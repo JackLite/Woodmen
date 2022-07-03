@@ -40,6 +40,9 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 98890a5013aa67146b7802c125b56466, type: 3}
   - {fileID: 21300000, guid: 01db8ab1e9440b442bce2a27ac527ed9, type: 3}
+  - {fileID: 1158674123, guid: 14102e32505e796469ee71e522c29bc9, type: 3}
+  - {fileID: 471547711, guid: 14102e32505e796469ee71e522c29bc9, type: 3}
+  - {fileID: 21300000, guid: 1e5923927cacab54b920aea2db876437, type: 3}
   - {fileID: 21300000, guid: 4c5480144e6f08a49b0795a2dfeb4a24, type: 3}
   - {fileID: 21300000, guid: d25ab0b4c6a98144aa58dc298a569a5c, type: 3}
   - {fileID: 381569403, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
@@ -57,6 +60,9 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - i_mustaches
   - i_video
+  - b_grad_h_0
+  - b_grad_h_1
+  - i_pause
   - i_arrow
   - i_wood
   - b_circle_3
