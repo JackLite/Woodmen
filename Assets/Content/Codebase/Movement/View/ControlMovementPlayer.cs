@@ -14,13 +14,19 @@ namespace Movement
         [SerializeField]
         private CircleMovementPlayer _movementCircle;
 
-        public event Action<Vector2> OnChange;
+        public event Action OnStopMove;
 
         private bool _isMoveActive;
+        private Vector2 _input;
 
         private void Awake()
         {
             _reader.OnChangeMoveState += OnChangeMoveState;
+        }
+
+        public Vector2 ReadInput()
+        {
+            return _input;
         }
 
         private void OnChangeMoveState(bool isActive)
@@ -28,7 +34,11 @@ namespace Movement
             if (isActive)
                 _movementCircle.SetStartPosition(_reader.CurrentPointerPos);
             else
+            {
+                _input = Vector2.zero;
                 _movementCircle.ResetToDefault();
+                OnStopMove?.Invoke();
+            }
             _isMoveActive = isActive;
         }
 
@@ -37,8 +47,8 @@ namespace Movement
             if (!_isMoveActive)
                 return;
 
+            _input = _movementCircle.Delta;
             _movementCircle.SetPosition(_reader.CurrentPointerPos);
-            OnChange?.Invoke(_movementCircle.Delta);
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Movement
             var newPos = Vector2.ClampMagnitude(direction, _diff);
             _circle.anchoredPosition = newPos;
 
-            var max = Mathf.Max(newPos.x, newPos.y);
+            var max = Mathf.Max(Mathf.Abs(newPos.x), Mathf.Abs(newPos.y));
             if (max == 0)
             {
                 Delta = Vector2.zero;

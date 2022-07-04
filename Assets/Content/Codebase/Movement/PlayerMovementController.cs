@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Movement
 {
-    public class PlayerMovementController : IInitializable, IDisposable
+    public class PlayerMovementController : IInitializable, IFixedTickable, IDisposable
     {
         private readonly PlayerMovement _playerMovement;
         private readonly ControlMovementPlayer _controlMovementPlayer;
@@ -16,12 +16,17 @@ namespace Movement
 
         public void Initialize()
         {
-            _controlMovementPlayer.OnChange += _playerMovement.Move;
+            _controlMovementPlayer.OnStopMove += _playerMovement.StopMove;
+        }
+        
+        public void FixedTick()
+        {
+            _playerMovement.Move(_controlMovementPlayer.ReadInput());
         }
 
         public void Dispose()
         {
-            _controlMovementPlayer.OnChange -= _playerMovement.Move;
+            _controlMovementPlayer.OnStopMove -= _playerMovement.StopMove;
         }
     }
 }
