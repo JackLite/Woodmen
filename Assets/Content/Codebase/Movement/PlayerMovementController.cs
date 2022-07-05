@@ -8,6 +8,8 @@ namespace Movement
         private readonly PlayerMovement _playerMovement;
         private readonly ControlMovementPlayer _controlMovementPlayer;
 
+        public bool IsPlayerMoving => _playerMovement.IsMoving;
+        
         public PlayerMovementController(MetaViewProvider viewProvider)
         {
             _playerMovement = viewProvider.PlayerMovement;

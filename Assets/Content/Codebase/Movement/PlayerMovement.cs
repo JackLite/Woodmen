@@ -20,12 +20,7 @@ namespace Movement
         private static readonly int _stopWalk = Animator.StringToHash("StopWalk");
         private static readonly int _startWalk = Animator.StringToHash("StartWalk");
         private Vector2 _lastDelta;
-        private float _realSpeed;
-
-        private void Update()
-        {
-            _realSpeed = _speed * Time.deltaTime;
-        }
+        public bool IsMoving => _rigidbody.velocity != Vector3.zero;
 
         public void Move(Vector2 delta)
         {
