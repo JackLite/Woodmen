@@ -1,4 +1,5 @@
-﻿using MetaInteractions;
+﻿using CameraProcessing;
+using MetaInteractions;
 using MetaTrees;
 using Movement;
 using UnityEngine;
@@ -12,8 +13,10 @@ public class MainInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Container.Bind<MetaViewProvider>().FromInstance(_metaViewProvider).AsSingle();
+        Container.Bind<CamerasContainer>().FromInstance(_metaViewProvider.CamerasContainer).AsSingle();
         Container.BindInterfacesAndSelfTo<PlayerMovementController>().AsSingle().NonLazy();
         Container.BindInterfacesAndSelfTo<InteractionsController>().AsSingle().NonLazy();
         Container.BindInterfacesAndSelfTo<TreeInteraction>().AsSingle();
+        Container.BindInterfacesAndSelfTo<CameraController>().AsSingle();
     }
 }

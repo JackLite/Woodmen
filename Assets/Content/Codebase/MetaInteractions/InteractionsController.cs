@@ -17,6 +17,7 @@ namespace MetaInteractions
         
         public void Initialize()
         {
+            //TODO: переделать на пул в котором объекты для взаимодействия будут сами регистрироваться
             var allInteracts = Object.FindObjectsOfType<InteractTarget>();
             foreach (var target in allInteracts)
             {

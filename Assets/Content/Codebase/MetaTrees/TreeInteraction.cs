@@ -1,13 +1,27 @@
+using CameraProcessing;
+using MetaInteractions;
 using Movement;
-using UnityEngine;
 
 namespace MetaTrees
 {
     public class TreeInteraction
     {
-        public void OnInteract()
+        private readonly PlayerMovementController _playerMovement;
+        private readonly CameraController _cameraController;
+        public TreeInteraction(PlayerMovementController playerMovement, CameraController cameraController)
         {
-            Debug.Log("Tree interact");
+            _playerMovement = playerMovement;
+            _cameraController = cameraController;
+        }
+
+        public void OnInteract(InteractTarget target)
+        {
+            var tree = target.GetComponent<Tree>();
+            if (!tree)
+                return;
+
+            _playerMovement.SetPlayerToPos(tree.PlayerWorldPosition);
+            _cameraController.MoveToCore();
         }
     }
 }

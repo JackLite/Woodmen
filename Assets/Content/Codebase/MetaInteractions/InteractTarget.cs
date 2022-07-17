@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace MetaInteractions
 {
-
     public class InteractTarget : MonoBehaviour
     {
         [SerializeField]
@@ -15,7 +14,7 @@ namespace MetaInteractions
         private bool _isInteract;
         private float _startInteractionTime;
 
-        public event Action OnStartInteract;
+        public event Action<InteractTarget> OnStartInteract;
         
         private void OnTriggerEnter(Collider other)
         {
@@ -41,7 +40,7 @@ namespace MetaInteractions
 
             if (Time.time > _startInteractionTime)
             {
-                OnStartInteract?.Invoke();
+                OnStartInteract?.Invoke(this);
                 _isInteract = false;
             }
         }

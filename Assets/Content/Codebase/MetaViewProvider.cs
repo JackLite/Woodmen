@@ -1,4 +1,5 @@
-﻿using Movement;
+﻿using CameraProcessing;
+using Movement;
 using UnityEngine;
 
 /// <summary>
@@ -12,4 +13,7 @@ public class MetaViewProvider : MonoBehaviour
 
     [field:SerializeField]
     public ControlMovementPlayer ControlMovementPlayer { get; private set; }
+    
+    [field:SerializeField]
+    public CamerasContainer CamerasContainer { get; private set; }
 }

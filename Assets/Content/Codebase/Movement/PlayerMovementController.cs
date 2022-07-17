@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using Zenject;
 
 namespace Movement
@@ -29,6 +30,10 @@ namespace Movement
         public void Dispose()
         {
             _controlMovementPlayer.OnStopMove -= _playerMovement.StopMove;
+        }
+        public void SetPlayerToPos(Vector3 pos)
+        {
+            _playerMovement.transform.position = pos;
         }
     }
 }
