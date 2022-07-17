@@ -15,7 +15,12 @@ namespace MetaInteractions
         private float _startInteractionTime;
 
         public event Action<InteractTarget> OnStartInteract;
-        
+
+        private void Awake()
+        {
+            InteractionStaticPool.Register(this);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (!other.gameObject.CompareTag("Player"))
