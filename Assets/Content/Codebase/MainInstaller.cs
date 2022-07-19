@@ -1,26 +1,28 @@
-﻿using CameraProcessing;
-using DefaultNamespace;
-using MetaInteractions;
-using MetaTrees;
-using Movement;
-using Player.Indicators;
-using UnityEngine;
+﻿using UnityEngine;
+using Woodman.CameraProcessing;
+using Woodman.MetaInteractions;
+using Woodman.MetaTrees;
+using Woodman.Player.Indicators;
+using Woodman.Player.Movement;
 using Zenject;
 
-public class MainInstaller : MonoInstaller
+namespace Woodman
 {
-    [SerializeField]
-    private MetaViewProvider _metaViewProvider;
-
-    public override void InstallBindings()
+    public class MainInstaller : MonoInstaller
     {
-        Container.Bind<MetaViewProvider>().FromInstance(_metaViewProvider).AsSingle();
-        Container.Bind<CamerasContainer>().FromInstance(_metaViewProvider.CamerasContainer).AsSingle();
-        Container.BindInterfacesAndSelfTo<InteractionsController>().AsSingle().NonLazy();
-        Container.BindInterfacesAndSelfTo<TreeInteraction>().AsSingle();
-        Container.BindInterfacesAndSelfTo<CameraController>().AsSingle();
-        Container.BindInterfacesAndSelfTo<PlayerMovementController>().AsSingle().NonLazy();
-        Container.BindInterfacesAndSelfTo<WindowsSwitcher>().FromInstance(_metaViewProvider.WindowsSwitcher).AsSingle();
-        Container.BindInterfacesAndSelfTo<PlayerIndicatorsController>().FromInstance(_metaViewProvider.PlayerIndicatorsController).AsSingle();
+        [SerializeField]
+        private MetaViewProvider _metaViewProvider;
+
+        public override void InstallBindings()
+        {
+            Container.Bind<MetaViewProvider>().FromInstance(_metaViewProvider).AsSingle();
+            Container.Bind<CamerasContainer>().FromInstance(_metaViewProvider.CamerasContainer).AsSingle();
+            Container.BindInterfacesAndSelfTo<InteractionsController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<TreeInteraction>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CameraController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerMovementController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<WindowsSwitcher>().FromInstance(_metaViewProvider.WindowsSwitcher).AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerIndicatorsController>().FromInstance(_metaViewProvider.PlayerIndicatorsController).AsSingle();
+        }
     }
 }

@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Movement
+namespace Woodman.Player.Movement
 {
     public class PlayerMovement : MonoBehaviour
     {

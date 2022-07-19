@@ -1,7 +1,7 @@
-using MetaTrees;
+using Woodman.MetaTrees;
 using Zenject;
 
-namespace MetaInteractions
+namespace Woodman.MetaInteractions
 {
     /// <summary>
     /// Связывает обработчиков взаимодействия и события взаимодействия

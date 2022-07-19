@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Player.Indicators
+namespace Woodman.Player.Indicators
 {
     public class PlayerIndicatorsController : MonoBehaviour
     {

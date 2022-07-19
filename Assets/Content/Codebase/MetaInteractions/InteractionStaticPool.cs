@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MetaInteractions
+namespace Woodman.MetaInteractions
 {
     public static class InteractionStaticPool
     {

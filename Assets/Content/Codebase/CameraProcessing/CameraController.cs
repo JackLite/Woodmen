@@ -1,4 +1,4 @@
-namespace CameraProcessing
+namespace Woodman.CameraProcessing
 {
     public class CameraController
     {

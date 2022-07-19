@@ -1,12 +1,11 @@
 using System;
 using System.Threading.Tasks;
-using CameraProcessing;
-using DefaultNamespace;
-using MetaInteractions;
-using Movement;
-using Player.Indicators;
+using Woodman.CameraProcessing;
+using Woodman.MetaInteractions;
+using Woodman.Player.Indicators;
+using Woodman.Player.Movement;
 
-namespace MetaTrees
+namespace Woodman.MetaTrees
 {
     public class TreeInteraction
     {

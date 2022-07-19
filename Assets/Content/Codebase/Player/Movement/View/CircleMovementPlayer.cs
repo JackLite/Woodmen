@@ -1,9 +1,7 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using Misc;
+﻿using System.Runtime.CompilerServices;
 using UnityEngine;
 
-namespace Movement
+namespace Woodman.Player.Movement.View
 {
     [RequireComponent(typeof(RectTransform))]
     public class CircleMovementPlayer : MonoBehaviour

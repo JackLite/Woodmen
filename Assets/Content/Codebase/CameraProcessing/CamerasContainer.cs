@@ -1,7 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
-namespace CameraProcessing
+namespace Woodman.CameraProcessing
 {
     public class CamerasContainer : MonoBehaviour
     {

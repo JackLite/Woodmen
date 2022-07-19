@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
-    
-namespace Movement
+
+namespace Woodman.Player.Movement.View
 {
     /// <summary>
     /// Enter point for read movement input

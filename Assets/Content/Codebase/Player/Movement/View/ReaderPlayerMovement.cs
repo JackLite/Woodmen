@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Movement
+namespace Woodman.Player.Movement.View
 {
     public class ReaderPlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerMoveHandler, IPointerUpHandler
     {

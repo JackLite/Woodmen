@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Misc
+namespace Woodman.Misc
 {
     [RequireComponent(typeof(RectTransform))]
     public class NormalToCamera : MonoBehaviour

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace MetaInteractions
+namespace Woodman.MetaInteractions
 {
     public class InteractTarget : MonoBehaviour
     {

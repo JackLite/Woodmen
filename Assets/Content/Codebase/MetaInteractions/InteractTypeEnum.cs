@@ -1,4 +1,4 @@
-namespace MetaInteractions
+namespace Woodman.MetaInteractions
 {
     public enum InteractTypeEnum
     {

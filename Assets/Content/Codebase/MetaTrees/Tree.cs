@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MetaTrees
+namespace Woodman.MetaTrees
 {
     public class Tree : MonoBehaviour
     {

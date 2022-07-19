@@ -1,8 +1,9 @@
 ﻿using System;
 using UnityEngine;
+using Woodman.Player.Movement.View;
 using Zenject;
 
-namespace Movement
+namespace Woodman.Player.Movement
 {
     public class PlayerMovementController : IInitializable, IFixedTickable, IDisposable
     {

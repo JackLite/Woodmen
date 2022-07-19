@@ -1,7 +1,6 @@
-using UnityEditor.VersionControl;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Woodman
 {
     public class WindowsSwitcher : MonoBehaviour
     {
