@@ -15,6 +15,8 @@ namespace MetaInteractions
         private float _startInteractionTime;
 
         public event Action<InteractTarget> OnStartInteract;
+        public event Action<InteractTarget> OnEndInteract;
+        public event Action<InteractTarget> OnInteract;
 
         private void Awake()
         {
@@ -28,6 +30,7 @@ namespace MetaInteractions
 
             _startInteractionTime = Time.time + _interactionDelay;
             _isInteract = true;
+            OnStartInteract?.Invoke(this);
         }
 
         private void OnTriggerExit(Collider other)
@@ -36,6 +39,7 @@ namespace MetaInteractions
                 return;
 
             _isInteract = false;
+            OnEndInteract?.Invoke(this);
         }
 
         private void Update()
@@ -45,7 +49,7 @@ namespace MetaInteractions
 
             if (Time.time > _startInteractionTime)
             {
-                OnStartInteract?.Invoke(this);
+                OnInteract?.Invoke(this);
                 _isInteract = false;
             }
         }

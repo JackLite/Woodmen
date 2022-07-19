@@ -4,6 +4,7 @@ using CameraProcessing;
 using DefaultNamespace;
 using MetaInteractions;
 using Movement;
+using Player.Indicators;
 
 namespace MetaTrees
 {
@@ -12,14 +13,27 @@ namespace MetaTrees
         private readonly PlayerMovementController _playerMovement;
         private readonly CameraController _cameraController;
         private readonly WindowsSwitcher _windowsSwitcher;
+        private readonly PlayerIndicatorsController _playerIndicators;
         public TreeInteraction(
             PlayerMovementController playerMovement,
             CameraController cameraController,
-            WindowsSwitcher windowsSwitcher)
+            WindowsSwitcher windowsSwitcher,
+            PlayerIndicatorsController playerIndicators)
         {
             _playerMovement = playerMovement;
             _cameraController = cameraController;
             _windowsSwitcher = windowsSwitcher;
+            _playerIndicators = playerIndicators;
+        }
+
+        public void OnStartInteract(InteractTarget target)
+        {
+            _playerIndicators.ShowHideTreeIndicator(true);
+        }
+
+        public void OnEndInteract(InteractTarget target)
+        {
+            _playerIndicators.ShowHideTreeIndicator(false);
         }
 
         public void OnInteract(InteractTarget target)

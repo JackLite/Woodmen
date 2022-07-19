@@ -1,5 +1,4 @@
 using MetaTrees;
-using UnityEngine;
 using Zenject;
 
 namespace MetaInteractions
@@ -20,7 +19,11 @@ namespace MetaInteractions
             foreach (var target in InteractionStaticPool.Targets)
             {
                 if (target.InteractType == InteractTypeEnum.Tree)
-                    target.OnStartInteract += _treeInteraction.OnInteract;
+                {
+                    target.OnStartInteract += _treeInteraction.OnStartInteract;
+                    target.OnInteract += _treeInteraction.OnInteract;
+                    target.OnEndInteract += _treeInteraction.OnEndInteract;
+                }
             }
         }
     }
