@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Woodman.Felling
 {
-    public class FellingPlayerController : MonoBehaviour
+    public class FellingCharacterController : MonoBehaviour
     {
         [SerializeField]
         private Transform _character;
@@ -32,6 +32,11 @@ namespace Woodman.Felling
             _character.position = _sideToPosMap[side].Item1;
             _character.rotation = _sideToPosMap[side].Item2;
             CurrentSide = side;
+        }
+
+        public void Cut()
+        {
+            //_animator.SetTrigger(_cut);
         }
 
         [Serializable]

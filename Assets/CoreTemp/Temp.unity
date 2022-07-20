@@ -501,18 +501,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 778295431}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &778295433 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7050587359729992140, guid: 6201229c9ed9b3442bbdcdc631f0093c,
-    type: 3}
-  m_PrefabInstance: {fileID: 778295431}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2976f7362b14262ab5fc82ed8233ad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1205651020
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,8 +668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <TreeContainer>k__BackingField: {fileID: 1333919568}
-  <FellingPlayerController>k__BackingField: {fileID: 1585188041}
-  <TapController>k__BackingField: {fileID: 778295433}
+  <FellingCharacterController>k__BackingField: {fileID: 1585188041}
+  <FellingUIProvider>k__BackingField: {fileID: 1866803147}
 --- !u!4 &1333919567
 Transform:
   m_ObjectHideFlags: 0
@@ -934,3 +922,15 @@ MonoBehaviour:
   - side: 1
     pos: {x: 1, y: 0.1, z: 0}
     rotation: {x: 0, y: -0.70710677, z: 0, w: 0.70710677}
+--- !u!114 &1866803147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5621346360134876906, guid: 6201229c9ed9b3442bbdcdc631f0093c,
+    type: 3}
+  m_PrefabInstance: {fileID: 778295431}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ac7df328764b50b90eb74e0ec5b96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

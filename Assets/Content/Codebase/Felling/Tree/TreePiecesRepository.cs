@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Woodman.Felling
+namespace Woodman.Felling.Tree
 {
-    public class PiecesController
+    public class TreePiecesRepository
     {
         private readonly Queue<TreePiece> _pieces = new();
         public void AddPiece(TreePiece piece)
@@ -15,10 +15,10 @@ namespace Woodman.Felling
         {
             return _pieces.Peek();
         }
-        
+
         public void RemovePiece()
         {
-            var cutPiece= _pieces.Dequeue();
+            var cutPiece = _pieces.Dequeue();
             Object.Destroy(cutPiece.gameObject);
             foreach (var piece in _pieces)
             {

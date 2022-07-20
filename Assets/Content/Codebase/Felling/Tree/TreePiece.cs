@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Woodman.Felling
+namespace Woodman.Felling.Tree
 {
     public class TreePiece : MonoBehaviour
     {
