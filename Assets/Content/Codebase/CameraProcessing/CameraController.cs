@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Woodman.CameraProcessing
 {
     public class CameraController
@@ -8,8 +10,11 @@ namespace Woodman.CameraProcessing
             _camerasContainer = camerasContainer;
         }
 
-        public void MoveToCore()
+        public void MoveToCore(Transform focusTarget)
         {
+            _camerasContainer.CoreCamera.transform.position = _camerasContainer.MetaCamera.transform.position;
+            _camerasContainer.CoreCamera.LookAt = focusTarget;
+            _camerasContainer.CoreCamera.Follow = focusTarget;
             _camerasContainer.MetaCamera.enabled = false;
             _camerasContainer.CoreCamera.enabled = true;
         }

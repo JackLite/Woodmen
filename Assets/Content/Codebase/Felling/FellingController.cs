@@ -1,18 +1,16 @@
 using UnityEngine;
-using Woodman.Felling.Tree;
+using Woodman.MetaTrees;
 using Zenject;
 
 namespace Woodman.Felling
 {
     public class FellingController : IInitializable
     {
-        private readonly TreeGenerator _treeGenerator;
         private readonly FellingProcessor _fellingProcessor;
         private readonly FellingUI _fellingUI;
 
-        public FellingController(TreeGenerator treeGenerator, FellingProcessor fellingProcessor, FellingUI fellingUI)
+        public FellingController(FellingProcessor fellingProcessor, FellingUI fellingUI)
         {
-            _treeGenerator = treeGenerator;
             _fellingProcessor = fellingProcessor;
             _fellingUI = fellingUI;
         }
@@ -22,10 +20,17 @@ namespace Woodman.Felling
             _fellingUI.OnStart += StartGame;
             _fellingProcessor.OnGameOver += OnGameOver;
         }
+
+        public void InitFelling(TreeMeta treeMeta)
+        {
+            _fellingUI.InitFelling();
+            
+        }
+
         private void StartGame()
         {
-            _treeGenerator.Generate();
         }
+
         private void OnGameOver()
         {
             Debug.Log("Loose!");

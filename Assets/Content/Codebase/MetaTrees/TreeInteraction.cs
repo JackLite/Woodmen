@@ -1,28 +1,17 @@
-using System;
-using System.Threading.Tasks;
-using Woodman.CameraProcessing;
+using Woodman.Felling;
 using Woodman.MetaInteractions;
 using Woodman.Player.Indicators;
-using Woodman.Player.Movement;
 
 namespace Woodman.MetaTrees
 {
     public class TreeInteraction
     {
-        private readonly PlayerMovementController _playerMovement;
-        private readonly CameraController _cameraController;
-        private readonly WindowsSwitcher _windowsSwitcher;
         private readonly PlayerIndicatorsController _playerIndicators;
-        public TreeInteraction(
-            PlayerMovementController playerMovement,
-            CameraController cameraController,
-            WindowsSwitcher windowsSwitcher,
-            PlayerIndicatorsController playerIndicators)
+        private readonly FellingInitializer _fellingInitializer;
+        public TreeInteraction(PlayerIndicatorsController playerIndicators, FellingInitializer fellingInitializer)
         {
-            _playerMovement = playerMovement;
-            _cameraController = cameraController;
-            _windowsSwitcher = windowsSwitcher;
             _playerIndicators = playerIndicators;
+            _fellingInitializer = fellingInitializer;
         }
 
         public void OnStartInteract(InteractTarget target)
@@ -37,20 +26,11 @@ namespace Woodman.MetaTrees
 
         public void OnInteract(InteractTarget target)
         {
-            var tree = target.GetComponent<Tree>();
+            var tree = target.GetComponent<TreeMeta>();
             if (!tree)
                 return;
 
-            _playerMovement.SetPlayerToPos(tree.PlayerWorldPosition);
-            _cameraController.MoveToCore();
-            SwitchUi();
-        }
-
-        private async void SwitchUi()
-        {
-            _windowsSwitcher.ShowHideMeta(false);
-            await Task.Delay(TimeSpan.FromSeconds(2));
-            _windowsSwitcher.ShowHideCore(true);
+            _fellingInitializer.Init(tree);
         }
     }
 }

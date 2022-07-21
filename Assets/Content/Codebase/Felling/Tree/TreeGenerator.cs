@@ -13,16 +13,18 @@ namespace Woodman.Felling.Tree
             _treePiecesRepository = treePiecesRepository;
         }
 
-        public void Generate()
+        public void Generate(Vector3 rootPos)
         {
             var size = 200;
+            var parent = new GameObject("TreeCore");
             for (var i = 0; i < size; ++i)
             {
                 var isRight = Random.Range(0, 1f) > .5f;
                 var side = isRight ? Side.Right : Side.Left;
                 var isShort = Random.Range(0, 1f) > .5f;
                 var hasBench = i % 2 == 0 && i >= 4;
-                var tree = _pieceFactory.Create(side, i, hasBench, isShort);
+                var tree = _pieceFactory.Create(rootPos, side, i, hasBench, isShort);
+                tree.transform.SetParent(parent.transform, true);
                 _treePiecesRepository.AddPiece(tree);
             }
         }

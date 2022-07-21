@@ -32,9 +32,5 @@ namespace Woodman.Player.Movement
         {
             _controlMovementPlayer.OnStopMove -= _playerMovement.StopMove;
         }
-        public void SetPlayerToPos(Vector3 pos)
-        {
-            _playerMovement.transform.position = pos;
-        }
     }
 }

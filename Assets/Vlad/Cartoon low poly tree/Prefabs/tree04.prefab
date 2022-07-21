@@ -28,12 +28,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4790895467909538535}
   - {fileID: 4858889305753219341}
+  - {fileID: 1461084066334749056}
+  - {fileID: 4790895467909538535}
+  - {fileID: 9010091887218486469}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3097121997845127581
+--- !u!1 &3400172695774814834
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,28 +43,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5709725291918813344}
+  - component: {fileID: 9010091887218486469}
   m_Layer: 0
-  m_Name: PlayerInteractionPos
+  m_Name: RightFellingPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5709725291918813344
+--- !u!4 &9010091887218486469
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3097121997845127581}
+  m_GameObject: {fileID: 3400172695774814834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.468, y: -1.79, z: -0.032}
+  m_LocalPosition: {x: 0.224, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4858889305753219341}
-  m_RootOrder: 0
+  m_Father: {fileID: 4356311853730785322}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8117155846998202113
 GameObject:
@@ -97,10 +99,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.075, z: 0}
   m_LocalScale: {x: 2, y: 0.2, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5709725291918813344}
+  m_Children: []
   m_Father: {fileID: 4356311853730785322}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6869884116326729664
 MeshFilter:
@@ -117,7 +118,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8117155846998202113}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -177,7 +178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed3aac748114b7587a455a36a6fe919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTargetPosition: {fileID: 5709725291918813344}
+  _leftCutPosition: {fileID: 1461084066334749056}
+  _rightCutPosition: {fileID: 9010091887218486469}
+  _mesh: {fileID: 4790895467909185223}
 --- !u!114 &5791442636874632512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +211,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &9179789399275582347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461084066334749056}
+  m_Layer: 0
+  m_Name: LeftFellingPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1461084066334749056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179789399275582347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.224, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4356311853730785322}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4790895467909150823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -275,6 +309,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: faff3c7e646bbbe4fb407521f496cea9, type: 2}
+    - target: {fileID: 400000, guid: dc9b74e51e432fd40bfcc4f28fb3a17e, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: dc9b74e51e432fd40bfcc4f28fb3a17e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

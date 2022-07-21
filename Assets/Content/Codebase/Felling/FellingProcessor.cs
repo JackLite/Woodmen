@@ -26,7 +26,7 @@ namespace Woodman.Felling
 
         private void Cut(Side side)
         {
-            _characterController.MoveToSide(side);
+            _characterController.SetSide(side);
             if (CheckGameOver())
             {
                 OnGameOver?.Invoke();
