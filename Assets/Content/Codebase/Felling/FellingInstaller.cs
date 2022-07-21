@@ -1,5 +1,6 @@
 using System.Reflection;
 using UnityEngine;
+using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Misc;
 using Zenject;
@@ -15,6 +16,7 @@ namespace Woodman.Felling
             Container.BindInterfacesAndSelfTo<FellingController>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<FellingInitializer>().AsSingle();
             Container.BindInterfacesAndSelfTo<FellingProcessor>().AsSingle();
+            Container.BindInterfacesAndSelfTo<FellingTimer>().AsSingle();
             Container.BindInterfacesAndSelfTo<FellingUI>().AsSingle();
             Container.BindInterfacesAndSelfTo<TreeGenerator>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<TreePieceFactory>().AsSingle();

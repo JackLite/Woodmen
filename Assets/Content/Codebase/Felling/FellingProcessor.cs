@@ -1,4 +1,5 @@
 using System;
+using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Zenject;
 
@@ -10,14 +11,20 @@ namespace Woodman.Felling
         private readonly FellingUIProvider _fellingUI;
         private readonly TreePiecesRepository _treePiecesRepository;
         private readonly FellingCharacterController _characterController;
+        private readonly FellingTimer _fellingTimer;
 
         public event Action OnGameOver;
-        
-        public FellingProcessor (FellingUIProvider fellingUI, TreePiecesRepository treePiecesRepository, FellingCharacterController characterController)
+
+        public FellingProcessor(
+            FellingUIProvider fellingUI,
+            TreePiecesRepository treePiecesRepository,
+            FellingCharacterController characterController,
+            FellingTimer fellingTimer)
         {
             _fellingUI = fellingUI;
             _treePiecesRepository = treePiecesRepository;
             _characterController = characterController;
+            _fellingTimer = fellingTimer;
         }
         public void Initialize()
         {
@@ -37,7 +44,9 @@ namespace Woodman.Felling
             if (CheckGameOver())
             {
                 OnGameOver?.Invoke();
+                return;
             }
+            _fellingTimer.AddTime(0.1f);
         }
 
         private bool CheckGameOver()

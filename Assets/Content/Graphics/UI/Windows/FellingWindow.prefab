@@ -193,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TapController>k__BackingField: {fileID: 7050587359729992140}
   <StartGameBtn>k__BackingField: {fileID: 2867498825994008638}
+  <FellingTimerView>k__BackingField: {fileID: 8481823292790138154}
 --- !u!1 &2559410797264825651
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3744120373238290169}
   - component: {fileID: 6140347394883505688}
+  - component: {fileID: 8481823292790138154}
   m_Layer: 5
   m_Name: TimeBar
   m_TagString: Untagged
@@ -736,6 +738,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8481823292790138154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740892405980588323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f45ed43fa4743cfb67fe791f94cefba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 6140347394883505688}
 --- !u!1001 &1594583650979764231
 PrefabInstance:
   m_ObjectHideFlags: 0

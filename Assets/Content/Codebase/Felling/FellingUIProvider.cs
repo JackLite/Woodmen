@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 
 namespace Woodman.Felling
@@ -8,8 +9,11 @@ namespace Woodman.Felling
     {
         [field:SerializeField]
         public TapController TapController { get; private set; }
-        
+
         [field:SerializeField]
         public Button StartGameBtn { get; private set; }
+
+        [field:SerializeField]
+        public FellingTimerView FellingTimerView { get; private set; }
     }
 }
