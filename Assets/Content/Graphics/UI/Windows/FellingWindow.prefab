@@ -194,6 +194,7 @@ MonoBehaviour:
   <TapController>k__BackingField: {fileID: 7050587359729992140}
   <StartGameBtn>k__BackingField: {fileID: 2867498825994008638}
   <FellingTimerView>k__BackingField: {fileID: 8481823292790138154}
+  <TreeUIProgress>k__BackingField: {fileID: 6898697311731724597}
 --- !u!1 &2559410797264825651
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +864,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2174090302585734848, guid: ff5f7d42a180af9478418bb72887df14,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2875537161287030703, guid: ff5f7d42a180af9478418bb72887df14,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -880,12 +886,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff5f7d42a180af9478418bb72887df14, type: 3}
+--- !u!114 &579542671894634183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2174090302585734848, guid: ff5f7d42a180af9478418bb72887df14,
+    type: 3}
+  m_PrefabInstance: {fileID: 1594583650979764231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2331708525775978659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1346903803320469252 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 328816368197656323, guid: ff5f7d42a180af9478418bb72887df14,
     type: 3}
   m_PrefabInstance: {fileID: 1594583650979764231}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2331708525775978659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3925729219822999716, guid: ff5f7d42a180af9478418bb72887df14,
+    type: 3}
+  m_PrefabInstance: {fileID: 1594583650979764231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6898697311731724597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2331708525775978659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d5ab855e414064a402e061cdd18f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 579542671894634183}
 --- !u!1001 &3269356150364459462
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,27 +8,27 @@ namespace Woodman.Felling
     public class FellingProcessor : IInitializable
     {
         private readonly TapController _tapController;
-        private readonly FellingUIProvider _fellingUI;
+        private readonly FellingUIProvider _uiProvider;
         private readonly TreePiecesRepository _treePiecesRepository;
         private readonly FellingCharacterController _characterController;
-        private readonly FellingTimer _fellingTimer;
+        private readonly TreeProgressService _progressService;
 
         public event Action OnGameOver;
 
         public FellingProcessor(
-            FellingUIProvider fellingUI,
+            FellingUIProvider uiProvider,
             TreePiecesRepository treePiecesRepository,
             FellingCharacterController characterController,
-            FellingTimer fellingTimer)
+            TreeProgressService progressService)
         {
-            _fellingUI = fellingUI;
+            _uiProvider = uiProvider;
             _treePiecesRepository = treePiecesRepository;
             _characterController = characterController;
-            _fellingTimer = fellingTimer;
+            _progressService = progressService;
         }
         public void Initialize()
         {
-            _fellingUI.TapController.OnTap += Cut;
+            _uiProvider.TapController.OnTap += Cut;
         }
 
         private void Cut(Side side)
@@ -46,7 +46,7 @@ namespace Woodman.Felling
                 OnGameOver?.Invoke();
                 return;
             }
-            _fellingTimer.AddTime(0.1f);
+            _progressService.UpdateAfterCut();
         }
 
         private bool CheckGameOver()

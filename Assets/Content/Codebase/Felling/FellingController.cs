@@ -28,7 +28,6 @@ namespace Woodman.Felling
         public void InitFelling(TreeMeta treeMeta)
         {
             _fellingUI.InitFelling();
-            
         }
 
         private void StartGame()

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Woodman.Felling.Tree;
 using Woodman.MetaTrees;
 
 namespace Woodman.Felling
@@ -16,25 +17,23 @@ namespace Woodman.Felling
 
         private readonly Dictionary<Side, Vector3> _sideToPosMap = new();
         private static readonly int _cut = Animator.StringToHash("Cut");
-        private Vector3 _targetPos;
+        private TreeModel _currentTree;
         public Side CurrentSide { get; private set; }
 
         public void SetSide(Side side)
         {
             _character.position = _sideToPosMap[side];
-            var rot = Quaternion.LookRotation((_targetPos - _character.position).normalized).eulerAngles;
+            var rot = Quaternion.LookRotation((_currentTree.pos - _character.position).normalized).eulerAngles;
             _character.rotation = Quaternion.Euler(0, rot.y, 0);
             CurrentSide = side;
         }
 
-        public void InitFelling(TreeMeta tree)
+        public void InitFelling(TreeModel tree)
         {
-            _targetPos = tree.transform.position;
-            var leftPos = tree.GetCutPosition(Side.Left);
-            var rightPos = tree.GetCutPosition(Side.Right);
-            
-            _sideToPosMap[Side.Left] = leftPos;
-            _sideToPosMap[Side.Right] = rightPos;
+            _currentTree = tree;
+
+            _sideToPosMap[Side.Left] = _currentTree.leftPos;
+            _sideToPosMap[Side.Right] = _currentTree.rightPos;
         }
 
         public void Cut()

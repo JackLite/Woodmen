@@ -13,9 +13,8 @@ namespace Woodman.Felling.Tree
             _treePiecesRepository = treePiecesRepository;
         }
 
-        public void Generate(Vector3 rootPos)
+        public void Generate(Vector3 rootPos, int size)
         {
-            var size = 200;
             var parent = new GameObject("TreeCore");
             for (var i = 0; i < size; ++i)
             {

@@ -15,5 +15,8 @@ namespace Woodman.Felling
 
         [field:SerializeField]
         public FellingTimerView FellingTimerView { get; private set; }
+        
+        [field:SerializeField]
+        public TreeUIProgress TreeUIProgress { get; private set; }
     }
 }
