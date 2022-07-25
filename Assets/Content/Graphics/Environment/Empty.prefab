@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8646181221538019817}
   - component: {fileID: 3077239417955193020}
   m_Layer: 0
-  m_Name: VikingHouse_1
+  m_Name: Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
