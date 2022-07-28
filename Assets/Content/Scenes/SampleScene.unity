@@ -363,6 +363,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree1
       objectReference: {fileID: 0}
+    - target: {fileID: 1314587481415183605, guid: 7a68d5b2a44ea9c4f9769976df5fe084,
+        type: 3}
+      propertyPath: _size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4356311853730785322, guid: 7a68d5b2a44ea9c4f9769976df5fe084,
         type: 3}
       propertyPath: m_RootOrder
@@ -587,7 +592,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235444975}
-  m_LocalRotation: {x: 0.36340126, y: -0.007620843, z: 0.002972771, w: 0.9315968}
+  m_LocalRotation: {x: 0.36340126, y: -0.007620811, z: 0.0029727584, w: 0.9315968}
   m_LocalPosition: {x: 0.16999999, y: 21.12, z: -10.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2349,7 +2354,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.36340126, y: -0.007620843, z: 0.002972771, w: 0.9315968}
+  m_LocalRotation: {x: 0.36340126, y: -0.007620811, z: 0.0029727584, w: 0.9315968}
   m_LocalPosition: {x: 0.16999999, y: 21.12, z: -10.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3073,6 +3078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fellingViewProvider: {fileID: 1333919566}
+  _fellingSettings: {fileID: 4900000, guid: 4f1c480774e9419ba08c229eeb73585b, type: 3}
 --- !u!4 &1363661019
 Transform:
   m_ObjectHideFlags: 0

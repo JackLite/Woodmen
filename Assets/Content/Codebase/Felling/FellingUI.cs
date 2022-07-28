@@ -44,7 +44,6 @@ namespace Woodman.Felling
             _windowsSwitcher.ShowHideMeta(false);
             await Task.Delay(TimeSpan.FromSeconds(2));
             _windowsSwitcher.ShowHideCore(true);
-            _fellingTimer.Start(_settingsContainer.GetSettings().time);
         }
 
         private void OnStartClick()

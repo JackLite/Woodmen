@@ -1,5 +1,4 @@
 using System;
-using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Zenject;
 
@@ -13,6 +12,7 @@ namespace Woodman.Felling
         private readonly FellingCharacterController _characterController;
         private readonly TreeProgressService _progressService;
 
+        public event Action OnWin;
         public event Action OnGameOver;
 
         public FellingProcessor(
@@ -41,6 +41,11 @@ namespace Woodman.Felling
             }
             _characterController.Cut();
             _treePiecesRepository.RemovePiece();
+            if (_treePiecesRepository.GetRemain() == 0)
+            {
+                OnWin?.Invoke();
+                return;
+            }
             if (CheckGameOver())
             {
                 OnGameOver?.Invoke();

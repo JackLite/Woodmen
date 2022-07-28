@@ -16,6 +16,11 @@ namespace Woodman.Felling.Tree
             return _pieces.Peek();
         }
 
+        public int GetRemain()
+        {
+            return _pieces.Count;
+        }
+
         public void RemovePiece()
         {
             var cutPiece = _pieces.Dequeue();
