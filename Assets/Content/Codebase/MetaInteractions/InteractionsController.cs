@@ -1,3 +1,4 @@
+using Woodman.Buildings;
 using Woodman.MetaTrees;
 using Zenject;
 
@@ -9,11 +10,14 @@ namespace Woodman.MetaInteractions
     public class InteractionsController : IInitializable
     {
         private readonly TreeInteraction _treeInteraction;
-        public InteractionsController(TreeInteraction treeInteraction)
+        private readonly BuildingInteraction _buildingInteraction;
+
+        public InteractionsController(TreeInteraction treeInteraction, BuildingInteraction buildingInteraction)
         {
             _treeInteraction = treeInteraction;
+            _buildingInteraction = buildingInteraction;
         }
-        
+
         public void Initialize()
         {
             foreach (var target in InteractionStaticPool.Targets)
@@ -23,6 +27,10 @@ namespace Woodman.MetaInteractions
                     target.OnStartInteract += _treeInteraction.OnStartInteract;
                     target.OnInteract += _treeInteraction.OnInteract;
                     target.OnEndInteract += _treeInteraction.OnEndInteract;
+                }
+                else if (target.InteractType == InteractTypeEnum.Building)
+                {
+                    target.OnInteract += _buildingInteraction.OnInteract;
                 }
             }
         }
