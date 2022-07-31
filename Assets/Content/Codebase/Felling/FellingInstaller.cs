@@ -7,7 +7,7 @@ using Zenject;
 
 namespace Woodman.Felling
 {
-    public class FellingInstaller : MonoInstaller
+    public class FellingInstaller : BaseInstaller
     {
         [SerializeField]
         private FellingViewProvider _fellingViewProvider;
@@ -29,30 +29,6 @@ namespace Woodman.Felling
             Container.BindInterfacesAndSelfTo<TreePiecesRepository>().AsSingle();
             Container.BindInterfacesAndSelfTo<TreeProgressService>().AsSingle();
             BindView(_fellingViewProvider);
-        }
-
-        private void BindView<T>(T viewProvider) where T : class
-        {
-            var t = typeof(T);
-            foreach (var p in t.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public))
-            {
-                if (p.GetCustomAttribute(typeof(ViewInjectAttribute)) == null)
-                    continue;
-
-                var val = p.GetValue(viewProvider);
-                if (val == null)
-                {
-                    Debug.LogError($"{p.FieldType} not found in {viewProvider.GetType()}");
-                    continue;
-                }
-                Bind(val);
-            }
-        }
-
-        private void Bind(object t)
-        {
-            var type = t.GetType();
-            Container.BindInterfacesAndSelfTo(type).FromInstance(t).AsSingle();
         }
     }
 }

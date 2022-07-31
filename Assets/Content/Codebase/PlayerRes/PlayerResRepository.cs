@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using Woodman.Utils;
 using Logger = Woodman.Utils.Logger;
@@ -9,6 +10,8 @@ namespace Woodman.PlayerRes
         private const string SAVE_KEY = "player.resources.logs";
 
         private int _count;
+
+        public event Action<int, int> OnChange;
 
         public PlayerResRepository()
         {
@@ -23,9 +26,11 @@ namespace Woodman.PlayerRes
 
         public void AddPlayerRes(int count, bool saveImmediate = true)
         {
+            var old = _count;
             _count += count;
             if (saveImmediate)
                 Save();
+            OnChange?.Invoke(old, _count);
         }
 
         public void SubtractRes(int count, bool saveImmediate = true)
@@ -36,9 +41,11 @@ namespace Woodman.PlayerRes
                     nameof(SubtractRes),
                     $"Count: {_count}. You trying subtract ${count}!");
             }
+            var old = _count;
             _count = math.max(_count - count, 0);
             if (saveImmediate)
                 Save();
+            OnChange?.Invoke(old, _count);
         }
 
         private void Save()

@@ -1,4 +1,5 @@
 using Woodman.Buildings;
+using Woodman.Logs;
 using Woodman.MetaTrees;
 using Zenject;
 
@@ -11,11 +12,14 @@ namespace Woodman.MetaInteractions
     {
         private readonly TreeInteraction _treeInteraction;
         private readonly BuildingInteraction _buildingInteraction;
+        private readonly LogsInteraction _logsInteraction;
 
-        public InteractionsController(TreeInteraction treeInteraction, BuildingInteraction buildingInteraction)
+        public InteractionsController(TreeInteraction treeInteraction, BuildingInteraction buildingInteraction,
+            LogsInteraction logsInteraction)
         {
             _treeInteraction = treeInteraction;
             _buildingInteraction = buildingInteraction;
+            _logsInteraction = logsInteraction;
         }
 
         public void Initialize()
@@ -31,6 +35,10 @@ namespace Woodman.MetaInteractions
                 else if (target.InteractType == InteractTypeEnum.Building)
                 {
                     target.OnInteract += _buildingInteraction.OnInteract;
+                }
+                else if (target.InteractType == InteractTypeEnum.Logs)
+                {
+                    target.OnInteract += _logsInteraction.OnInteract;
                 }
             }
         }

@@ -4,6 +4,7 @@ namespace Woodman.MetaInteractions
     {
         None = 0,
         Tree,
-        Building
+        Building,
+        Logs
     }
 }
