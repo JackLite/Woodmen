@@ -1,25 +1,21 @@
 ﻿using UnityEngine;
-using Woodman.CameraProcessing;
-using Woodman.Misc;
+using Woodman.Common.CameraProcessing;
 using Woodman.Player.Indicators;
 using Woodman.Player.Movement;
 using Woodman.Player.Movement.View;
+using Woodman.Utils;
 
-namespace Woodman
+namespace Woodman.Common
 {
     /// <summary>
     /// Инкапсулирует ссылки на монобехи
     /// </summary>
-    public class MetaViewProvider : MonoBehaviour
+    public class MainViewProvider : MonoBehaviour
     {
         [field:Header("Global")]
         [field:SerializeField]
         [field:ViewInject]
         public CamerasContainer CamerasContainer { get; private set; }
-
-        [field:SerializeField]
-        [field:ViewInject]
-        public WindowsSwitcher WindowsSwitcher { get; private set; }
 
         [field:Header("Player")]
         [field:SerializeField]
@@ -35,6 +31,10 @@ namespace Woodman
         public PlayerIndicatorsController PlayerIndicatorsController { get; private set; }
         
         [field:Header("UI")]
+        [field:SerializeField]
+        [field:ViewInject]
+        public WindowsUiProvider WindowsUiProvider { get; private set; }
+        
         [field:SerializeField]
         [field:ViewInject]
         public MetaUiProvider MetaUiProvider { get; private set; }

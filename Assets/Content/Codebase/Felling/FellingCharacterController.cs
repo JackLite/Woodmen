@@ -11,29 +11,35 @@ namespace Woodman.Felling
     {
         [SerializeField]
         private Transform _character;
+        
+        [SerializeField]
+        private Transform _characterContainer;
 
         [SerializeField]
         private Animator _animator;
 
-        private readonly Dictionary<Side, Vector3> _sideToPosMap = new();
+        private readonly Dictionary<FellingSide, Vector3> _sideToPosMap = new();
         private static readonly int _cut = Animator.StringToHash("Cut");
         private TreeModel _currentTree;
-        public Side CurrentSide { get; private set; }
+        public FellingSide CurrentFellingSide { get; private set; }
 
-        public void SetSide(Side side)
+        public void SetSide(FellingSide fellingSide)
         {
-            _character.position = _sideToPosMap[side];
+            _characterContainer.position = _sideToPosMap[fellingSide];
             var rot = Quaternion.LookRotation((_currentTree.pos - _character.position).normalized).eulerAngles;
             _character.rotation = Quaternion.Euler(0, rot.y, 0);
-            CurrentSide = side;
+            CurrentFellingSide = fellingSide;
         }
 
         public void InitFelling(TreeModel tree)
         {
             _currentTree = tree;
 
-            _sideToPosMap[Side.Left] = _currentTree.leftPos;
-            _sideToPosMap[Side.Right] = _currentTree.rightPos;
+            var positionY = _characterContainer.position.y;
+            var leftPos = new Vector3(_currentTree.leftPos.x, positionY, _currentTree.leftPos.z);
+            var rightPos = new Vector3(_currentTree.rightPos.x, positionY, _currentTree.rightPos.z);
+            _sideToPosMap[FellingSide.Left] = leftPos;
+            _sideToPosMap[FellingSide.Right] = rightPos;
         }
 
         public void Cut()

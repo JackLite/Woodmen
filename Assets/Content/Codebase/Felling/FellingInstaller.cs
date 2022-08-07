@@ -2,7 +2,6 @@ using System.Reflection;
 using UnityEngine;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
-using Woodman.Misc;
 using Zenject;
 
 namespace Woodman.Felling
@@ -18,11 +17,12 @@ namespace Woodman.Felling
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<FellingController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<FellingEventBus>().AsSingle();
             Container.BindInterfacesAndSelfTo<FellingInitializer>().AsSingle();
             Container.BindInterfacesAndSelfTo<FellingProcessor>().AsSingle();
             Container.BindInterfacesAndSelfTo<FellingSettingsContainer>().AsSingle().WithArguments(_fellingSettings);
             Container.BindInterfacesAndSelfTo<FellingTimer>().AsSingle();
-            Container.BindInterfacesAndSelfTo<FellingUI>().AsSingle();
+            Container.BindInterfacesAndSelfTo<FellingUiProcessor>().AsSingle();
 
             Container.BindInterfacesAndSelfTo<TreeGenerator>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<TreePieceFactory>().AsSingle();

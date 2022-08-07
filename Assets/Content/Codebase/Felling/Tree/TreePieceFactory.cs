@@ -11,16 +11,16 @@ namespace Woodman.Felling.Tree
             _treeContainer = treeContainer;
         }
 
-        public TreePiece Create(Vector3 rootPos, Side side, int num, bool hasBench, bool isShort)
+        public TreePiece Create(Vector3 rootPos, FellingSide fellingSide, int num, bool hasBench, bool isShort)
         {
             var piecePos = new Vector3(rootPos.x, rootPos.y + num, rootPos.z);
             var tree = Object.Instantiate(_treeContainer.TreePrefab, piecePos, Quaternion.identity);
-            tree.name = $"Tree piece - {side}/{hasBench} - {num}";
+            tree.name = $"Tree piece - {fellingSide}/{hasBench} - {num}";
             tree.IsHasBench = hasBench;
             if (!hasBench)
                 return tree;
-            tree.Side = side;
-            var benchPos = GetPosForBench(rootPos, num, isShort, side == Side.Right);
+            tree.FellingSide = fellingSide;
+            var benchPos = GetPosForBench(rootPos, num, isShort, fellingSide == FellingSide.Right);
             var prefab = isShort ? _treeContainer.ShortBenchPrefab : _treeContainer.LongBenchPrefab;
 
             Object.Instantiate(prefab, benchPos, _benchRotation, tree.transform);

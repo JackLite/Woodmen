@@ -1,4 +1,4 @@
-using Woodman.CameraProcessing;
+using Woodman.Common.CameraProcessing;
 using Woodman.Felling.Tree;
 using Woodman.MetaTrees;
 
@@ -6,20 +6,20 @@ namespace Woodman.Felling
 {
     public class FellingInitializer
     {
-        private readonly FellingUI _fellingUI;
+        private readonly FellingUiProcessor _fellingUiProcessor;
         private readonly FellingCharacterController _characterController;
         private readonly CameraController _cameraController;
         private readonly TreeGenerator _treeGenerator;
         private readonly TreeProgressService _progressService;
 
         public FellingInitializer(
-            FellingUI fellingUI,
+            FellingUiProcessor fellingUiProcessor,
             FellingCharacterController characterController,
             CameraController cameraController,
             TreeGenerator treeGenerator,
             TreeProgressService progressService)
         {
-            _fellingUI = fellingUI;
+            _fellingUiProcessor = fellingUiProcessor;
             _characterController = characterController;
             _cameraController = cameraController;
             _treeGenerator = treeGenerator;
@@ -31,8 +31,8 @@ namespace Woodman.Felling
             var treeModel = tree.GetTreeModel();
             _progressService.SetModel(treeModel);
             _characterController.InitFelling(treeModel);
-            _characterController.SetSide(Side.Right);
-            _fellingUI.InitFelling();
+            _characterController.SetSide(FellingSide.Right);
+            _fellingUiProcessor.InitFelling();
             _cameraController.MoveToCore(tree.transform);
             _treeGenerator.Generate(tree.transform.position, treeModel.size);
             tree.HideMesh();

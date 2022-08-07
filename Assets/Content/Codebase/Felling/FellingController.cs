@@ -1,4 +1,5 @@
 using UnityEngine;
+using Woodman.Common;
 using Woodman.Felling.Timer;
 using Zenject;
 
@@ -7,28 +8,35 @@ namespace Woodman.Felling
     public class FellingController : IInitializable
     {
         private readonly FellingProcessor _fellingProcessor;
-        private readonly FellingUI _fellingUI;
+        private readonly FellingUiProcessor _fellingUiProcessor;
         private readonly FellingTimer _fellingTimer;
         private readonly FellingSettingsContainer _settingsContainer;
+        private readonly WindowsUiProvider _uiProvider;
+        private readonly FellingEventBus _fellingEventBus;
 
         public FellingController(
             FellingProcessor fellingProcessor,
-            FellingUI fellingUI,
+            FellingUiProcessor fellingUiProcessor,
             FellingTimer fellingTimer,
-            FellingSettingsContainer settingsContainer)
+            FellingSettingsContainer settingsContainer,
+            WindowsUiProvider uiProvider,
+            FellingEventBus fellingEventBus)
         {
             _fellingProcessor = fellingProcessor;
-            _fellingUI = fellingUI;
+            _fellingUiProcessor = fellingUiProcessor;
             _fellingTimer = fellingTimer;
             _settingsContainer = settingsContainer;
+            _uiProvider = uiProvider;
+            _fellingEventBus = fellingEventBus;
         }
 
         public void Initialize()
         {
-            _fellingUI.OnStart += StartGame;
+            _fellingUiProcessor.OnStart += StartGame;
             _fellingProcessor.OnWin += OnWin;
             _fellingProcessor.OnGameOver += OnGameOver;
             _fellingTimer.OnEnd += OnGameOver;
+            _uiProvider.FellingWinWindow.OnOkBtnClick += () => _fellingEventBus.OnEscapeFelling?.Invoke(true);
         }
 
         private void StartGame()
@@ -38,7 +46,9 @@ namespace Woodman.Felling
 
         private void OnWin()
         {
-            Debug.Log("Win!");
+            _fellingTimer.Stop();
+            _uiProvider.FellingWinWindow.Show();
+            
         }
         private void OnGameOver()
         {

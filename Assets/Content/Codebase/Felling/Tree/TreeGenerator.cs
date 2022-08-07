@@ -19,7 +19,7 @@ namespace Woodman.Felling.Tree
             for (var i = 0; i < size; ++i)
             {
                 var isRight = Random.Range(0, 1f) > .5f;
-                var side = isRight ? Side.Right : Side.Left;
+                var side = isRight ? FellingSide.Right : FellingSide.Left;
                 var isShort = Random.Range(0, 1f) > .5f;
                 var hasBench = i % 2 == 0 && i >= 4;
                 var tree = _pieceFactory.Create(rootPos, side, i, hasBench, isShort);

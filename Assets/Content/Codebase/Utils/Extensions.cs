@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Woodman.Misc
+namespace Woodman.Utils
 {
     public static class Extensions
     {

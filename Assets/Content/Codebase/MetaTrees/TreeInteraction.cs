@@ -26,11 +26,11 @@ namespace Woodman.MetaTrees
 
         public void OnInteract(InteractTarget target)
         {
-            var tree = target.GetComponent<TreeMeta>();
-            if (!tree)
+            var treeInteract = target as TreeInteract;
+            if (!treeInteract)
                 return;
 
-            _fellingInitializer.Init(tree);
+            _fellingInitializer.Init(treeInteract.TreeMeta);
         }
     }
 }

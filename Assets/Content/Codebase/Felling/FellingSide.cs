@@ -1,6 +1,6 @@
 namespace Woodman.Felling
 {
-    public enum Side
+    public enum FellingSide
     {
         Left = 0,
         Right

@@ -1,36 +1,30 @@
 using System;
 using System.Threading.Tasks;
-using Woodman.Felling.Timer;
+using Woodman.Common;
 using Woodman.Felling.Tree;
 using Zenject;
 
 namespace Woodman.Felling
 {
-    public class FellingUI : IInitializable
+    public class FellingUiProcessor : IInitializable
     {
         private readonly FellingUIProvider _uiProvider;
-        private readonly WindowsSwitcher _windowsSwitcher;
-        private readonly FellingTimer _fellingTimer;
         private readonly TreeProgressService _progressService;
-        private readonly FellingSettingsContainer _settingsContainer;
+        private readonly WindowsUiProvider _windowsUiProvider;
 
         /// <summary>
         /// Вызывается когда игрок начинает кор-геймплей
         /// </summary>
         public event Action OnStart;
 
-        public FellingUI(
+        public FellingUiProcessor(
             FellingUIProvider uiProvider,
-            WindowsSwitcher windowsSwitcher,
-            FellingTimer fellingTimer,
             TreeProgressService progressService,
-            FellingSettingsContainer settingsContainer)
+            WindowsUiProvider windowsUiProvider)
         {
             _uiProvider = uiProvider;
-            _windowsSwitcher = windowsSwitcher;
-            _fellingTimer = fellingTimer;
             _progressService = progressService;
-            _settingsContainer = settingsContainer;
+            _windowsUiProvider = windowsUiProvider;
         }
 
         public void Initialize()
@@ -41,9 +35,9 @@ namespace Woodman.Felling
 
         public async void InitFelling()
         {
-            _windowsSwitcher.ShowHideMeta(false);
+            _windowsUiProvider.MetaUi.Hide();
             await Task.Delay(TimeSpan.FromSeconds(2));
-            _windowsSwitcher.ShowHideCore(true);
+            _windowsUiProvider.FellingUi.Show();
         }
 
         private void OnStartClick()

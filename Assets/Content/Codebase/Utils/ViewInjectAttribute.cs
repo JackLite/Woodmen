@@ -1,6 +1,6 @@
 using System;
 
-namespace Woodman.Misc
+namespace Woodman.Utils
 {
     [AttributeUsage(AttributeTargets.Field)]
     public class ViewInjectAttribute : Attribute

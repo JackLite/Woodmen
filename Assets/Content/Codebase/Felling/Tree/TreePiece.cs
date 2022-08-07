@@ -7,7 +7,7 @@ namespace Woodman.Felling.Tree
         [field:SerializeField]
         public Transform TreeMesh { get; private set; }
         
-        public Side Side { get; set; }
+        public FellingSide FellingSide { get; set; }
         public bool IsHasBench { get; set; }
     }
 }

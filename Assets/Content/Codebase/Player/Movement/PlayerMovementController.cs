@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Woodman.Common;
 using Woodman.Player.Movement.View;
 using Zenject;
 
@@ -12,7 +13,7 @@ namespace Woodman.Player.Movement
 
         public bool IsPlayerMoving => _playerMovement.IsMoving;
         
-        public PlayerMovementController(MetaViewProvider viewProvider)
+        public PlayerMovementController(MainViewProvider viewProvider)
         {
             _playerMovement = viewProvider.PlayerMovement;
             _controlMovementPlayer = viewProvider.ControlMovementPlayer;

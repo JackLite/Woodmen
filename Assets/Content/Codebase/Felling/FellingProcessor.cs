@@ -31,9 +31,9 @@ namespace Woodman.Felling
             _uiProvider.TapController.OnTap += Cut;
         }
 
-        private void Cut(Side side)
+        private void Cut(FellingSide fellingSide)
         {
-            _characterController.SetSide(side);
+            _characterController.SetSide(fellingSide);
             if (CheckGameOver())
             {
                 OnGameOver?.Invoke();
@@ -57,7 +57,7 @@ namespace Woodman.Felling
         private bool CheckGameOver()
         {
             var piece = _treePiecesRepository.GetBottomPiece();
-            return piece.IsHasBench && piece.Side == _characterController.CurrentSide;
+            return piece.IsHasBench && piece.FellingSide == _characterController.CurrentFellingSide;
         }
     }
 }

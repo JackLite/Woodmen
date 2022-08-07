@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Woodman.Felling.Tree
+namespace Woodman.Felling
 {
     /// <summary>
     /// Отвечает за события тапов игрока в коре
@@ -15,12 +15,12 @@ namespace Woodman.Felling.Tree
         [SerializeField]
         private Button rightTap;
 
-        public event Action<Side> OnTap;
+        public event Action<FellingSide> OnTap;
 
         private void Awake()
         {
-            leftTap.onClick.AddListener(() => OnTap?.Invoke(Side.Left));
-            rightTap.onClick.AddListener(() => OnTap?.Invoke(Side.Right));
+            leftTap.onClick.AddListener(() => OnTap?.Invoke(FellingSide.Left));
+            rightTap.onClick.AddListener(() => OnTap?.Invoke(FellingSide.Right));
         }
     }
 }

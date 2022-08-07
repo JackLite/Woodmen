@@ -1,10 +1,10 @@
 using UnityEngine;
 using Woodman.Felling.Tree;
-using Woodman.Misc;
+using Woodman.Utils;
 
 namespace Woodman.Felling
 {
-    public class FellingViewProvider : MonoBehaviour
+    public class FellingViewProvider : ViewProvider
     {
         [field:SerializeField]
         [field:ViewInject]
