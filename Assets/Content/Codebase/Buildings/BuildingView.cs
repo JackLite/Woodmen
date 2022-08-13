@@ -1,6 +1,8 @@
 using System;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
-using UnityEngine.Assertions;
 using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Buildings
@@ -14,6 +16,10 @@ namespace Woodman.Buildings
         [SerializeField]
         private GameObject[] _states;
 
+        [SerializeField]
+        private int _totalLogsCount;
+
+        [ContextMenuItem("Recalc", nameof(CalculateStateLogsCount))]
         [SerializeField]
         private int[] _logsCount;
 
@@ -33,9 +39,24 @@ namespace Woodman.Buildings
                 _guid = Guid.NewGuid().ToString();
         }
 
+        private void CalculateStateLogsCount()
+        {
+            var stateCount = _states.Length;
+            var oneStateCount = _totalLogsCount / (stateCount - 1);
+            var lastStateCount = oneStateCount + _totalLogsCount % oneStateCount;
+            _logsCount = new int[_states.Length];
+            _logsCount[0] = 0;
+            for (var i = 1; i < _logsCount.Length - 1; ++i)
+                _logsCount[i] = oneStateCount;
+            _logsCount[^1] = lastStateCount;
+            #if UNITY_EDITOR
+            EditorUtility.SetDirty(gameObject);
+            #endif
+        }
+
         public int GetResForState(int stateIndex)
         {
-            if (stateIndex < 0 || stateIndex >= _states.Length)
+            if (stateIndex < 0 || stateIndex >= _logsCount.Length)
             {
                 Logger.LogError(nameof(BuildingView),
                     nameof(SetState),
@@ -45,7 +66,7 @@ namespace Woodman.Buildings
 
             return _logsCount[stateIndex];
         }
-        
+
         public void SetState(int index)
         {
             if (index < 0 || index >= _states.Length)
