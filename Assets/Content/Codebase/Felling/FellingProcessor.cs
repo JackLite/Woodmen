@@ -46,6 +46,7 @@ namespace Woodman.Felling
             {
                 _treePiecesRepository.Destroy();
                 _progressService.UpdateAfterCut();
+                _characterController.SetSide(FellingSide.Right);
                 OnWin?.Invoke();
                 return;
             }
@@ -55,6 +56,7 @@ namespace Woodman.Felling
             _treePiecesRepository.RemovePiece();
             if (_treePiecesRepository.GetRemain() == 0)
             {
+                _characterController.SetSide(FellingSide.Right);
                 OnWin?.Invoke();
                 return;
             }

@@ -386,7 +386,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.9554069, y: 1}
+    m_SensorSize: {x: 0.5625, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4803,6 +4803,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: VikingIsland
       objectReference: {fileID: 0}
+    - target: {fileID: 4206100945100427732, guid: a0b866dbb86793c499f926d991749bf5,
+        type: 3}
+      propertyPath: _size
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206100945100427732, guid: a0b866dbb86793c499f926d991749bf5,
+        type: 3}
+      propertyPath: _logsCount
+      value: 201
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0b866dbb86793c499f926d991749bf5, type: 3}
 --- !u!4 &4356311852275697190
@@ -5972,7 +5982,7 @@ PrefabInstance:
     - target: {fileID: 4049601455032220816, guid: 8aab324f90070e5408171135e5096777,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 232.22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4049601455032220816, guid: 8aab324f90070e5408171135e5096777,
         type: 3}
@@ -5997,7 +6007,7 @@ PrefabInstance:
     - target: {fileID: 4607866853372124733, guid: 8aab324f90070e5408171135e5096777,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 232.22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4607866853372124733, guid: 8aab324f90070e5408171135e5096777,
         type: 3}

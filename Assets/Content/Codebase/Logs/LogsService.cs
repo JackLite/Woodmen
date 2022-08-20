@@ -5,16 +5,19 @@ namespace Woodman.Logs
     public class LogsService
     {
         private const int smallLogsHeap = 50;
-        private const int logsHeap = 99;
-        private const int bigLogsHeap = 100;
+        private const int logsHeap = 100;
+        private const int bigLogsHeap = 200;
 
         public void ShowLogsAfterFelling(TreeMeta treeMeta)
         {
+            //todo: добавить 4 размер кучи
             var treeModel = treeMeta.GetTreeModel();
-            var bigLogsCount = treeModel.logsCount / bigLogsHeap;
-            // todo: show many log's heaps
-            treeMeta.ShowLogs(LogsHeapType.Big, bigLogsCount * bigLogsHeap);
-            var remain = treeModel.logsCount % bigLogsHeap;
+            var remain = treeModel.logsCount;
+            if (treeModel.logsCount > bigLogsHeap)
+            {
+                remain = treeModel.logsCount % bigLogsHeap;
+                treeMeta.ShowLogs(LogsHeapType.Big, treeModel.logsCount - remain);
+            }
             if (remain <= smallLogsHeap)
                 treeMeta.ShowLogs(LogsHeapType.Small, remain);
             else
