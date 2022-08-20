@@ -25,13 +25,13 @@ namespace Woodman.Felling
             _progressService = progressService;
         }
 
+        public event Action OnWin;
+        public event Action OnGameOver;
+        
         public void Initialize()
         {
             _uiProvider.TapController.OnTap += Cut;
         }
-
-        public event Action OnWin;
-        public event Action OnGameOver;
 
         private void Cut(FellingSide fellingSide)
         {

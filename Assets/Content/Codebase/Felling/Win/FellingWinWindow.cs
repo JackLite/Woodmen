@@ -10,11 +10,11 @@ namespace Woodman.Felling.Win
         [SerializeField]
         private Button _okBtn;
 
+        public event Action OnOkBtnClick;
+
         private void Awake()
         {
             _okBtn.onClick.AddListener(() => OnOkBtnClick?.Invoke());
         }
-
-        public event Action OnOkBtnClick;
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Woodman.Felling;
+using Woodman.Felling.Lose;
 using Woodman.Felling.Win;
 using Woodman.Meta;
 using Woodman.Utils;
@@ -10,6 +11,9 @@ namespace Woodman.Common
     {
         [field: SerializeField]
         public FellingWinWindow FellingWinWindow { get; private set; }
+
+        [field: SerializeField]
+        public FellingLoseWindow FellingLoseWindow { get; private set; }
 
         [field: SerializeField]
         public MetaUi MetaUi { get; private set; }

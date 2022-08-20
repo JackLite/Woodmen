@@ -9,6 +9,7 @@ namespace Woodman.MetaInteractions
         private float _interactionDelay = 1;
 
         private bool _isInteract;
+        private bool _isInside;
         private float _startInteractionTime;
 
         [field: SerializeField]
@@ -33,11 +34,12 @@ namespace Woodman.MetaInteractions
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.gameObject.CompareTag("Player"))
+            if (!other.gameObject.CompareTag("Player") || _isInside)
                 return;
 
             _startInteractionTime = Time.time + _interactionDelay;
             _isInteract = true;
+            _isInside = true;
             OnStartInteract?.Invoke(this);
         }
 
@@ -47,6 +49,7 @@ namespace Woodman.MetaInteractions
                 return;
 
             _isInteract = false;
+            _isInside = false;
             OnEndInteract?.Invoke(this);
         }
 

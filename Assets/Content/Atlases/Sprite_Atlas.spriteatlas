@@ -50,6 +50,7 @@ SpriteAtlas:
   - {fileID: -1336893636, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
   - {fileID: -1064785896, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
   - {fileID: -225644436, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
+  - {fileID: 21300000, guid: cc8491682a08acd429d5c1a99ada1b74, type: 3}
   - {fileID: 381569403, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
   - {fileID: 2043122589, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
   - {fileID: -1336893636, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
@@ -57,6 +58,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 804f506cfd675d3499979324df8ef102, type: 3}
   - {fileID: 21300000, guid: a8a6576d0cce2c244ae5274366b96555, type: 3}
   - {fileID: 21300000, guid: b89578ad6c6f09543b0f910cafa1ef0b, type: 3}
+  - {fileID: 21300000, guid: da5fc2edec621e04b8a854886e61bbea, type: 3}
   - {fileID: 21300000, guid: 1b9fd8afdd26c9442ad5510a5e247a3b, type: 3}
   - {fileID: 21300000, guid: f2e8a6ff14f794e469f369f5d00c099c, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -72,6 +74,7 @@ SpriteAtlas:
   - b_circle_1
   - b_circle_0
   - b_circle_4
+  - i_lose_home
   - b_circle_3
   - b_circle_2
   - b_circle_1
@@ -79,6 +82,7 @@ SpriteAtlas:
   - i_noads
   - b_arrow
   - b_tris
+  - i_lose_restart
   - i_setting
   - i_axe
   m_RenderDataMap: {}

@@ -37,6 +37,7 @@ namespace Woodman.Felling
             _fellingProcessor.OnGameOver += OnGameOver;
             _fellingTimer.OnEnd += OnGameOver;
             _uiProvider.FellingWinWindow.OnOkBtnClick += () => _fellingEventBus.OnEscapeFelling?.Invoke(true);
+            _uiProvider.FellingLoseWindow.OnHomeClick += () => _fellingEventBus.OnEscapeFelling?.Invoke(false);
         }
 
         private void StartGame()
@@ -52,7 +53,8 @@ namespace Woodman.Felling
 
         private void OnGameOver()
         {
-            Debug.Log("Loose!");
+            _fellingTimer.Stop();
+            _uiProvider.FellingLoseWindow.Show();
         }
     }
 }

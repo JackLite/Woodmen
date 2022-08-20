@@ -34,6 +34,11 @@ namespace Woodman.MetaTrees
             _logsHeapTypeToViews = _logsTypeViews.ToDictionary(l => l.type, l => l.logView);
         }
 
+        public void EnableMeta()
+        {
+            _metaContent.SetActive(true);
+        }
+
         public void DisableMeta()
         {
             _metaContent.SetActive(false);
