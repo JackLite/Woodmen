@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using Woodman.Felling.Tree;
 using Zenject;
 
@@ -40,6 +41,15 @@ namespace Woodman.Felling
                 OnGameOver?.Invoke();
                 return;
             }
+            #if UNITY_EDITOR
+            if (Input.GetKey(KeyCode.Space))
+            {
+                _treePiecesRepository.Destroy();
+                _progressService.UpdateAfterCut();
+                OnWin?.Invoke();
+                return;
+            }
+            #endif
 
             _characterController.Cut();
             _treePiecesRepository.RemovePiece();

@@ -35,7 +35,7 @@ namespace Woodman.Buildings
             var currentCount = _buildingsRepository.GetBuildingLogsCount(buildingId);
             var playerRes = _resRepository.GetPlayerRes();
 
-            while (playerRes > nextCount && !_buildingsRepository.IsLastState(buildingId))
+            while (playerRes >= nextCount && !_buildingsRepository.IsLastState(buildingId))
             {
                 SetNextState(interact, nextState);
                 playerRes = _resRepository.SubtractRes(nextCount);

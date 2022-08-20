@@ -53,7 +53,7 @@ namespace Woodman.MetaTrees
 
         public void ShowLogs(LogsHeapType type, int resourceCount)
         {
-            _logsHeapTypeToViews[type].Count = resourceCount;
+            _logsHeapTypeToViews[type].SetCount(resourceCount);
             _logsHeapTypeToViews[type].Show();
         }
 

@@ -12,8 +12,7 @@ namespace Woodman.PlayerRes
 
         public PlayerResRepository()
         {
-            // _count = SaveUtility.LoadInt(SAVE_KEY);
-            _count = 200; //todo: temp value
+            _count = SaveUtility.LoadInt(SAVE_KEY);
         }
 
         public event Action<int, int> OnChange;

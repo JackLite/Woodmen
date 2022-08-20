@@ -28,5 +28,14 @@ namespace Woodman.Felling.Tree
             Object.Destroy(cutPiece.gameObject);
             foreach (var piece in _pieces) piece.transform.position += Vector3.down * TreeConstants.PieceHeight;
         }
+
+        public void Destroy()
+        {
+            foreach (var piece in _pieces)
+            {
+                Object.Destroy(piece.gameObject);
+            }
+            _pieces.Clear();
+        }
     }
 }

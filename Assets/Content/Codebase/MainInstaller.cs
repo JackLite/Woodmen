@@ -5,6 +5,7 @@ using Woodman.Common.CameraProcessing;
 using Woodman.Logs;
 using Woodman.MetaInteractions;
 using Woodman.MetaTrees;
+using Woodman.Player;
 using Woodman.Player.Movement;
 using Woodman.PlayerRes;
 
@@ -29,6 +30,7 @@ namespace Woodman
             Container.BindInterfacesAndSelfTo<MetaCoreTransition>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<MetaTreesRepository>().AsSingle();
 
+            Container.BindInterfacesAndSelfTo<PlayerDataContainer>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerResRepository>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerResHandler>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<PlayerMovementController>().AsSingle().NonLazy();
