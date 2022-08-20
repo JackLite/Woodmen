@@ -5,10 +5,10 @@ namespace Woodman.Common.CameraProcessing
 {
     public class CamerasContainer : MonoBehaviour
     {
-        [field:SerializeField]
+        [field: SerializeField]
         public CinemachineVirtualCamera MetaCamera;
 
-        [field:SerializeField]
+        [field: SerializeField]
         public CinemachineVirtualCamera CoreCamera;
     }
 }

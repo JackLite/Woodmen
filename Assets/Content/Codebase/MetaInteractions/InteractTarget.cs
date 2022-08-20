@@ -8,19 +8,27 @@ namespace Woodman.MetaInteractions
         [SerializeField]
         private float _interactionDelay = 1;
 
-        [field:SerializeField]
-        public InteractTypeEnum InteractType { get; private set; }
-
         private bool _isInteract;
         private float _startInteractionTime;
 
-        public event Action<InteractTarget> OnStartInteract;
-        public event Action<InteractTarget> OnEndInteract;
-        public event Action<InteractTarget> OnInteract;
+        [field: SerializeField]
+        public InteractTypeEnum InteractType { get; private set; }
 
         private void Awake()
         {
             InteractionStaticPool.Register(this);
+        }
+
+        private void Update()
+        {
+            if (!_isInteract)
+                return;
+
+            if (Time.time > _startInteractionTime)
+            {
+                OnInteract?.Invoke(this);
+                _isInteract = false;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -42,16 +50,8 @@ namespace Woodman.MetaInteractions
             OnEndInteract?.Invoke(this);
         }
 
-        private void Update()
-        {
-            if (!_isInteract)
-                return;
-
-            if (Time.time > _startInteractionTime)
-            {
-                OnInteract?.Invoke(this);
-                _isInteract = false;
-            }
-        }
+        public event Action<InteractTarget> OnStartInteract;
+        public event Action<InteractTarget> OnEndInteract;
+        public event Action<InteractTarget> OnInteract;
     }
 }

@@ -15,7 +15,7 @@ namespace Woodman.Utils
             foreach (var field in serializedFields)
             {
                 var val = FindObjectOfType(field.FieldType, true);
-                if(val == null)
+                if (val == null)
                     Debug.LogError($"Can't find component {field.FieldType} in scene");
                 else
                     field.SetValue(this, val);

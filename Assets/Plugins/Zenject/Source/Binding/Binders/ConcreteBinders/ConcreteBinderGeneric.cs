@@ -60,7 +60,7 @@ namespace Zenject
                 BindContainer, BindInfo, BindStatement);
         }
 
-#if !(UNITY_WSA && ENABLE_DOTNET)
+        #if !(UNITY_WSA && ENABLE_DOTNET)
         public FromBinderNonGeneric To(
             Action<ConventionSelectTypesBinder> generator)
         {
@@ -68,11 +68,12 @@ namespace Zenject
 
             // Automatically filter by the given contract types
             bindInfo.AddTypeFilter(
-                concreteType => BindInfo.ContractTypes.All(contractType => concreteType.DerivesFromOrEqual(contractType)));
+                concreteType =>
+                    BindInfo.ContractTypes.All(contractType => concreteType.DerivesFromOrEqual(contractType)));
 
             generator(new ConventionSelectTypesBinder(bindInfo));
             return To(bindInfo.ResolveTypes());
         }
-#endif
+        #endif
     }
 }

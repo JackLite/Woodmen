@@ -1,8 +1,6 @@
-using System.Reflection;
 using UnityEngine;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
-using Zenject;
 
 namespace Woodman.Felling
 {

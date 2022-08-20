@@ -7,12 +7,12 @@ namespace Woodman.Felling
 {
     public class FellingController : IInitializable
     {
+        private readonly FellingEventBus _fellingEventBus;
         private readonly FellingProcessor _fellingProcessor;
-        private readonly FellingUiProcessor _fellingUiProcessor;
         private readonly FellingTimer _fellingTimer;
+        private readonly FellingUiProcessor _fellingUiProcessor;
         private readonly FellingSettingsContainer _settingsContainer;
         private readonly WindowsUiProvider _uiProvider;
-        private readonly FellingEventBus _fellingEventBus;
 
         public FellingController(
             FellingProcessor fellingProcessor,
@@ -48,8 +48,8 @@ namespace Woodman.Felling
         {
             _fellingTimer.Stop();
             _uiProvider.FellingWinWindow.Show();
-            
         }
+
         private void OnGameOver()
         {
             Debug.Log("Loose!");

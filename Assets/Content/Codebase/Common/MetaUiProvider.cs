@@ -7,6 +7,5 @@ namespace Woodman.Common
     {
         [field: SerializeField]
         public ResourceBarMetaUI ResourceBarMetaUI { get; private set; }
-
     }
 }

@@ -6,11 +6,11 @@ namespace Woodman.Felling
 {
     public class FellingInitializer
     {
-        private readonly FellingUiProcessor _fellingUiProcessor;
-        private readonly FellingCharacterController _characterController;
         private readonly CameraController _cameraController;
-        private readonly TreeGenerator _treeGenerator;
+        private readonly FellingCharacterController _characterController;
+        private readonly FellingUiProcessor _fellingUiProcessor;
         private readonly TreeProgressService _progressService;
+        private readonly TreeGenerator _treeGenerator;
 
         public FellingInitializer(
             FellingUiProcessor fellingUiProcessor,
@@ -35,8 +35,7 @@ namespace Woodman.Felling
             _fellingUiProcessor.InitFelling();
             _cameraController.MoveToCore(tree.transform);
             _treeGenerator.Generate(tree.transform.position, treeModel.size);
-            tree.HideMesh();
-            tree.gameObject.SetActive(false);
+            tree.DisableMeta();
         }
     }
 }

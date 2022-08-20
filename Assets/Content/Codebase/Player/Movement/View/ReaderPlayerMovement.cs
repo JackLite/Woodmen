@@ -9,7 +9,12 @@ namespace Woodman.Player.Movement.View
         private bool _isMoveStarted;
         public Vector2 CurrentPointerPos { get; private set; }
 
-        public event Action<bool> OnChangeMoveState;
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            _isMoveStarted = true;
+            CurrentPointerPos = eventData.pressPosition;
+            OnChangeMoveState?.Invoke(_isMoveStarted);
+        }
 
         public void OnPointerMove(PointerEventData eventData)
         {
@@ -25,11 +30,6 @@ namespace Woodman.Player.Movement.View
             OnChangeMoveState?.Invoke(_isMoveStarted);
         }
 
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            _isMoveStarted = true;
-            CurrentPointerPos = eventData.pressPosition;
-            OnChangeMoveState?.Invoke(_isMoveStarted);
-        }
+        public event Action<bool> OnChangeMoveState;
     }
 }

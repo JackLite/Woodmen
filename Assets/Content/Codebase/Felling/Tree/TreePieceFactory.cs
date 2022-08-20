@@ -5,33 +5,38 @@ namespace Woodman.Felling.Tree
     public class TreePieceFactory
     {
         private readonly TreeContainer _treeContainer;
-        private readonly Quaternion _benchRotation = Quaternion.Euler(0, 0, 90);
+
         public TreePieceFactory(TreeContainer treeContainer)
         {
             _treeContainer = treeContainer;
         }
 
-        public TreePiece Create(Vector3 rootPos, FellingSide fellingSide, int num, bool hasBench, bool isShort)
+        public TreePiece Create(Vector3 rootPos, FellingSide fellingSide, int num, bool hasBranch, bool isShort)
         {
-            var piecePos = new Vector3(rootPos.x, rootPos.y + num, rootPos.z);
+            var piecePos = new Vector3(rootPos.x, rootPos.y + num * TreeConstants.PieceHeight, rootPos.z);
             var tree = Object.Instantiate(_treeContainer.TreePrefab, piecePos, Quaternion.identity);
-            tree.name = $"Tree piece - {fellingSide}/{hasBench} - {num}";
-            tree.IsHasBench = hasBench;
-            if (!hasBench)
+            tree.name = $"Tree piece - {fellingSide}/{hasBranch} - {num}";
+            tree.IsHasBranch = hasBranch;
+            if (!hasBranch)
                 return tree;
             tree.FellingSide = fellingSide;
-            var benchPos = GetPosForBench(rootPos, num, isShort, fellingSide == FellingSide.Right);
+            var branchPos = GetPosForBranch(rootPos, num, isShort, fellingSide == FellingSide.Right);
             var prefab = isShort ? _treeContainer.ShortBenchPrefab : _treeContainer.LongBenchPrefab;
 
-            Object.Instantiate(prefab, benchPos, _benchRotation, tree.transform);
+            Object.Instantiate(prefab, branchPos, GetRotationForBranch(fellingSide), tree.transform);
             return tree;
         }
 
-        private static Vector3 GetPosForBench(Vector3 rootPos, int num, bool isShort, bool isRight)
+        private static Vector3 GetPosForBranch(Vector3 rootPos, int num, bool isShort, bool isRight)
         {
-            var x = isShort ? 1 : 1.5f;
+            var x = 0.5f;
             x = isRight ? x : -x;
-            return new Vector3(rootPos.x + x, rootPos.y + num * 1 + 1, rootPos.z);
+            return new Vector3(rootPos.x + x, rootPos.y + num * TreeConstants.PieceHeight + 1, rootPos.z);
+        }
+
+        private static Quaternion GetRotationForBranch(FellingSide side)
+        {
+            return side == FellingSide.Right ? Quaternion.Euler(0, -180, 0) : Quaternion.identity;
         }
     }
 }

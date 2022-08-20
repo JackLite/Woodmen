@@ -5,7 +5,7 @@ namespace Woodman.Logs
 {
     public class LogInteract : InteractTarget
     {
-        [field:SerializeField]
+        [field: SerializeField]
         public LogView LogView { get; private set; }
     }
 }

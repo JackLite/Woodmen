@@ -6,6 +6,7 @@ namespace Woodman.Felling.Tree
     public class TreePiecesRepository
     {
         private readonly Queue<TreePiece> _pieces = new();
+
         public void AddPiece(TreePiece piece)
         {
             _pieces.Enqueue(piece);
@@ -25,10 +26,7 @@ namespace Woodman.Felling.Tree
         {
             var cutPiece = _pieces.Dequeue();
             Object.Destroy(cutPiece.gameObject);
-            foreach (var piece in _pieces)
-            {
-                piece.transform.position += Vector3.down;
-            }
+            foreach (var piece in _pieces) piece.transform.position += Vector3.down * TreeConstants.PieceHeight;
         }
     }
 }

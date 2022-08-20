@@ -19,6 +19,7 @@ namespace Woodman.Logs
             {
                 _resRepository.AddPlayerRes(logInteract.LogView.Count);
                 logInteract.LogView.Count = 0;
+                logInteract.LogView.Hide();
             }
         }
     }

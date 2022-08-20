@@ -13,7 +13,7 @@ namespace Woodman.Common
 
         [field: SerializeField]
         public MetaUi MetaUi { get; private set; }
-        
+
         [field: SerializeField]
         public FellingUi FellingUi { get; private set; }
     }

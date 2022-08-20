@@ -5,6 +5,7 @@ namespace Woodman.Common.CameraProcessing
     public class CameraController
     {
         private readonly CamerasContainer _camerasContainer;
+
         public CameraController(CamerasContainer camerasContainer)
         {
             _camerasContainer = camerasContainer;
@@ -18,7 +19,7 @@ namespace Woodman.Common.CameraProcessing
             _camerasContainer.MetaCamera.enabled = false;
             _camerasContainer.CoreCamera.enabled = true;
         }
-        
+
         public void MoveToMeta()
         {
             _camerasContainer.MetaCamera.enabled = true;

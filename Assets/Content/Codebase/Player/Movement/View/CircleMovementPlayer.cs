@@ -9,10 +9,11 @@ namespace Woodman.Player.Movement.View
         [SerializeField]
         private RectTransform _circle;
 
-        private RectTransform _rectTransform;
         private Vector2 _defaultAnchoredPosition;
-        private Vector2 _startPos;
         private float _diff;
+
+        private RectTransform _rectTransform;
+        private Vector2 _startPos;
         public Vector2 Delta { get; private set; }
 
         public void Awake()
@@ -49,6 +50,7 @@ namespace Woodman.Player.Movement.View
                 Delta = Vector2.zero;
                 return;
             }
+
             var delta = newPos.sqrMagnitude / (_diff * _diff);
             var x = delta * newPos.x / max;
             var y = delta * newPos.y / max;

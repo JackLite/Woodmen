@@ -5,10 +5,10 @@ namespace Woodman.Utils
     public static class Extensions
     {
         /// <summary>
-        /// Works like Mathf.Clamp but for Vector2
+        ///     Works like Mathf.Clamp but for Vector2
         /// </summary>
-        /// <seealso cref="Mathf.Clamp(float,float,float)"/>
-        /// <seealso cref="Vector2.Clamp(float, float)"/>
+        /// <seealso cref="Mathf.Clamp(float,float,float)" />
+        /// <seealso cref="Vector2.Clamp(float, float)" />
         /// <returns>Clamped vector</returns>
         public static Vector2 Clamp(this Vector2 v, Vector2 min, Vector2 max)
         {
@@ -16,11 +16,11 @@ namespace Woodman.Utils
         }
 
         /// <summary>
-        /// Works like Mathf.Clamp but for Vector2
-        /// Use same min/max for x and y axes
+        ///     Works like Mathf.Clamp but for Vector2
+        ///     Use same min/max for x and y axes
         /// </summary>
-        /// <seealso cref="Mathf.Clamp(float,float,float)"/>
-        /// <seealso cref="Vector2.Clamp(Vector2, Vector2)"/>
+        /// <seealso cref="Mathf.Clamp(float,float,float)" />
+        /// <seealso cref="Vector2.Clamp(Vector2, Vector2)" />
         /// <returns>Clamped vector</returns>
         public static Vector2 Clamp(this Vector2 v, float min, float max)
         {

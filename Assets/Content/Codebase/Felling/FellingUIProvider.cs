@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
-using Woodman.Felling.Win;
 
 namespace Woodman.Felling
 {

@@ -21,6 +21,7 @@ namespace Woodman
                     Debug.LogError($"{p.FieldType} not found in {viewProvider.GetType()}");
                     continue;
                 }
+
                 Bind(val);
             }
         }

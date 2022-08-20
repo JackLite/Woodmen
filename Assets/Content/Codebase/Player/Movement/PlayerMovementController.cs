@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 using Woodman.Common;
 using Woodman.Player.Movement.View;
 using Zenject;
@@ -8,30 +7,30 @@ namespace Woodman.Player.Movement
 {
     public class PlayerMovementController : IInitializable, IFixedTickable, IDisposable
     {
-        private readonly PlayerMovement _playerMovement;
         private readonly ControlMovementPlayer _controlMovementPlayer;
+        private readonly PlayerMovement _playerMovement;
 
-        public bool IsPlayerMoving => _playerMovement.IsMoving;
-        
         public PlayerMovementController(MainViewProvider viewProvider)
         {
             _playerMovement = viewProvider.PlayerMovement;
             _controlMovementPlayer = viewProvider.ControlMovementPlayer;
         }
 
-        public void Initialize()
+        public bool IsPlayerMoving => _playerMovement.IsMoving;
+
+        public void Dispose()
         {
-            _controlMovementPlayer.OnStopMove += _playerMovement.StopMove;
+            _controlMovementPlayer.OnStopMove -= _playerMovement.StopMove;
         }
-        
+
         public void FixedTick()
         {
             _playerMovement.Move(_controlMovementPlayer.ReadInput());
         }
 
-        public void Dispose()
+        public void Initialize()
         {
-            _controlMovementPlayer.OnStopMove -= _playerMovement.StopMove;
+            _controlMovementPlayer.OnStopMove += _playerMovement.StopMove;
         }
     }
 }

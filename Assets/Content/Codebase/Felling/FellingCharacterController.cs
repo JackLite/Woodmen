@@ -1,17 +1,16 @@
-using System;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using Woodman.Felling.Tree;
-using Woodman.MetaTrees;
 
 namespace Woodman.Felling
 {
     public class FellingCharacterController : MonoBehaviour
     {
+        private static readonly int _cut = Animator.StringToHash("Cut");
+
         [SerializeField]
         private Transform _character;
-        
+
         [SerializeField]
         private Transform _characterContainer;
 
@@ -19,7 +18,6 @@ namespace Woodman.Felling
         private Animator _animator;
 
         private readonly Dictionary<FellingSide, Vector3> _sideToPosMap = new();
-        private static readonly int _cut = Animator.StringToHash("Cut");
         private TreeModel _currentTree;
         public FellingSide CurrentFellingSide { get; private set; }
 

@@ -1,9 +1,10 @@
 using System;
+using UnityEngine;
+using Woodman.Common.UI;
+using Logger = Woodman.Utils.Logger;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-using UnityEngine;
-using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Buildings
 {
@@ -26,17 +27,37 @@ namespace Woodman.Buildings
         [SerializeField]
         private Animator _animator;
 
+        [SerializeField]
+        private ProgressText _progress;
+
+        private int _currentCount;
         private static readonly int BuildingTrigger = Animator.StringToHash("Building");
 
+        public string Id => _guid;
+        
         private void Awake()
         {
             SetState(0); // todo: load from save
+            _currentCount = 0;
+            _progress.Init(0, _logsCount[1]);
         }
 
         private void GenerateGuid()
         {
             if (string.IsNullOrWhiteSpace(_guid))
                 _guid = Guid.NewGuid().ToString();
+        }
+
+        public void AddLogs(int count)
+        {
+            _currentCount += count;
+            _progress.SetProgress(_currentCount);
+        }
+        
+        public void SetLogs(int count)
+        {
+            _currentCount = count;
+            _progress.SetProgress(_currentCount);
         }
 
         private void CalculateStateLogsCount()
@@ -64,7 +85,7 @@ namespace Woodman.Buildings
                 return int.MaxValue;
             }
 
-            return _logsCount[stateIndex];
+            return _logsCount[stateIndex] - _currentCount;
         }
 
         public void SetState(int index)
@@ -85,6 +106,12 @@ namespace Woodman.Buildings
 
             _animator.ResetTrigger(BuildingTrigger);
             _animator.SetTrigger(BuildingTrigger);
+        }
+
+
+        public void FinishBuilding()
+        {
+            _progress.Hide();
         }
     }
 }

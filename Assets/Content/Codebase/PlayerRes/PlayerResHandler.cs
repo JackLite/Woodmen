@@ -6,13 +6,18 @@ namespace Woodman.PlayerRes
 {
     public class PlayerResHandler : IInitializable, IDisposable
     {
-        private readonly PlayerResRepository _resRepository;
         private readonly ResourceBarMetaUI _resourceBar;
+        private readonly PlayerResRepository _resRepository;
 
         public PlayerResHandler(PlayerResRepository resRepository, MainViewProvider uiProvider)
         {
             _resRepository = resRepository;
             _resourceBar = uiProvider.MetaUiProvider.ResourceBarMetaUI;
+        }
+
+        public void Dispose()
+        {
+            _resRepository.OnChange -= OnResChanges;
         }
 
         public void Initialize()
@@ -25,11 +30,6 @@ namespace Woodman.PlayerRes
         {
             //todo: устанавливать с анимацией
             _resourceBar.SetCount(arg2);
-        }
-
-        public void Dispose()
-        {
-            _resRepository.OnChange -= OnResChanges;
         }
     }
 }

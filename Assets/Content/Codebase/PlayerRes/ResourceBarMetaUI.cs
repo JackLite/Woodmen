@@ -14,6 +14,7 @@ namespace Woodman.PlayerRes
             // TODO: make formatting if need
             _text.text = count.ToString(CultureInfo.InvariantCulture);
         }
+
         public void SetCountAnim(int count)
         {
             //TODO: make animation

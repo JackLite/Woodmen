@@ -4,6 +4,9 @@ namespace Woodman.Player.Movement
 {
     public class PlayerMovement : MonoBehaviour
     {
+        private static readonly int _stopWalk = Animator.StringToHash("StopWalk");
+        private static readonly int _startWalk = Animator.StringToHash("StartWalk");
+
         [SerializeField]
         private float _speed;
 
@@ -16,8 +19,6 @@ namespace Woodman.Player.Movement
         [SerializeField]
         private Animator _animator;
 
-        private static readonly int _stopWalk = Animator.StringToHash("StopWalk");
-        private static readonly int _startWalk = Animator.StringToHash("StartWalk");
         private Vector2 _lastDelta;
         public bool IsMoving => _rigidbody.velocity != Vector3.zero;
 

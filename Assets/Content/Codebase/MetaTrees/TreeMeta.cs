@@ -1,5 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Woodman.Felling.Tree;
+using Woodman.Logs;
 
 namespace Woodman.MetaTrees
 {
@@ -15,12 +19,24 @@ namespace Woodman.MetaTrees
         private Transform _rightCutPosition;
 
         [SerializeField]
-        private GameObject _mesh;
+        private GameObject _metaContent;
 
+        [SerializeField]
+        private int _logsCount;
 
-        public void HideMesh()
+        [SerializeField]
+        private LogsTypeView[] _logsTypeViews;
+
+        private Dictionary<LogsHeapType, LogView> _logsHeapTypeToViews = new();
+
+        private void Awake()
         {
-            _mesh.SetActive(false);
+            _logsHeapTypeToViews = _logsTypeViews.ToDictionary(l => l.type, l => l.logView);
+        }
+
+        public void DisableMeta()
+        {
+            _metaContent.SetActive(false);
         }
 
         public TreeModel GetTreeModel()
@@ -30,8 +46,22 @@ namespace Woodman.MetaTrees
                 pos = transform.position,
                 leftPos = _leftCutPosition.position,
                 rightPos = _rightCutPosition.position,
-                size = _size
+                size = _size,
+                logsCount = _logsCount
             };
+        }
+
+        public void ShowLogs(LogsHeapType type, int resourceCount)
+        {
+            _logsHeapTypeToViews[type].Count = resourceCount;
+            _logsHeapTypeToViews[type].Show();
+        }
+
+        [Serializable]
+        private struct LogsTypeView
+        {
+            public LogsHeapType type;
+            public LogView logView;
         }
     }
 }

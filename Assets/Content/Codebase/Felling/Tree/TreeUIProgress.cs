@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace Woodman.Felling.Tree
 {
     /// <summary>
-    /// Отображение прогресса рубки в коре
+    ///     Отображение прогресса рубки в коре
     /// </summary>
     public class TreeUIProgress : MonoBehaviour
     {
