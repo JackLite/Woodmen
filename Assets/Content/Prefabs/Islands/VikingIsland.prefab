@@ -149,6 +149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4066817925676777496}
+  - component: {fileID: 5933955119204963592}
   m_Layer: 0
   m_Name: VikingIsland
   m_TagString: Untagged
@@ -188,8 +189,53 @@ Transform:
   - {fileID: 5222825431391770236}
   - {fileID: 5222825430317131865}
   - {fileID: 5222825430399377490}
+  - {fileID: 8555585950214053269}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5933955119204963592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066817925676777497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae543183bb95481d8ff3effb7abcc2ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerSpawnPos: {fileID: 8555585950214053269}
+--- !u!1 &8419949725282765188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8555585950214053269}
+  m_Layer: 0
+  m_Name: PlayerSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8555585950214053269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419949725282765188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.69, y: 97.62, z: -90.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4066817925676777496}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4066817924589578506
 PrefabInstance:
@@ -526,17 +572,17 @@ PrefabInstance:
     - target: {fileID: 1200526562252214324, guid: 87e3eb70e1393ea49800e574bfce3b10,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.6
+      value: -28.39
       objectReference: {fileID: 0}
     - target: {fileID: 1200526562252214324, guid: 87e3eb70e1393ea49800e574bfce3b10,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 96.27
+      value: 95.178
       objectReference: {fileID: 0}
     - target: {fileID: 1200526562252214324, guid: 87e3eb70e1393ea49800e574bfce3b10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -95.34
+      value: -103.7
       objectReference: {fileID: 0}
     - target: {fileID: 1200526562252214324, guid: 87e3eb70e1393ea49800e574bfce3b10,
         type: 3}

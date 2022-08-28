@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a925015995e41bf448ff7a1aa4ff3037
+  m_SerializeEntries:
+  - m_GUID: a0b866dbb86793c499f926d991749bf5
+    m_Address: VikingsLocation
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9816d053fb2bf2740a94bb68c8c58cac
+    m_Address: Woodman
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 06234a19cbdac1e44a4ef14a4fc402bc, type: 2}
+    - {fileID: 11400000, guid: 2cb54bcdf916927498bbd8b86c5bc7ed, type: 2}

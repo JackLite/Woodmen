@@ -2,6 +2,7 @@
 using Woodman.Buildings;
 using Woodman.Common;
 using Woodman.Common.CameraProcessing;
+using Woodman.Loading;
 using Woodman.Logs;
 using Woodman.MetaInteractions;
 using Woodman.MetaTrees;
@@ -22,6 +23,8 @@ namespace Woodman
             Container.BindInterfacesAndSelfTo<BuildingsRepository>().AsSingle();
 
             Container.BindInterfacesAndSelfTo<CameraController>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<LoadingController>().AsSingle().NonLazy();
 
             Container.BindInterfacesAndSelfTo<InteractionsController>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<LogsInteraction>().AsSingle().NonLazy();

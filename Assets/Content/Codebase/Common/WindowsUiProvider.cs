@@ -20,5 +20,8 @@ namespace Woodman.Common
 
         [field: SerializeField]
         public FellingUi FellingUi { get; private set; }
+
+        [field: SerializeField]
+        public GameObject LoadScreen { get; private set; }
     }
 }

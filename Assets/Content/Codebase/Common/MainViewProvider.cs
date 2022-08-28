@@ -23,6 +23,9 @@ namespace Woodman.Common
         public PlayerMovement PlayerMovement { get; private set; }
 
         [field: SerializeField]
+        public GameObject WoodmanContainer { get; private set; }
+
+        [field: SerializeField]
         [field: ViewInject]
         public ControlMovementPlayer ControlMovementPlayer { get; private set; }
 
