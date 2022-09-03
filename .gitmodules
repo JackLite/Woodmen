@@ -1,0 +1,6 @@
+[submodule "Assets/Third-party/ModulesFramework"]
+	path = Assets/Third-party/ModulesFramework
+	url = https://github.com/JackLite/ModulesFramework
+[submodule "Assets/Third-party/ModulesFrameworkUnity"]
+	path = Assets/Third-party/ModulesFrameworkUnity
+	url = https://github.com/JackLite/ModulesFrameworkUnity

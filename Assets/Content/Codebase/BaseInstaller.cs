@@ -1,6 +1,6 @@
 using System.Reflection;
 using UnityEngine;
-using Woodman.Utils;
+using Woodman.EcsCodebase.Utils;
 using Zenject;
 
 namespace Woodman

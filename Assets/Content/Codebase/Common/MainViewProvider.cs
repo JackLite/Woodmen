@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using Woodman.Common.CameraProcessing;
+using Woodman.EcsCodebase.Player.Movement.View;
+using Woodman.EcsCodebase.Utils;
 using Woodman.Player.Indicators;
-using Woodman.Player.Movement;
-using Woodman.Player.Movement.View;
-using Woodman.Utils;
 
 namespace Woodman.Common
 {
