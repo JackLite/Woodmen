@@ -8,5 +8,10 @@ namespace Woodman.Utils
         {
             Debug.LogError($"[{className}::{methodName}] {msg}");
         }
+        
+        public static void LogError(object sourceObject, string methodName, string msg)
+        {
+            Debug.LogError($"[{sourceObject.GetType().Name}::{methodName}] {msg}");
+        }
     }
 }

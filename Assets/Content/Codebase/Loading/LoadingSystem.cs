@@ -4,6 +4,7 @@ using Core;
 using EcsCore;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using Woodman.Buildings;
 using Woodman.Common;
 using Woodman.Felling;
 using Woodman.Locations;
@@ -13,9 +14,10 @@ namespace Woodman.Loading
     [EcsSystem(typeof(StartupModule))]
     public class LoadingSystem : IInitSystem
     {
-        private MainViewProvider _mainViewProvider;
+        private BuildingsRepository _buildingsRepository;
         private DataWorld _world;
-        
+        private MainViewProvider _mainViewProvider;
+
         public void Init()
         {
             Load();
@@ -27,6 +29,7 @@ namespace Woodman.Loading
             {
                 var location = await Addressables.InstantiateAsync("VikingsLocation").Task;
                 var locationView = location.GetComponent<LocationView>();
+                locationView.SetBuildingsStates(_buildingsRepository);
                 _mainViewProvider.WoodmanContainer.transform.position = locationView.GetPlayerSpawnPos();
                 await Task.Delay(TimeSpan.FromSeconds(1f));
                 _world.InitModule<MainModule>();
