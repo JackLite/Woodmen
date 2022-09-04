@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Woodman.Common.CameraProcessing;
+using Woodman.Logs;
 using Woodman.Player.Indicators;
 using Woodman.Player.Movement.View;
 using Woodman.Utils;
@@ -31,6 +32,11 @@ namespace Woodman.Common
         [field: SerializeField]
         [field: ViewInject]
         public PlayerIndicatorsController PlayerIndicatorsController { get; private set; }
+
+        [field: Header("Pools")]
+        [field: SerializeField]
+        [field: ViewInject]
+        public LogsPool LogsPool { get; private set; }
 
         [field: Header("UI")]
         [field: SerializeField]

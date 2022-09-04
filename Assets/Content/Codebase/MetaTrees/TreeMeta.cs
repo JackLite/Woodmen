@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Woodman.Felling.Tree;
 using Woodman.Logs;
+using Logger = Woodman.Utils.Logger;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -34,13 +35,13 @@ namespace Woodman.MetaTrees
         [SerializeField]
         private LogsTypeView[] _logsTypeViews;
 
-        private Dictionary<LogsHeapType, LogView> _logsHeapTypeToViews = new();
+        public Dictionary<LogsHeapType, Transform> LogsHeapTypeToViews { private set; get; } = new();
 
         public string Id => _guid;
         
         private void Awake()
         {
-            _logsHeapTypeToViews = _logsTypeViews.ToDictionary(l => l.type, l => l.logView);
+            LogsHeapTypeToViews = _logsTypeViews.ToDictionary(l => l.type, l => l.logPos);
         }
 
         private void GenerateGuid()
@@ -74,17 +75,22 @@ namespace Woodman.MetaTrees
             };
         }
 
-        public void ShowLogs(LogsHeapType type, int resourceCount)
+        public Vector3 GetLogsPos(LogsHeapType heapType)
         {
-            _logsHeapTypeToViews[type].SetCount(resourceCount);
-            _logsHeapTypeToViews[type].Show();
+            if (!LogsHeapTypeToViews.ContainsKey(heapType))
+            {
+                Logger.LogError(this, nameof(GetLogsPos), $"Can't find pos for heap type {heapType}");
+                return Vector3.zero;
+            }
+
+            return LogsHeapTypeToViews[heapType].position;
         }
 
         [Serializable]
         private struct LogsTypeView
         {
             public LogsHeapType type;
-            public LogView logView;
+            public Transform logPos;
         }
     }
 }

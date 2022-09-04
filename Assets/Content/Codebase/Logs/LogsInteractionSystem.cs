@@ -13,7 +13,9 @@ namespace Woodman.MetaInteractions.LogsInteraction
     {
         private DataWorld _world;
         private EcsOneData<PlayerOneData> _playerData;
+        private LogsHeapRepository _logsHeapRepository;
         private PlayerResRepository _resRepository;
+
         public void Run()
         {
             var q = _world.Select<Interact>()
@@ -37,6 +39,7 @@ namespace Woodman.MetaInteractions.LogsInteraction
             var toAdd = math.min(max - currentRes, logs.LogView.Count);
             _resRepository.AddPlayerRes(toAdd);
             logs.LogView.Subtract(toAdd);
+            _logsHeapRepository.SetCount(logs.LogView.Id, logs.LogView.Count);
         }
     }
 }

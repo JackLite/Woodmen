@@ -11,8 +11,13 @@ namespace Woodman.Logs
         [SerializeField]
         private int _count;
 
+        [SerializeField]
+        private LogsHeapType _type;
+        
         //todo: завести репозиторий для куч брёвен
         public int Count => _count;
+        public LogsHeapType LogType => _type;
+        public string Id { get; set; }
         
         public void Show()
         {

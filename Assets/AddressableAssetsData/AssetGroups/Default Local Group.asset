@@ -29,6 +29,18 @@ MonoBehaviour:
     m_Address: FellingSettings
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 18d32ca61920b2f49b025678463470d9
+    m_Address: Assets/Content/Prefabs/Logs/SmallLogs.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 78c78fe3652959d4898720754a08eb6d
+    m_Address: Assets/Content/Prefabs/Logs/BigLogs.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fda1c1e35c28b59478b35472a262845c
+    m_Address: Assets/Content/Prefabs/Logs/MediumLogs.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:

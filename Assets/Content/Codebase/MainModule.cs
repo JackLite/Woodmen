@@ -24,7 +24,6 @@ namespace Woodman
 
             var fellingViewProvider = Object.FindObjectOfType<FellingViewProvider>();
             AddDependency(new PlayerResRepository());
-            AddDependency(new LogsService());
             AddDependency(mainViewProvider.WindowsUiProvider);
             AddDependency(mainViewProvider.PlayerIndicatorsController);
             AddDependency(mainViewProvider.MetaUiProvider.ResourceBarMetaUI);

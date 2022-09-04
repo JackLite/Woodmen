@@ -18,7 +18,6 @@ namespace Woodman.FellingTransition.FellingEscape
         private CameraController _cameraController;
         private MetaTreesRepository _treesRepository;
         private FellingCharacterController _characterController;
-        private LogsService _logsService;
         private TreePiecesRepository _treePiecesRepository;
         private WindowsUiProvider _uiProvider;
 
