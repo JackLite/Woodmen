@@ -25,6 +25,10 @@ MonoBehaviour:
     m_Address: Woodman
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 4f1c480774e9419ba08c229eeb73585b
+    m_Address: FellingSettings
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:

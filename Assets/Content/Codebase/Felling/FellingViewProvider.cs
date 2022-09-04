@@ -1,6 +1,6 @@
 using UnityEngine;
-using Woodman.EcsCodebase.Utils;
 using Woodman.Felling.Tree;
+using Woodman.Utils;
 
 namespace Woodman.Felling
 {

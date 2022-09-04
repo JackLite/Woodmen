@@ -1,9 +1,9 @@
 using UnityEngine;
-using Woodman.EcsCodebase.Utils;
 using Woodman.Felling;
 using Woodman.Felling.Lose;
 using Woodman.Felling.Win;
 using Woodman.Meta;
+using Woodman.Utils;
 
 namespace Woodman.Common
 {

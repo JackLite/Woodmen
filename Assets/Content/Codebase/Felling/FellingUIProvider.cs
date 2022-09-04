@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Woodman.Felling.Taps;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 

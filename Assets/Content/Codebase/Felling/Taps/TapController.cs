@@ -1,0 +1,26 @@
+using System;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Woodman.Felling.Taps
+{
+    /// <summary>
+    ///     Отвечает за события тапов игрока в коре
+    /// </summary>
+    public class TapController : MonoBehaviour
+    {
+        [SerializeField]
+        private Button leftTap;
+
+        [SerializeField]
+        private Button rightTap;
+
+        private void Awake()
+        {
+            leftTap.onClick.AddListener(() => OnTap?.Invoke(FellingSide.Left));
+            rightTap.onClick.AddListener(() => OnTap?.Invoke(FellingSide.Right));
+        }
+
+        public event Action<FellingSide> OnTap;
+    }
+}

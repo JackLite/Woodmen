@@ -1,4 +1,4 @@
-namespace Woodman.MetaTrees
+namespace Woodman.Logs
 {
     public enum LogsHeapType
     {

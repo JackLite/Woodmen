@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using Logger = Woodman.EcsCodebase.Utils.Logger;
+using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Common.UI
 {

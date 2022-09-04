@@ -1,5 +1,5 @@
 using UnityEngine;
-using Woodman.EcsCodebase.PlayerRes;
+using Woodman.PlayerRes;
 
 namespace Woodman.Common
 {
