@@ -8,6 +8,7 @@ using Woodman.Buildings;
 using Woodman.Common;
 using Woodman.Felling;
 using Woodman.Locations;
+using Woodman.MetaTrees;
 
 namespace Woodman.Loading
 {
@@ -15,6 +16,7 @@ namespace Woodman.Loading
     public class LoadingSystem : IInitSystem
     {
         private BuildingsRepository _buildingsRepository;
+        private MetaTreesRepository _treesRepository;
         private DataWorld _world;
         private MainViewProvider _mainViewProvider;
 
@@ -30,6 +32,7 @@ namespace Woodman.Loading
                 var location = await Addressables.InstantiateAsync("VikingsLocation").Task;
                 var locationView = location.GetComponent<LocationView>();
                 locationView.SetBuildingsStates(_buildingsRepository);
+                locationView.SetTreesStates(_treesRepository);
                 _mainViewProvider.WoodmanContainer.transform.position = locationView.GetPlayerSpawnPos();
                 await Task.Delay(TimeSpan.FromSeconds(1f));
                 _world.InitModule<MainModule>();

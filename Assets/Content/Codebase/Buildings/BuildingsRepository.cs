@@ -1,8 +1,4 @@
-using System;
-using Newtonsoft.Json;
-using UnityEngine;
 using Woodman.Utils;
-using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Buildings
 {
@@ -11,28 +7,12 @@ namespace Woodman.Buildings
     /// </summary>
     public class BuildingsRepository
     {
-        private const string SAVE_KEY = "buildings";
+        private const string SAVE_KEY = "meta.buildings.progress";
         private readonly BuildingSave _buildingSave;
 
         public BuildingsRepository()
         {
-            if (!SaveUtility.IsKeyExist(SAVE_KEY))
-            {
-                _buildingSave = new BuildingSave();
-            }
-            else
-            {
-                try
-                {
-                    var json = SaveUtility.LoadString(SAVE_KEY);
-                    _buildingSave = JsonConvert.DeserializeObject<BuildingSave>(json);
-                }
-                catch (Exception e)
-                {
-                    Logger.LogError(this, "ctor", e.Message);
-                    _buildingSave = new BuildingSave();
-                }
-            }
+            _buildingSave = RepositoryHelper.CreateSaveData<BuildingSave>(SAVE_KEY);
         }
         
         public int GetBuildingStateIndex(string building)
@@ -81,8 +61,7 @@ namespace Woodman.Buildings
 
         private void Save()
         {
-            var json = JsonConvert.SerializeObject(_buildingSave);
-            SaveUtility.SaveString(SAVE_KEY, json, true);
+            RepositoryHelper.Save(SAVE_KEY, _buildingSave);
         }
     }
 }

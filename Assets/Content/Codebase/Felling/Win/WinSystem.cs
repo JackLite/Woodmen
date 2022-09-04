@@ -1,6 +1,7 @@
 using Core;
 using EcsCore;
 using Woodman.Common;
+using Woodman.MetaTrees;
 
 namespace Woodman.Felling.Win
 {
@@ -8,6 +9,7 @@ namespace Woodman.Felling.Win
     public class WinSystem : IPostRunSystem
     {
         private DataWorld _world;
+        private MetaTreesRepository _treesRepository;
         private WindowsUiProvider _windows;
         public void PostRun()
         {
@@ -15,6 +17,7 @@ namespace Woodman.Felling.Win
             if (!q.Any())
                 return;
             
+            _treesRepository.SetFell(_treesRepository.CurrentTree.Id);
             _world.DeactivateModule<FellingModule>();
             _windows.FellingWinWindow.Show();
         }
