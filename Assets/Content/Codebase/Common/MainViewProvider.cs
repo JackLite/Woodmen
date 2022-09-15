@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Woodman.Cheats;
 using Woodman.Common.CameraProcessing;
 using Woodman.Logs;
 using Woodman.Player.Indicators;
@@ -46,5 +47,9 @@ namespace Woodman.Common
         [field: SerializeField]
         [field: ViewInject]
         public MetaUiProvider MetaUiProvider { get; private set; }
+
+        [field: SerializeField]
+        [field: ViewInject]
+        public DebugViewProvider DebugViewProvider { get; private set; }
     }
 }

@@ -7,6 +7,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Woodman.Buildings;
+using Woodman.Cheats;
 using Woodman.Common;
 using Woodman.Felling;
 using Woodman.Locations;
@@ -41,9 +42,13 @@ namespace Woodman.Loading
                 await LoadLogs();
 
                 _mainViewProvider.WoodmanContainer.transform.position = locationView.GetPlayerSpawnPos();
-                await Task.Delay(TimeSpan.FromSeconds(1f));
                 _world.InitModule<MainModule>();
                 _world.InitModule<FellingModule, MainModule>();
+                if (Debug.isDebugBuild)
+                {
+                    _world.InitModule<CheatsModule>();
+                    _world.ActivateModule<CheatsModule>();
+                }
                 _world.ActivateModule<MainModule>();
             }
             catch (Exception e)
