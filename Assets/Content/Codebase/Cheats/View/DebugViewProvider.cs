@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Woodman.Cheats
+namespace Woodman.Cheats.View
 {
     public class DebugViewProvider : MonoBehaviour
     {
@@ -13,5 +13,8 @@ namespace Woodman.Cheats
         
         [field:SerializeField]
         public GameObject DebugPanel { get; private set; }
+        
+        [field:SerializeField]
+        public DebugMessageView DebugMessageView { get; private set; }
     }
 }

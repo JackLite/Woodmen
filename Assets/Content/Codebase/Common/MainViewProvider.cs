@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Woodman.Cheats;
+using Woodman.Cheats.View;
 using Woodman.Common.CameraProcessing;
 using Woodman.Logs;
 using Woodman.Player.Indicators;

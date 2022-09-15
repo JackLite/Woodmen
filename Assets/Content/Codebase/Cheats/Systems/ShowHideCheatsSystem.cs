@@ -1,7 +1,8 @@
 using Core;
 using EcsCore;
+using Woodman.Cheats.View;
 
-namespace Woodman.Cheats
+namespace Woodman.Cheats.Systems
 {
     [EcsSystem(typeof(CheatsModule))]
     public class ShowHideCheatsSystem : IInitSystem, IDestroySystem
