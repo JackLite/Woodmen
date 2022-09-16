@@ -46,7 +46,7 @@ namespace Woodman.Loading
                 _world.InitModule<FellingModule, MainModule>();
                 if (Debug.isDebugBuild)
                 {
-                    _world.InitModule<CheatsModule>();
+                    _world.InitModule<CheatsModule, MainModule>();
                     _world.ActivateModule<CheatsModule>();
                 }
                 _world.ActivateModule<MainModule>();
