@@ -10,7 +10,6 @@ namespace Woodman.Cheats
             var mainViewProvider = GetGlobalDependency<StartupModule, MainViewProvider>();
             AddDependency(mainViewProvider.DebugViewProvider);
             AddDependency(mainViewProvider.DebugViewProvider.DebugResourceViewProvider);
-            CreateOneData<DebugStateData>();
             mainViewProvider.DebugViewProvider.gameObject.SetActive(true);
             mainViewProvider.DebugViewProvider.DebugPanel.SetActive(false);
             mainViewProvider.DebugViewProvider.DebugResourceViewProvider.gameObject.SetActive(false);

@@ -1,5 +1,6 @@
 using Core;
 using EcsCore;
+using Woodman.Cheats;
 using Woodman.Common;
 using Woodman.Felling.Taps;
 using Woodman.Felling.Timer;
@@ -10,9 +11,12 @@ namespace Woodman.Felling.Lose
     public class LosingSystem : IPostRunSystem
     {
         private DataWorld _world;
+        private EcsOneData<DebugStateData> _debugData;
         private WindowsUiProvider _windows;
         public void PostRun()
         {
+            if (_debugData.GetData().isGodModeTurnOn)
+                return;
             var endTimer = _world.Select<TimerEndEvent>();
             if (endTimer.Any())
             {

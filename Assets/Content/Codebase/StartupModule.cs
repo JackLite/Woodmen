@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using EcsCore;
 using UnityEngine;
 using Woodman.Buildings;
+using Woodman.Cheats;
 using Woodman.Common;
 using Woodman.Logs;
 using Woodman.MetaTrees;
@@ -21,6 +22,7 @@ namespace Woodman
             var viewProvider = Object.FindObjectOfType<MainViewProvider>(true);
             AddDependency(viewProvider);
             AddDependency(viewProvider.LogsPool);
+            CreateOneData<DebugStateData>();
             return Task.CompletedTask;
         }
     }
