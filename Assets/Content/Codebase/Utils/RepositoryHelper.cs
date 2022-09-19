@@ -5,7 +5,7 @@ namespace Woodman.Utils
 {
     public static class RepositoryHelper
     {
-        public static JsonSerializerSettings settings = new JsonSerializerSettings
+        private static JsonSerializerSettings settings = new()
         {
             ContractResolver = new UnityContractResolver()
         };

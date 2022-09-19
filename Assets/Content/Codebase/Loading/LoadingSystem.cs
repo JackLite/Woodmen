@@ -41,6 +41,7 @@ namespace Woodman.Loading
                 
                 await LoadLogs();
 
+                await _mainViewProvider.PoolsProvider.BuildingFxPool.WarmUp(3);
                 _mainViewProvider.WoodmanContainer.transform.position = locationView.GetPlayerSpawnPos();
                 _world.InitModule<MainModule>();
                 _world.InitModule<FellingModule, MainModule>();
@@ -69,7 +70,7 @@ namespace Woodman.Loading
 
             foreach (var (type, count) in counter)
             {
-                var warmCount = (int)(count * 1.2f);
+                var warmCount = math.min(1, (int)(count * 1.2f));
                 await _mainViewProvider.LogsPool.WarmUp(type, math.max(3, warmCount));
             }
 
