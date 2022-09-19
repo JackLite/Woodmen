@@ -221,7 +221,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6988157680867912240}
   - component: {fileID: 5749830562333861354}
-  - component: {fileID: 7726805624940608790}
   - component: {fileID: 9098805112361671153}
   m_Layer: 5
   m_Name: RewardIcon
@@ -260,36 +259,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5243735340786004137}
   m_CullTransparentMesh: 1
---- !u!114 &7726805624940608790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243735340786004137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -1064785896, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 6
 --- !u!114 &9098805112361671153
 MonoBehaviour:
   m_ObjectHideFlags: 0
