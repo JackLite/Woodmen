@@ -38,8 +38,14 @@ namespace Woodman.Locations
         {
             foreach (var view in _buildings)
             {
-                view.SetLogs(buildingsRepository.GetBuildingLogsCount(view.Id));
-                view.SetState(buildingsRepository.GetBuildingStateIndex(view.Id));
+                var stateIndex = buildingsRepository.GetBuildingStateIndex(view.Id);
+                if (!buildingsRepository.IsLastState(view.Id))
+                {
+                    var current = buildingsRepository.GetBuildingLogsCount(view.Id);
+                    var total = view.GetResForState(stateIndex + 1);
+                    view.SetLogs(current, total);
+                }
+                view.SetState(stateIndex);
             }
         }
 

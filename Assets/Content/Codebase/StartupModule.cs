@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Threading.Tasks;
 using EcsCore;
 using UnityEngine;
@@ -7,6 +8,7 @@ using Woodman.Common;
 using Woodman.Logs;
 using Woodman.MetaTrees;
 using Woodman.Player;
+using Woodman.Utils;
 
 namespace Woodman
 {
@@ -21,7 +23,7 @@ namespace Woodman
             AddDependency(new LogsHeapRepository());
             var viewProvider = Object.FindObjectOfType<MainViewProvider>(true);
             AddDependency(viewProvider);
-            AddDependency(viewProvider.LogsPool);
+            BindView(viewProvider);
             CreateOneData<DebugStateData>();
             return Task.CompletedTask;
         }

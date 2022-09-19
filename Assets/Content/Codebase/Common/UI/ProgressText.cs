@@ -10,7 +10,7 @@ namespace Woodman.Common.UI
         private TMP_Text _text;
 
         private int _current;
-        private int _total;
+        private int? _total;
 
         public void Init(int current, int total)
         {
@@ -19,11 +19,12 @@ namespace Woodman.Common.UI
             UpdateText();
         }
 
-        public void SetProgress(int current)
+        public void SetProgress(int current, int total)
         {
-            if (_total == 0)
+            if (_total == null)
                 Logger.LogError(nameof(ProgressText), nameof(SetProgress), "Not initialized");
             _current = current;
+            _total = total;
             UpdateText();
         }
 
@@ -34,7 +35,12 @@ namespace Woodman.Common.UI
 
         public void Hide()
         {
-            _text.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
+        
+        public void Show()
+        {
+            gameObject.SetActive(true);
         }
     }
 }

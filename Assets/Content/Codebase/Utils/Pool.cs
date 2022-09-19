@@ -18,7 +18,9 @@ namespace Woodman.Utils
             for (var i = 0; i < size; ++i)
             {
                 var go = await Addressables.InstantiateAsync(_prefab, startPos, Quaternion.identity, transform).Task;
-                _pool.Push(go.GetComponent<T>());
+                var component = go.GetComponent<T>();
+                ResetPoolObject(component);
+                _pool.Push(component);
             }
         }
 
@@ -29,13 +31,24 @@ namespace Woodman.Utils
 
             var startPos = Vector3.one * 50000;
             var go = Addressables.InstantiateAsync(_prefab, startPos, Quaternion.identity, transform)
-                                 .WaitForCompletion();
-            return go.GetComponent<T>();
+                .WaitForCompletion();
+            var component = go.GetComponent<T>();
+            OnBeforeGet(component);
+            return component;
         }
 
         public void Return(T poolObject)
         {
+            ResetPoolObject(poolObject);
             _pool.Push(poolObject);
+        }
+
+        protected virtual void ResetPoolObject(T _)
+        {
+        }
+
+        protected virtual void OnBeforeGet(T _)
+        {
         }
 
         private void OnDestroy()
@@ -44,6 +57,7 @@ namespace Woodman.Utils
             {
                 Addressables.ReleaseInstance(t.gameObject);
             }
+
             _pool.Clear();
         }
     }

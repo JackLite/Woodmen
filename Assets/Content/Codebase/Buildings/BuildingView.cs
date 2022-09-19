@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 using Woodman.Common.UI;
@@ -23,20 +24,28 @@ namespace Woodman.Buildings
         private int[] _logsCount;
 
         [SerializeField]
+        private ProgressText _progress;
+
+        [SerializeField]
+        private Transform _vfxParent;  
+        
+        [Header("Animation")]
+        [SerializeField]
         private Animator _animator;
 
         [SerializeField]
-        private ProgressText _progress;
+        private float _frames;
+
+        [SerializeField]
+        private float _framesPerSecond;
 
         private int _currentCount;
         private static readonly int BuildingTrigger = Animator.StringToHash("Building");
 
         public string Id => _guid;
-        
+
         private void Awake()
         {
-            SetState(0); // todo: load from save
-            _currentCount = 0;
             _progress.Init(0, _logsCount[1]);
         }
 
@@ -46,16 +55,10 @@ namespace Woodman.Buildings
                 _guid = Guid.NewGuid().ToString();
         }
 
-        public void AddLogs(int count)
-        {
-            _currentCount += count;
-            _progress.SetProgress(_currentCount);
-        }
-        
-        public void SetLogs(int count)
+        public void SetLogs(int count, int total)
         {
             _currentCount = count;
-            _progress.SetProgress(_currentCount);
+            _progress.SetProgress(_currentCount, total);
         }
 
         private void CalculateStateLogsCount()
@@ -83,7 +86,7 @@ namespace Woodman.Buildings
                 return int.MaxValue;
             }
 
-            return _logsCount[stateIndex] - _currentCount;
+            return _logsCount[stateIndex];
         }
 
         public void SetState(int index)
@@ -101,15 +104,38 @@ namespace Woodman.Buildings
                 var state = _states[i];
                 state.SetActive(i == index);
             }
-
-            _animator.ResetTrigger(BuildingTrigger);
-            _animator.SetTrigger(BuildingTrigger);
         }
 
-
-        public void FinishBuilding()
+        public void AnimateTo(int state, BuildingFxPool vfxPool)
         {
+            _animator.SetBool(BuildingTrigger, true);
             _progress.Hide();
+            
+            AnimateAsync(state, vfxPool);
+        }
+
+        private async void AnimateAsync(int state, BuildingFxPool vfxPool)
+        {
+            try
+            {
+                var vfx = vfxPool.Get();
+                vfx.SetParent(_vfxParent);
+                vfx.localPosition = Vector3.zero;
+                vfx.localRotation = Quaternion.identity;
+                vfx.gameObject.SetActive(false);
+                vfx.gameObject.SetActive(true);
+                await Task.Delay(TimeSpan.FromSeconds(1));
+                SetState(state);
+                await Task.Delay(TimeSpan.FromSeconds(_frames / _framesPerSecond - 1));
+                _animator.SetBool(BuildingTrigger, false);
+                if (state != _states.Length - 1)
+                    _progress.Show();
+                vfxPool.Return(vfx);
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
         }
     }
 }

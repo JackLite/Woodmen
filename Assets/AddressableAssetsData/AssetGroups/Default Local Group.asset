@@ -41,6 +41,10 @@ MonoBehaviour:
     m_Address: Assets/Content/Prefabs/Logs/MediumLogs.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: bc828ab2d7d867346a65a95cd2432792
+    m_Address: Assets/Content/Graphics/FX/fx_building.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:

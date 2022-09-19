@@ -1,5 +1,6 @@
 using Core;
 using EcsCore;
+using Woodman.Common;
 using Woodman.MetaInteractions;
 using Woodman.MetaInteractions.Components;
 using Woodman.PlayerRes;
@@ -12,16 +13,18 @@ namespace Woodman.Buildings
         private DataWorld _world;
         private PlayerResRepository _resRepository;
         private BuildingsRepository _buildingsRepository;
+        private PoolsProvider _poolsProvider;
+
         public void Run()
         {
             var q = _world.Select<Interact>()
                 .Where<Interact>(c => c.interactType == InteractTypeEnum.Building);
             if (!q.TrySelectFirst(out Interact interact))
                 return;
-            
+
             OnInteract(interact.target);
         }
-        
+
         private void OnInteract(InteractTarget target)
         {
             var interact = target.GetComponent<BuildingInteract>();
@@ -31,46 +34,72 @@ namespace Woodman.Buildings
             var buildingId = interact.BuildingView.Id;
             if (_buildingsRepository.IsLastState(buildingId))
                 return;
-            
-            Process(buildingId, interact);
+
+            Process(interact);
         }
 
-        private void Process(string buildingId, BuildingInteract interact)
+        private void Process(BuildingInteract interact)
         {
-            var nextState = _buildingsRepository.GetBuildingStateIndex(buildingId) + 1;
-            var nextCount = interact.BuildingView.GetResForState(nextState);
-            var currentCount = _buildingsRepository.GetBuildingLogsCount(buildingId);
+            var delta = CalcNextState(interact.BuildingView);
+            var oldState = _buildingsRepository.GetBuildingStateIndex(interact.BuildingView.Id);
+            _resRepository.SubtractRes(delta.totalResources);
+            _buildingsRepository.SetBuildingStateIndex(delta.resultState, interact.BuildingView.Id);
+            _buildingsRepository.SetBuildingLogsCount(delta.resultLogsCount, interact.BuildingView.Id);
+
+            interact.BuildingView.SetLogs(delta.resultLogsCount, delta.nextStateLogsCount);
+
+            if (oldState != delta.resultState)
+            {
+                interact.BuildingView.AnimateTo(delta.resultState, _poolsProvider.BuildingFxPool);
+            }
+        }
+
+        private BuildingDelta CalcNextState(BuildingView building)
+        {
+            var delta = new BuildingDelta
+            {
+                resultState = _buildingsRepository.GetBuildingStateIndex(building.Id)
+            };
+
+            var currentCount = _buildingsRepository.GetBuildingLogsCount(building.Id);
+            var nextCount = building.GetResForState(delta.resultState + 1) - currentCount;
             var playerRes = _resRepository.GetPlayerRes();
-
-            while (playerRes >= nextCount && nextState < 4)
+            delta.resultLogsCount = currentCount;
+            while (playerRes >= nextCount)
             {
-                SetNextState(interact, nextState);
-                playerRes = _resRepository.SubtractRes(nextCount);
-                nextState++;
-                nextCount = interact.BuildingView.GetResForState(nextState);
-                currentCount = 0;
+                playerRes -= nextCount;
+                delta.resultState++;
+                if (delta.resultState < 4)
+                {
+                    nextCount = building.GetResForState(delta.resultState + 1);
+                    delta.resultLogsCount = 0;
+                    delta.nextStateLogsCount = nextCount;
+                }
+                else
+                {
+                    delta.resultLogsCount = 0;
+                    delta.nextStateLogsCount = 0;
+                    break;
+                }
             }
 
-            var isLastState = nextState == 4;
-            if (isLastState && playerRes > nextCount)
+            if (delta.resultState < 4)
             {
-                SetNextState(interact, nextState);
-                interact.BuildingView.FinishBuilding();
-                //todo: обработка завершения постройки здания
-                return;
+                delta.resultLogsCount += playerRes;
+                delta.nextStateLogsCount = building.GetResForState(delta.resultState + 1);
+                playerRes = 0;
             }
 
-            interact.BuildingView.AddLogs(playerRes);
-            _resRepository.SubtractRes(playerRes);
-            _buildingsRepository.SetBuildingLogsCount(currentCount + playerRes, buildingId);
+            delta.totalResources = _resRepository.GetPlayerRes() - playerRes;
+            return delta;
         }
 
-        private void SetNextState(BuildingInteract interact, int nextState)
+        private struct BuildingDelta
         {
-            interact.BuildingView.SetState(nextState);
-            interact.BuildingView.SetLogs(0);
-            _buildingsRepository.SetBuildingStateIndex(nextState, interact.BuildingView.Id);
-            _buildingsRepository.SetBuildingLogsCount(0, interact.BuildingView.Id);
+            public int totalResources;
+            public int resultState;
+            public int resultLogsCount;
+            public int nextStateLogsCount;
         }
     }
 }
