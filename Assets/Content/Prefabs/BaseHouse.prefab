@@ -462,7 +462,7 @@ MonoBehaviour:
   _progress: {fileID: 5624809599188203995}
   _vfxParent: {fileID: 4194465771318039751}
   _animator: {fileID: 3077239417955193020}
-  _frames: 285
+  _frames: 350
   _framesPerSecond: 60
 --- !u!1 &7828470431374696775
 GameObject:
