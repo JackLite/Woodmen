@@ -117,13 +117,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9163973, z: 0.91670305, w: 0.29329437}
+    m_Value: {x: 1, y: 0.9163973, z: 0.91670305, w: 0.23332208}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.31187087}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.16649418}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.27616283}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.006951354}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0.12
@@ -148,34 +148,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 2
   gaussianStart:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 7.51
   gaussianEnd:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 30
   gaussianMaxRadius:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 1.484
   highQualitySampling:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 3.82
+    m_Value: 15
   aperture:
     m_OverrideState: 0
-    m_Value: 5.7
+    m_Value: 5
   focalLength:
     m_OverrideState: 1
-    m_Value: 66
+    m_Value: 255
   bladeCount:
     m_OverrideState: 0
-    m_Value: 7
+    m_Value: 9
   bladeCurvature:
     m_OverrideState: 0
     m_Value: 1
