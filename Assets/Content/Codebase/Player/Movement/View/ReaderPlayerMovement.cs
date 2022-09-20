@@ -13,7 +13,7 @@ namespace Woodman.Player.Movement.View
         {
             _isMoveStarted = true;
             CurrentPointerPos = eventData.pressPosition;
-            OnChangeMoveState?.Invoke(_isMoveStarted);
+            onChangeMoveState?.Invoke(_isMoveStarted);
         }
 
         public void OnPointerMove(PointerEventData eventData)
@@ -27,9 +27,9 @@ namespace Woodman.Player.Movement.View
         {
             Debug.Log("Stop move!");
             _isMoveStarted = false;
-            OnChangeMoveState?.Invoke(_isMoveStarted);
+            onChangeMoveState?.Invoke(_isMoveStarted);
         }
 
-        public event Action<bool> OnChangeMoveState;
+        public event Action<bool> onChangeMoveState;
     }
 }

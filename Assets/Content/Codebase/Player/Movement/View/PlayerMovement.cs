@@ -4,8 +4,8 @@ namespace Woodman.Player.Movement.View
 {
     public class PlayerMovement : MonoBehaviour
     {
-        private static readonly int _stopWalk = Animator.StringToHash("StopWalk");
-        private static readonly int _startWalk = Animator.StringToHash("StartWalk");
+        private static readonly int StopWalk = Animator.StringToHash("StopWalk");
+        private static readonly int StartWalk = Animator.StringToHash("StartWalk");
 
         [SerializeField]
         private float _speed;
@@ -38,15 +38,15 @@ namespace Woodman.Player.Movement.View
         {
             _lastDelta = Vector2.zero;
             _rigidbody.AddForce(Vector3.zero, ForceMode.Acceleration);
-            _animator.SetTrigger(_stopWalk);
+            _animator.SetTrigger(StopWalk);
         }
 
         private void UpdateAnimation(Vector2 delta)
         {
             if (_lastDelta != Vector2.zero && delta == Vector2.zero)
-                _animator.SetTrigger(_stopWalk);
+                _animator.SetTrigger(StopWalk);
             else if (_lastDelta == Vector2.zero && delta != Vector2.zero)
-                _animator.SetTrigger(_startWalk);
+                _animator.SetTrigger(StartWalk);
             _lastDelta = delta;
         }
     }

@@ -19,6 +19,9 @@ namespace Woodman.Common
         [field: ViewInject]
         public CamerasContainer CamerasContainer { get; private set; }
 
+        [field: SerializeField]
+        public Canvas MainCanvas { get; private set; }
+        
         [field: Header("Player")]
         [field: SerializeField]
         [field: ViewInject]
@@ -26,10 +29,6 @@ namespace Woodman.Common
 
         [field: SerializeField]
         public GameObject WoodmanContainer { get; private set; }
-
-        [field: SerializeField]
-        [field: ViewInject]
-        public ControlMovementPlayer ControlMovementPlayer { get; private set; }
 
         [field: SerializeField]
         [field: ViewInject]

@@ -3578,18 +3578,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1272028792 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1272028792, guid: 8aab324f90070e5408171135e5096777,
-    type: 3}
-  m_PrefabInstance: {fileID: 5531311456913278628}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7500aaa835124922bc78dd4db0ef89e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1333919565
 GameObject:
   m_ObjectHideFlags: 0
@@ -4154,9 +4142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CamerasContainer>k__BackingField: {fileID: 963194231}
+  <MainCanvas>k__BackingField: {fileID: 109553439}
   <PlayerMovement>k__BackingField: {fileID: 919704486}
   <WoodmanContainer>k__BackingField: {fileID: 919704482}
-  <ControlMovementPlayer>k__BackingField: {fileID: 1272028792}
   <PlayerIndicatorsController>k__BackingField: {fileID: 1039542334}
   <LogsPool>k__BackingField: {fileID: 413255062}
   <WindowsUiProvider>k__BackingField: {fileID: 109553442}

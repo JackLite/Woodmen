@@ -41,6 +41,11 @@ namespace Woodman.Player.Movement.View
         public void SetPosition(Vector2 p)
         {
             var direction = p - _startPos;
+            if (direction.sqrMagnitude > _diff * _diff)
+            {
+                _startPos += Vector2.ClampMagnitude(direction, direction.magnitude - _diff);
+                _rectTransform.anchoredPosition = _startPos;
+            }
             var newPos = Vector2.ClampMagnitude(direction, _diff);
             _circle.anchoredPosition = newPos;
 

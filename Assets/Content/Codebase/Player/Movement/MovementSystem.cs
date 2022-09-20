@@ -1,27 +1,19 @@
 using Core;
 using EcsCore;
 using Woodman.Common;
+using Woodman.Player.Movement.View;
 
 namespace Woodman.Player.Movement
 {
     [EcsSystem(typeof(MainModule))]
-    public class MovementSystem : IInitSystem, IRunPhysicSystem, IDestroySystem
+    public class MovementSystem : IRunPhysicSystem
     {
         private MainViewProvider _mainViewProvider;
-
-        public void Init()
-        {
-            _mainViewProvider.ControlMovementPlayer.OnStopMove += _mainViewProvider.PlayerMovement.StopMove;
-        }
+        private EcsOneData<PlayerMovementData> _moveData;
 
         public void RunPhysic()
         {
-            _mainViewProvider.PlayerMovement.Move(_mainViewProvider.ControlMovementPlayer.ReadInput());
-        }
-
-        public void Destroy()
-        {
-            _mainViewProvider.ControlMovementPlayer.OnStopMove -= _mainViewProvider.PlayerMovement.StopMove;
+            _mainViewProvider.PlayerMovement.Move(_moveData.GetData().input);
         }
     }
 }

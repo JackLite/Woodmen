@@ -8,6 +8,7 @@ using Woodman.Felling.Tree;
 using Woodman.FellingTransition;
 using Woodman.MetaInteractions;
 using Woodman.MetaInteractions.TreeInteraction;
+using Woodman.Player.Movement.View;
 using Woodman.PlayerRes;
 using Object = UnityEngine.Object;
 
@@ -36,6 +37,7 @@ namespace Woodman
             CreateTreeGenerator();
             
             CreateOneData<TreeModel>();
+            CreateOneData<PlayerMovementData>();
 
             return Task.CompletedTask;
         }
