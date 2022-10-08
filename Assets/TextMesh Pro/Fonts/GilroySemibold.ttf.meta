@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a30a3a157a3078840a86ce4bd020e66e
+guid: ee1ecab6e2ba10a4c82bdd593335557a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Wendy One
+  - Gilroy
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
