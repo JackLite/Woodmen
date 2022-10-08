@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 5169144123832171626}
   - component: {fileID: 425154695368080066}
   - component: {fileID: 7516043837901237525}
-  - component: {fileID: 7065950213386963621}
   m_Layer: 5
   m_Name: ResourceBar 1
   m_TagString: Untagged
@@ -219,19 +218,6 @@ MonoBehaviour:
   m_HorizontalFit: 2
   m_VerticalFit: 0
 --- !u!114 &7516043837901237525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989105609465208224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5604429d6c754bf6945c54393706ba5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _text: {fileID: 2769552613278045870}
---- !u!114 &7065950213386963621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
