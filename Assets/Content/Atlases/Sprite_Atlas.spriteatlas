@@ -42,6 +42,7 @@ SpriteAtlas:
   - {fileID: 1158674123, guid: 14102e32505e796469ee71e522c29bc9, type: 3}
   - {fileID: 471547711, guid: 14102e32505e796469ee71e522c29bc9, type: 3}
   - {fileID: 21300000, guid: 1e5923927cacab54b920aea2db876437, type: 3}
+  - {fileID: 21300000, guid: 0a3ef1239714d5041ada2759838f6806, type: 3}
   - {fileID: 21300000, guid: d25ab0b4c6a98144aa58dc298a569a5c, type: 3}
   - {fileID: 21300000, guid: a85b20e56ee86cb4da7c117c4aa9f80e, type: 3}
   - {fileID: 21300000, guid: e39c63569bac6dc47b2a0826d19959f4, type: 3}
@@ -57,6 +58,7 @@ SpriteAtlas:
   - {fileID: 2043122589, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
   - {fileID: -1336893636, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
   - {fileID: -1064785896, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
+  - {fileID: 21300000, guid: bd81ca1d7fb88074e9196efd2559c45e, type: 3}
   - {fileID: 21300000, guid: a8a6576d0cce2c244ae5274366b96555, type: 3}
   - {fileID: 21300000, guid: b89578ad6c6f09543b0f910cafa1ef0b, type: 3}
   - {fileID: 21300000, guid: da5fc2edec621e04b8a854886e61bbea, type: 3}
@@ -66,6 +68,7 @@ SpriteAtlas:
   - b_grad_h_0
   - b_grad_h_1
   - i_pause
+  - bg_bar
   - i_wood
   - i_mustaches
   - i_noads
@@ -81,6 +84,7 @@ SpriteAtlas:
   - b_circle_2
   - b_circle_1
   - b_circle_0
+  - i_coin
   - b_arrow
   - b_tris
   - i_lose_restart
