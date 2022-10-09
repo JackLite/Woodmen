@@ -133,6 +133,9 @@ GameObject:
   - component: {fileID: 7050587359729992140}
   - component: {fileID: 5621346360134876906}
   - component: {fileID: 8483673718201540571}
+  - component: {fileID: 6189961923987602410}
+  - component: {fileID: 6239383393547463413}
+  - component: {fileID: 7573128666255767687}
   m_Layer: 5
   m_Name: FellingWindow
   m_TagString: Untagged
@@ -207,6 +210,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833fc2a36557431f8898b7657d0058de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6189961923987602410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510967623381873656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConformX: 1
+  ConformY: 1
+  Logging: 0
+--- !u!95 &6239383393547463413
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510967623381873656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 036e32e602480814da2373a39b57061a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!225 &7573128666255767687
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510967623381873656}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2331708525775978659
 GameObject:
   m_ObjectHideFlags: 0
