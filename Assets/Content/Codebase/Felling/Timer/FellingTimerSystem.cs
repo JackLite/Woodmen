@@ -14,6 +14,12 @@ namespace Woodman.Felling.Timer
         public void Run()
         {
             ref var td = ref _timerData.GetData();
+            var restartQ = _world.Select<TimerRestartEvent>();
+            if (restartQ.Any())
+            {
+                restartQ.DestroyAll();
+                td.remain = td.totalTime;
+            }
             if (td.remain <= 0 && !_world.Select<TimerEndEvent>().Any())
             {
                 _world.NewEntity().AddComponent(new TimerEndEvent());

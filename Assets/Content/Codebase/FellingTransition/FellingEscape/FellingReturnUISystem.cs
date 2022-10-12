@@ -12,12 +12,14 @@ namespace Woodman.FellingTransition.FellingEscape
         private DataWorld _world;
         private MetaTreesRepository _treesRepository;
         private FellingCharacterController _characterController;
+        private FellingUIProvider _fellingUIProvider;
         private WindowsUiProvider _uiProvider;
 
         public void Init()
         {
             _uiProvider.FellingWinWindow.OnOkBtnClick += OnWinClick;
             _uiProvider.FellingLoseWindow.OnHomeClick += OnLoseClick;
+            _uiProvider.FellingLoseWindow.OnRestartClick += OnRestartClick;
         }
 
         private void OnWinClick()
@@ -29,6 +31,15 @@ namespace Woodman.FellingTransition.FellingEscape
         {
             _characterController.SetSide(FellingSide.Right);
             _uiProvider.FellingLoseWindow.Hide();
+        }
+
+        private void OnRestartClick()
+        {
+            _uiProvider.FellingLoseWindow.Hide();
+            _uiProvider.FellingUi.Show();
+            _fellingUIProvider.StartGameBtn.gameObject.SetActive(true);
+            _fellingUIProvider.FellingTimerView.SetProgress(1);
+            _fellingUIProvider.TreeUIProgress.SetProgress(1);
         }
 
         public void Destroy()

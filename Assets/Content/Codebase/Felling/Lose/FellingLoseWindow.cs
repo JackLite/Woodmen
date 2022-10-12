@@ -10,11 +10,16 @@ namespace Woodman.Felling.Lose
         [SerializeField]
         private Button _homeBtn;
 
+        [SerializeField] 
+        private Button _restartBtn;
+
         public event Action OnHomeClick;
+        public event Action OnRestartClick;
 
         public void Awake()
         {
             _homeBtn.onClick.AddListener(() => OnHomeClick?.Invoke());
+            _restartBtn.onClick.AddListener(() => OnRestartClick?.Invoke());
         }
     }
 }

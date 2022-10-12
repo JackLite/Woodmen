@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _homeBtn: {fileID: 2716880249665022623}
+  _restartBtn: {fileID: 2716880248566677165}
 --- !u!1 &2716880250652646928
 GameObject:
   m_ObjectHideFlags: 0
