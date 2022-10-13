@@ -6,6 +6,7 @@ using EcsCore;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.SceneManagement;
 using Woodman.Buildings;
 using Woodman.Cheats;
 using Woodman.Common;
@@ -13,6 +14,7 @@ using Woodman.Felling;
 using Woodman.Locations;
 using Woodman.Logs;
 using Woodman.MetaTrees;
+using Object = UnityEngine.Object;
 
 namespace Woodman.Loading
 {
@@ -34,8 +36,8 @@ namespace Woodman.Loading
         {
             try
             {
-                var location = await Addressables.InstantiateAsync("VikingsLocation").Task;
-                var locationView = location.GetComponent<LocationView>();
+                await Addressables.LoadSceneAsync("VikingsLocation", LoadSceneMode.Additive).Task;
+                var locationView = Object.FindObjectOfType<LocationView>();
                 locationView.SetBuildingsStates(_buildingsRepository);
                 locationView.SetTreesStates(_treesRepository);
                 
