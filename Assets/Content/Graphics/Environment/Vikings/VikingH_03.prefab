@@ -64,6 +64,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d212c39d2ee854c409070ec8f507b4d6,
         type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d212c39d2ee854c409070ec8f507b4d6,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4cf7fb5d887331d479f22b8af0366180, type: 2}
@@ -71,6 +76,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "house_viking_\u21163 almost"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d212c39d2ee854c409070ec8f507b4d6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d212c39d2ee854c409070ec8f507b4d6, type: 3}
@@ -144,6 +154,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 50542f0c688593843a457e65c92d6662,
         type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 50542f0c688593843a457e65c92d6662,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4cf7fb5d887331d479f22b8af0366180, type: 2}
@@ -151,6 +166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "house_viking_\u21163 half"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 50542f0c688593843a457e65c92d6662,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50542f0c688593843a457e65c92d6662, type: 3}
@@ -224,6 +244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 80ee50213d17c14419ef0a71b9048847,
         type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 80ee50213d17c14419ef0a71b9048847,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4cf7fb5d887331d479f22b8af0366180, type: 2}
@@ -231,6 +256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "house_viking_\u21163 a little"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 80ee50213d17c14419ef0a71b9048847,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ee50213d17c14419ef0a71b9048847, type: 3}
@@ -304,6 +334,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: fd177a1b285a2bd4a8db4dc4482ff1a5,
         type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fd177a1b285a2bd4a8db4dc4482ff1a5,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4cf7fb5d887331d479f22b8af0366180, type: 2}
@@ -311,6 +346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "house_viking_\u21163 foundation"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fd177a1b285a2bd4a8db4dc4482ff1a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd177a1b285a2bd4a8db4dc4482ff1a5, type: 3}
@@ -384,6 +424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 101d95efc4369e34bbe54c83f7dae93a,
         type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 101d95efc4369e34bbe54c83f7dae93a,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4cf7fb5d887331d479f22b8af0366180, type: 2}
@@ -391,6 +436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "house_viking_\u21163 full"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 101d95efc4369e34bbe54c83f7dae93a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 101d95efc4369e34bbe54c83f7dae93a, type: 3}
@@ -407,6 +457,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 275414793198500438, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583478387007599114, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583478387007599114, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583478387007599114, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583478387007599114, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583478387007599114, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5040874764198787765, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
       propertyPath: _guid
