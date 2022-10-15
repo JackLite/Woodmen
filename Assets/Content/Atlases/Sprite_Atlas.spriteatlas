@@ -58,6 +58,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d25ab0b4c6a98144aa58dc298a569a5c, type: 3}
   - {fileID: 21300000, guid: a85b20e56ee86cb4da7c117c4aa9f80e, type: 3}
   - {fileID: 21300000, guid: e39c63569bac6dc47b2a0826d19959f4, type: 3}
+  - {fileID: 21300000, guid: a2b38fe6caeb0bc4395507f338f10e77, type: 3}
   - {fileID: 381569403, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
   - {fileID: 2043122589, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
   - {fileID: -1336893636, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
@@ -65,7 +66,6 @@ SpriteAtlas:
   - {fileID: -225644436, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
   - {fileID: 21300000, guid: 69ef8b77d68d70b45a4df20e114facd4, type: 3}
   - {fileID: 21300000, guid: 67af46a7f535f014d8bed332ac8d0a41, type: 3}
-  - {fileID: 21300000, guid: 058a2ce7fa48b3c47abb54b24d6ab605, type: 3}
   - {fileID: 21300000, guid: cc8491682a08acd429d5c1a99ada1b74, type: 3}
   - {fileID: 21300000, guid: a3b63888247325e48a3610c13fccaf97, type: 3}
   - {fileID: 381569403, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
@@ -73,10 +73,10 @@ SpriteAtlas:
   - {fileID: -1336893636, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
   - {fileID: -1064785896, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
   - {fileID: 21300000, guid: 563f25e9c5e97374ea0b540271f797f3, type: 3}
+  - {fileID: 21300000, guid: e9b1769a89852ae4794edef7f40a67a0, type: 3}
+  - {fileID: 21300000, guid: 154984caab1127643aa08b7085ebac8d, type: 3}
   - {fileID: 21300000, guid: a64103ccd55438e48b85f5ac33bfc196, type: 3}
-  - {fileID: 21300000, guid: a228091d476eb8746856cbe788852115, type: 3}
   - {fileID: 21300000, guid: bd81ca1d7fb88074e9196efd2559c45e, type: 3}
-  - {fileID: 21300000, guid: 502c3a5dbb8bf4a458a70cec6267f5f2, type: 3}
   - {fileID: 21300000, guid: a8a6576d0cce2c244ae5274366b96555, type: 3}
   - {fileID: 21300000, guid: b89578ad6c6f09543b0f910cafa1ef0b, type: 3}
   - {fileID: 21300000, guid: 929656ddfd11dfd46a274f0d4ac4839b, type: 3}
@@ -91,6 +91,7 @@ SpriteAtlas:
   - i_wood
   - i_mustaches
   - i_noads
+  - b_shape_3
   - b_circle_3
   - b_circle_2
   - b_circle_1
@@ -98,7 +99,6 @@ SpriteAtlas:
   - b_circle_4
   - i_setting
   - bg_shape
-  - Union
   - i_lose_home
   - i_arrow
   - b_circle_3
@@ -106,10 +106,10 @@ SpriteAtlas:
   - b_circle_1
   - b_circle_0
   - bg_res_bar_1
+  - b_shape_1
+  - b_shape_2
   - bg_res_bar
-  - Rectangle 44
   - i_coin
-  - Rectangle 43
   - b_arrow
   - b_tris
   - Time_icon
