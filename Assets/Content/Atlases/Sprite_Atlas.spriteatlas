@@ -65,6 +65,7 @@ SpriteAtlas:
   - {fileID: -1064785896, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
   - {fileID: -225644436, guid: d2441527b4e876a4e9cf9b845b9b8fde, type: 3}
   - {fileID: 21300000, guid: 69ef8b77d68d70b45a4df20e114facd4, type: 3}
+  - {fileID: 21300000, guid: 5931318703538274fa8c84bd44de1cb5, type: 3}
   - {fileID: 21300000, guid: 67af46a7f535f014d8bed332ac8d0a41, type: 3}
   - {fileID: 21300000, guid: cc8491682a08acd429d5c1a99ada1b74, type: 3}
   - {fileID: 21300000, guid: a3b63888247325e48a3610c13fccaf97, type: 3}
@@ -81,6 +82,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b89578ad6c6f09543b0f910cafa1ef0b, type: 3}
   - {fileID: 21300000, guid: 929656ddfd11dfd46a274f0d4ac4839b, type: 3}
   - {fileID: 21300000, guid: da5fc2edec621e04b8a854886e61bbea, type: 3}
+  - {fileID: 21300000, guid: 455a6e2e55a24f64c90b1d24f4f2c749, type: 3}
+  - {fileID: 21300000, guid: b059ddfefc0451c478a4b7b2c812539a, type: 3}
   - {fileID: 21300000, guid: f2e8a6ff14f794e469f369f5d00c099c, type: 3}
   m_PackedSpriteNamesToIndex:
   - i_video
@@ -98,6 +101,7 @@ SpriteAtlas:
   - b_circle_0
   - b_circle_4
   - i_setting
+  - b_square
   - bg_shape
   - i_lose_home
   - i_arrow
@@ -114,6 +118,8 @@ SpriteAtlas:
   - b_tris
   - Time_icon
   - i_lose_restart
+  - bg_pause
+  - i_restart
   - i_axe
   m_RenderDataMap: {}
   m_Tag: Sprite_Atlas
