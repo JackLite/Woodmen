@@ -48,13 +48,18 @@ namespace Woodman.Felling.Taps
             #endif
 
             _characterController.Cut();
-            _treePiecesRepository.RemovePiece();
-            UpdateProgressUI();
-            if (_treePiecesRepository.GetRemain() == 0)
+            var piece = _treePiecesRepository.GetBottomPiece();
+            piece.DecrementSize();
+            if (piece.Size <= 0)
             {
-                _characterController.SetSide(FellingSide.Right);
-                _world.CreateOneFrame().AddComponent(new WinEvent());
-                return;
+                _treePiecesRepository.RemovePiece();
+                UpdateProgressUI();
+                if (_treePiecesRepository.GetRemain() == 0)
+                {
+                    _characterController.SetSide(FellingSide.Right);
+                    _world.CreateOneFrame().AddComponent(new WinEvent());
+                    return;
+                }
             }
 
             if (CheckGameOver())
@@ -76,7 +81,7 @@ namespace Woodman.Felling.Taps
         private bool CheckGameOver()
         {
             var piece = _treePiecesRepository.GetBottomPiece();
-            return piece.IsHasBranch && piece.FellingSide == _characterController.CurrentFellingSide;
+            return piece.IsHasBranch && piece.BranchSide == _characterController.CurrentFellingSide;
         }
     }
 }

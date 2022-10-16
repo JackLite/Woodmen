@@ -45,9 +45,9 @@ namespace Woodman
         private void CreateTreeGenerator()
         {
             var treeContainer = Object.FindObjectOfType<TreeContainer>();
-            var treePieceFactory = new TreePieceFactory(treeContainer);
+            var treePieceBuilder = new TreePieceBuilder(treeContainer);
             var treePiecesRepository = new TreePiecesRepository();
-            var treeGenerator = new TreeGenerator(treePieceFactory, treePiecesRepository);
+            var treeGenerator = new TreeGenerator(treePieceBuilder, treePiecesRepository);
             AddDependency(treePiecesRepository);
             AddDependency(treeGenerator);
         }
