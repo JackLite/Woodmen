@@ -97,6 +97,7 @@ Material:
     - SoftEdgeAlpha: 0.323
     - SoftEdgeFalloff: 0.58
     - SoftEdgeSize: 19
+    - _Alpha: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
