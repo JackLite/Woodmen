@@ -462,6 +462,26 @@ PrefabInstance:
       propertyPath: _logsCount.Array.data[4]
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 5247850110073906051, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.353342
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247850110073906051, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.0043162
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247850110073906051, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.025485277
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247850110073906051, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.002158299
+      objectReference: {fileID: 0}
     - target: {fileID: 5435580474224783162, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
       propertyPath: m_Name

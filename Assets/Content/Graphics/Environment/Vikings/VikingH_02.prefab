@@ -582,6 +582,21 @@ PrefabInstance:
       propertyPath: _logsCount.Array.data[4]
       value: 77
       objectReference: {fileID: 0}
+    - target: {fileID: 5247850110073906051, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247850110073906051, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247850110073906051, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 5435580474224783162, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
       propertyPath: m_Name
