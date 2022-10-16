@@ -14,6 +14,8 @@ namespace Woodman.Felling.Timer
         public void Run()
         {
             ref var td = ref _timerData.GetData();
+            if (td.isFreeze) 
+                return;
             var restartQ = _world.Select<TimerRestartEvent>();
             if (restartQ.Any())
             {

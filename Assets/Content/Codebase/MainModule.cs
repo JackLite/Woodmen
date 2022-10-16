@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ModulesFrameworkUnity;
 using Woodman.Common;
 using Woodman.Common.CameraProcessing;
 using Woodman.Felling;
@@ -47,7 +48,7 @@ namespace Woodman
             var treeContainer = Object.FindObjectOfType<TreeContainer>();
             var treePieceBuilder = new TreePieceBuilder(treeContainer);
             var treePiecesRepository = new TreePiecesRepository();
-            var treeGenerator = new TreeGenerator(treePieceBuilder, treePiecesRepository);
+            var treeGenerator = new TreeGenerator(treePieceBuilder, treePiecesRepository, EcsWorldContainer.World);
             AddDependency(treePiecesRepository);
             AddDependency(treeGenerator);
         }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Woodman.Felling.Tree.Branches;
 
 namespace Woodman.Felling.Tree
 {
@@ -21,15 +22,13 @@ namespace Woodman.Felling.Tree
             return this;
         }
 
-        public TreePieceBuilder SetBranch(bool isShort)
+        public BranchView CreateBranch()
         {
             _currentPiece.IsHasBranch = true;
             var branchPos = GetPosForBranch(_currentPiece.BranchSide == FellingSide.Right);
-            var prefab = isShort ? _treeContainer.ShortBenchPrefab : _treeContainer.LongBenchPrefab;
 
-            Object.Instantiate(prefab, branchPos, GetRotationForBranch(_currentPiece.BranchSide),
+            return Object.Instantiate(_treeContainer.LongBenchPrefab, branchPos, GetRotationForBranch(_currentPiece.BranchSide),
                 _currentPiece.transform);
-            return this;
         }
 
         public TreePiece Flush()

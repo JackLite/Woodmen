@@ -17,13 +17,10 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: a925015995e41bf448ff7a1aa4ff3037
   m_SerializeEntries:
-<<<<<<< HEAD
   - m_GUID: 6909b8c5d0a876f4c9e7bfe96fd7df58
     m_Address: VikingsLocation
     m_ReadOnly: 0
     m_SerializedLabels: []
-=======
->>>>>>> 7c1fcff (Hollow in core)
   - m_GUID: 9816d053fb2bf2740a94bb68c8c58cac
     m_Address: Woodman
     m_ReadOnly: 0
@@ -48,13 +45,6 @@ MonoBehaviour:
     m_Address: Assets/Content/Graphics/FX/fx_building.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-<<<<<<< HEAD
-=======
-  - m_GUID: 6909b8c5d0a876f4c9e7bfe96fd7df58
-    m_Address: VikingsLocation
-    m_ReadOnly: 0
-    m_SerializedLabels: []
->>>>>>> 7c1fcff (Hollow in core)
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:

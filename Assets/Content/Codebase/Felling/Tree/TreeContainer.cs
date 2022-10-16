@@ -1,4 +1,5 @@
 using UnityEngine;
+using Woodman.Felling.Tree.Branches;
 
 namespace Woodman.Felling.Tree
 {
@@ -8,9 +9,6 @@ namespace Woodman.Felling.Tree
         public TreePiece TreePrefab { get; private set; }
 
         [field: SerializeField]
-        public GameObject LongBenchPrefab { get; private set; }
-
-        [field: SerializeField]
-        public GameObject ShortBenchPrefab { get; private set; }
+        public BranchView LongBenchPrefab { get; private set; }
     }
 }

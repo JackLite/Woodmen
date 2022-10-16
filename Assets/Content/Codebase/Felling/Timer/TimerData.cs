@@ -4,5 +4,6 @@ namespace Woodman.Felling.Timer
     {
         public float remain;
         public float totalTime;
+        public bool isFreeze;
     }
 }
