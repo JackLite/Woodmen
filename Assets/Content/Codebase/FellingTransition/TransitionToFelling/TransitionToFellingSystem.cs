@@ -26,11 +26,11 @@ namespace Woodman.FellingTransition.TransitionToFelling
             _metaTrees.CurrentTree = c.treeMeta;
             var treeModel = c.treeMeta.GetTreeModel();
             _currentTree.SetData(treeModel);
-            _characterController.InitFelling(treeModel);
+            var root = _treeGenerator.Generate(c.treeMeta.transform.position, treeModel.size);
+            _characterController.InitFelling(treeModel, root);
             _characterController.SetSide(FellingSide.Right);
             _fellingUiSwitcher.InitFelling();
-            _cameraController.MoveToCore(c.treeMeta.transform);
-            _treeGenerator.Generate(c.treeMeta.transform.position, treeModel.size);
+            _cameraController.MoveToCore(root.transform);
             c.treeMeta.DisableMeta();
         }
     }

@@ -3,6 +3,6 @@
     public enum TreePieceType
     {
         Usual = 0,
-        Hollow = 1
+        Strong = 1
     }
 }

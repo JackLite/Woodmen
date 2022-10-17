@@ -17,7 +17,7 @@ namespace Woodman.Felling.Tree
             _world = world;
         }
 
-        public void Generate(Vector3 rootPos, int size)
+        public GameObject Generate(Vector3 rootPos, int size)
         {
             var parent = new GameObject("TreeCore");
             for (var i = 0; i < size; ++i)
@@ -27,8 +27,8 @@ namespace Woodman.Felling.Tree
                 var hasBranch = i % 2 == 0 && i >= 4;
                 var type = TreePieceType.Usual;
                 if (i > 10 && Random.Range(0, 1f) > .5f)
-                    type = TreePieceType.Hollow;
-                var builder = _pieceBuilder.Create(rootPos, side, i)
+                    type = TreePieceType.Strong;
+                var builder = _pieceBuilder.Create(rootPos + Vector3.up * 0.5f, side, i)
                     .SetType(type);
                 if (hasBranch)
                 {
@@ -48,6 +48,8 @@ namespace Woodman.Felling.Tree
                 tree.transform.SetParent(parent.transform, true);
                 _treePiecesRepository.AddPiece(tree);
             }
+
+            return _treePiecesRepository.GetBottomPiece().gameObject;
         }
 
         private void CreateBoosterEvent(BoosterType boosterType)

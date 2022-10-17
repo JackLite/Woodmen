@@ -27,8 +27,11 @@ namespace Woodman.Felling.Tree
             _currentPiece.IsHasBranch = true;
             var branchPos = GetPosForBranch(_currentPiece.BranchSide == FellingSide.Right);
 
-            return Object.Instantiate(_treeContainer.LongBenchPrefab, branchPos, GetRotationForBranch(_currentPiece.BranchSide),
+            var branchView = Object.Instantiate(_treeContainer.LongBenchPrefab, branchPos, GetRotationForBranch(_currentPiece.BranchSide),
                 _currentPiece.transform);
+            if (_currentPiece.BranchSide != FellingSide.Right)
+                branchView.RevertBoosters();
+            return branchView;
         }
 
         public TreePiece Flush()
@@ -53,7 +56,8 @@ namespace Woodman.Felling.Tree
 
         public TreePieceBuilder SetType(TreePieceType type)
         {
-            _currentPiece.Size = type == TreePieceType.Hollow ? 2 : 1;
+            var size = type == TreePieceType.Strong ? 2 : 1;
+            _currentPiece.SetSize(size);
             _currentPiece.SetType(type);
             return this;
         }

@@ -37,5 +37,13 @@ namespace Woodman.Felling.Tree.Branches
                 booster.gameObject.SetActive(boosterType == booster.BoosterType);
             }
         }
+
+        public void RevertBoosters()
+        {
+            foreach (var booster in _boosters)
+            {
+                booster.transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+        }
     }
 }

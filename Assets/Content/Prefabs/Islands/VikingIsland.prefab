@@ -435,6 +435,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: VikingH_03
       objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: e9b42605179694046926d1aca010c7df,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: e9b42605179694046926d1aca010c7df,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: e9b42605179694046926d1aca010c7df,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: e9b42605179694046926d1aca010c7df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: e9b42605179694046926d1aca010c7df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360049188944174996, guid: e9b42605179694046926d1aca010c7df,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b42605179694046926d1aca010c7df, type: 3}
 --- !u!114 &743746510760551982 stripped
@@ -522,6 +552,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: VikingH_01
       objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 00e2b3ab942766c46982b9cea751f68d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 00e2b3ab942766c46982b9cea751f68d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 00e2b3ab942766c46982b9cea751f68d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 00e2b3ab942766c46982b9cea751f68d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 00e2b3ab942766c46982b9cea751f68d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360049188944174996, guid: 00e2b3ab942766c46982b9cea751f68d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e2b3ab942766c46982b9cea751f68d, type: 3}
 --- !u!114 &743746511526508554 stripped
@@ -608,6 +668,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VikingH_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 8fe15108f0f4fd5498e45266751bf3e9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 8fe15108f0f4fd5498e45266751bf3e9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 8fe15108f0f4fd5498e45266751bf3e9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 8fe15108f0f4fd5498e45266751bf3e9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: 8fe15108f0f4fd5498e45266751bf3e9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360049188944174996, guid: 8fe15108f0f4fd5498e45266751bf3e9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fe15108f0f4fd5498e45266751bf3e9, type: 3}
@@ -1624,6 +1714,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: VikingH_05
       objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: c67a0488b32e1c7458ed3cc7b2ffde99,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: c67a0488b32e1c7458ed3cc7b2ffde99,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: c67a0488b32e1c7458ed3cc7b2ffde99,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: c67a0488b32e1c7458ed3cc7b2ffde99,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: c67a0488b32e1c7458ed3cc7b2ffde99,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360049188944174996, guid: c67a0488b32e1c7458ed3cc7b2ffde99,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c67a0488b32e1c7458ed3cc7b2ffde99, type: 3}
 --- !u!114 &743746510398978828 stripped
@@ -1914,6 +2034,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VikingH_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: df7a1090dfad60d49a61f8ab15127ccd,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: df7a1090dfad60d49a61f8ab15127ccd,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: df7a1090dfad60d49a61f8ab15127ccd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: df7a1090dfad60d49a61f8ab15127ccd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074874700314974152, guid: df7a1090dfad60d49a61f8ab15127ccd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360049188944174996, guid: df7a1090dfad60d49a61f8ab15127ccd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df7a1090dfad60d49a61f8ab15127ccd, type: 3}
