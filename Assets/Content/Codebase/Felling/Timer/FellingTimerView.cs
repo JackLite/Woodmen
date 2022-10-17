@@ -13,5 +13,10 @@ namespace Woodman.Felling.Timer
         {
             _slider.value = p;
         }
+
+        public void SetFreeze()
+        {
+            //todo: set freeze effect
+        }
     }
 }
