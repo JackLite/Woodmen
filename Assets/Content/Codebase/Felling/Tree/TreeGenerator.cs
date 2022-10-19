@@ -41,11 +41,14 @@ namespace Woodman.Felling.Tree
                     if (isShort)
                         branch.MakeShort();
                     branch.OnBoosterCollide += CreateBoosterEvent;
+                    branch.OnHiveCollide += CreateHiveEvent;
                     var r = Random.Range(0, 1f);
                     if (r is > .15f and < .25f)
                         branch.ActivateBooster(BoosterType.TimeFreeze);
-                    else if(r > .25f)
+                    else if(r is > .25f and < .35f)
                         branch.ActivateBooster(BoosterType.RestoreTime);
+                    else if (r > .35f)
+                        branch.ActivateHive();
                 }
 
                 var tree = builder.Flush();
@@ -55,6 +58,11 @@ namespace Woodman.Felling.Tree
             }
 
             return _treePiecesRepository.GetBottomPiece().gameObject;
+        }
+
+        private void CreateHiveEvent()
+        {
+            _world.NewEntity().AddComponent(new HiveCollideEvent());
         }
 
         private static TreePieceType GenerateType(int pieceIndex)
