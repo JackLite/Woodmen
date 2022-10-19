@@ -6,24 +6,27 @@ namespace Woodman.Felling.Tree
 {
     public class TreePiece : MonoBehaviour
     {
-        [field: SerializeField]
-        public GameObject UsualPiece { get; private set; }
+        [SerializeField]
+        private GameObject _usualPiece;
 
-        [field: SerializeField]
-        public GameObject StrongPiece { get; private set; }
+        [SerializeField]
+        private GameObject _strongPiece;
+
+        [SerializeField]
+        private GameObject _hollowPiece;
 
         [SerializeField]
         private TMP_Text _strongText;
 
         public FellingSide BranchSide { get; set; }
         public bool IsHasBranch { get; set; }
-        public TreePieceType PieceType { get; set; } = TreePieceType.Usual;
+        private TreePieceType _pieceType = TreePieceType.Usual;
         public int Size { get; private set; }
 
 
         public void SetType(TreePieceType type)
         {
-            PieceType = type;
+            _pieceType = type;
             UpdateByType();
         }
 
@@ -41,7 +44,7 @@ namespace Woodman.Felling.Tree
                 UpdateStrongText();
                 return;
             }
-            if (PieceType != TreePieceType.Strong) return;
+            if (_pieceType != TreePieceType.Strong) return;
             SetType(TreePieceType.Usual);
         }
 
@@ -52,8 +55,9 @@ namespace Woodman.Felling.Tree
 
         private void UpdateByType()
         {
-            UsualPiece.SetActive(PieceType == TreePieceType.Usual);
-            StrongPiece.SetActive(PieceType == TreePieceType.Strong);
+            _usualPiece.SetActive(_pieceType == TreePieceType.Usual);
+            _strongPiece.SetActive(_pieceType == TreePieceType.Strong);
+            _hollowPiece.SetActive(_pieceType == TreePieceType.Hollow);
         }
     }
 }

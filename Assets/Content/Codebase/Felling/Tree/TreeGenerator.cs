@@ -20,16 +20,20 @@ namespace Woodman.Felling.Tree
         public GameObject Generate(Vector3 rootPos, int size)
         {
             var parent = new GameObject("TreeCore");
-            for (var i = 0; i < size; ++i)
+            var pieceIndex = 0;
+            var s = size;
+            while (s > 0)
             {
                 var isRight = Random.Range(0, 1f) > .5f;
                 var side = isRight ? FellingSide.Right : FellingSide.Left;
-                var hasBranch = i % 2 == 0 && i >= 4;
-                var type = TreePieceType.Usual;
-                if (i > 10 && Random.Range(0, 1f) > .5f)
-                    type = TreePieceType.Strong;
-                var builder = _pieceBuilder.Create(rootPos + Vector3.up * 0.5f, side, i)
+
+                var type = GenerateType(pieceIndex);
+                if (type != TreePieceType.Hollow) 
+                    --s;
+                var builder = _pieceBuilder.Create(rootPos + Vector3.up * 0.5f, side, pieceIndex)
                     .SetType(type);
+                
+                var hasBranch = pieceIndex % 2 == 0 && pieceIndex >= 4;
                 if (hasBranch)
                 {
                     var branch = builder.CreateBranch();
@@ -47,9 +51,21 @@ namespace Woodman.Felling.Tree
                 var tree = builder.Flush();
                 tree.transform.SetParent(parent.transform, true);
                 _treePiecesRepository.AddPiece(tree);
+                ++pieceIndex;
             }
 
             return _treePiecesRepository.GetBottomPiece().gameObject;
+        }
+
+        private static TreePieceType GenerateType(int pieceIndex)
+        {
+            var type = TreePieceType.Usual;
+            var typeR = Random.Range(0, 1f);
+            if (pieceIndex > 10 && typeR is > .5f and < .75f)
+                type = TreePieceType.Strong;
+            else if (pieceIndex > 20 && typeR > .75f)
+                type = TreePieceType.Hollow;
+            return type;
         }
 
         private void CreateBoosterEvent(BoosterType boosterType)
