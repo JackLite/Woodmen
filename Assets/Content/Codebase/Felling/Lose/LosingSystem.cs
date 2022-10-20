@@ -4,6 +4,7 @@ using Woodman.Cheats;
 using Woodman.Common;
 using Woodman.Felling.Taps;
 using Woodman.Felling.Timer;
+using Woodman.Felling.Tree.Branches;
 
 namespace Woodman.Felling.Lose
 {
@@ -29,6 +30,13 @@ namespace Woodman.Felling.Lose
             {
                 GameOver();
                 branchCollideQ.DestroyAll();
+            }
+            
+            var hiveCollideQ = _world.Select<HiveCollideEvent>();
+            if (hiveCollideQ.Any())
+            {
+                GameOver();
+                hiveCollideQ.DestroyAll();
             }
         }
 
