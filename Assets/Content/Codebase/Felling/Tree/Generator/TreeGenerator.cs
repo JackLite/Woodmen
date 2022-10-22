@@ -1,6 +1,10 @@
 using Core;
+using Unity.Mathematics;
 using UnityEngine;
+using Woodman.Felling.Settings;
 using Woodman.Felling.Tree.Branches;
+using Woodman.Felling.Tree.Generator;
+using Random = UnityEngine.Random;
 
 namespace Woodman.Felling.Tree
 {
@@ -8,13 +12,20 @@ namespace Woodman.Felling.Tree
     {
         private readonly TreePieceBuilder _pieceBuilder;
         private readonly TreePiecesRepository _treePiecesRepository;
+        private readonly TreePieceTypeGenerator _typeGenerator;
         private readonly DataWorld _world;
+        private readonly FellingSettings _fellingSettings;
 
-        public TreeGenerator(TreePieceBuilder pieceBuilder, TreePiecesRepository treePiecesRepository, DataWorld world)
+        public TreeGenerator(
+            TreePieceBuilder pieceBuilder,
+            TreePiecesRepository treePiecesRepository, 
+            DataWorld world,
+            in TreeGenerationSettings settings)
         {
             _pieceBuilder = pieceBuilder;
             _treePiecesRepository = treePiecesRepository;
             _world = world;
+            _typeGenerator = new TreePieceTypeGenerator(settings);
         }
 
         public GameObject Generate(Vector3 rootPos, int size)
@@ -27,12 +38,12 @@ namespace Woodman.Felling.Tree
                 var isRight = Random.Range(0, 1f) > .5f;
                 var side = isRight ? FellingSide.Right : FellingSide.Left;
 
-                var type = GenerateType(pieceIndex);
-                if (type != TreePieceType.Hollow) 
+                var type = _typeGenerator.Generate(pieceIndex);
+                if (type != TreePieceType.Hollow)
                     --s;
                 var builder = _pieceBuilder.Create(rootPos + Vector3.up * 0.5f, side, pieceIndex)
                     .SetType(type);
-                
+
                 var hasBranch = pieceIndex % 2 == 0 && pieceIndex >= 4;
                 if (hasBranch)
                 {
@@ -43,12 +54,12 @@ namespace Woodman.Felling.Tree
                     branch.OnBoosterCollide += CreateBoosterEvent;
                     branch.OnHiveCollide += CreateHiveEvent;
                     var r = Random.Range(0, 1f);
-                    if (r is > .15f and < .25f)
+                    /*if (r is > .15f and < .25f)
                         branch.ActivateBooster(BoosterType.TimeFreeze);
-                    else if(r is > .25f and < .35f)
+                    else if (r is > .25f and < .35f)
                         branch.ActivateBooster(BoosterType.RestoreTime);
                     else if (r > .35f)
-                        branch.ActivateHive();
+                        branch.ActivateHive();*/
                 }
 
                 var tree = builder.Flush();
@@ -63,17 +74,6 @@ namespace Woodman.Felling.Tree
         private void CreateHiveEvent()
         {
             _world.NewEntity().AddComponent(new HiveCollideEvent());
-        }
-
-        private static TreePieceType GenerateType(int pieceIndex)
-        {
-            var type = TreePieceType.Usual;
-            var typeR = Random.Range(0, 1f);
-            if (pieceIndex > 10 && typeR is > .5f and < .75f)
-                type = TreePieceType.Strong;
-            else if (pieceIndex > 20 && typeR > .75f)
-                type = TreePieceType.Hollow;
-            return type;
         }
 
         private void CreateBoosterEvent(BoosterType boosterType)

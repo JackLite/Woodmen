@@ -3,18 +3,16 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Woodman.Common;
+using Woodman.Felling.Settings;
 using Woodman.Felling.Timer;
 
 namespace Woodman.Felling
 {
     public class FellingModule : EcsModuleWithDependencies
     {
-        protected override async Task Setup()
+        protected override Task Setup()
         {
-            var rawFellingSettings = await Addressables.LoadAssetAsync<TextAsset>("FellingSettings").Task;
-            var fellingSettings = JsonConvert.DeserializeObject<FellingSettings>(rawFellingSettings.text);
-            CreateOneData(fellingSettings);
-            
+            var fellingSettings = GetOneData<FellingSettings, MainModule>().GetData();
             CreateOneData(new TimerData
             {
                 remain = fellingSettings.time,
@@ -25,6 +23,7 @@ namespace Woodman.Felling
             var mainViewProvider = GetGlobalDependency<StartupModule, MainViewProvider>();
             mainViewProvider.WindowsUiProvider.MetaUi.gameObject.SetActive(true);
             mainViewProvider.WindowsUiProvider.LoadScreen.SetActive(false);
+            return Task.CompletedTask;
         }
     }
 }

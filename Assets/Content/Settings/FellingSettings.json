@@ -1,4 +1,45 @@
 {
   "time": 5,
-  "timeForCut": 0.23
+  "timeForCut": 0.23,
+  "treeGeneration": {
+    "hollow": {
+      "afterIndex": 0,
+      "afterTree": 0,
+      "possibilityCoef": 0.01,
+      "startPossibility": 0.03,
+      "maxPossibility": 0.6
+    },
+    "strong": {
+      "afterIndex": 0,
+      "afterTree": 0,
+      "possibilityCoef": 0.005,
+      "startPossibility": 0.01,
+      "maxPossibility": 0.5,
+      "countWeight": [
+        {
+          "count": 2,
+          "weight": 400
+        },
+        {
+          "count": 3,
+          "weight": 200
+        },
+        {
+          "count": 4,
+          "weight": 100
+        },
+        {
+          "count": 5,
+          "weight": 10
+        }
+      ]
+    },
+    "timeFreeze": {
+      "afterIndex": 60,
+      "afterTree": 0,
+      "possibilityCoef": 0.0004,
+      "startPossibility": 0.05,
+      "maxPossibility": 0.2
+    }
+  }
 }

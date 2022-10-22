@@ -1,10 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using EcsCore;
 using ModulesFrameworkUnity;
+using Newtonsoft.Json;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using Woodman.Cheats;
 using Woodman.Common;
 using Woodman.Common.CameraProcessing;
 using Woodman.Felling;
+using Woodman.Felling.Settings;
 using Woodman.Felling.Tree;
 using Woodman.FellingTransition;
 using Woodman.MetaInteractions;
@@ -17,7 +23,7 @@ namespace Woodman
 {
     public class MainModule : EcsModuleWithDependencies
     {
-        protected override Task Setup()
+        protected override async Task Setup()
         {
             var mainViewProvider = GetGlobalDependency<StartupModule, MainViewProvider>();
 
@@ -35,20 +41,36 @@ namespace Woodman
             AddDependency(fellingViewProvider);
             AddDependency(fellingViewProvider.FellingUIProvider);
 
-            CreateTreeGenerator();
-            
+            var rawFellingSettings = await Addressables.LoadAssetAsync<TextAsset>("FellingSettings").Task;
+            var fellingSettings = JsonConvert.DeserializeObject<FellingSettings>(rawFellingSettings.text);
+            CreateOneData(fellingSettings);
+
+            CreateTreeGenerator(fellingSettings);
+
             CreateOneData<TreeModel>();
             CreateOneData<PlayerMovementData>();
 
-            return Task.CompletedTask;
+            EcsWorldContainer.World.InitModule<FellingModule, MainModule>();
+            if (Debug.isDebugBuild)
+            {
+                EcsWorldContainer.World.InitModule<CheatsModule, MainModule>();
+                EcsWorldContainer.World.ActivateModule<CheatsModule>();
+            }
+
+            EcsWorldContainer.World.ActivateModule<MainModule>();
         }
 
-        private void CreateTreeGenerator()
+        private void CreateTreeGenerator(FellingSettings fellingSettings)
         {
             var treeContainer = Object.FindObjectOfType<TreeContainer>();
             var treePieceBuilder = new TreePieceBuilder(treeContainer);
             var treePiecesRepository = new TreePiecesRepository();
-            var treeGenerator = new TreeGenerator(treePieceBuilder, treePiecesRepository, EcsWorldContainer.World);
+            var treeGenerator = new TreeGenerator(
+                treePieceBuilder,
+                treePiecesRepository,
+                EcsWorldContainer.World,
+                fellingSettings.treeGeneration
+            );
             AddDependency(treePiecesRepository);
             AddDependency(treeGenerator);
         }

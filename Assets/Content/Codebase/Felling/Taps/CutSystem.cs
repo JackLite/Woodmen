@@ -1,6 +1,7 @@
 using Core;
 using EcsCore;
 using UnityEngine;
+using Woodman.Felling.Settings;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Win;
