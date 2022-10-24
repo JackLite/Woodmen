@@ -1,4 +1,5 @@
-﻿using Unity.Mathematics;
+﻿using System.Linq;
+using Unity.Mathematics;
 using Woodman.Felling.Settings;
 using Random = UnityEngine.Random;
 
@@ -60,6 +61,24 @@ namespace Woodman.Felling.Tree.Generator
                                       pieceDiff * element.possibilityCoef;
             possibility.possibility =
                 math.min(possibility.possibility, element.maxPossibility);
+        }
+
+        public int GenerateStrongSize()
+        {
+            var sumWeight = 0f;
+            foreach (var countSetting in _strong.countWeight)
+                sumWeight += countSetting.weight;
+
+            var random = Random.Range(0, sumWeight);
+            var acc = 0f;
+            foreach (var countSetting in _strong.countWeight)
+            {
+                acc += countSetting.weight;
+                if (acc >= random)
+                    return countSetting.count;
+            }
+
+            return _strong.countWeight.Last().count;
         }
     }
 }
