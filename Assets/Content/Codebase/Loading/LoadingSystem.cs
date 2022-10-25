@@ -36,7 +36,15 @@ namespace Woodman.Loading
         {
             try
             {
-                await Addressables.LoadSceneAsync("VikingsLocation", LoadSceneMode.Additive).Task;
+                AssetReference chosenLocation = null;
+                var locations = await Addressables.LoadAssetAsync<Locations>("LocationsContainer").Task;
+                _mainViewProvider.LocationsView.Init(locations.locations);
+                _mainViewProvider.LocationsView.gameObject.SetActive(true);
+                _mainViewProvider.LocationsView.OnOnLocationChosen += r => chosenLocation = r;
+                while (chosenLocation == null)
+                    await Task.Delay(200);
+                _mainViewProvider.LocationsView.gameObject.SetActive(false);
+                await Addressables.LoadSceneAsync(chosenLocation, LoadSceneMode.Additive).Task;
                 var locationView = Object.FindObjectOfType<LocationView>();
                 locationView.SetBuildingsStates(_buildingsRepository);
                 locationView.SetTreesStates(_treesRepository);
