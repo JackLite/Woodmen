@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: a925015995e41bf448ff7a1aa4ff3037
   m_SerializeEntries:
   - m_GUID: 6909b8c5d0a876f4c9e7bfe96fd7df58
-    m_Address: VikingsLocation
+    m_Address: VikingsLocation1
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 9816d053fb2bf2740a94bb68c8c58cac
@@ -43,6 +43,10 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: bc828ab2d7d867346a65a95cd2432792
     m_Address: Assets/Content/Graphics/FX/fx_building.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 85b4f1d9c4ec1bb418008fb78b0d1961
+    m_Address: VikingsLocation
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

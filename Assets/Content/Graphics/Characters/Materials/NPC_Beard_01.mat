@@ -8,43 +8,75 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NPC_Beard_01
-  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a4aec2d89ff109847a39df6cf26a33e5,
+    type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ea49fadae16b8ed45842c1f1cf79d478, type: 3}
+        m_Texture: {fileID: 2800000, guid: b1270ac045edc1c43a2f813198cd08cb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ea49fadae16b8ed45842c1f1cf79d478, type: 3}
+        m_Texture: {fileID: 2800000, guid: b1270ac045edc1c43a2f813198cd08cb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - HardEdgeAlpha: 0.463
+    - HardEdgeFalloff: 0.462
+    - HardEdgeSize: 0.335
+    - SoftEdgeAlpha: 0
+    - SoftEdgeFalloff: 0
+    - SoftEdgeSize: 0
+    - _Alpha: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
+    - _LightScalar: 0.86
+    - _QueueControl: 0
     - _QueueOffset: 0
+    - _RampLevels: 3
     - _SampleGI: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _ZWrite: 1
     m_Colors:
+    - HardEdgeColor: {r: 0, g: 0, b: 0, a: 1}
+    - SoftEdgeColor: {r: 0, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_1: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissColor: {r: 1, g: 1, b: 1, a: 0}
+    - _HighColor: {r: 2, g: 2, b: 2, a: 0}
+    - _LowColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2302971643231018285
 MonoBehaviour:

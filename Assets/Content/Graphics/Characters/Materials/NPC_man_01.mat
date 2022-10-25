@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f94e08adda63d1c4da0478c4c04da0bb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 591d68af066232943aca49d53099dde6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -100,12 +100,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - HardEdgeAlpha: 0.066
-    - HardEdgeFalloff: 0.533
-    - HardEdgeSize: 0.682
-    - SoftEdgeAlpha: 0.323
-    - SoftEdgeFalloff: 0.58
-    - SoftEdgeSize: 19
+    - HardEdgeAlpha: 0.463
+    - HardEdgeFalloff: 0.462
+    - HardEdgeSize: 0.335
+    - SoftEdgeAlpha: 0
+    - SoftEdgeFalloff: 0
+    - SoftEdgeSize: 0
+    - _Alpha: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -121,13 +122,13 @@ Material:
     - _Glossiness: 0
     - _GlossinessSource: 0
     - _GlossyReflections: 0
-    - _LightScalar: 1.4
+    - _LightScalar: 0.86
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RampLevels: 2
+    - _RampLevels: 3
     - _ReceiveShadows: 0
     - _Shininess: 0
     - _Smoothness: 0.5
@@ -140,14 +141,14 @@ Material:
     - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
-    - HardEdgeColor: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 0}
-    - SoftEdgeColor: {r: 0.26312745, g: 0.6886792, b: 0.60974526, a: 0}
+    - HardEdgeColor: {r: 0, g: 0, b: 0, a: 1}
+    - SoftEdgeColor: {r: 0, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _Color_1: {r: 0, g: 0, b: 0, a: 0}
     - _EmissColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HighColor: {r: 2.670157, g: 2.670157, b: 2.670157, a: 0}
-    - _LowColor: {r: 0.8408964, g: 0.8408964, b: 0.8408964, a: 0}
+    - _LowColor: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

@@ -131,7 +131,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecSource: 0
     - _SpecularHighlights: 1
-    - _SpeedWater: 0.01
+    - _SpeedWater: 0.005
     - _SrcBlend: 1
     - _Surface: 0
     - _TimeCell: 1.5

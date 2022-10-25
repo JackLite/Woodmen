@@ -18,3 +18,12 @@ PresetManager:
         type: 2}
       m_Filter: glob:"*Concepts/*"
       m_Disabled: 0
+  - first:
+      m_NativeTypeID: 1041
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: b57616c9acae9de4cb3147d8cd2c6f0d,
+        type: 2}
+      m_Filter: glob:"*Environment/**"
+      m_Disabled: 0
