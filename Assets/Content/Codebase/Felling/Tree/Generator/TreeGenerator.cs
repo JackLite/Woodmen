@@ -41,9 +41,10 @@ namespace Woodman.Felling.Tree
                 var type = _typeGenerator.Generate(pieceIndex);
                 if (type != TreePieceType.Hollow)
                     --s;
-                var builder = _pieceBuilder.Create(rootPos + Vector3.up * 0.5f, side, pieceIndex)
-                    .SetType(type);
 
+                var builder = _pieceBuilder.Create(rootPos + Vector3.up * 0.5f, side, pieceIndex)
+                        .SetType(type);
+                
                 var hasBranch = pieceIndex % 2 == 0 && pieceIndex >= 4;
                 if (hasBranch)
                 {
@@ -63,6 +64,8 @@ namespace Woodman.Felling.Tree
                 }
 
                 var tree = builder.Flush();
+                if (type == TreePieceType.Strong)
+                    tree.SetSize(_typeGenerator.GenerateStrongSize());
                 tree.transform.SetParent(parent.transform, true);
                 _treePiecesRepository.AddPiece(tree);
                 ++pieceIndex;

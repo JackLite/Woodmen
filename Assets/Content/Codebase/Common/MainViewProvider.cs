@@ -2,6 +2,7 @@
 using Woodman.Cheats;
 using Woodman.Cheats.View;
 using Woodman.Common.CameraProcessing;
+using Woodman.Loading;
 using Woodman.Logs;
 using Woodman.Player.Indicators;
 using Woodman.Player.Movement.View;
@@ -21,6 +22,11 @@ namespace Woodman.Common
 
         [field: SerializeField]
         public Canvas MainCanvas { get; private set; }
+
+        [field: Header("Locations")]
+        [field: SerializeField]
+        [field: ViewInject]
+        public LocationsView LocationsView { get; private set; }
         
         [field: Header("Player")]
         [field: SerializeField]

@@ -1,4 +1,4 @@
-﻿namespace Woodman.Felling.Tree
+﻿namespace Woodman.Felling.Tree.Generator
 {
     public struct TreeGeneratorPossibility
     {

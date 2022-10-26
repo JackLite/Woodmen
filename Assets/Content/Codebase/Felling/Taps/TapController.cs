@@ -15,12 +15,22 @@ namespace Woodman.Felling.Taps
         [SerializeField]
         private Button rightTap;
 
+        public event Action<FellingSide> OnTap;
+
         private void Awake()
         {
             leftTap.onClick.AddListener(() => OnTap?.Invoke(FellingSide.Left));
             rightTap.onClick.AddListener(() => OnTap?.Invoke(FellingSide.Right));
         }
-
-        public event Action<FellingSide> OnTap;
+        
+        #if UNITY_EDITOR
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+                OnTap?.Invoke(FellingSide.Left);
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+                OnTap?.Invoke(FellingSide.Right);
+        }
+        #endif
     }
 }
