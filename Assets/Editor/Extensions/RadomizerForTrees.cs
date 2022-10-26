@@ -17,16 +17,12 @@ namespace Woodman.Editor.Extensions
             var r = Random.Range(0, Selection.count);
             for (int i = 0; i < Selection.count; i++)
             {
-                Selection.gameObjects[i].SetActive(i == r);
-                if (i == r)
-                {
                     var oldRotation = Selection.transforms[i].rotation.eulerAngles;
                     Selection.transforms[i].rotation = Quaternion.Euler(
                         oldRotation.x,
                         Random.Range(-180f, 180f),
                         oldRotation.z
                     );
-                }
                 EditorUtility.SetDirty(Selection.gameObjects[i]);
             }
         }
