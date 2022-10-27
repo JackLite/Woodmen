@@ -57,6 +57,10 @@ MonoBehaviour:
     m_Address: ArabianIsland
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 1cf91c82b360ab749880a4f83004bf23
+    m_Address: CandyIsland
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:
