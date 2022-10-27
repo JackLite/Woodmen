@@ -3,6 +3,7 @@ using EcsCore;
 using Woodman.Common.CameraProcessing;
 using Woodman.Felling;
 using Woodman.Felling.Tree;
+using Woodman.Felling.Tree.Generator;
 using Woodman.MetaTrees;
 
 namespace Woodman.FellingTransition.TransitionToFelling

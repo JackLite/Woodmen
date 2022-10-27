@@ -21,6 +21,12 @@ namespace Woodman.Felling.Tree.Generator
             _strongPossibility = TreeGeneratorPossibilityFactory.Create(settings.strong);
         }
 
+        public void Reset()
+        {
+            _hollowPossibility = TreeGeneratorPossibilityFactory.Create(_hollow);
+            _strongPossibility = TreeGeneratorPossibilityFactory.Create(_strong);
+        }
+
         public TreePieceType Generate(int pieceIndex)
         {
             var pieceDiff = pieceIndex - _hollowPossibility.lastGeneratedPieceIndex;
@@ -38,6 +44,7 @@ namespace Woodman.Felling.Tree.Generator
                 }
             }
 
+            pieceDiff = pieceIndex - _strongPossibility.lastGeneratedPieceIndex;
             acc += _strongPossibility.possibility;
             if (_strong.afterIndex <= pieceIndex)
             {

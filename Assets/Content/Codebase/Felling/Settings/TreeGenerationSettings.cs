@@ -8,5 +8,7 @@ namespace Woodman.Felling.Settings
         public TreeElementSettings hollow;
         public TreeStrongPieceSettings strong;
         public TreeElementSettings timeFreeze;
+        public TreeElementSettings restoreTime;
+        public TreeElementSettings hive;
     }
 }

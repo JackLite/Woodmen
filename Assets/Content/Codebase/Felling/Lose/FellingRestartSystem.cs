@@ -3,6 +3,7 @@ using EcsCore;
 using Woodman.Common;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
+using Woodman.Felling.Tree.Generator;
 using Woodman.MetaTrees;
 
 namespace Woodman.Felling.Lose
