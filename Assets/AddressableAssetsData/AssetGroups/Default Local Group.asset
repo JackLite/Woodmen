@@ -17,10 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: a925015995e41bf448ff7a1aa4ff3037
   m_SerializeEntries:
-  - m_GUID: 6909b8c5d0a876f4c9e7bfe96fd7df58
-    m_Address: VikingsIsland
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 9816d053fb2bf2740a94bb68c8c58cac
     m_Address: Woodman
     m_ReadOnly: 0
@@ -49,16 +45,24 @@ MonoBehaviour:
     m_Address: LocationsContainer
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 2218ed24a33d3734c913227c1f5201a9
-    m_Address: AfrikaIsland
+  - m_GUID: 1cf91c82b360ab749880a4f83004bf23
+    m_Address: Assets/Content/Scenes/Levels/CandyIsland.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 85b4f1d9c4ec1bb418008fb78b0d1961
-    m_Address: ArabianIsland
+    m_Address: Assets/Content/Scenes/Levels/ArabianIsland.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 1cf91c82b360ab749880a4f83004bf23
-    m_Address: CandyIsland
+  - m_GUID: 6909b8c5d0a876f4c9e7bfe96fd7df58
+    m_Address: VikingIsland
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d4b0905a961579d40a03f21c1a62d3c1
+    m_Address: InkiIsland
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2218ed24a33d3734c913227c1f5201a9
+    m_Address: Assets/Content/Scenes/Levels/AfrikaIsland.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
