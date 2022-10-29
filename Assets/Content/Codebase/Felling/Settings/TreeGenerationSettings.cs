@@ -3,8 +3,9 @@
 namespace Woodman.Felling.Settings
 {
     [Serializable]
-    public struct TreeGenerationSettings
+    public class TreeGenerationSettings
     {
+        public BranchSwitchingSettings branchSwitching;
         public TreeElementSettings hollow;
         public TreeStrongPieceSettings strong;
         public TreeElementSettings timeFreeze;

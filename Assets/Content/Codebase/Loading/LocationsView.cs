@@ -14,12 +14,13 @@ namespace Woodman.Loading
 
         public event Action<AssetReference> OnOnLocationChosen;
 
-        public void Init(AssetReference[] locations)
+        public void Init(AssetReference[] locations, string[] locationsNames)
         {
-            foreach (var location in locations)
+            for (var i = 0; i < locations.Length; i++)
             {
+                var location = locations[i];
                 var btn = Instantiate(_locationChoseBtnPrefab, _btnsParent).GetComponent<LocationChoseBtn>();
-                btn.SetName(location.editorAsset.name);
+                btn.SetName(locationsNames[i]);
                 btn.location = location;
                 btn.OnOnLocationChosen += r => OnOnLocationChosen?.Invoke(r);
             }

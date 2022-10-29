@@ -46,7 +46,10 @@ namespace Woodman
             var fellingSettings = JsonConvert.DeserializeObject<FellingSettings>(rawFellingSettings.text);
             CreateOneData(fellingSettings);
 
-            CreateTreeGenerator(fellingSettings);
+            var rawTreeGenerationSettings = await Addressables.LoadAssetAsync<TextAsset>("TreeGenerationSettings").Task;
+            var treeGenerationSettings =
+                JsonConvert.DeserializeObject<TreeGenerationSettings>(rawTreeGenerationSettings.text);
+            CreateTreeGenerator(treeGenerationSettings);
 
             CreateOneData<TreeModel>();
             CreateOneData<PlayerMovementData>();
@@ -61,7 +64,7 @@ namespace Woodman
             EcsWorldContainer.World.ActivateModule<MainModule>();
         }
 
-        private void CreateTreeGenerator(FellingSettings fellingSettings)
+        private void CreateTreeGenerator(TreeGenerationSettings generationSettings)
         {
             var treeContainer = Object.FindObjectOfType<TreeContainer>();
             var treePieceBuilder = new TreePieceBuilder(treeContainer);
@@ -70,7 +73,7 @@ namespace Woodman
                 treePieceBuilder,
                 treePiecesRepository,
                 EcsWorldContainer.World,
-                fellingSettings.treeGeneration
+                generationSettings
             );
             AddDependency(treePiecesRepository);
             AddDependency(treeGenerator);

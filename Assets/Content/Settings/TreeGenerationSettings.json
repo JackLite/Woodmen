@@ -1,0 +1,64 @@
+﻿{
+  "branchSwitching": {
+    "min": 0.1,
+    "max": 1,
+    "minAcc": 0.05,
+    "maxAcc": 0.4,
+    "accDelta": 0.07,
+    "accMultiplier": 1.1,
+    "accMod": 25
+  },
+  "hollow": {
+    "afterIndex": 20,
+    "afterTree": 0,
+    "possibilityCoef": 0.01,
+    "startPossibility": 0.03,
+    "maxPossibility": 0.6
+  },
+  "strong": {
+    "afterIndex": 20,
+    "afterTree": 0,
+    "possibilityCoef": 0.005,
+    "startPossibility": 0.01,
+    "maxPossibility": 0.5,
+    "countWeight": [
+      {
+        "count": 2,
+        "weight": 600
+      },
+      {
+        "count": 3,
+        "weight": 250
+      },
+      {
+        "count": 4,
+        "weight": 100
+      },
+      {
+        "count": 5,
+        "weight": 5
+      }
+    ]
+  },
+  "timeFreeze": {
+    "afterIndex": 30,
+    "afterTree": 0,
+    "possibilityCoef": 0.0002,
+    "startPossibility": 0.05,
+    "maxPossibility": 0.2
+  },
+  "restoreTime": {
+    "afterIndex": 100,
+    "afterTree": 0,
+    "possibilityCoef": 0.0002,
+    "startPossibility": 0.05,
+    "maxPossibility": 0.2
+  },
+  "hive": {
+    "afterIndex": 130,
+    "afterTree": 0,
+    "possibilityCoef": 0.0004,
+    "startPossibility": 0.2,
+    "maxPossibility": 0.5
+  }
+}

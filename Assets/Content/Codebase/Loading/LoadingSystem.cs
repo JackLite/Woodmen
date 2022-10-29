@@ -36,7 +36,7 @@ namespace Woodman.Loading
             {
                 AssetReference chosenLocation = null;
                 var locations = await Addressables.LoadAssetAsync<Locations>("LocationsContainer").Task;
-                _mainViewProvider.LocationsView.Init(locations.locations);
+                _mainViewProvider.LocationsView.Init(locations.locations, locations.names);
                 _mainViewProvider.LocationsView.gameObject.SetActive(true);
                 _mainViewProvider.LocationsView.OnOnLocationChosen += r => chosenLocation = r;
                 while (chosenLocation == null)

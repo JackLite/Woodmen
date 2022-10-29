@@ -7,6 +7,5 @@ namespace Woodman.Felling.Settings
     {
         public float time;
         public float timeForCut;
-        public TreeGenerationSettings treeGeneration;
     }
 }

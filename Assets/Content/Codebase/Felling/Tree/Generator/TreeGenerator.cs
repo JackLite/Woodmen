@@ -1,5 +1,6 @@
 using System;
 using Core;
+using Unity.Mathematics;
 using UnityEngine;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Tree.Branches;
@@ -13,21 +14,27 @@ namespace Woodman.Felling.Tree.Generator
         private readonly TreePiecesRepository _treePiecesRepository;
         private readonly TreePieceTypeGenerator _typeGenerator;
         private readonly DataWorld _world;
-        private readonly FellingSettings _fellingSettings;
+        private readonly TreeGenerationSettings _settings;
         private readonly TreePieceBranchModGenerator _branchModGenerator;
         private NextBranchData _nextBranch;
+
+        private float _branchSP;
+        private float _branchSPAcc;
 
         public TreeGenerator(
             TreePieceBuilder pieceBuilder,
             TreePiecesRepository treePiecesRepository, 
             DataWorld world,
-            in TreeGenerationSettings settings)
+            TreeGenerationSettings settings)
         {
+            _settings = settings;
             _pieceBuilder = pieceBuilder;
             _treePiecesRepository = treePiecesRepository;
             _world = world;
             _typeGenerator = new TreePieceTypeGenerator(settings);
             _branchModGenerator = new TreePieceBranchModGenerator(settings);
+            _branchSP = settings.branchSwitching.min;
+            _branchSPAcc = settings.branchSwitching.minAcc;
         }
 
         public GameObject Generate(Vector3 rootPos, int size)
@@ -45,8 +52,7 @@ namespace Woodman.Felling.Tree.Generator
                 if (type  == TreePieceType.Usual)
                     --s;
                 
-                var isRight = Random.Range(0, 1f) > .5f;
-                var side = isRight ? FellingSide.Right : FellingSide.Left;
+                var side = GenerateSide(pieceIndex, prevSide);
                 var builder = _pieceBuilder.Create(rootPos + Vector3.up * 0.5f, side, pieceIndex)
                         .SetType(type);
 
@@ -66,6 +72,21 @@ namespace Woodman.Felling.Tree.Generator
             }
 
             return _treePiecesRepository.GetBottomPiece().gameObject;
+        }
+
+        private FellingSide GenerateSide(int pieceIndex, FellingSide? prevSide)
+        {
+            var settings = _settings.branchSwitching;
+            var accDelta = settings.accDelta * settings.accMultiplier * (pieceIndex / settings.accMod);
+            _branchSPAcc = math.clamp(_branchSPAcc + accDelta, settings.minAcc, settings.maxAcc);
+            _branchSP = math.clamp(_branchSP + _branchSPAcc, settings.min, settings.max);
+            
+            var isChange = Random.Range(0, 1f) < _branchSP;
+            if (!isChange)
+                return prevSide ?? (Random.Range(0, 1f) > .5f ? FellingSide.Left : FellingSide.Right);
+            _branchSPAcc = settings.minAcc;
+            _branchSP = settings.min;
+            return prevSide == FellingSide.Left ? FellingSide.Right : FellingSide.Left;
         }
 
         private void ProcessBranch(TreePieceBuilder builder, int pieceIndex, ref int branchBias, FellingSide side,
@@ -106,8 +127,7 @@ namespace Woodman.Felling.Tree.Generator
                 {
                     _nextBranch = new NextBranchData
                     {
-                        mod = branchMod,
-                        side = side
+                        mod = branchMod
                     };
                     branchBias++;
                 }
@@ -142,7 +162,6 @@ namespace Woodman.Felling.Tree.Generator
 
         private class NextBranchData
         {
-            public FellingSide side;
             public BranchModEnum mod;
         }
     }
