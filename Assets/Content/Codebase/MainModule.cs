@@ -12,6 +12,7 @@ using Woodman.Common.CameraProcessing;
 using Woodman.Felling;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Tree;
+using Woodman.Felling.Tree.Generator;
 using Woodman.FellingTransition;
 using Woodman.MetaInteractions;
 using Woodman.MetaInteractions.TreeInteraction;

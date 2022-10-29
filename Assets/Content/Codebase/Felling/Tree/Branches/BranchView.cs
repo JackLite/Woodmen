@@ -25,7 +25,11 @@ namespace Woodman.Felling.Tree.Branches
             _hive.OnPlayerCollide += () => OnHiveCollide?.Invoke();
             foreach (var booster in _boosters)
             {
-                booster.OnPlayerCollide += () => OnBoosterCollide?.Invoke(booster.BoosterType);
+                booster.OnPlayerCollide += () =>
+                {
+                    OnBoosterCollide?.Invoke(booster.BoosterType);
+                    booster.Destroy();
+                };
             }
         }
 

@@ -6,5 +6,10 @@ namespace Woodman.Felling.Tree.Branches
     {
         [field: SerializeField]
         public BoosterType BoosterType { get; private set; }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
+        }
     }
 }

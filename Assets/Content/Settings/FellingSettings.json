@@ -3,14 +3,14 @@
   "timeForCut": 0.23,
   "treeGeneration": {
     "hollow": {
-      "afterIndex": 0,
+      "afterIndex": 20,
       "afterTree": 0,
       "possibilityCoef": 0.01,
       "startPossibility": 0.03,
       "maxPossibility": 0.6
     },
     "strong": {
-      "afterIndex": 0,
+      "afterIndex": 20,
       "afterTree": 0,
       "possibilityCoef": 0.005,
       "startPossibility": 0.01,
@@ -30,16 +30,30 @@
         },
         {
           "count": 5,
-          "weight": 10
+          "weight": 5
         }
       ]
     },
     "timeFreeze": {
-      "afterIndex": 60,
+      "afterIndex": 30,
       "afterTree": 0,
-      "possibilityCoef": 0.0004,
+      "possibilityCoef": 0.0002,
       "startPossibility": 0.05,
       "maxPossibility": 0.2
+    },
+    "restoreTime": {
+      "afterIndex": 100,
+      "afterTree": 0,
+      "possibilityCoef": 0.0002,
+      "startPossibility": 0.05,
+      "maxPossibility": 0.2
+    },
+    "hive": {
+      "afterIndex": 130,
+      "afterTree": 0,
+      "possibilityCoef": 0.0004,
+      "startPossibility": 0.2,
+      "maxPossibility": 0.5
     }
   }
 }
