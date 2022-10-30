@@ -14,7 +14,6 @@ namespace Woodman.Logs
         [SerializeField]
         private LogsHeapType _type;
         
-        //todo: завести репозиторий для куч брёвен
         public int Count => _count;
         public LogsHeapType LogType => _type;
         public string Id { get; set; }
@@ -39,8 +38,6 @@ namespace Woodman.Logs
         {
             _count -= count;
             _countText.SetCount(_count);
-            if (_count <= 0)
-                Hide();
         }
     }
 }

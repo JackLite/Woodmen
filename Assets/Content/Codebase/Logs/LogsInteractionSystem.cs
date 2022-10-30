@@ -3,6 +3,7 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
+using Woodman.Common;
 using Woodman.Logs;
 using Woodman.MetaInteractions.Components;
 using Woodman.Player;
@@ -16,6 +17,7 @@ namespace Woodman.MetaInteractions.LogsInteraction
         private DataWorld _world;
         private EcsOneData<PlayerOneData> _playerData;
         private LogsHeapRepository _logsHeapRepository;
+        private LogsPool _logsPool;
         private PlayerResRepository _resRepository;
 
         public void Run()
@@ -41,6 +43,10 @@ namespace Woodman.MetaInteractions.LogsInteraction
             var toAdd = math.min(max - currentRes, logs.LogView.Count);
             _resRepository.AddPlayerRes(toAdd);
             logs.LogView.Subtract(toAdd);
+            if (logs.LogView.Count <= 0)
+            {
+                _logsPool.Return(logs.LogView);
+            }
             _logsHeapRepository.SetCount(logs.LogView.Id, logs.LogView.Count);
         }
     }
