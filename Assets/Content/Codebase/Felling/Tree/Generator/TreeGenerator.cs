@@ -1,5 +1,6 @@
 using System;
-using Core;
+using ModulesFramework;
+using ModulesFramework.Data;
 using Unity.Mathematics;
 using UnityEngine;
 using Woodman.Felling.Settings;

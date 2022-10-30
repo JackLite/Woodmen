@@ -19,7 +19,6 @@ namespace Woodman.Felling
                 totalTime = fellingSettings.time
             });
             
-            
             var mainViewProvider = GetGlobalDependency<StartupModule, MainViewProvider>();
             mainViewProvider.WindowsUiProvider.MetaUi.gameObject.SetActive(true);
             mainViewProvider.WindowsUiProvider.LoadScreen.SetActive(false);

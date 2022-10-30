@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using EcsCore;
+using ModulesFramework.Modules;
 using UnityEngine;
 using Woodman.Utils;
 

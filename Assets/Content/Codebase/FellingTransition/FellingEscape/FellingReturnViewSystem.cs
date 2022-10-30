@@ -1,7 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using Core;
-using EcsCore;
+using ModulesFramework;
+using ModulesFramework.Attributes;
+using ModulesFramework.Data;
+using ModulesFramework.Systems;
 using Woodman.Common;
 using Woodman.Common.CameraProcessing;
 using Woodman.Felling;

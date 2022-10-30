@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Core;
-using EcsCore;
+using ModulesFramework;
+using ModulesFramework.Attributes;
+using ModulesFramework.Data;
+using ModulesFramework.Systems;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -42,7 +44,9 @@ namespace Woodman.Loading
                 while (chosenLocation == null)
                     await Task.Delay(200);
                 _mainViewProvider.LocationsView.gameObject.SetActive(false);
-                await Addressables.LoadSceneAsync(chosenLocation, LoadSceneMode.Additive).Task;
+                var t = await Addressables.LoadSceneAsync(chosenLocation, LoadSceneMode.Additive).Task;
+                t.ActivateAsync();
+                LightProbes.TetrahedralizeAsync();
                 var locationView = Object.FindObjectOfType<LocationView>();
                 locationView.SetBuildingsStates(_buildingsRepository);
                 locationView.SetTreesStates(_treesRepository);

@@ -1,5 +1,7 @@
-using Core;
-using EcsCore;
+using ModulesFramework;
+using ModulesFramework.Attributes;
+using ModulesFramework.Data;
+using ModulesFramework.Systems;
 using Unity.Mathematics;
 using Woodman.Logs;
 using Woodman.MetaInteractions.Components;

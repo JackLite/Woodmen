@@ -1,6 +1,5 @@
-using System.Reflection;
 using System.Threading.Tasks;
-using EcsCore;
+using ModulesFramework.Attributes;
 using UnityEngine;
 using Woodman.Buildings;
 using Woodman.Cheats;
@@ -8,7 +7,6 @@ using Woodman.Common;
 using Woodman.Logs;
 using Woodman.MetaTrees;
 using Woodman.Player;
-using Woodman.Utils;
 
 namespace Woodman
 {
@@ -17,6 +15,7 @@ namespace Woodman
     {
         protected override Task Setup()
         {
+            Application.targetFrameRate = 60;
             CreateOneData(new PlayerOneData {maxWoodCount = 50});
             AddDependency(new BuildingsRepository());
             AddDependency(new MetaTreesRepository());
