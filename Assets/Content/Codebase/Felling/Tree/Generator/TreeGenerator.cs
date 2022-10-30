@@ -40,8 +40,7 @@ namespace Woodman.Felling.Tree.Generator
 
         public GameObject Generate(Vector3 rootPos, int size)
         {
-            _typeGenerator.Reset();
-            _branchModGenerator.Reset();
+            Reset();
             var parent = new GameObject("TreeCore");
             var pieceIndex = 0;
             var s = size;
@@ -57,7 +56,8 @@ namespace Woodman.Felling.Tree.Generator
                 var builder = _pieceBuilder.Create(rootPos + Vector3.up * 0.5f, side, pieceIndex)
                         .SetType(type);
 
-                ProcessBranch(builder, pieceIndex, ref branchBias, side, ref prevSide);
+                if (pieceIndex > 4)
+                    ProcessBranch(builder, pieceIndex, ref branchBias, side, ref prevSide);
 
                 var tree = builder.Flush();
                 if (type == TreePieceType.Strong)
@@ -73,6 +73,14 @@ namespace Woodman.Felling.Tree.Generator
             }
 
             return _treePiecesRepository.GetBottomPiece().gameObject;
+        }
+
+        private void Reset()
+        {
+            _typeGenerator.Reset();
+            _branchModGenerator.Reset();
+            _branchSP = _settings.branchSwitching.min;
+            _branchSPAcc = _settings.branchSwitching.minAcc;
         }
 
         private FellingSide GenerateSide(int pieceIndex, FellingSide? prevSide)
