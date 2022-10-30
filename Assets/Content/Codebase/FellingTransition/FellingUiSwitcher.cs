@@ -20,6 +20,8 @@ namespace Woodman.FellingTransition
         {
             _windowsUiProvider.MetaUi.Hide();
             await Task.Delay(TimeSpan.FromSeconds(2));
+            _uiProvider.FellingTimerView.SetProgress(1);
+            _uiProvider.TreeUIProgress.SetProgress(1);
             _windowsUiProvider.FellingUi.Show();
             _uiProvider.StartGameBtn.gameObject.SetActive(true);
         }

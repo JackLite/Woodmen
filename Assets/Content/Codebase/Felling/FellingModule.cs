@@ -10,19 +10,31 @@ namespace Woodman.Felling
 {
     public class FellingModule : EcsModuleWithDependencies
     {
+        private FellingSettings _fellingSettings;
+
         protected override Task Setup()
         {
-            var fellingSettings = GetOneData<FellingSettings, MainModule>().GetData();
+            _fellingSettings = GetOneData<FellingSettings, MainModule>().GetData();
             CreateOneData(new TimerData
             {
-                remain = fellingSettings.time,
-                totalTime = fellingSettings.time
+                remain = _fellingSettings.time,
+                totalTime = _fellingSettings.time
             });
             
             var mainViewProvider = GetGlobalDependency<StartupModule, MainViewProvider>();
             mainViewProvider.WindowsUiProvider.MetaUi.gameObject.SetActive(true);
             mainViewProvider.WindowsUiProvider.LoadScreen.SetActive(false);
             return Task.CompletedTask;
+        }
+
+        public override void OnActivate()
+        {
+            var td = GetOneData<TimerData, FellingModule>();
+            td.SetData(new TimerData
+            {
+                remain = _fellingSettings.time,
+                totalTime = _fellingSettings.time
+            });
         }
     }
 }

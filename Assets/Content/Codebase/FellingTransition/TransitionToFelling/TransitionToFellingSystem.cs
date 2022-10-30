@@ -35,6 +35,7 @@ namespace Woodman.FellingTransition.TransitionToFelling
             _fellingUiSwitcher.InitFelling();
             _cameraController.MoveToCore(root.transform);
             c.treeMeta.DisableMeta();
+            
         }
     }
 }
