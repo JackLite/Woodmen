@@ -1,5 +1,5 @@
-using Core;
-using EcsCore;
+using ModulesFramework.Attributes;
+using ModulesFramework.Systems;
 using Unity.Mathematics;
 using Woodman.Cheats.View;
 using Woodman.PlayerRes;

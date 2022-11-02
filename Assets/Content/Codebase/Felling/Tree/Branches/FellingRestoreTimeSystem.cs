@@ -1,5 +1,7 @@
-﻿using Core;
-using EcsCore;
+﻿using ModulesFramework;
+using ModulesFramework.Attributes;
+using ModulesFramework.Data;
+using ModulesFramework.Systems;
 using Woodman.Felling.Timer;
 
 namespace Woodman.Felling.Tree.Branches

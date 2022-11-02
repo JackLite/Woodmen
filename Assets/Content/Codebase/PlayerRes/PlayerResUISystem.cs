@@ -1,5 +1,7 @@
-using Core;
-using EcsCore;
+using ModulesFramework;
+using ModulesFramework.Attributes;
+using ModulesFramework.Systems;
+
 
 namespace Woodman.PlayerRes
 {

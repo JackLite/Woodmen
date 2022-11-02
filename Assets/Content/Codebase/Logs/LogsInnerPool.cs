@@ -4,6 +4,9 @@ namespace Woodman.Logs
 {
     public class LogsInnerPool : Pool<LogView>
     {
-        
+        protected override void ResetPoolObject(LogView view)
+        {
+            view.Hide();
+        }
     }
 }

@@ -1,5 +1,7 @@
-using Core;
-using EcsCore;
+using ModulesFramework;
+using ModulesFramework.Attributes;
+using ModulesFramework.Data;
+using ModulesFramework.Systems;
 using Woodman.Common.CameraProcessing;
 using Woodman.Felling;
 using Woodman.Felling.Tree;
@@ -33,6 +35,7 @@ namespace Woodman.FellingTransition.TransitionToFelling
             _fellingUiSwitcher.InitFelling();
             _cameraController.MoveToCore(root.transform);
             c.treeMeta.DisableMeta();
+            
         }
     }
 }
