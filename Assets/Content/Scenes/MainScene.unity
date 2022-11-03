@@ -743,7 +743,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235444975}
-  m_LocalRotation: {x: 0.38268346, y: 0.000000015896623, z: -0.0000000065845964, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: -0.000000015896623, z: 0.0000000065845964, w: 0.92387956}
   m_LocalPosition: {x: -23.82, y: 13.316, z: -110.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2726,6 +2726,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0822de982da44f43b3c99c40c54f092c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &919704488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919704482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23134ef1cef465ca58c01c098a09bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerCollider: {fileID: 919704490}
+--- !u!136 &919704490 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 7700761873809558511, guid: 9816d053fb2bf2740a94bb68c8c58cac,
+    type: 3}
+  m_PrefabInstance: {fileID: 7700761872976042058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &944550563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,7 +2995,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.38268346, y: 0.000000015896623, z: -0.0000000065845964, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: -0.000000015896623, z: 0.0000000065845964, w: 0.92387956}
   m_LocalPosition: {x: -23.82, y: 13.316, z: -110.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4109,6 +4128,7 @@ MonoBehaviour:
   <MainCanvas>k__BackingField: {fileID: 109553439}
   <LocationsView>k__BackingField: {fileID: 710492791}
   <PlayerMovement>k__BackingField: {fileID: 919704486}
+  <PlayerVisibilityDetector>k__BackingField: {fileID: 919704488}
   <WoodmanContainer>k__BackingField: {fileID: 919704482}
   <PlayerIndicatorsController>k__BackingField: {fileID: 1039542334}
   <LogsPool>k__BackingField: {fileID: 413255062}

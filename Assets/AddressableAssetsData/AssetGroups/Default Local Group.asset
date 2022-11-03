@@ -69,6 +69,10 @@ MonoBehaviour:
     m_Address: TreeGenerationSettings
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 7fa122a981c583b40bef692c8c4361d1
+    m_Address: VisualSettings
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:

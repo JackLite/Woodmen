@@ -79,12 +79,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1718269bc8421439177ef6a6b4c42a, type: 3}
+--- !u!23 &41839703447600106 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 9c1718269bc8421439177ef6a6b4c42a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1681304310440453998}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1987310698781203007 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9c1718269bc8421439177ef6a6b4c42a,
     type: 3}
   m_PrefabInstance: {fileID: 1681304310440453998}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &7896751883115000596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987310698781203007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5219728751764543599, guid: 9c1718269bc8421439177ef6a6b4c42a, type: 3}
+--- !u!114 &5779094228833947513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987310698781203007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderers:
+  - {fileID: 41839703447600106}
 --- !u!1001 &4491826923474801690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,6 +155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3589387744395563023, guid: 4b6fc844e13dd074f86f7c992b08f907,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4356311853730785322, guid: 4b6fc844e13dd074f86f7c992b08f907,
         type: 3}
