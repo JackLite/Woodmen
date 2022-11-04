@@ -40,7 +40,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Title
+    path: Content/Title
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -138,7 +138,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: Mask/Content
+    path: Content/Mask/Content
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -166,7 +166,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Mask
+    path: Content/Mask
     classID: 114
     script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_PPtrCurves: []
@@ -296,7 +296,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Title
+    path: Content/Title
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -324,7 +324,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Title
+    path: Content/Title
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -352,7 +352,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Title
+    path: Content/Title
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -389,7 +389,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: Mask/Content
+    path: Content/Mask/Content
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -501,7 +501,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Mask
+    path: Content/Mask
     classID: 114
     script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_EulerEditorCurves: []
