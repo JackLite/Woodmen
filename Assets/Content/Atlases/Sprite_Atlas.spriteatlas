@@ -50,6 +50,7 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 420745d05df03074d9d977a842826df3, type: 3}
   - {fileID: 21300000, guid: 01db8ab1e9440b442bce2a27ac527ed9, type: 3}
   - {fileID: 1158674123, guid: 14102e32505e796469ee71e522c29bc9, type: 3}
   - {fileID: 471547711, guid: 14102e32505e796469ee71e522c29bc9, type: 3}
@@ -95,6 +96,7 @@ SpriteAtlas:
   - {fileID: -225644436, guid: 4bb006afffe28e6428f7697b5d4f48ab, type: 3}
   - {fileID: 21300000, guid: f2e8a6ff14f794e469f369f5d00c099c, type: 3}
   m_PackedSpriteNamesToIndex:
+  - i_close
   - i_video
   - b_grad_h_0
   - b_grad_h_1
