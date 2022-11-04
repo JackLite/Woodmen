@@ -10,7 +10,7 @@ using Woodman.MetaTrees;
 
 namespace Woodman.Felling.Lose
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class FellingRestartSystem : IInitSystem, IDestroySystem
     {
         private DataWorld _world;
@@ -18,7 +18,7 @@ namespace Woodman.Felling.Lose
         private MetaTreesRepository _metaTrees;
         private TreeGenerator _treeGenerator;
         private TreePiecesRepository _piecesRepository;
-        private WindowsUiProvider _uiProvider;
+        private UiProvider _uiProvider;
         public void Init()
         {
             _uiProvider.FellingLoseWindow.OnRestartClick += RestartFelling;

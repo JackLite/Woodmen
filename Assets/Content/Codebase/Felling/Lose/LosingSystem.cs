@@ -10,12 +10,12 @@ using Woodman.Felling.Tree.Branches;
 
 namespace Woodman.Felling.Lose
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class LosingSystem : IPostRunSystem
     {
         private DataWorld _world;
         private EcsOneData<DebugStateData> _debugData;
-        private WindowsUiProvider _windows;
+        private UiProvider _windows;
         public void PostRun()
         {
             if (_debugData.GetData().isGodModeTurnOn)

@@ -3,14 +3,16 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using UnityEngine;
+using Woodman.Felling.Settings;
 
 namespace Woodman.Felling.Timer
 {
     [EcsSystem(typeof(FellingModule))]
-    public class FellingTimerSystem : IRunSystem
+    public class FellingTimerSystem : IActivateSystem, IRunSystem
     {
         private DataWorld _world;
         private EcsOneData<TimerData> _timerData;
+        private EcsOneData<FellingSettings> _fellingSettings;
         private FellingUIProvider _uiProvider;
         
         public void Run()
@@ -32,6 +34,16 @@ namespace Woodman.Felling.Timer
 
             td.remain -= Time.deltaTime;
             _uiProvider.FellingTimerView.SetProgress(td.remain / td.totalTime);
+        }
+
+        public void Activate()
+        {
+            var settings = _fellingSettings.GetData();
+            _timerData.SetData(new TimerData
+            {
+                remain = settings.time,
+                totalTime = settings.time
+            });
         }
     }
 }

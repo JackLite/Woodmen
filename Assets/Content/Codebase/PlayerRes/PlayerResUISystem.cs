@@ -5,7 +5,7 @@ using ModulesFramework.Systems;
 
 namespace Woodman.PlayerRes
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class PlayerResUISystem : IInitSystem, IDestroySystem
     {
         private ResourceBarMetaUI _resourceBar;

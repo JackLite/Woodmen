@@ -12,7 +12,7 @@ namespace Woodman.Felling.Win
     {
         private DataWorld _world;
         private MetaTreesRepository _treesRepository;
-        private WindowsUiProvider _windows;
+        private UiProvider _windows;
         public void PostRun()
         {
             var q = _world.Select<WinEvent>();

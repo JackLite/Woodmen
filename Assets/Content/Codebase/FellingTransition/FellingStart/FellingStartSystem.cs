@@ -6,7 +6,7 @@ using Woodman.Felling;
 
 namespace Woodman.FellingTransition.FellingStart
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(CoreModule))]
     public class FellingStartSystem : IInitSystem, IDestroySystem
     {
         private DataWorld _world;

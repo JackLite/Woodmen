@@ -29,6 +29,11 @@ namespace Woodman
         protected void BindView<T>(T viewProvider) where T : class
         {
             var t = typeof(T);
+            BindView(viewProvider, t);
+        }
+
+        protected void BindView(object viewProvider, Type t)
+        {
             foreach (var p in t.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public))
             {
                 if (p.GetCustomAttribute(typeof(ViewInjectAttribute)) == null)
@@ -41,7 +46,9 @@ namespace Woodman
                     continue;
                 }
 
+                var typedVal = Convert.ChangeType(val, p.FieldType);
                 AddDependency(p.FieldType, val);
+                BindView(typedVal, p.FieldType);
             }
         }
     }

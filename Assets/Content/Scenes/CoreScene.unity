@@ -881,6 +881,37 @@ Transform:
   m_Father: {fileID: 942221550}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: -3.2039795}
+--- !u!1 &599787242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599787243}
+  m_Layer: 0
+  m_Name: TreeRootPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &599787243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599787242}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.04, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853435159}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622084892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,6 +1588,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68ff474b28cbf5d42a8039fc4f17c191, type: 3}
+--- !u!4 &853435159 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3906496960851977950, guid: 68ff474b28cbf5d42a8039fc4f17c191,
+    type: 3}
+  m_PrefabInstance: {fileID: 853435158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &942221549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,6 +1988,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9a1333964c1bd94d855c53081841cb1, type: 3}
+--- !u!95 &1275931601 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: a9a1333964c1bd94d855c53081841cb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275931600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1275931602 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400008, guid: a9a1333964c1bd94d855c53081841cb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275931600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1275931603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: a9a1333964c1bd94d855c53081841cb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275931600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1275931604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275931603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0822de982da44f43b3c99c40c54f092c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _character: {fileID: 1275931602}
+  _characterContainer: {fileID: 1275931602}
+  _animator: {fileID: 1275931601}
 --- !u!1001 &1333239059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2041,6 +2111,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1333239059}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1333919565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333919567}
+  - component: {fileID: 1333919566}
+  - component: {fileID: 1333919568}
+  - component: {fileID: 1333919569}
+  m_Layer: 0
+  m_Name: FellingViewProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1333919566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333919565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4838a4ad074bc0a6caaa1df0e7f35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TreeContainer>k__BackingField: {fileID: 1333919568}
+  <FellingCharacterController>k__BackingField: {fileID: 1275931604}
+  <FellingPositions>k__BackingField: {fileID: 1333919569}
+--- !u!4 &1333919567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333919565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.239462, y: -1.3885269, z: -59.15084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1333919568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333919565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ee9d61ba8a4788bf026dda075defd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TreePrefab>k__BackingField: {fileID: 6723325413920634481, guid: 68ff474b28cbf5d42a8039fc4f17c191,
+    type: 3}
+  <LongBenchPrefab>k__BackingField: {fileID: 8641633097403601289, guid: 24ad542c9d446674da7a58899bc2acf2,
+    type: 3}
+--- !u!114 &1333919569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333919565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa41533fd3054549a72a052a7e277622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _treeRoot: {fileID: 599787243}
 --- !u!1 &1655359095
 GameObject:
   m_ObjectHideFlags: 0

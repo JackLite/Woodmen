@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 2716880249997960678}
   - component: {fileID: 6899730290290723799}
   - component: {fileID: 3357628754869663250}
+  - component: {fileID: 1688918551771516719}
   m_Layer: 5
   m_Name: LoadingCore
   m_TagString: Untagged
@@ -147,3 +148,15 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1688918551771516719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716880249997960601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca812238ff24646a055594732f8b12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

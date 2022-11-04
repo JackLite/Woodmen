@@ -11,7 +11,7 @@ using Woodman.PlayerRes;
 
 namespace Woodman.MetaInteractions.LogsInteraction
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class LogsInteractionSystem : IRunSystem
     {
         private DataWorld _world;

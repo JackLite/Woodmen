@@ -7,7 +7,7 @@ using Woodman.Player;
 
 namespace Woodman.Meta
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class TransparencySystem : IActivateSystem, IRunSystem, IDeactivateSystem
     {
         private DataWorld _world;

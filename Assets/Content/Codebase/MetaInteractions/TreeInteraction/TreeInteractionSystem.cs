@@ -9,7 +9,7 @@ using Woodman.Player.Indicators;
 
 namespace Woodman.MetaInteractions.TreeInteraction
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class TreeInteractionSystem : IRunSystem
     {
         private DataWorld _world;

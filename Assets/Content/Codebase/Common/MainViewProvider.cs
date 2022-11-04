@@ -53,11 +53,7 @@ namespace Woodman.Common
         [field: Header("UI")]
         [field: SerializeField]
         [field: ViewInject]
-        public WindowsUiProvider WindowsUiProvider { get; private set; }
-
-        [field: SerializeField]
-        [field: ViewInject]
-        public MetaUiProvider MetaUiProvider { get; private set; }
+        public UiProvider WindowsUiProvider { get; private set; }
 
         [field: SerializeField]
         [field: ViewInject]

@@ -9,7 +9,7 @@ using Woodman.PlayerRes;
 
 namespace Woodman.Buildings
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class BuildingInteractSystem : IRunSystem
     {
         private DataWorld _world;

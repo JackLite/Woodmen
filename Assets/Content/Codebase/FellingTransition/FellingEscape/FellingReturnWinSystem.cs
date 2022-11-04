@@ -8,7 +8,7 @@ using Woodman.MetaTrees;
 
 namespace Woodman.FellingTransition.FellingEscape
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class FellingReturnWinSystem : IInitSystem, IDestroySystem
     {
         //todo: move to settings
@@ -19,7 +19,7 @@ namespace Woodman.FellingTransition.FellingEscape
         private LogsPool _logsPool;
         private LogsHeapRepository _logsHeapRepository;
         private MetaTreesRepository _metaTrees;
-        private WindowsUiProvider _uiProvider;
+        private UiProvider _uiProvider;
 
         public void Init()
         {

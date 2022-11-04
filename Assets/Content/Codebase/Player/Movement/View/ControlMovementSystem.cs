@@ -7,7 +7,7 @@ using Woodman.Utils;
 
 namespace Woodman.Player.Movement.View
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class ControlMovementSystem : IInitSystem, IRunSystem, IDestroySystem
     {
         private MetaUiProvider _metaUiProvider;

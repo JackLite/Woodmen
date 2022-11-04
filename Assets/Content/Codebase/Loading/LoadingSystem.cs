@@ -55,7 +55,7 @@ namespace Woodman.Loading
 
                 await _mainViewProvider.PoolsProvider.BuildingFxPool.WarmUp(3);
                 _mainViewProvider.WoodmanContainer.transform.position = locationView.GetPlayerSpawnPos();
-                _world.InitModule<MainModule>();
+                _world.InitModule<MetaModule>();
             }
             catch (Exception e)
             {

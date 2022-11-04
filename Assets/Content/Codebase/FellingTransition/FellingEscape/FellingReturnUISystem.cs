@@ -8,14 +8,14 @@ using Woodman.MetaTrees;
 
 namespace Woodman.FellingTransition.FellingEscape
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class FellingReturnUISystem : IInitSystem, IDestroySystem
     {
         private DataWorld _world;
         private MetaTreesRepository _treesRepository;
         private FellingCharacterController _characterController;
         private FellingUIProvider _fellingUIProvider;
-        private WindowsUiProvider _uiProvider;
+        private UiProvider _uiProvider;
 
         public void Init()
         {

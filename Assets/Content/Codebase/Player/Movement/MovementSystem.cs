@@ -6,7 +6,7 @@ using Woodman.Player.Movement.View;
 
 namespace Woodman.Player.Movement
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class MovementSystem : IRunPhysicSystem
     {
         private MainViewProvider _mainViewProvider;

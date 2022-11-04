@@ -6,7 +6,7 @@ using Woodman.MetaInteractions.Components;
 
 namespace Woodman.MetaInteractions
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class InteractionRegisterSystem : IInitSystem, IRunSystem, IDestroySystem
     {
         private readonly DataWorld _world;
