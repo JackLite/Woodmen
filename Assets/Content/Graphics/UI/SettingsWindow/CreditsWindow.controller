@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShowSettingWindow
+  m_Name: ShowPauseWindow
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fe89929574e950c42bb1ea9b0a2b52a4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 028a027137e080b44952f855a2fd2b0b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -34,7 +34,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HideSettingWindow
+  m_Name: HidePauseWindow
   m_Speed: -1
   m_CycleOffset: 0
   m_Transitions: []
@@ -84,7 +84,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UpgradeWindow
+  m_Name: CreditsWindow
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: HideWindow
