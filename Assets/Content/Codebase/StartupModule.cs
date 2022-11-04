@@ -1,10 +1,12 @@
 using System.Threading.Tasks;
 using ModulesFramework.Attributes;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using Woodman.Buildings;
 using Woodman.Cheats;
 using Woodman.Common;
 using Woodman.Logs;
+using Woodman.Meta;
 using Woodman.MetaTrees;
 using Woodman.Player;
 
@@ -13,7 +15,7 @@ namespace Woodman
     [GlobalModule]
     public class StartupModule : EcsModuleWithDependencies
     {
-        protected override Task Setup()
+        protected override async Task Setup()
         {
             Application.targetFrameRate = 60;
             CreateOneData(new PlayerOneData {maxWoodCount = 50});
@@ -24,7 +26,8 @@ namespace Woodman
             AddDependency(viewProvider);
             BindView(viewProvider);
             CreateOneData<DebugStateData>();
-            return Task.CompletedTask;
+            var transparency = await Addressables.LoadAssetAsync<VisualSettings>("VisualSettings").Task;
+            AddDependency(transparency);
         }
     }
 }
