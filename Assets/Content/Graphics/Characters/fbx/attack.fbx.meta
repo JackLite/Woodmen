@@ -8,7 +8,7 @@ ModelImporter:
     second: Armature|Armature|mixamo.com|Layer0
   - first:
       74: -623603649343465320
-    second: Scene
+    second: WoodmanAttack
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -39,7 +39,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Scene
+      name: WoodmanAttack
       takeName: Scene
       internalID: 0
       firstFrame: 0
