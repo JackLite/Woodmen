@@ -512,6 +512,7 @@ MonoBehaviour:
   <LoadScreen>k__BackingField: {fileID: 1007012611}
   <SwitchCoreScreen>k__BackingField: {fileID: 259231157}
   <FellingUIProvider>k__BackingField: {fileID: 8948099601766782768}
+  <PauseView>k__BackingField: {fileID: 1283851069}
 --- !u!1 &178932892
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +750,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235444975}
-  m_LocalRotation: {x: 0.38268346, y: -0.000000015896623, z: 0.0000000065845964, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: 0.000000015896623, z: -0.0000000065845964, w: 0.92387956}
   m_LocalPosition: {x: -23.82, y: 13.316, z: -110.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3036,7 +3037,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.38268346, y: -0.000000015896623, z: 0.0000000065845964, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: 0.000000015896623, z: -0.0000000065845964, w: 0.92387956}
   m_LocalPosition: {x: -23.82, y: 13.316, z: -110.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3485,6 +3486,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dead165644ded964f9ab59b89c029930, type: 3}
+--- !u!114 &1283851069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6814521912570273364, guid: dead165644ded964f9ab59b89c029930,
+    type: 3}
+  m_PrefabInstance: {fileID: 1283851068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431170202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b4e3c10b2246a28ac4d153d14de7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1335073824
 GameObject:
   m_ObjectHideFlags: 0

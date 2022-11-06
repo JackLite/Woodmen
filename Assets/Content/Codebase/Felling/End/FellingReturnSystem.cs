@@ -23,6 +23,7 @@ namespace Woodman.Felling.End
             _uiProvider.FellingWinWindow.OnOkBtnClick += OnWinClick;
             _uiProvider.FellingLoseWindow.OnHomeClick += OnLoseClick;
             _uiProvider.FellingLoseWindow.OnRestartClick += OnRestartClick;
+            _uiProvider.PauseView.OnRestart += OnRestartClick;
         }
 
         private void OnWinClick()
@@ -68,6 +69,7 @@ namespace Woodman.Felling.End
             _uiProvider.FellingWinWindow.OnOkBtnClick -= OnWinClick;
             _uiProvider.FellingLoseWindow.OnHomeClick -= OnLoseClick;
             _uiProvider.FellingLoseWindow.OnRestartClick -= OnRestartClick;
+            _uiProvider.PauseView.OnRestart -= OnRestartClick;
         }
     }
 }

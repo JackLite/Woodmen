@@ -3,6 +3,7 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Common;
+using Woodman.Felling.Pause;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Generator;
@@ -19,10 +20,12 @@ namespace Woodman.Felling.Lose
         private TreeGenerator _treeGenerator;
         private TreePiecesRepository _piecesRepository;
         private UiProvider _uiProvider;
+        private PauseView _pauseView;
 
         public void Init()
         {
             _uiProvider.FellingLoseWindow.OnRestartClick += RestartFelling;
+            _pauseView.OnRestart += RestartFelling;
         }
 
         private void RestartFelling()
@@ -37,6 +40,7 @@ namespace Woodman.Felling.Lose
         public void Destroy()
         {
             _uiProvider.FellingLoseWindow.OnRestartClick -= RestartFelling;
+            _pauseView.OnRestart -= RestartFelling;
         }
     }
 }
