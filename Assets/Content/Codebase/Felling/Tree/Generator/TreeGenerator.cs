@@ -59,7 +59,7 @@ namespace Woodman.Felling.Tree.Generator
                         .SetType(type);
 
                 if (pieceIndex > 4)
-                    ProcessBranch(builder, pieceIndex, ref branchBias, side, ref prevSide);
+                    ProcessBranch(builder, pieceIndex,  side, type, ref branchBias, ref prevSide);
 
                 var tree = builder.Flush();
                 if (type == TreePieceType.Strong)
@@ -100,12 +100,19 @@ namespace Woodman.Felling.Tree.Generator
             return prevSide == FellingSide.Left ? FellingSide.Right : FellingSide.Left;
         }
 
-        private void ProcessBranch(TreePieceBuilder builder, int pieceIndex, ref int branchBias, FellingSide side,
+        private void ProcessBranch(
+            TreePieceBuilder builder, 
+            int pieceIndex, 
+            FellingSide side,
+            TreePieceType pieceType,
+            ref int branchBias, 
             ref FellingSide? prevSide)
         {
             if (_nextBranch != null)
             {
                 var branch = CreateBranch(builder);
+                if (_nextBranch.pieceType == TreePieceType.Strong)
+                    branch.MakeStrong();
                 prevSide = side;
 
                 switch (_nextBranch.mod)
@@ -138,13 +145,16 @@ namespace Woodman.Felling.Tree.Generator
                 {
                     _nextBranch = new NextBranchData
                     {
-                        mod = branchMod
+                        mod = branchMod,
+                        pieceType = pieceType
                     };
                     branchBias++;
                 }
                 else
                 {
-                    CreateBranch(builder);
+                    var branch = CreateBranch(builder);
+                    if (pieceType == TreePieceType.Strong)
+                        branch.MakeStrong();
                     prevSide = side;
                 }
             }
@@ -174,6 +184,7 @@ namespace Woodman.Felling.Tree.Generator
         private class NextBranchData
         {
             public BranchModEnum mod;
+            public TreePieceType pieceType;
         }
     }
 }

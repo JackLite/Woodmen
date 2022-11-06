@@ -2211,7 +2211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TreePrefab>k__BackingField: {fileID: 6723325413920634481, guid: 68ff474b28cbf5d42a8039fc4f17c191,
     type: 3}
-  <LongBenchPrefab>k__BackingField: {fileID: 8641633097403601289, guid: 24ad542c9d446674da7a58899bc2acf2,
+  <LongBranchPrefab>k__BackingField: {fileID: 8641633097403601289, guid: 24ad542c9d446674da7a58899bc2acf2,
     type: 3}
 --- !u!114 &1333919569
 MonoBehaviour:

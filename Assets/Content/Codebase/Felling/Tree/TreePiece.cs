@@ -18,11 +18,11 @@ namespace Woodman.Felling.Tree
         [SerializeField]
         private TMP_Text _strongText;
 
+        private TreePieceType _pieceType = TreePieceType.Usual;
+
         public FellingSide BranchSide { get; set; }
         public bool IsHasBranch { get; set; }
-        private TreePieceType _pieceType = TreePieceType.Usual;
         public int Size { get; private set; }
-
 
         public void SetType(TreePieceType type)
         {
@@ -39,14 +39,7 @@ namespace Woodman.Felling.Tree
         public void DecrementSize()
         {
             Size--;
-            if (Size > 1)
-            {
-                UpdateStrongText();
-                return;
-            }
-
-            if (_pieceType != TreePieceType.Strong) return;
-            SetType(TreePieceType.Usual);
+            UpdateStrongText();
         }
 
         private void UpdateStrongText()

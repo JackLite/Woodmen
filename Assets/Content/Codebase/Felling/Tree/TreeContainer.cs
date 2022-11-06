@@ -9,6 +9,6 @@ namespace Woodman.Felling.Tree
         public TreePiece TreePrefab { get; private set; }
 
         [field: SerializeField]
-        public BranchView LongBenchPrefab { get; private set; }
+        public BranchView LongBranchPrefab { get; private set; }
     }
 }

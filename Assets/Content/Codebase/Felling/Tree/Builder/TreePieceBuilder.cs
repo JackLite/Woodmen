@@ -31,7 +31,7 @@ namespace Woodman.Felling.Tree.Builder
             _currentPiece.IsHasBranch = true;
             var branchPos = GetPosForBranch(_currentPiece.BranchSide == FellingSide.Right);
 
-            var branchView = Object.Instantiate(_treeContainer.LongBenchPrefab, branchPos, Quaternion.identity,
+            var branchView = Object.Instantiate(_treeContainer.LongBranchPrefab, branchPos, Quaternion.identity,
                 _currentPiece.transform);
             if (_currentPiece.BranchSide != FellingSide.Left)
             {

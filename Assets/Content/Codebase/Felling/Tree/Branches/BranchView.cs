@@ -13,10 +13,13 @@ namespace Woodman.Felling.Tree.Branches
         private BranchElementView _hive;
 
         [SerializeField]
-        private GameObject _longBranch;
+        private MeshRenderer _longBranch;
 
         [SerializeField]
-        private GameObject _shortBranch;
+        private MeshRenderer _shortBranch;
+
+        [SerializeField]
+        private Material _strongMat;
 
         public event Action<BoosterType> OnBoosterCollide;
         public event Action OnHiveCollide;
@@ -36,8 +39,8 @@ namespace Woodman.Felling.Tree.Branches
 
         public void MakeShort()
         {
-            _longBranch.SetActive(false);
-            _shortBranch.SetActive(true);
+            _longBranch.gameObject.SetActive(false);
+            _shortBranch.gameObject.SetActive(true);
         }
 
         public void ActivateBooster(BoosterType boosterType)
@@ -56,6 +59,12 @@ namespace Woodman.Felling.Tree.Branches
         public void Revert()
         {
             transform.localScale = transform.localScale.MirrorX();
+        }
+
+        public void MakeStrong()
+        {
+            _longBranch.material = _strongMat;
+            _shortBranch.material = _strongMat;
         }
     }
 }
