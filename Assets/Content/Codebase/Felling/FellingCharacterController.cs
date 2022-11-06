@@ -32,13 +32,14 @@ namespace Woodman.Felling
         {
             _characterContainer.position = _sideToPosMap[fellingSide];
             if (CurrentFellingSide != fellingSide)
-                SwitchScale();
+                Switch();
             CurrentFellingSide = fellingSide;
         }
 
-        private void SwitchScale()
+        private void Switch()
         {
-            _character.localScale = _character.localScale.MirrorZ();
+            var rot = _character.rotation.eulerAngles;
+            _character.rotation = Quaternion.Euler(rot.x, rot.y + 180, rot.z);
         }
 
         public void Cut()
