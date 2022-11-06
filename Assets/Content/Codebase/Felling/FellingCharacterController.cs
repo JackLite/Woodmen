@@ -1,13 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Woodman.Felling.Tree;
-using Woodman.Utils;
 
 namespace Woodman.Felling
 {
     public class FellingCharacterController : MonoBehaviour
     {
-        private static readonly int _cut = Animator.StringToHash("Cut");
+        private static readonly int _cut = Animator.StringToHash("Attack");
 
         [SerializeField]
         private Transform _character;
@@ -44,7 +42,7 @@ namespace Woodman.Felling
 
         public void Cut()
         {
-            //_animator.SetTrigger(_cut);
+            _animator.SetTrigger(_cut);
         }
     }
 }
