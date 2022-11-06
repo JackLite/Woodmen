@@ -73,7 +73,7 @@ MonoBehaviour:
     m_Address: VisualSettings
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 8c799f3d60d127d48a64184c529453c7
+  - m_GUID: 1ba2fddae2d9da542b941dabb34cba0a
     m_Address: CoreScene
     m_ReadOnly: 0
     m_SerializedLabels: []

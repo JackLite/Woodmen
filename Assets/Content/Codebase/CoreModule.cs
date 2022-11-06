@@ -29,7 +29,7 @@ namespace Woodman
                 JsonConvert.DeserializeObject<TreeGenerationSettings>(rawTreeGenerationSettings.text);
             CreateTreeGenerator(treeGenerationSettings);
             
-            var fellingViewProvider = Object.FindObjectOfType<FellingViewProvider>();
+            var fellingViewProvider = Object.FindObjectOfType<FellingViewProvider>(true);
             AddDependency(fellingViewProvider);
             BindView(fellingViewProvider);
             EcsWorldContainer.World.InitModule<FellingModule>();
