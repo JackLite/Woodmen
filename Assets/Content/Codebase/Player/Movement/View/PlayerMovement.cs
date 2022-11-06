@@ -21,6 +21,7 @@ namespace Woodman.Player.Movement.View
 
         private Vector2 _lastDelta;
         public bool IsMoving => _rigidbody.velocity != Vector3.zero;
+        public Vector3 CurrentPos => transform.position;
 
         public void Move(Vector2 delta)
         {

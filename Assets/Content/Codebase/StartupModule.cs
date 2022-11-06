@@ -10,6 +10,7 @@ using Woodman.Common;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
+using Woodman.Felling.Win;
 using Woodman.Loading;
 using Woodman.Locations;
 using Woodman.Locations.Trees;
@@ -25,7 +26,7 @@ namespace Woodman
         protected override async Task Setup()
         {
             Application.targetFrameRate = 60;
-            CreateOneData(new PlayerOneData {maxWoodCount = 50});
+            CreateOneData(new PlayerData {maxWoodCount = 50});
             CreateOneData<TreeModel>();
             CreateOneData<TimerData>();
             CreateOneData<LocationsData>();

@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using Woodman.Logs;
 
 namespace Woodman.Felling.Tree
 {
@@ -6,8 +8,6 @@ namespace Woodman.Felling.Tree
     {
         public int size;
         public int logsCount;
-        public Vector3 leftPos;
-        public Vector3 rightPos;
-        public Vector3 pos;
+        public Dictionary<LogsHeapType, Vector3> logsPositions;
     }
 }

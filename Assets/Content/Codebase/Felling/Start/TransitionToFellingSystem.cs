@@ -9,6 +9,8 @@ using Woodman.Common.UI;
 using Woodman.Felling.Tree;
 using Woodman.Locations.Trees;
 using Woodman.Meta;
+using Woodman.Player;
+using Woodman.Player.Movement.View;
 
 namespace Woodman.Felling.Start
 {
@@ -17,8 +19,10 @@ namespace Woodman.Felling.Start
     {
         private DataWorld _world;
         private EcsOneData<TreeModel> _currentTree;
+        private EcsOneData<PlayerData> _playerData;
         private MetaTreesRepository _metaTrees;
         private MetaUi _metaUi;
+        private PlayerMovement _playerMovement;
         private SwitchCoreScreen _switchCoreScreen;
 
         public void Run()
@@ -30,6 +34,8 @@ namespace Woodman.Felling.Start
             _metaTrees.CurrentTree = c.treeMeta;
             var treeModel = c.treeMeta.GetTreeModel();
             _currentTree.SetData(treeModel);
+            ref var pd = ref _playerData.GetData();
+            pd.metaPos = _playerMovement.CurrentPos;
             SwitchUI();
         }
 

@@ -19,12 +19,6 @@ namespace Woodman.Locations.Trees
         private int _size = 100;
 
         [SerializeField]
-        private Transform _leftCutPosition;
-
-        [SerializeField]
-        private Transform _rightCutPosition;
-
-        [SerializeField]
         private GameObject _metaContent;
 
         [SerializeField]
@@ -33,13 +27,13 @@ namespace Woodman.Locations.Trees
         [SerializeField]
         private LogsTypeView[] _logsTypeViews;
 
-        public Dictionary<LogsHeapType, Transform> LogsHeapTypeToViews { private set; get; } = new();
+        public Dictionary<LogsHeapType, Vector3> LogsHeapTypeToViews { private set; get; } = new();
 
         public string Id => _guid;
         
         private void Awake()
         {
-            LogsHeapTypeToViews = _logsTypeViews.ToDictionary(l => l.type, l => l.logPos);
+            LogsHeapTypeToViews = _logsTypeViews.ToDictionary(l => l.type, l => l.logPos.position);
         }
 
         private void GenerateGuid()
@@ -65,23 +59,10 @@ namespace Woodman.Locations.Trees
         {
             return new TreeModel
             {
-                pos = transform.position,
-                leftPos = _leftCutPosition.position,
-                rightPos = _rightCutPosition.position,
                 size = _size,
-                logsCount = _logsCount
+                logsCount = _logsCount,
+                logsPositions = LogsHeapTypeToViews
             };
-        }
-
-        public Vector3 GetLogsPos(LogsHeapType heapType)
-        {
-            if (!LogsHeapTypeToViews.ContainsKey(heapType))
-            {
-                Logger.LogError(this, nameof(GetLogsPos), $"Can't find pos for heap type {heapType}");
-                return Vector3.zero;
-            }
-
-            return LogsHeapTypeToViews[heapType].position;
         }
 
         [Serializable]

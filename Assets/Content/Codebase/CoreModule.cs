@@ -11,7 +11,6 @@ using Woodman.Felling.Settings;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Builder;
 using Woodman.Felling.Tree.Generator;
-using Woodman.Meta;
 using Woodman.Utils;
 
 namespace Woodman

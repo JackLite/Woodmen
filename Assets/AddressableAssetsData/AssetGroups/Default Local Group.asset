@@ -73,14 +73,6 @@ MonoBehaviour:
     m_Address: VisualSettings
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 1ba2fddae2d9da542b941dabb34cba0a
-    m_Address: CoreScene
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 22b204bd4ad631d42bb990072d7d4942
-    m_Address: MainScene
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:

@@ -1058,9 +1058,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 13, z: -13}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -3123,8 +3123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d737a7a8438447e813aef0fd0f7b2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MetaCamera: {fileID: 235444976}
-  CoreCamera: {fileID: 0}
 --- !u!1 &1007012611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4551220555998990420, guid: ae9ae2861bddd354997a7e4a490d59b0,

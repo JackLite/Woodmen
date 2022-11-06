@@ -14,7 +14,7 @@ namespace Woodman.Logs
     public class LogsInteractionSystem : IRunSystem
     {
         private DataWorld _world;
-        private EcsOneData<PlayerOneData> _playerData;
+        private EcsOneData<PlayerData> _playerData;
         private LogsHeapRepository _logsHeapRepository;
         private LogsPool _logsPool;
         private PlayerResRepository _resRepository;

@@ -10,10 +10,10 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using Woodman.Buildings;
-using Woodman.Common;
 using Woodman.Locations.Trees;
 using Woodman.Logs;
 using Woodman.Meta;
+using Woodman.Player;
 
 namespace Woodman.Locations
 {
@@ -21,13 +21,14 @@ namespace Woodman.Locations
     public class LoadingLocationSystem : IInitSystem
     {
         private EcsOneData<LocationsData> _locationsData;
+        private EcsOneData<PlayerData> _playerData;
         private BuildingsRepository _buildingsRepository;
         private LogsHeapRepository _logsHeapRepository;
         private MetaTreesRepository _treesRepository;
         private MetaViewProvider _metaViewProvider;
-        
+
         private DataWorld _world;
-        
+
         public void Init()
         {
             Load();
@@ -41,6 +42,7 @@ namespace Woodman.Locations
                 var t = await Addressables.LoadSceneAsync(ld.currentLocation, LoadSceneMode.Additive).Task;
                 t.ActivateAsync();
                 LightProbes.TetrahedralizeAsync();
+
                 var locationView = UnityEngine.Object.FindObjectOfType<LocationView>();
                 locationView.SetBuildingsStates(_buildingsRepository);
                 locationView.SetTreesStates(_treesRepository);
@@ -48,7 +50,8 @@ namespace Woodman.Locations
                 await LoadLogs();
 
                 await _metaViewProvider.PoolsProvider.BuildingFxPool.WarmUp(3);
-                _metaViewProvider.WoodmanContainer.transform.position = locationView.GetPlayerSpawnPos();
+                UpdatePlayerPos(locationView);
+
                 _world.ActivateModule<MetaModule>();
             }
             catch (Exception e)
@@ -56,7 +59,17 @@ namespace Woodman.Locations
                 Debug.LogException(e);
             }
         }
-        
+
+        private void UpdatePlayerPos(LocationView locationView)
+        {
+            Vector3 pos;
+            if (_playerData.GetData().metaPos == Vector3.zero)
+                pos = locationView.GetPlayerSpawnPos();
+            else
+                pos = _playerData.GetData().metaPos;
+            _metaViewProvider.WoodmanContainer.transform.position = pos;
+        }
+
         private async Task LoadLogs()
         {
             var counter = new Dictionary<LogsHeapType, int>();
