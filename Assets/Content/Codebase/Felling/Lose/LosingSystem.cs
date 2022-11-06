@@ -44,6 +44,7 @@ namespace Woodman.Felling.Lose
 
         private void GameOver()
         {
+            _windows.FellingUi.Hide();
             _windows.FellingLoseWindow.Show();
             _world.DeactivateModule<FellingModule>();
         }

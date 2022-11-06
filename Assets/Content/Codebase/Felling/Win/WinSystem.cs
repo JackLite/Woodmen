@@ -31,6 +31,7 @@ namespace Woodman.Felling.Win
             _treesRepository.SetFell(_treesRepository.CurrentTree.Id);
             SaveLogs();
             _world.DeactivateModule<FellingModule>();
+            _windows.FellingUi.Hide();
             _windows.FellingWinWindow.Show();
         }
 
