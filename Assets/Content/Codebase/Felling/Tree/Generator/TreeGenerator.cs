@@ -5,6 +5,8 @@ using Unity.Mathematics;
 using UnityEngine;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Tree.Branches;
+using Woodman.Felling.Tree.Builder;
+using Woodman.Meta;
 using Random = UnityEngine.Random;
 
 namespace Woodman.Felling.Tree.Generator

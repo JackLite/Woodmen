@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using Woodman.Cheats.View;
 using Woodman.Common.UI;
 using Woodman.Felling;
 using Woodman.Felling.Lose;
@@ -11,6 +11,9 @@ namespace Woodman.Common
 {
     public class UiProvider : ViewProvider
     {
+        [field: SerializeField]
+        public Canvas MainCanvas { get; private set; }
+        
         [field: SerializeField]
         [field: ViewInject]
         public MetaUiProvider MetaUiProvider { get; private set; }
@@ -43,8 +46,16 @@ namespace Woodman.Common
         [field: ViewInject]
         public FellingUIProvider FellingUIProvider { get; private set; }
 
+        private static UiProvider _inst;
         private void Awake()
         {
+            if (_inst != null)
+            {
+                DestroyImmediate(gameObject);
+                return;
+            }
+
+            _inst = this;
             DontDestroyOnLoad(gameObject);
         }
     }

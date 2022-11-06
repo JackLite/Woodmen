@@ -9,7 +9,10 @@ using Woodman.Common.UI;
 using Woodman.Felling;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Tree;
+using Woodman.Felling.Tree.Builder;
 using Woodman.Felling.Tree.Generator;
+using Woodman.Meta;
+using Woodman.Utils;
 
 namespace Woodman
 {
@@ -21,7 +24,6 @@ namespace Woodman
         {
             if (SceneManager.GetActiveScene().name != "CoreScene")
                 _coreScene = await Addressables.LoadSceneAsync("CoreScene").Task;
-            // внедрить зависимости связанные с корой
             var rawTreeGenerationSettings = await Addressables.LoadAssetAsync<TextAsset>("TreeGenerationSettings").Task;
             var treeGenerationSettings =
                 JsonConvert.DeserializeObject<TreeGenerationSettings>(rawTreeGenerationSettings.text);
@@ -30,7 +32,7 @@ namespace Woodman
             var fellingViewProvider = Object.FindObjectOfType<FellingViewProvider>();
             AddDependency(fellingViewProvider);
             BindView(fellingViewProvider);
-            // сгенерировать дерево
+            EcsWorldContainer.World.InitModule<FellingModule>();
             EcsWorldContainer.World.ActivateModule<CoreModule>();
         }
 
@@ -47,7 +49,8 @@ namespace Woodman
         private void CreateTreeGenerator(TreeGenerationSettings generationSettings)
         {
             var treeContainer = Object.FindObjectOfType<TreeContainer>();
-            var treePieceBuilder = new TreePieceBuilder(treeContainer);
+            var visualSettings = GetGlobalDependency<StartupModule, VisualSettings>();
+            var treePieceBuilder = new TreePieceBuilder(treeContainer, visualSettings);
             var treePiecesRepository = new TreePiecesRepository();
             var treeGenerator = new TreeGenerator(
                 treePieceBuilder,

@@ -3,13 +3,12 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
-using Woodman.Common;
-using Woodman.Logs;
-using Woodman.MetaInteractions.Components;
+using Woodman.Locations.Interactions;
+using Woodman.Locations.Interactions.Components;
 using Woodman.Player;
-using Woodman.PlayerRes;
+using Woodman.Player.PlayerResources;
 
-namespace Woodman.MetaInteractions.LogsInteraction
+namespace Woodman.Logs
 {
     [EcsSystem(typeof(MetaModule))]
     public class LogsInteractionSystem : IRunSystem

@@ -10,7 +10,7 @@ namespace Woodman.Felling.Tree.Branches
     public class BoosterSystem : IRunSystem
     {
         private DataWorld _world;
-        
+
         public void Run()
         {
             var entities = _world.Select<BoosterCollideEvent>().GetEntities();

@@ -14,11 +14,11 @@ namespace Woodman.Felling.Timer
         private EcsOneData<TimerData> _timerData;
         private EcsOneData<FellingSettings> _fellingSettings;
         private FellingUIProvider _uiProvider;
-        
+
         public void Run()
         {
             ref var td = ref _timerData.GetData();
-            if (td.isFreeze) 
+            if (td.isFreeze)
                 return;
             var restartQ = _world.Select<TimerRestartEvent>();
             if (restartQ.Any())
@@ -26,6 +26,7 @@ namespace Woodman.Felling.Timer
                 restartQ.DestroyAll();
                 td.remain = td.totalTime;
             }
+
             if (td.remain <= 0 && !_world.Select<TimerEndEvent>().Any())
             {
                 _world.NewEntity().AddComponent(new TimerEndEvent());

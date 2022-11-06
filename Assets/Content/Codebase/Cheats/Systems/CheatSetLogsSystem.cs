@@ -2,7 +2,7 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
 using Woodman.Cheats.View;
-using Woodman.PlayerRes;
+using Woodman.Player.PlayerResources;
 
 namespace Woodman.Cheats.Systems
 {

@@ -7,6 +7,8 @@ namespace Woodman.Common.UI
     /// </summary>
     public class SwitchCoreScreen : MonoBehaviour
     {
+        public float animDuration = 2f;
+
         public void Show()
         {
             gameObject.SetActive(true);

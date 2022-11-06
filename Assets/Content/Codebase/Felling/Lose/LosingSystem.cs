@@ -10,7 +10,7 @@ using Woodman.Felling.Tree.Branches;
 
 namespace Woodman.Felling.Lose
 {
-    [EcsSystem(typeof(MetaModule))]
+    [EcsSystem(typeof(CoreModule))]
     public class LosingSystem : IPostRunSystem
     {
         private DataWorld _world;

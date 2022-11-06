@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Woodman.Buildings;
-using Woodman.MetaTrees;
+using Woodman.Locations.Trees;
 using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Locations

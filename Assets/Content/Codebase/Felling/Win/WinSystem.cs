@@ -3,7 +3,7 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Common;
-using Woodman.MetaTrees;
+using Woodman.Locations.Trees;
 
 namespace Woodman.Felling.Win
 {

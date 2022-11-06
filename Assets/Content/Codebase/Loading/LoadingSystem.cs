@@ -12,8 +12,8 @@ using UnityEngine.SceneManagement;
 using Woodman.Buildings;
 using Woodman.Common;
 using Woodman.Locations;
+using Woodman.Locations.Trees;
 using Woodman.Logs;
-using Woodman.MetaTrees;
 using Object = UnityEngine.Object;
 
 namespace Woodman.Loading
@@ -25,67 +25,37 @@ namespace Woodman.Loading
         private LogsHeapRepository _logsHeapRepository;
         private MetaTreesRepository _treesRepository;
         private DataWorld _world;
-        private MainViewProvider _mainViewProvider;
+        private LocationsView _locationsView;
+        private EcsOneData<LocationsData> _locationsData;
 
         public void Init()
         {
             Load();
         }
-        
+
         private async void Load()
         {
             try
             {
                 AssetReference chosenLocation = null;
                 var locations = await Addressables.LoadAssetAsync<Locations>("LocationsContainer").Task;
-                _mainViewProvider.LocationsView.Init(locations.locations, locations.names);
-                _mainViewProvider.LocationsView.gameObject.SetActive(true);
-                _mainViewProvider.LocationsView.OnOnLocationChosen += r => chosenLocation = r;
+                _locationsView.Init(locations.locations, locations.names);
+                _locationsView.gameObject.SetActive(true);
+                _locationsView.OnOnLocationChosen += r => chosenLocation = r;
                 while (chosenLocation == null)
                     await Task.Delay(200);
-                _mainViewProvider.LocationsView.gameObject.SetActive(false);
-                var t = await Addressables.LoadSceneAsync(chosenLocation, LoadSceneMode.Additive).Task;
-                t.ActivateAsync();
-                LightProbes.TetrahedralizeAsync();
-                var locationView = Object.FindObjectOfType<LocationView>();
-                locationView.SetBuildingsStates(_buildingsRepository);
-                locationView.SetTreesStates(_treesRepository);
-                
-                await LoadLogs();
 
-                await _mainViewProvider.PoolsProvider.BuildingFxPool.WarmUp(3);
-                _mainViewProvider.WoodmanContainer.transform.position = locationView.GetPlayerSpawnPos();
+                var ld = _locationsData.GetData();
+                ld.currentLocation = chosenLocation;
+                _locationsData.SetData(ld);
+
+                _locationsView.gameObject.SetActive(false);
+
                 _world.InitModule<MetaModule>();
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
-            }
-        }
-
-        private async Task LoadLogs()
-        {
-            var counter = new Dictionary<LogsHeapType, int>();
-            foreach (var heapData in _logsHeapRepository.GetData())
-            {
-                if (!counter.ContainsKey(heapData.type))
-                    counter[heapData.type] = 0;
-                counter[heapData.type]++;
-            }
-
-            foreach (var (type, count) in counter)
-            {
-                var warmCount = math.min(1, (int)(count * 1.2f));
-                await _mainViewProvider.LogsPool.WarmUp(type, math.max(3, warmCount));
-            }
-
-            foreach (var heapData in _logsHeapRepository.GetData())
-            {
-                var view = _mainViewProvider.LogsPool.GetLogView(heapData.type);
-                view.Id = heapData.id;
-                view.SetCount(heapData.count);
-                view.transform.position = heapData.position;
-                view.Show();
             }
         }
     }

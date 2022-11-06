@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Woodman.Felling.Tree;
+using Woodman.Utils;
 
 namespace Woodman.Felling
 {
@@ -19,32 +20,25 @@ namespace Woodman.Felling
 
         private readonly Dictionary<FellingSide, Vector3> _sideToPosMap = new();
         private Vector3 _bottomPos;
-        public FellingSide CurrentFellingSide { get; private set; }
+        public FellingSide CurrentFellingSide { get; private set; } = FellingSide.Right;
+
+        public void InitFelling(FellingPositions positions)
+        {
+            _sideToPosMap[FellingSide.Left] = positions.LeftCharPos;
+            _sideToPosMap[FellingSide.Right] = positions.RightCharPos;
+        }
 
         public void SetSide(FellingSide fellingSide)
         {
             _characterContainer.position = _sideToPosMap[fellingSide];
-            var rot = Quaternion.LookRotation((_bottomPos - _character.position).normalized).eulerAngles;
-            _character.rotation = Quaternion.Euler(0, rot.y, 0);
+            if (CurrentFellingSide != fellingSide)
+                SwitchScale();
             CurrentFellingSide = fellingSide;
         }
 
-        public void InitFelling(TreeModel treeModel, GameObject bottomPiece)
+        private void SwitchScale()
         {
-            _bottomPos = bottomPiece.transform.position;
-
-            var positionY = _characterContainer.position.y;
-            var leftDist = (treeModel.leftPos - treeModel.pos).magnitude;
-            var rightDist = (treeModel.leftPos - treeModel.pos).magnitude;
-            
-            var piecePos = bottomPiece.transform.position;
-            var left = Vector3.MoveTowards(piecePos, -bottomPiece.transform.right * 100, leftDist);
-            var right = Vector3.MoveTowards(piecePos, bottomPiece.transform.right * 100, rightDist);
-            
-            var leftPos = new Vector3(left.x, positionY, left.z);
-            var rightPos = new Vector3(right.x, positionY, right.z);
-            _sideToPosMap[FellingSide.Left] = leftPos;
-            _sideToPosMap[FellingSide.Right] = rightPos;
+            _character.localScale = _character.localScale.MirrorZ();
         }
 
         public void Cut()
