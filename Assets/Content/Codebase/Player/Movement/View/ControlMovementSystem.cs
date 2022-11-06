@@ -3,15 +3,17 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Systems;
 using UnityEngine;
 using Woodman.Common;
+using Woodman.Meta;
 using Woodman.Utils;
 
 namespace Woodman.Player.Movement.View
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class ControlMovementSystem : IInitSystem, IRunSystem, IDestroySystem
     {
         private MetaUiProvider _metaUiProvider;
-        private MainViewProvider _mainViewProvider;
+        private MetaViewProvider _metaViewProvider;
+        private UiProvider _uiProvider;
         private EcsOneData<PlayerMovementData> _movementData;
         public void Init()
         {
@@ -25,14 +27,14 @@ namespace Woodman.Player.Movement.View
             ref var moveData = ref _movementData.GetData();
             if (isActive)
             {
-                var pos = _mainViewProvider.MainCanvas.ScreenToCanvasPosition(reader.CurrentPointerPos);
+                var pos = _uiProvider.MainCanvas.ScreenToCanvasPosition(reader.CurrentPointerPos);
                 circle.SetStartPosition(pos);
             }
             else
             {
                 moveData.input = Vector2.zero;
                 circle.ResetToDefault();
-                _mainViewProvider.PlayerMovement.StopMove();
+                _metaViewProvider.PlayerMovement.StopMove();
             }
 
             moveData.isMove = isActive;
@@ -48,7 +50,7 @@ namespace Woodman.Player.Movement.View
             var circleMovement = _metaUiProvider.MovementViewProvider.CircleMovement;
             var reader = _metaUiProvider.MovementViewProvider.Reader;
             moveData.input = circleMovement.Delta;
-            var pos = _mainViewProvider.MainCanvas.ScreenToCanvasPosition(reader.CurrentPointerPos);
+            var pos = _uiProvider.MainCanvas.ScreenToCanvasPosition(reader.CurrentPointerPos);
 
             circleMovement.SetPosition(pos);
         }

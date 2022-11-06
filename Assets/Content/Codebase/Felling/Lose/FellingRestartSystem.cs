@@ -6,19 +6,20 @@ using Woodman.Common;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Generator;
-using Woodman.MetaTrees;
 
 namespace Woodman.Felling.Lose
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(CoreModule))]
     public class FellingRestartSystem : IInitSystem, IDestroySystem
     {
         private DataWorld _world;
+        private EcsOneData<TreeModel> _currentTree;
+        private FellingPositions _positions;
         private FellingCharacterController _characterController;
-        private MetaTreesRepository _metaTrees;
         private TreeGenerator _treeGenerator;
         private TreePiecesRepository _piecesRepository;
-        private WindowsUiProvider _uiProvider;
+        private UiProvider _uiProvider;
+
         public void Init()
         {
             _uiProvider.FellingLoseWindow.OnRestartClick += RestartFelling;
@@ -27,9 +28,9 @@ namespace Woodman.Felling.Lose
         private void RestartFelling()
         {
             _piecesRepository.Destroy();
-            var treeModel = _metaTrees.CurrentTree.GetTreeModel();
+            var treeModel = _currentTree.GetData();
             _characterController.SetSide(FellingSide.Right);
-            _treeGenerator.Generate(_metaTrees.CurrentTree.transform.position, treeModel.size);
+            _treeGenerator.Generate(_positions.RootPos, treeModel.size);
             _world.NewEntity().AddComponent(new TimerRestartEvent());
         }
 

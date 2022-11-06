@@ -1,0 +1,34 @@
+using ModulesFramework.Attributes;
+using ModulesFramework.Data;
+using ModulesFramework.Systems;
+
+namespace Woodman.Felling.Start
+{
+    [EcsSystem(typeof(CoreModule))]
+    public class FellingStartSystem : IInitSystem, IDestroySystem
+    {
+        private DataWorld _world;
+        private FellingUIProvider _fellingUIProvider;
+        private FellingUi _fellingUi;
+
+        public void Init()
+        {
+            _fellingUi.Show();
+            _fellingUIProvider.StartGameBtn.gameObject.SetActive(true);
+            _fellingUIProvider.FellingTimerView.SetProgress(1);
+            _fellingUIProvider.TreeUIProgress.SetProgress(1);
+            _fellingUIProvider.StartGameBtn.onClick.AddListener(OnStartClick);
+        }
+
+        private void OnStartClick()
+        {
+            _fellingUIProvider.StartGameBtn.gameObject.SetActive(false);
+            _world.ActivateModule<FellingModule>();
+        }
+
+        public void Destroy()
+        {
+            _fellingUIProvider.StartGameBtn.onClick.RemoveListener(OnStartClick);
+        }
+    }
+}

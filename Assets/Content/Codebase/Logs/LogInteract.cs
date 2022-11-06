@@ -1,5 +1,5 @@
 using UnityEngine;
-using Woodman.MetaInteractions;
+using Woodman.Locations.Interactions;
 
 namespace Woodman.Logs
 {

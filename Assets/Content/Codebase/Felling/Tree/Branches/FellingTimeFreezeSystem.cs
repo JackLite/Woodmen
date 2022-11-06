@@ -13,7 +13,7 @@ namespace Woodman.Felling.Tree.Branches
         private EcsOneData<TimerData> _timerData;
         private FellingUIProvider _uiProvider;
         private DataWorld _world;
-        
+
         public void Run()
         {
             var q = _world.Select<FellingTimeFreeze>().GetEntities();
@@ -26,6 +26,7 @@ namespace Woodman.Felling.Tree.Branches
                 else
                     isFreeze = true;
             }
+
             ref var timerData = ref _timerData.GetData();
             timerData.isFreeze = isFreeze;
 

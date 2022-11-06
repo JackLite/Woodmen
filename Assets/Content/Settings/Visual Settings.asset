@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   min: 0.1
+  gap: 0
+  branchX: 0.4
+  pieceHeight: 1
+  startBias: {x: -0.04, y: -0.5, z: 0}
+  branchY: 0.5

@@ -16,6 +16,6 @@ namespace Woodman.Felling
 
         [field: SerializeField]
         [field: ViewInject]
-        public FellingUIProvider FellingUIProvider { get; private set; }
+        public FellingPositions FellingPositions { get; private set; }
     }
 }

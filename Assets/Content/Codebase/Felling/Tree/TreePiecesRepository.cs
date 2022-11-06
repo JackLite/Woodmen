@@ -35,6 +35,7 @@ namespace Woodman.Felling.Tree
             {
                 Object.Destroy(piece.gameObject);
             }
+
             _pieces.Clear();
         }
     }

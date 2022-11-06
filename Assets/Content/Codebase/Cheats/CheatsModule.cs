@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
-using Woodman.Common;
+using Woodman.Cheats.View;
+using Woodman.Utils;
 
 namespace Woodman.Cheats
 {
@@ -7,12 +8,12 @@ namespace Woodman.Cheats
     {
         protected override Task Setup()
         {
-            var mainViewProvider = GetGlobalDependency<StartupModule, MainViewProvider>();
-            AddDependency(mainViewProvider.DebugViewProvider);
-            AddDependency(mainViewProvider.DebugViewProvider.DebugResourceViewProvider);
-            mainViewProvider.DebugViewProvider.gameObject.SetActive(true);
-            mainViewProvider.DebugViewProvider.DebugPanel.SetActive(false);
-            mainViewProvider.DebugViewProvider.DebugResourceViewProvider.gameObject.SetActive(false);
+            var debugViewProvider = GetGlobalDependency<StartupModule, DebugViewProvider>();
+            AddDependency(debugViewProvider);
+            AddDependency(debugViewProvider.DebugResourceViewProvider);
+            debugViewProvider.gameObject.SetActive(true);
+            debugViewProvider.DebugPanel.SetActive(false);
+            debugViewProvider.DebugResourceViewProvider.gameObject.SetActive(false);
             return Task.CompletedTask;
         }
     }

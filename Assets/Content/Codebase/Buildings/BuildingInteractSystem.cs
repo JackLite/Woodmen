@@ -3,13 +3,13 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Common;
-using Woodman.MetaInteractions;
-using Woodman.MetaInteractions.Components;
-using Woodman.PlayerRes;
+using Woodman.Locations.Interactions;
+using Woodman.Locations.Interactions.Components;
+using Woodman.Player.PlayerResources;
 
 namespace Woodman.Buildings
 {
-    [EcsSystem(typeof(MainModule))]
+    [EcsSystem(typeof(MetaModule))]
     public class BuildingInteractSystem : IRunSystem
     {
         private DataWorld _world;

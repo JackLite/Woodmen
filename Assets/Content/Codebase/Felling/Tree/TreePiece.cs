@@ -44,6 +44,7 @@ namespace Woodman.Felling.Tree
                 UpdateStrongText();
                 return;
             }
+
             if (_pieceType != TreePieceType.Strong) return;
             SetType(TreePieceType.Usual);
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Woodman.Utils;
 
 namespace Woodman.Felling.Tree.Branches
 {
@@ -19,7 +20,7 @@ namespace Woodman.Felling.Tree.Branches
 
         public event Action<BoosterType> OnBoosterCollide;
         public event Action OnHiveCollide;
-        
+
         private void Awake()
         {
             _hive.OnPlayerCollide += () => OnHiveCollide?.Invoke();
@@ -47,17 +48,14 @@ namespace Woodman.Felling.Tree.Branches
             }
         }
 
-        public void RevertBoosters()
-        {
-            foreach (var booster in _boosters)
-            {
-                booster.transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
-        }
-
         public void ActivateHive()
         {
             _hive.gameObject.SetActive(true);
+        }
+
+        public void Revert()
+        {
+            transform.localScale = transform.localScale.MirrorX();
         }
     }
 }

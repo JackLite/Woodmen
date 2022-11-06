@@ -10,7 +10,7 @@ using Woodman.Felling.Win;
 
 namespace Woodman.Felling.Taps
 {
-    [EcsSystem(typeof(FellingModule))]
+    [EcsSystem(typeof(CoreModule))]
     public class CutSystem : IInitSystem, IDestroySystem
     {
         private DataWorld _world;

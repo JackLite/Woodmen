@@ -42,5 +42,15 @@ namespace Woodman.Utils
             var scale = canvasRect.sizeDelta;
             return Vector3.Scale(viewportPosition, scale);
         }
+
+        public static Vector3 MirrorZ(this Vector3 v)
+        {
+            return new Vector3(v.x, v.y, -v.z);
+        }
+        
+        public static Vector3 MirrorX(this Vector3 v)
+        {
+            return new Vector3(-v.x, v.y, v.z);
+        }
     }
 }
