@@ -33,9 +33,14 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  - m_AssetGUID: a806a952dbbc0b04aab63819a6b34862
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   names:
   - VikingIsland
   - ArabianIsland
   - InkiIsland
   - CandyIsland
   - AfrikaIsland
+  - Tutorial
