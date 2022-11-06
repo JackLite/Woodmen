@@ -1,8 +1,8 @@
 using UnityEngine;
-using Woodman.Cheats.View;
 using Woodman.Common.UI;
 using Woodman.Felling;
 using Woodman.Felling.Lose;
+using Woodman.Felling.Pause;
 using Woodman.Felling.Win;
 using Woodman.Meta;
 using Woodman.Utils;
@@ -45,6 +45,10 @@ namespace Woodman.Common
         [field: SerializeField]
         [field: ViewInject]
         public FellingUIProvider FellingUIProvider { get; private set; }
+        
+        [field: SerializeField]
+        [field: ViewInject]
+        public PauseView PauseView { get; private set; }
 
         private static UiProvider _inst;
         private void Awake()

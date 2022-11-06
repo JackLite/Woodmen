@@ -8,7 +8,7 @@ using Woodman.Felling.Settings;
 namespace Woodman.Felling.Timer
 {
     [EcsSystem(typeof(FellingModule))]
-    public class FellingTimerSystem : IActivateSystem, IRunSystem
+    public class FellingTimerSystem : IRunSystem
     {
         private DataWorld _world;
         private EcsOneData<TimerData> _timerData;
@@ -35,16 +35,6 @@ namespace Woodman.Felling.Timer
 
             td.remain -= Time.deltaTime;
             _uiProvider.FellingTimerView.SetProgress(td.remain / td.totalTime);
-        }
-
-        public void Activate()
-        {
-            var settings = _fellingSettings.GetData();
-            _timerData.SetData(new TimerData
-            {
-                remain = settings.time,
-                totalTime = settings.time
-            });
         }
     }
 }
