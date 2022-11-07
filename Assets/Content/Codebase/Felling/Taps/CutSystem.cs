@@ -57,6 +57,7 @@ namespace Woodman.Felling.Taps
             if (piece.Size <= 0)
             {
                 _treePiecesRepository.RemovePiece();
+                _world.NewEntity().AddComponent(new CutEvent());
                 UpdateProgressUI();
                 if (_treePiecesRepository.GetRemain() == 0)
                 {

@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
@@ -23,6 +24,12 @@ namespace Woodman.Felling.Tree
         public FellingSide BranchSide { get; set; }
         public bool IsHasBranch { get; set; }
         public int Size { get; private set; }
+        public float TargetY { get; set; }
+
+        private void Start()
+        {
+            TargetY = transform.position.y;
+        }
 
         public void SetType(TreePieceType type)
         {

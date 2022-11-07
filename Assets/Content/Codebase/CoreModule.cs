@@ -28,6 +28,8 @@ namespace Woodman
                 JsonConvert.DeserializeObject<TreeGenerationSettings>(rawTreeGenerationSettings.text);
             CreateTreeGenerator(treeGenerationSettings);
             
+            CreateOneData<TreePiecesData>();
+            
             var fellingViewProvider = Object.FindObjectOfType<FellingViewProvider>(true);
             AddDependency(fellingViewProvider);
             BindView(fellingViewProvider);

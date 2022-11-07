@@ -17,5 +17,8 @@ namespace Woodman
         public float pieceHeight = 1;
         public Vector3 startBias;
         public float branchY = .5f;
+
+        [Header("Felling")]
+        public float fallSpeed = 10f;
     }
 }
