@@ -2,6 +2,7 @@ using ModulesFramework;
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
+using Unity.Mathematics;
 using UnityEngine;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Timer;
@@ -72,7 +73,11 @@ namespace Woodman.Felling.Taps
             }
 
             ref var td = ref _timerData.GetData();
-            td.remain += _fellingSettings.GetData().timeForCut;
+            if (!td.isFreeze)
+            {
+                td.remain += _fellingSettings.GetData().timeForCut;
+                td.remain = math.min(td.remain, td.totalTime);
+            }
         }
 
         private void UpdateProgressUI()

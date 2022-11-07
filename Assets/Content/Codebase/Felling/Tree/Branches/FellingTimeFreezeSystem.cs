@@ -18,21 +18,53 @@ namespace Woodman.Felling.Tree.Branches
         {
             var q = _world.Select<FellingTimeFreeze>().GetEntities();
             var isFreeze = false;
+            var unfreezeMaxTime = 0f;
             foreach (var e in q)
             {
                 ref var timeFreeze = ref e.GetComponent<FellingTimeFreeze>();
                 if (Time.time >= timeFreeze.unfreezeTime)
+                {
                     e.AddComponent(new EcsOneFrame());
+                }
                 else
+                {
+                    if (unfreezeMaxTime < timeFreeze.unfreezeTime)
+                        unfreezeMaxTime = timeFreeze.unfreezeTime;
                     isFreeze = true;
+                }
             }
 
             ref var timerData = ref _timerData.GetData();
             timerData.isFreeze = isFreeze;
+            
+            UpdateUI(isFreeze, ref timerData, unfreezeMaxTime);
+        }
 
-            if (timerData.isFreeze)
+        private void UpdateUI(bool isFreeze, ref TimerData timerData, float unfreezeMaxTime)
+        {
+            if (isFreeze && timerData.freezeState == TimerFreezeState.Unfreeze)
             {
+                timerData.freezeState = TimerFreezeState.Freeze;
                 _uiProvider.FellingTimerView.SetFreeze();
+                return;
+            }
+
+            if (isFreeze && timerData.freezeState == TimerFreezeState.Freeze)
+            {
+                var remainTime = unfreezeMaxTime - Time.time;
+                if (remainTime < 3)
+                {
+                    timerData.freezeState = TimerFreezeState.Defroze;
+                    _uiProvider.FellingTimerView.SetDefroze();
+                }
+
+                return;
+            }
+
+            if (!isFreeze && timerData.freezeState == TimerFreezeState.Defroze)
+            {
+                timerData.freezeState = TimerFreezeState.Unfreeze;
+                _uiProvider.FellingTimerView.SetUnfreeze();
             }
         }
     }
