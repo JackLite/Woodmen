@@ -20,11 +20,10 @@ namespace Woodman.Felling.Tree
             ref var pd = ref _piecesData.GetData();
             var q = _world.Select<CutEvent>();
             var y = 0f;
-            foreach (var entity in q.GetEntities())
+            foreach (var _ in q.GetEntities())
             {
                 y += _visualSettings.pieceHeight;
                 pd.remainY += _visualSettings.pieceHeight;
-                entity.Destroy();
             }
 
             if (pd.remainY == 0)

@@ -73,6 +73,10 @@ MonoBehaviour:
     m_Address: VisualSettings
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 76bc361b3e905ce4c87631e9877aede8
+    m_Address: Assets/Content/Graphics/Core/fx_tree.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:

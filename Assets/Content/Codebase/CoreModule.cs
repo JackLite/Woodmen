@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using ModulesFrameworkUnity;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -8,10 +10,12 @@ using UnityEngine.SceneManagement;
 using Woodman.Common.UI;
 using Woodman.Felling;
 using Woodman.Felling.Settings;
+using Woodman.Felling.Taps;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Builder;
 using Woodman.Felling.Tree.Generator;
 using Woodman.Utils;
+using Object = UnityEngine.Object;
 
 namespace Woodman
 {
@@ -27,10 +31,11 @@ namespace Woodman
             var treeGenerationSettings =
                 JsonConvert.DeserializeObject<TreeGenerationSettings>(rawTreeGenerationSettings.text);
             CreateTreeGenerator(treeGenerationSettings);
-            
+
             CreateOneData<TreePiecesData>();
-            
+
             var fellingViewProvider = Object.FindObjectOfType<FellingViewProvider>(true);
+            await fellingViewProvider.CutFxPool.WarmUp(5);
             AddDependency(fellingViewProvider);
             BindView(fellingViewProvider);
             EcsWorldContainer.World.InitModule<FellingModule>();
@@ -46,7 +51,15 @@ namespace Woodman
         {
             Addressables.Release(_coreScene);
         }
-        
+
+        protected override Dictionary<Type, int> GetSystemsOrder()
+        {
+            return new Dictionary<Type, int>
+            {
+                { typeof(CutSystem), -10 }
+            };
+        }
+
         private void CreateTreeGenerator(TreeGenerationSettings generationSettings)
         {
             var treeContainer = Object.FindObjectOfType<TreeContainer>();

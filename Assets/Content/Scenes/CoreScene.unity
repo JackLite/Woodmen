@@ -1676,6 +1676,56 @@ Transform:
   m_Father: {fileID: 2015954989}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1144069891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144069893}
+  - component: {fileID: 1144069892}
+  m_Layer: 0
+  m_Name: CutFxPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1144069892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144069891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f8b76fa12d4456a8c66ea882048eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab:
+    m_AssetGUID: 76bc361b3e905ce4c87631e9877aede8
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  lifetime: 2
+--- !u!4 &1144069893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144069891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 19.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1161426194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2180,6 +2230,7 @@ MonoBehaviour:
   <TreeContainer>k__BackingField: {fileID: 1333919568}
   <FellingCharacterController>k__BackingField: {fileID: 1275931604}
   <FellingPositions>k__BackingField: {fileID: 1333919569}
+  <CutFxPool>k__BackingField: {fileID: 1144069892}
 --- !u!4 &1333919567
 Transform:
   m_ObjectHideFlags: 0

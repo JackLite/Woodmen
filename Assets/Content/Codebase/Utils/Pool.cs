@@ -14,10 +14,9 @@ namespace Woodman.Utils
 
         public async Task WarmUp(int size)
         {
-            var startPos = Vector3.one * 50000;
             for (var i = 0; i < size; ++i)
             {
-                var go = await Addressables.InstantiateAsync(_prefab, startPos, Quaternion.identity, transform).Task;
+                var go = await Addressables.InstantiateAsync(_prefab, Vector3.zero, Quaternion.identity, transform).Task;
                 var component = go.GetComponent<T>();
                 ResetPoolObject(component);
                 _pool.Push(component);
@@ -27,10 +26,13 @@ namespace Woodman.Utils
         public T Get()
         {
             if (_pool.Count != 0)
-                return _pool.Pop().GetComponent<T>();
+            {
+                var c = _pool.Pop().GetComponent<T>();
+                OnBeforeGet(c);
+                return c;
+            }
 
-            var startPos = Vector3.one * 50000;
-            var go = Addressables.InstantiateAsync(_prefab, startPos, Quaternion.identity, transform)
+            var go = Addressables.InstantiateAsync(_prefab, Vector3.zero, Quaternion.identity, transform)
                 .WaitForCompletion();
             var component = go.GetComponent<T>();
             OnBeforeGet(component);
@@ -43,12 +45,14 @@ namespace Woodman.Utils
             _pool.Push(poolObject);
         }
 
-        protected virtual void ResetPoolObject(T _)
+        protected virtual void ResetPoolObject(T component)
         {
+            component.gameObject.SetActive(false);
         }
 
-        protected virtual void OnBeforeGet(T _)
+        protected virtual void OnBeforeGet(T component)
         {
+            component.gameObject.SetActive(true);
         }
 
         private void OnDestroy()

@@ -5,6 +5,7 @@ using ModulesFramework.Systems;
 using Unity.Mathematics;
 using UnityEngine;
 using Woodman.Felling.Settings;
+using Woodman.Felling.Taps.CutFx;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Win;
@@ -14,6 +15,7 @@ namespace Woodman.Felling.Taps
     [EcsSystem(typeof(CoreModule))]
     public class CutSystem : IInitSystem, IDestroySystem
     {
+        private CutFxPool _cutFxPool;
         private DataWorld _world;
         private EcsOneData<TreeModel> _currentTree;
         private EcsOneData<FellingSettings> _fellingSettings;
@@ -57,7 +59,7 @@ namespace Woodman.Felling.Taps
             if (piece.Size <= 0)
             {
                 _treePiecesRepository.RemovePiece();
-                _world.NewEntity().AddComponent(new CutEvent());
+                _world.CreateOneFrame().AddComponent(new CutEvent());
                 UpdateProgressUI();
                 if (_treePiecesRepository.GetRemain() == 0)
                 {

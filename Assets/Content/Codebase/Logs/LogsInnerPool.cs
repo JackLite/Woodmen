@@ -8,5 +8,9 @@ namespace Woodman.Logs
         {
             view.Hide();
         }
+
+        protected override void OnBeforeGet(LogView _)
+        {
+        }
     }
 }
