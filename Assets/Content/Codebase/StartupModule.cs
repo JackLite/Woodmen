@@ -16,6 +16,7 @@ using Woodman.Locations;
 using Woodman.Locations.Trees;
 using Woodman.Logs;
 using Woodman.Player;
+using Woodman.Player.PlayerResources;
 using Woodman.Utils;
 
 namespace Woodman
@@ -39,7 +40,9 @@ namespace Woodman
             AddDependency(new BuildingsRepository());
             AddDependency(new MetaTreesRepository());
             AddDependency(new LogsHeapRepository());
-            
+            AddDependency(new PlayerLogsRepository());
+            AddDependency(new PlayerCoinsRepository());
+
             var locationsChooseView = Object.FindObjectOfType<LocationsView>(true);
             AddDependency(locationsChooseView);
             var debugViewProvider = Object.FindObjectOfType<DebugViewProvider>(true);

@@ -17,7 +17,7 @@ namespace Woodman.Logs
         private EcsOneData<PlayerData> _playerData;
         private LogsHeapRepository _logsHeapRepository;
         private LogsPool _logsPool;
-        private PlayerResRepository _resRepository;
+        private PlayerLogsRepository _resRepository;
 
         public void Run()
         {

@@ -10,7 +10,7 @@ namespace Woodman.Cheats.Systems
     public class CheatSetLogsSystem : IInitSystem, IDestroySystem
     {
         private DebugResourceViewProvider _viewProvider;
-        private PlayerResRepository _playerResRepository;
+        private PlayerLogsRepository _playerResRepository;
         private DebugViewProvider _debugViewProvider;
         public void Init()
         {

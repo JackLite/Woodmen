@@ -236,8 +236,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b6631bb2a94ebf818630b762974524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ResourceBarMetaUI>k__BackingField: {fileID: 1263359237036591418}
+  <LogsBarMetaUI>k__BackingField: {fileID: 1263359237036591418}
+  <CoinsBarMetaUI>k__BackingField: {fileID: 9181768740112717517}
   <MovementViewProvider>k__BackingField: {fileID: 3608913231731725868}
+  <SettingsButton>k__BackingField: {fileID: 4569297289904279452}
 --- !u!114 &5202229907929482466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,6 +740,18 @@ RectTransform:
 --- !u!114 &1263359237036591418 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1375195576443777194, guid: 6b1990c60bab5d84a8a8e9d7493e63f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 188579023400008080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5604429d6c754bf6945c54393706ba5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9181768740112717517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9075251992597409629, guid: 6b1990c60bab5d84a8a8e9d7493e63f2,
     type: 3}
   m_PrefabInstance: {fileID: 188579023400008080}
   m_PrefabAsset: {fileID: 0}
@@ -1292,6 +1306,18 @@ PrefabInstance:
       objectReference: {fileID: 7327080407487890919}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee92219ee4b3f1e418130efcf4920ee9, type: 3}
+--- !u!114 &4569297289904279452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5810353475331843494, guid: ee92219ee4b3f1e418130efcf4920ee9,
+    type: 3}
+  m_PrefabInstance: {fileID: 8055780979265645114}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7327080407487890919 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 748977227272581085, guid: ee92219ee4b3f1e418130efcf4920ee9,
