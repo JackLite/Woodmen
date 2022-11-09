@@ -24,16 +24,15 @@ namespace Woodman.Felling.Taps.CutFx
             {
                 var fxTransform = CreateFx();
                 _world.NewEntity()
-                    .AddComponent(new CutFxComponent { fxTransform = fxTransform, remain = _cutFxPool.lifetime })
+                    .AddComponent(new CutFxComponent { fxTransform = fxTransform })
                     .AddComponent(new Lifetime { remain = _cutFxPool.lifetime });
             }
 
-            var fxQ = _world.Select<CutFxComponent>();
+            var fxQ = _world.Select<CutFxComponent>()
+                .Without<Lifetime>();
             foreach (var entity in fxQ.GetEntities())
             {
-                ref var cfx = ref entity.GetComponent<CutFxComponent>();
-                cfx.remain -= Time.deltaTime;
-                if (cfx.remain > 0) continue;
+                Debug.Log("[TEST] Destroy fx");
                 _cutFxPool.Return(entity.GetComponent<CutFxComponent>().fxTransform);
                 entity.Destroy();
             }
