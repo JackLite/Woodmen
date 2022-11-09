@@ -57,6 +57,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1e5923927cacab54b920aea2db876437, type: 3}
   - {fileID: 21300000, guid: 0aaa9af2043a59c4f9ffe837db4f730f, type: 3}
   - {fileID: 21300000, guid: 0c06b6732f35eea4ea1b0ef489c897d3, type: 3}
+  - {fileID: 21300000, guid: 69496ab357f9c6542873542dac8bcf18, type: 3}
   - {fileID: 21300000, guid: 3126d2442991bb040bdc37fc5a6213a9, type: 3}
   - {fileID: 21300000, guid: d25ab0b4c6a98144aa58dc298a569a5c, type: 3}
   - {fileID: 21300000, guid: a85b20e56ee86cb4da7c117c4aa9f80e, type: 3}
@@ -106,6 +107,7 @@ SpriteAtlas:
   - i_pause
   - i_time
   - Bar_wood
+  - b_arrow_2
   - bg_resultwindow
   - i_wood
   - i_mustaches
