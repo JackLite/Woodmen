@@ -4,50 +4,45 @@ using Woodman.Utils;
 
 namespace Woodman.Player.PlayerResources
 {
-    public class PlayerResRepository
+    public abstract class PlayerResRepository
     {
-        private const string SAVE_KEY = "player.resources.logs";
+        protected int count;
 
-        private int _count;
-
-        public PlayerResRepository()
-        {
-            _count = SaveUtility.LoadInt(SAVE_KEY);
-        }
+        protected abstract string SaveKey { get; }
 
         public event Action<int, int> OnChange;
 
         public int GetPlayerRes()
         {
-            return _count;
+            return count;
         }
 
         public void AddPlayerRes(int count, bool saveImmediate = true)
         {
-            var old = _count;
-            _count += count;
+            var old = this.count;
+            this.count += count;
             if (saveImmediate)
                 Save();
-            OnChange?.Invoke(old, _count);
+            OnChange?.Invoke(old, this.count);
         }
 
         public int SubtractRes(int count, bool saveImmediate = true)
         {
-            if (_count < count)
+            if (this.count < count)
                 Logger.LogError(nameof(PlayerResRepository),
                     nameof(SubtractRes),
-                    $"Count: {_count}. You trying subtract ${count}!");
-            var old = _count;
-            _count = math.max(_count - count, 0);
+                    $"Count: {this.count}. You trying subtract ${count}!");
+            var old = this.count;
+            this.count = math.max(this.count - count, 0);
             if (saveImmediate)
                 Save();
-            OnChange?.Invoke(old, _count);
-            return _count;
+            OnChange?.Invoke(old, this.count);
+            return this.count;
         }
 
         private void Save()
         {
-            SaveUtility.SaveInt(SAVE_KEY, _count, true);
+            SaveUtility.SaveInt(SaveKey, count, true);
         }
     }
 }

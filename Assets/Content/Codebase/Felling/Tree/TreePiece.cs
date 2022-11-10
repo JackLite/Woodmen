@@ -25,6 +25,7 @@ namespace Woodman.Felling.Tree
         public bool IsHasBranch { get; set; }
         public int Size { get; private set; }
         public float TargetY { get; set; }
+        public GameObject Branch { get; set; }
 
         private void Start()
         {

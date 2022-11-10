@@ -3,8 +3,10 @@ using Woodman.Common.UI;
 using Woodman.Felling;
 using Woodman.Felling.Lose;
 using Woodman.Felling.Pause;
+using Woodman.Felling.SecondChance;
 using Woodman.Felling.Win;
 using Woodman.Meta;
+using Woodman.Settings;
 using Woodman.Utils;
 
 namespace Woodman.Common
@@ -49,6 +51,14 @@ namespace Woodman.Common
         [field: SerializeField]
         [field: ViewInject]
         public PauseView PauseView { get; private set; }
+        
+        [field: SerializeField]
+        [field: ViewInject]
+        public SettingsWindow SettingsView { get; private set; }
+        
+        [field: SerializeField]
+        [field: ViewInject]
+        public SecondChanceView SecondChanceView { get; private set; }
 
         private static UiProvider _inst;
         private void Awake()

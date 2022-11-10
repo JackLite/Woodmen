@@ -4,6 +4,7 @@ using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Common;
 using Woodman.Felling.Pause;
+using Woodman.Felling.SecondChance;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Generator;
@@ -15,6 +16,7 @@ namespace Woodman.Felling.Lose
     {
         private DataWorld _world;
         private EcsOneData<TreeModel> _currentTree;
+        private EcsOneData<SecondChanceData> _secondChanceData;
         private FellingPositions _positions;
         private FellingCharacterController _characterController;
         private TreeGenerator _treeGenerator;
@@ -34,6 +36,12 @@ namespace Woodman.Felling.Lose
             var treeModel = _currentTree.GetData();
             _characterController.SetSide(FellingSide.Right);
             _treeGenerator.Generate(_positions.RootPos, treeModel.size);
+
+            ref var scd = ref _secondChanceData.GetData();
+            scd.isActive = false;
+            scd.wasShowed = false;
+            scd.remainTime = scd.totalTime;
+            
             _world.NewEntity().AddComponent(new TimerRestartEvent());
         }
 

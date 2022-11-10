@@ -32,7 +32,6 @@ namespace Woodman
             AddDependency(viewProvider);
             BindView(viewProvider);
 
-            AddDependency(new PlayerResRepository());
             CreateOneData<PlayerMovementData>();
 
             if (Debug.isDebugBuild)

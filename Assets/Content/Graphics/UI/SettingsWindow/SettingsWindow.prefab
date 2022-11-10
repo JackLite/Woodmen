@@ -1130,6 +1130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2538711805067057960}
   - component: {fileID: 4430283838362723805}
+  - component: {fileID: 7703490174860150686}
   m_Layer: 5
   m_Name: SettingsWindow
   m_TagString: Untagged
@@ -1179,6 +1180,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7703490174860150686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384297706478865628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe05e63bbc245e49d11ec4cd9cacca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeBtn: {fileID: 7256370998103111875}
 --- !u!1 &7488028157444379581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,6 +2215,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3751862743913569637}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7256370998103111875 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5810353475331843494, guid: ee92219ee4b3f1e418130efcf4920ee9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3751862743913569637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4118877008857323319
 PrefabInstance:
   m_ObjectHideFlags: 0

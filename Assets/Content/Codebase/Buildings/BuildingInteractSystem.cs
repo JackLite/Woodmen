@@ -13,7 +13,7 @@ namespace Woodman.Buildings
     public class BuildingInteractSystem : IRunSystem
     {
         private DataWorld _world;
-        private PlayerResRepository _resRepository;
+        private PlayerLogsRepository _resRepository;
         private BuildingsRepository _buildingsRepository;
         private PoolsProvider _poolsProvider;
 

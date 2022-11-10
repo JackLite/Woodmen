@@ -7,15 +7,16 @@ using Woodman.Buildings;
 using Woodman.Cheats;
 using Woodman.Cheats.View;
 using Woodman.Common;
+using Woodman.Felling.SecondChance;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
-using Woodman.Felling.Win;
 using Woodman.Loading;
 using Woodman.Locations;
 using Woodman.Locations.Trees;
 using Woodman.Logs;
 using Woodman.Player;
+using Woodman.Player.PlayerResources;
 using Woodman.Utils;
 
 namespace Woodman
@@ -31,6 +32,7 @@ namespace Woodman
             CreateOneData<TimerData>();
             CreateOneData<LocationsData>();
             CreateOneData<DebugStateData>();
+            CreateOneData(new SecondChanceData { remainTime = 5, totalTime = 5});
 
             var rawFellingSettings = await Addressables.LoadAssetAsync<TextAsset>("FellingSettings").Task;
             var fellingSettings = JsonConvert.DeserializeObject<FellingSettings>(rawFellingSettings.text);
@@ -39,7 +41,9 @@ namespace Woodman
             AddDependency(new BuildingsRepository());
             AddDependency(new MetaTreesRepository());
             AddDependency(new LogsHeapRepository());
-            
+            AddDependency(new PlayerLogsRepository());
+            AddDependency(new PlayerCoinsRepository());
+
             var locationsChooseView = Object.FindObjectOfType<LocationsView>(true);
             AddDependency(locationsChooseView);
             var debugViewProvider = Object.FindObjectOfType<DebugViewProvider>(true);

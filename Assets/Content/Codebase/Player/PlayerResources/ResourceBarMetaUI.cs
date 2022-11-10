@@ -9,10 +9,22 @@ namespace Woodman.Player.PlayerResources
         [SerializeField]
         private TMP_Text _text;
 
-        public void SetCount(int count)
+        public void SetCoinsCount(int count)
         {
-            // TODO: make formatting if need
-            _text.text = count.ToString(CultureInfo.InvariantCulture);
+            if(count < 1000)
+                _text.text = count.ToString(CultureInfo.InvariantCulture);
+            else
+                _text.text = (count / 1000).ToString(CultureInfo.InvariantCulture) + "k";
+        }
+
+        public void SetLogsCount(int count)
+        {
+            if(count < 1000) 
+                _text.text = count.ToString("000");
+            else if (count < 100000)
+                _text.text = count.ToString(CultureInfo.InvariantCulture);
+            else
+                _text.text = (count / 1000).ToString(CultureInfo.InvariantCulture) + "k";
         }
 
         public void SetCountAnim(int count)
