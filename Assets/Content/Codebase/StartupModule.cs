@@ -7,10 +7,10 @@ using Woodman.Buildings;
 using Woodman.Cheats;
 using Woodman.Cheats.View;
 using Woodman.Common;
+using Woodman.Felling.SecondChance;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
-using Woodman.Felling.Win;
 using Woodman.Loading;
 using Woodman.Locations;
 using Woodman.Locations.Trees;
@@ -32,6 +32,7 @@ namespace Woodman
             CreateOneData<TimerData>();
             CreateOneData<LocationsData>();
             CreateOneData<DebugStateData>();
+            CreateOneData(new SecondChanceData { remainTime = 5, totalTime = 5});
 
             var rawFellingSettings = await Addressables.LoadAssetAsync<TextAsset>("FellingSettings").Task;
             var fellingSettings = JsonConvert.DeserializeObject<FellingSettings>(rawFellingSettings.text);

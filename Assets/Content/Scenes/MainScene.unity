@@ -514,6 +514,7 @@ MonoBehaviour:
   <FellingUIProvider>k__BackingField: {fileID: 8948099601766782768}
   <PauseView>k__BackingField: {fileID: 1283851069}
   <SettingsView>k__BackingField: {fileID: 413731660}
+  <SecondChanceView>k__BackingField: {fileID: 1480877630}
 --- !u!1 &178932892
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +752,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235444975}
-  m_LocalRotation: {x: 0.38268346, y: -0.000000015896623, z: 0.0000000065845964, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: 0.000000015896623, z: -0.0000000065845964, w: 0.92387956}
   m_LocalPosition: {x: -23.82, y: 13.316, z: -110.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3230,7 +3231,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.38268346, y: -0.000000015896623, z: 0.0000000065845964, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: 0.000000015896623, z: -0.0000000065845964, w: 0.92387956}
   m_LocalPosition: {x: -23.82, y: 13.316, z: -110.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4092,6 +4093,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1480877628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1480877630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2681180410067467008, guid: 957b6a0f5bc84b646bf67ca37d994bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1480877628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144db447c43b4fcf958ee3e028f01897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1591747944
 GameObject:
   m_ObjectHideFlags: 0
