@@ -17,6 +17,7 @@ using Woodman.Locations.Trees;
 using Woodman.Logs;
 using Woodman.Player;
 using Woodman.Player.PlayerResources;
+using Woodman.Progress;
 using Woodman.Utils;
 
 namespace Woodman
@@ -37,10 +38,13 @@ namespace Woodman
             var rawFellingSettings = await Addressables.LoadAssetAsync<TextAsset>("FellingSettings").Task;
             var fellingSettings = JsonConvert.DeserializeObject<FellingSettings>(rawFellingSettings.text);
             CreateOneData(fellingSettings);
-            
+
+            var treeProgressionSettings =
+                await Addressables.LoadAssetAsync<TreeProgressionSettings>("TreeProgressionSettings").Task;
             AddDependency(new BuildingsRepository());
-            AddDependency(new MetaTreesRepository());
+            AddDependency(new TreeProgressionService(treeProgressionSettings));
             AddDependency(new LogsHeapRepository());
+            AddDependency(new MetaTreesRepository());
             AddDependency(new PlayerLogsRepository());
             AddDependency(new PlayerCoinsRepository());
 

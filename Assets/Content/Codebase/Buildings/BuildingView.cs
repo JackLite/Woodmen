@@ -1,6 +1,9 @@
 using System;
 using System.Threading.Tasks;
+#if UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.SceneManagement;
+#endif
 using UnityEngine;
 using Woodman.Common.UI;
 using Logger = Woodman.Utils.Logger;
@@ -53,6 +56,10 @@ namespace Woodman.Buildings
         {
             if (string.IsNullOrWhiteSpace(_guid))
                 _guid = Guid.NewGuid().ToString();
+            #if UNITY_EDITOR
+            EditorUtility.SetDirty(gameObject);
+            EditorUtility.SetDirty(this);
+            #endif
         }
 
         public void SetLogs(int count, int total)

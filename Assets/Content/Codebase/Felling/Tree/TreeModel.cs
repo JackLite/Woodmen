@@ -7,7 +7,6 @@ namespace Woodman.Felling.Tree
     public struct TreeModel
     {
         public int size;
-        public int logsCount;
         public Dictionary<LogsHeapType, Vector3> logsPositions;
     }
 }

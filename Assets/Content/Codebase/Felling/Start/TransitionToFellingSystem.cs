@@ -11,6 +11,7 @@ using Woodman.Locations.Trees;
 using Woodman.Meta;
 using Woodman.Player;
 using Woodman.Player.Movement.View;
+using Woodman.Progress;
 
 namespace Woodman.Felling.Start
 {
@@ -21,6 +22,7 @@ namespace Woodman.Felling.Start
         private EcsOneData<TreeModel> _currentTree;
         private EcsOneData<PlayerData> _playerData;
         private MetaTreesRepository _metaTrees;
+        private TreeProgressionService _treeProgressionService;
         private MetaUi _metaUi;
         private PlayerMovement _playerMovement;
         private SwitchCoreScreen _switchCoreScreen;
@@ -33,6 +35,7 @@ namespace Woodman.Felling.Start
 
             _metaTrees.CurrentTree = c.treeMeta;
             var treeModel = c.treeMeta.GetTreeModel();
+            treeModel.size = _treeProgressionService.GetSize();
             _currentTree.SetData(treeModel);
             ref var pd = ref _playerData.GetData();
             pd.metaPos = _playerMovement.CurrentPos;

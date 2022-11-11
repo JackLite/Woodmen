@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: Locations
   m_EditorClassIdentifier: 
   locations:
-  - m_AssetGUID: 6909b8c5d0a876f4c9e7bfe96fd7df58
+  - m_AssetGUID: a806a952dbbc0b04aab63819a6b34862
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   - m_AssetGUID: 85b4f1d9c4ec1bb418008fb78b0d1961
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 6909b8c5d0a876f4c9e7bfe96fd7df58
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -30,10 +34,6 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   - m_AssetGUID: 2218ed24a33d3734c913227c1f5201a9
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: a806a952dbbc0b04aab63819a6b34862
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

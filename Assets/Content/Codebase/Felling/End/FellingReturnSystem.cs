@@ -5,7 +5,6 @@ using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using UnityEngine;
 using Woodman.Common;
-using Woodman.Locations.Trees;
 
 namespace Woodman.Felling.End
 {
@@ -13,7 +12,6 @@ namespace Woodman.Felling.End
     public class FellingReturnSystem : IInitSystem, IDestroySystem
     {
         private DataWorld _world;
-        private MetaTreesRepository _treesRepository;
         private FellingCharacterController _characterController;
         private FellingUIProvider _fellingUIProvider;
         private UiProvider _uiProvider;

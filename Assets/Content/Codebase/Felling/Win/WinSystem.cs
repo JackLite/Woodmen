@@ -6,6 +6,7 @@ using Woodman.Common;
 using Woodman.Felling.Tree;
 using Woodman.Locations.Trees;
 using Woodman.Logs;
+using Woodman.Progress;
 
 namespace Woodman.Felling.Win
 {
@@ -13,8 +14,9 @@ namespace Woodman.Felling.Win
     public class WinSystem : IPostRunSystem
     {
         private DataWorld _world;
-        private MetaTreesRepository _treesRepository;
+        private TreeProgressionService _treeProgressionService;
         private LogsHeapRepository _logsHeapRepository;
+        private MetaTreesRepository _treesRepository;
         private UiProvider _windows;
         private EcsOneData<TreeModel> _treeModel;
         
@@ -29,6 +31,7 @@ namespace Woodman.Felling.Win
                 return;
             
             _treesRepository.SetFell(_treesRepository.CurrentTree.Id);
+            _treeProgressionService.SetFell();
             SaveLogs();
             _world.DeactivateModule<FellingModule>();
             _windows.FellingUi.Hide();
@@ -39,10 +42,10 @@ namespace Woodman.Felling.Win
         {
             //todo: добавить 4 размер кучи
             var treeModel = _treeModel.GetData();
-            var remain = treeModel.logsCount;
-            if (treeModel.logsCount > bigLogsHeap)
+            var remain = treeModel.size;
+            if (treeModel.size > bigLogsHeap)
             {
-                remain = treeModel.logsCount % bigLogsHeap;
+                remain = treeModel.size % bigLogsHeap;
                 _logsHeapRepository.Create(LogsHeapType.Big, remain, treeModel.logsPositions[LogsHeapType.Big]);
             }
 

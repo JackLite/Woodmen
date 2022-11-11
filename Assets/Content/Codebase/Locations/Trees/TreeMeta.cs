@@ -14,15 +14,9 @@ namespace Woodman.Locations.Trees
         [ContextMenuItem("Generate guid", nameof(GenerateGuid))]
         [SerializeField]
         private string _guid;
-        
-        [SerializeField]
-        private int _size = 100;
 
         [SerializeField]
         private GameObject _metaContent;
-
-        [SerializeField]
-        private int _logsCount;
 
         [SerializeField]
         private LogsTypeView[] _logsTypeViews;
@@ -42,6 +36,7 @@ namespace Woodman.Locations.Trees
                 _guid = Guid.NewGuid().ToString();
             #if UNITY_EDITOR
             EditorUtility.SetDirty(gameObject);
+            EditorUtility.SetDirty(this);
             #endif
         }
         
@@ -59,8 +54,6 @@ namespace Woodman.Locations.Trees
         {
             return new TreeModel
             {
-                size = _size,
-                logsCount = _logsCount,
                 logsPositions = LogsHeapTypeToViews
             };
         }

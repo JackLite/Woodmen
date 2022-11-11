@@ -14,6 +14,7 @@ using Woodman.Common;
 using Woodman.Locations;
 using Woodman.Locations.Trees;
 using Woodman.Logs;
+using Woodman.Progress;
 using Object = UnityEngine.Object;
 
 namespace Woodman.Loading
@@ -23,7 +24,6 @@ namespace Woodman.Loading
     {
         private BuildingsRepository _buildingsRepository;
         private LogsHeapRepository _logsHeapRepository;
-        private MetaTreesRepository _treesRepository;
         private DataWorld _world;
         private LocationsView _locationsView;
         private EcsOneData<LocationsData> _locationsData;
