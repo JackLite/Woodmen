@@ -138,7 +138,8 @@ MonoBehaviour:
   - {fileID: 3292665347648273627}
   - {fileID: 3383969481860958492}
   - {fileID: -7064689513349559513}
-  m_RendererFeatureMap: 4bdda57f22bb42b81b6ad84ef15fd28adb3cd03ab0e5b12d1cc915915046f62e274b5f64512ef59d
+  - {fileID: 8790893404899803436}
+  m_RendererFeatureMap: 4bdda57f22bb42b81b6ad84ef15fd28adb3cd03ab0e5b12d1cc915915046f62e274b5f64512ef59d2c8160c1f986ff79
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -158,7 +159,7 @@ MonoBehaviour:
       type: 3}
     objectMotionVector: {fileID: 4800000, guid: 7b3ede40266cd49a395def176e1bc486,
       type: 3}
-  m_AssetVersion: 1
+  m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
     m_Bits: 887
@@ -175,6 +176,7 @@ MonoBehaviour:
   m_ShadowTransparentReceive: 0
   m_RenderingMode: 0
   m_DepthPrimingMode: 0
+  m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 0
   m_ClusteredRendering: 0
   m_TileSize: 32
@@ -238,3 +240,18 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &8790893404899803436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7179ce5e0366e4e08817f6996541064d, type: 3}
+  m_Name: Projector Renderer Feature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_stencilMask: 255
+  m_replaceProjectorMaterialForDebug: {fileID: 0}

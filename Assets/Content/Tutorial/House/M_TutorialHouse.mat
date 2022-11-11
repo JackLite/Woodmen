@@ -110,7 +110,7 @@ Material:
     - _Glossiness: 0
     - _GlossinessSource: 0
     - _GlossyReflections: 0
-    - _LightScalar: 1
+    - _LightScalar: 0.17
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
