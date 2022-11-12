@@ -51,9 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: 
-  _size: 10
   _metaContent: {fileID: 4868485267603360112}
-  _logsCount: 0
   _logsTypeViews:
   - type: 0
     logPos: {fileID: 1378541719833990950}
@@ -183,7 +181,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4858889305753219341}
-  - {fileID: 3589387744395563023}
   - {fileID: 7400411119299999186}
   m_Father: {fileID: 4356311853730785322}
   m_RootOrder: 0
@@ -297,51 +294,6 @@ MonoBehaviour:
   _interactionDelay: 1
   <InteractType>k__BackingField: 1
   <TreeMeta>k__BackingField: {fileID: 5643181874768763308}
---- !u!1 &8815334365933975427
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3589387744395563023}
-  - component: {fileID: 1231569265012679094}
-  m_Layer: 0
-  m_Name: Coliider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3589387744395563023
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8815334365933975427}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8954485927341546632}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1231569265012679094
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8815334365933975427}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 5, z: 1.5}
-  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &9179789399275582347
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +335,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: eef4cc4951851f44a8d8bc3d7a127341,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eef4cc4951851f44a8d8bc3d7a127341,
         type: 3}
