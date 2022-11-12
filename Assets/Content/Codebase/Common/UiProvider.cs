@@ -42,7 +42,7 @@ namespace Woodman.Common
 
         [field: SerializeField]
         [field: ViewInject]
-        public SwitchCoreScreen SwitchCoreScreen { get; private set; }
+        public InnerLoadingScreen InnerLoadingScreen { get; private set; }
         
         [field: SerializeField]
         [field: ViewInject]

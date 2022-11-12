@@ -35,7 +35,7 @@ namespace Woodman
             CreateOneData<TreePiecesData>();
 
             var fellingViewProvider = Object.FindObjectOfType<FellingViewProvider>(true);
-            await fellingViewProvider.CutFxPool.WarmUp(5);
+            await fellingViewProvider.CutFxPool.WarmUp(20);
             AddDependency(fellingViewProvider);
             BindView(fellingViewProvider);
             EcsWorldContainer.World.InitModule<FellingModule>();
@@ -44,7 +44,7 @@ namespace Woodman
 
         public override void OnActivate()
         {
-            GetGlobalDependency<StartupModule, SwitchCoreScreen>().Hide();
+            GetGlobalDependency<StartupModule, InnerLoadingScreen>().Hide();
         }
 
         public override void OnDestroy()

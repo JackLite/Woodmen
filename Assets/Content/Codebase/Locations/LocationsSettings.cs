@@ -1,14 +1,17 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Woodman.Loading
+namespace Woodman.Locations
 {
     [CreateAssetMenu(menuName = "Woodman/Locations")]
-    public class Locations : ScriptableObject
+    public class LocationsSettings : ScriptableObject
     {
         public AssetReference[] locations;
-        
+        public bool choseLocation;
+
         #if UNITY_EDITOR
+        [Header("EditorOnly")]
         [ContextMenuItem(nameof(FillNames), nameof(FillNames))]
         #endif
         public string[] names;
@@ -22,6 +25,7 @@ namespace Woodman.Loading
                 var assetReference = locations[i];
                 names[i] = assetReference.editorAsset.name;
             }
+            EditorUtility.SetDirty(this);
         }
         #endif
     }

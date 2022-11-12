@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Woodman.Buildings;
 using Woodman.Locations.Trees;
-using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Locations
 {
@@ -18,6 +16,14 @@ namespace Woodman.Locations
         [SerializeField]
         [ContextMenuItem(nameof(LoadTrees), nameof(LoadTrees))]
         private TreeMeta[] _trees;
+
+        [SerializeField]
+        private BuildingView _boat;
+
+        private void Awake()
+        {
+            _boat.gameObject.SetActive(false);
+        }
 
         public Vector3 GetPlayerSpawnPos()
         {
@@ -39,7 +45,7 @@ namespace Woodman.Locations
             foreach (var view in _buildings)
             {
                 var stateIndex = buildingsRepository.GetBuildingStateIndex(view.Id);
-                if (!buildingsRepository.IsLastState(view.Id))
+                if (!buildingsRepository.IsLastState(view))
                 {
                     var current = buildingsRepository.GetBuildingLogsCount(view.Id);
                     var total = view.GetResForState(stateIndex + 1);
@@ -59,6 +65,26 @@ namespace Woodman.Locations
                 else
                     tree.EnableMeta();
             }
+        }
+
+        public int GetBuildingsCount()
+        {
+            return _buildings.Length;
+        }
+
+        public void ShowBoat()
+        {
+            _boat.gameObject.SetActive(true);
+        }
+
+        public void SetBoatState(int index)
+        {
+            _boat.SetState(index);
+        }
+
+        public void SetBoatLogs(int logs, int total)
+        {
+            _boat.SetLogs(logs, total);
         }
     }
 }

@@ -37,10 +37,11 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  choseLocation: 1
   names:
-  - VikingIsland
+  - TutorIsland
   - ArabianIsland
+  - VikingIsland
   - InkiIsland
   - CandyIsland
   - AfrikaIsland
-  - Tutorial

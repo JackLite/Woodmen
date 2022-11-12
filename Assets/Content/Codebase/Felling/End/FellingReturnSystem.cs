@@ -42,8 +42,8 @@ namespace Woodman.Felling.End
         {
             try
             {
-                _uiProvider.SwitchCoreScreen.Show();
-                await Task.Delay(TimeSpan.FromSeconds(_uiProvider.SwitchCoreScreen.animDuration));
+                _uiProvider.InnerLoadingScreen.Show();
+                await Task.Delay(TimeSpan.FromSeconds(_uiProvider.InnerLoadingScreen.animDuration));
                 _world.DestroyModule<CoreModule>();
                 _world.InitModule<MetaModule>();
             }

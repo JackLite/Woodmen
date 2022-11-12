@@ -13,6 +13,7 @@ using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Loading;
 using Woodman.Locations;
+using Woodman.Locations.Boat;
 using Woodman.Locations.Trees;
 using Woodman.Logs;
 using Woodman.Player;
@@ -27,26 +28,29 @@ namespace Woodman
     {
         protected override async Task Setup()
         {
-            Application.targetFrameRate = 60;
-            CreateOneData(new PlayerData {maxWoodCount = 50});
-            CreateOneData<TreeModel>();
-            CreateOneData<TimerData>();
-            CreateOneData<LocationsData>();
-            CreateOneData<DebugStateData>();
-            CreateOneData(new SecondChanceData { remainTime = 5, totalTime = 5});
+            Application.targetFrameRate = 300;
+            CreateOneData();
 
             var rawFellingSettings = await Addressables.LoadAssetAsync<TextAsset>("FellingSettings").Task;
             var fellingSettings = JsonConvert.DeserializeObject<FellingSettings>(rawFellingSettings.text);
             CreateOneData(fellingSettings);
 
-            var treeProgressionSettings =
-                await Addressables.LoadAssetAsync<TreeProgressionSettings>("TreeProgressionSettings").Task;
-            AddDependency(new BuildingsRepository());
-            AddDependency(new TreeProgressionService(treeProgressionSettings));
-            AddDependency(new LogsHeapRepository());
-            AddDependency(new MetaTreesRepository());
-            AddDependency(new PlayerLogsRepository());
+            var progressionSettings =
+                await Addressables.LoadAssetAsync<ProgressionSettings>("ProgressionSettings").Task;
+            AddDependency(progressionSettings);
+            var locations = await Addressables.LoadAssetAsync<LocationsSettings>("LocationsContainer").Task;
+            AddDependency(locations);
             AddDependency(new PlayerCoinsRepository());
+            AddDependency(new MetaTreesRepository());
+            AddDependency(new LogsHeapRepository());
+            AddDependency(new ProgressionService(progressionSettings, locations));
+            var buildingsRepository = new BuildingsRepository();
+            AddDependency(buildingsRepository);
+            var boatSaveService = new BoatSaveService();
+            AddDependency(boatSaveService);
+            var playerLogsRepository = new PlayerLogsRepository();
+            AddDependency(playerLogsRepository);
+            AddDependency(new BuildingService(buildingsRepository, playerLogsRepository, boatSaveService));
 
             var locationsChooseView = Object.FindObjectOfType<LocationsView>(true);
             AddDependency(locationsChooseView);
@@ -58,6 +62,16 @@ namespace Woodman
             
             var visualSettings = await Addressables.LoadAssetAsync<VisualSettings>("VisualSettings").Task;
             AddDependency(visualSettings);
+        }
+
+        private void CreateOneData()
+        {
+            CreateOneData(new PlayerData { maxWoodCount = 50 });
+            CreateOneData<TreeModel>();
+            CreateOneData<TimerData>();
+            CreateOneData<LocationData>();
+            CreateOneData<DebugStateData>();
+            CreateOneData(new SecondChanceData { remainTime = 5, totalTime = 5 });
         }
     }
 }

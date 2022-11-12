@@ -14,18 +14,20 @@ using Woodman.Locations.Trees;
 using Woodman.Logs;
 using Woodman.Meta;
 using Woodman.Player;
+using Woodman.Progress;
 
 namespace Woodman.Locations
 {
     [EcsSystem(typeof(MetaModule))]
     public class LoadingLocationSystem : IInitSystem
     {
-        private EcsOneData<LocationsData> _locationsData;
+        private EcsOneData<LocationData> _locationsData;
         private EcsOneData<PlayerData> _playerData;
         private BuildingsRepository _buildingsRepository;
         private LogsHeapRepository _logsHeapRepository;
         private MetaTreesRepository _treesRepository;
         private MetaViewProvider _metaViewProvider;
+        private ProgressionService _progressionService;
 
         private DataWorld _world;
 
@@ -38,19 +40,9 @@ namespace Woodman.Locations
         {
             try
             {
-                var ld = _locationsData.GetData();
-                var t = await Addressables.LoadSceneAsync(ld.currentLocation, LoadSceneMode.Additive).Task;
-                t.ActivateAsync();
-                LightProbes.TetrahedralizeAsync();
-
-                var locationView = UnityEngine.Object.FindObjectOfType<LocationView>();
-                locationView.SetBuildingsStates(_buildingsRepository);
-                locationView.SetTreesStates(_treesRepository);
-
+                await LoadLocation();
                 await LoadLogs();
-
                 await _metaViewProvider.PoolsProvider.BuildingFxPool.WarmUp(3);
-                UpdatePlayerPos(locationView);
 
                 _world.ActivateModule<MetaModule>();
             }
@@ -58,6 +50,24 @@ namespace Woodman.Locations
             {
                 Debug.LogException(e);
             }
+        }
+
+        private async Task LoadLocation()
+        {
+            var ld = _locationsData.GetData();
+            var sceneInstance = await Addressables.LoadSceneAsync(ld.currentLocation, LoadSceneMode.Additive).Task;
+            sceneInstance.ActivateAsync();
+            LightProbes.TetrahedralizeAsync();
+
+            ld.currentLocationScene = sceneInstance;
+            ld.locationView = UnityEngine.Object.FindObjectOfType<LocationView>();
+            _locationsData.SetData(ld);
+            ld.locationView.SetBuildingsStates(_buildingsRepository);
+            ld.locationView.SetTreesStates(_treesRepository);
+            _progressionService.SetBuildingsCount(ld.locationView.GetBuildingsCount());
+            if (_progressionService.IsBuildingsFinished())
+                ld.locationView.ShowBoat();
+            UpdatePlayerPos(ld.locationView);
         }
 
         private void UpdatePlayerPos(LocationView locationView)

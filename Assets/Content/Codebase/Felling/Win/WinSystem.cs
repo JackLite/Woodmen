@@ -14,7 +14,7 @@ namespace Woodman.Felling.Win
     public class WinSystem : IPostRunSystem
     {
         private DataWorld _world;
-        private TreeProgressionService _treeProgressionService;
+        private ProgressionService _progressionService;
         private LogsHeapRepository _logsHeapRepository;
         private MetaTreesRepository _treesRepository;
         private UiProvider _windows;
@@ -31,7 +31,7 @@ namespace Woodman.Felling.Win
                 return;
             
             _treesRepository.SetFell(_treesRepository.CurrentTree.Id);
-            _treeProgressionService.SetFell();
+            _progressionService.SetFell();
             SaveLogs();
             _world.DeactivateModule<FellingModule>();
             _windows.FellingUi.Hide();

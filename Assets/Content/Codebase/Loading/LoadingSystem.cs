@@ -1,21 +1,15 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using ModulesFramework;
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.SceneManagement;
 using Woodman.Buildings;
-using Woodman.Common;
 using Woodman.Locations;
-using Woodman.Locations.Trees;
 using Woodman.Logs;
 using Woodman.Progress;
-using Object = UnityEngine.Object;
 
 namespace Woodman.Loading
 {
@@ -26,7 +20,9 @@ namespace Woodman.Loading
         private LogsHeapRepository _logsHeapRepository;
         private DataWorld _world;
         private LocationsView _locationsView;
-        private EcsOneData<LocationsData> _locationsData;
+        private LocationsSettings _locations;
+        private EcsOneData<LocationData> _locationsData;
+        private ProgressionService _progressionService;
 
         public void Init()
         {
@@ -37,19 +33,14 @@ namespace Woodman.Loading
         {
             try
             {
-                AssetReference chosenLocation = null;
-                var locations = await Addressables.LoadAssetAsync<Locations>("LocationsContainer").Task;
-                _locationsView.Init(locations.locations, locations.names);
-                _locationsView.gameObject.SetActive(true);
-                _locationsView.OnOnLocationChosen += r => chosenLocation = r;
-                while (chosenLocation == null)
-                    await Task.Delay(200);
-
-                var ld = _locationsData.GetData();
-                ld.currentLocation = chosenLocation;
-                _locationsData.SetData(ld);
-
-                _locationsView.gameObject.SetActive(false);
+                if (Debug.isDebugBuild && _locations.choseLocation)
+                {
+                    await ChooseLocation();
+                }
+                else
+                {
+                    LoadLastLocation();
+                }
 
                 _world.InitModule<MetaModule>();
             }
@@ -57,6 +48,29 @@ namespace Woodman.Loading
             {
                 Debug.LogException(e);
             }
+        }
+
+        private void LoadLastLocation()
+        {
+            var location = _progressionService.GetLocation();
+            ref var ld = ref _locationsData.GetData();
+            ld.currentLocation = location;
+        }
+
+        private async Task ChooseLocation()
+        {
+            AssetReference chosenLocation = null;
+            _locationsView.Init(_locations.locations, _locations.names);
+            _locationsView.gameObject.SetActive(true);
+            _locationsView.OnOnLocationChosen += r => chosenLocation = r;
+            while (chosenLocation == null)
+                await Task.Delay(200);
+
+            var ld = _locationsData.GetData();
+            ld.currentLocation = chosenLocation;
+            _locationsData.SetData(ld);
+
+            _locationsView.gameObject.SetActive(false);
         }
     }
 }
