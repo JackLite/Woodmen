@@ -38,15 +38,11 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _ShadowTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.7
+    - _Alpha: 1
     - _Ambient: 0.3
-    - _ClipScale: 95.55
+    - _ClipScale: 100
     - _DSPCull: 2
     - _Offset: -1
     - _OffsetSlope: -1
