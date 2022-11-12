@@ -1401,31 +1401,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoftShadowProjector
       objectReference: {fileID: 0}
-    - target: {fileID: 2611276461722853706, guid: b9e8a15e107a55a44a9b47499573260c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5478436632303061600, guid: b9e8a15e107a55a44a9b47499573260c,
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5516038192542935648, guid: b9e8a15e107a55a44a9b47499573260c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7157526682394223050, guid: b9e8a15e107a55a44a9b47499573260c,
         type: 3}
       propertyPath: m_target
       value: 
       objectReference: {fileID: 3138394595511818146}
-    - target: {fileID: 7157526682394223050, guid: b9e8a15e107a55a44a9b47499573260c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8263232940557495918, guid: b9e8a15e107a55a44a9b47499573260c,
         type: 3}
       propertyPath: m_RootOrder

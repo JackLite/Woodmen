@@ -52,7 +52,7 @@ Projector:
   m_AspectRatio: 1
   m_Orthographic: 1
   m_OrthographicSize: 8.5
-  m_Material: {fileID: 2100000, guid: 6c3708fd2cd4d4212bcaabe05961097f, type: 2}
+  m_Material: {fileID: 2100000, guid: d6d312182125e4d9eb9bf65b4c5eef2f, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 768
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_blurSize: 1
   m_mipmapBlurSize: 1
   m_singlePassMipmapBlur: 0
-  m_shadowColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  m_shadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_blurShader: {fileID: 2100000, guid: a73b280aec97f4734ae3ad03c7b6a785, type: 2}
   m_downsampleShader: {fileID: 2100000, guid: a81f972eacc064190876c5a3d379ed72, type: 2}
   m_copyMipmapShader: {fileID: 2100000, guid: a0fb9bc77107e4463b7b8a887ed47fd6, type: 2}
@@ -216,7 +216,7 @@ MonoBehaviour:
   terrainRenderFlags: 6
   terrainsToBeFilteredWithRenderFlags: []
   m_shaderTagList: []
-  m_renderPassEvent: 400
+  m_renderPassEvent: 300
   m_perObjectData: 0
   m_stencilPass: {fileID: 0}
   m_stencilTestOptions: 0

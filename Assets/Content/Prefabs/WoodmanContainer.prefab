@@ -889,6 +889,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4669969340759869976, guid: b9e8a15e107a55a44a9b47499573260c,
         type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: d6d312182125e4d9eb9bf65b4c5eef2f, type: 2}
+    - target: {fileID: 4669969340759869976, guid: b9e8a15e107a55a44a9b47499573260c,
+        type: 3}
       propertyPath: m_OrthographicSize
       value: 1.45
       objectReference: {fileID: 0}
