@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,9 @@ namespace Woodman.Felling.Win
 {
     public class FellingWinWindow : SimpleUiWindow
     {
+        [SerializeField]
+        private CanvasGroup _topCanvasGroup;
+        
         [SerializeField]
         private TMP_Text _logsCount;
         
@@ -34,12 +38,23 @@ namespace Woodman.Felling.Win
         {
             _okBtn.onClick.AddListener(() => OnOkBtnClick?.Invoke());
             _x2Button.onClick.AddListener(() => OnX2BtnClick?.Invoke());
+            _topCanvasGroup.interactable = false;
+        }
+
+        public override async void Show()
+        {
+            gameObject.SetActive(true);
+            await Task.Delay(TimeSpan.FromSeconds(1f));
+            if (gameObject == null) 
+                return;
+            _topCanvasGroup.interactable = true;
         }
 
         public override void Hide()
         {
             base.Hide();
-            _x2Group.alpha = 1f;
+            _topCanvasGroup.interactable = false;
+            _x2Group.alpha = .5f;
             _x2Group.interactable = true;
         }
 
