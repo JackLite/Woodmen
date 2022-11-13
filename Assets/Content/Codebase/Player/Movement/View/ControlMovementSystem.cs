@@ -17,7 +17,7 @@ namespace Woodman.Player.Movement.View
         private EcsOneData<PlayerMovementData> _movementData;
         public void Init()
         {
-            _metaUiProvider.MovementViewProvider.Reader.onChangeMoveState += OnChangeMoveState;
+            _metaUiProvider.MovementViewProvider.Reader.OnOnChangeMoveState += OnChangeMoveState;
         }
 
         private void OnChangeMoveState(bool isActive)
@@ -34,7 +34,6 @@ namespace Woodman.Player.Movement.View
             {
                 moveData.input = Vector2.zero;
                 circle.ResetToDefault();
-                _metaViewProvider.PlayerMovement.StopMove();
             }
 
             moveData.isMove = isActive;
@@ -50,6 +49,8 @@ namespace Woodman.Player.Movement.View
             var circleMovement = _metaUiProvider.MovementViewProvider.CircleMovement;
             var reader = _metaUiProvider.MovementViewProvider.Reader;
             moveData.input = circleMovement.Delta;
+            if (moveData.input.magnitude > 1)
+                moveData.input = moveData.input.normalized;
             var pos = _uiProvider.MainCanvas.ScreenToCanvasPosition(reader.CurrentPointerPos);
 
             circleMovement.SetPosition(pos);
@@ -57,7 +58,7 @@ namespace Woodman.Player.Movement.View
 
         public void Destroy()
         {
-            _metaUiProvider.MovementViewProvider.Reader.onChangeMoveState -= OnChangeMoveState;
+            _metaUiProvider.MovementViewProvider.Reader.OnOnChangeMoveState -= OnChangeMoveState;
         }
     }
 }
