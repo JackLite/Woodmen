@@ -2231,6 +2231,7 @@ MonoBehaviour:
   <FellingCharacterController>k__BackingField: {fileID: 1275931604}
   <FellingPositions>k__BackingField: {fileID: 1333919569}
   <CutFxPool>k__BackingField: {fileID: 1144069892}
+  <Environment>k__BackingField: {fileID: 2015954989}
 --- !u!4 &1333919567
 Transform:
   m_ObjectHideFlags: 0

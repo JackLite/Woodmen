@@ -16,13 +16,14 @@ namespace Woodman.Felling
         private EcsOneData<TreeModel> _currentTree;
         private FellingPositions _positions;
         private FellingCharacterController _fellingCharacter;
+        private FellingViewProvider _viewProvider;
         private TreeGenerator _treeGenerator;
         private TreePiecesRepository _treePiecesRepository;
 
         public void PreInit()
         {
             var t = _currentTree.GetData();
-            _treeGenerator.Generate(_positions.RootPos, t.size);
+            _treeGenerator.Generate(_positions.RootPos, t.size, _viewProvider.Environment);
             _fellingCharacter.InitFelling(_positions);
         }
 
@@ -33,7 +34,7 @@ namespace Woodman.Felling
             {
                 _treePiecesRepository.Destroy();
                 var t = _currentTree.GetData();
-                _treeGenerator.Generate(_positions.RootPos, t.size);
+                _treeGenerator.Generate(_positions.RootPos, t.size, _viewProvider.Environment);
             }
             #endif
         }
