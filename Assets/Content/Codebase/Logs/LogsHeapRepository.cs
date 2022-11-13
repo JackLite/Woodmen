@@ -49,6 +49,11 @@ namespace Woodman.Logs
             return id;
         }
 
+        public void Remove(string id)
+        {
+            SetCount(id, 0);
+        }
+
         private void Check(string id)
         {
             if (_saveData.logHeaps.ContainsKey(id))

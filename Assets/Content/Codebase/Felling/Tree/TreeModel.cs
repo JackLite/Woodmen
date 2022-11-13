@@ -8,5 +8,6 @@ namespace Woodman.Felling.Tree
     {
         public int size;
         public Dictionary<LogsHeapType, Vector3> logsPositions;
+        public List<string> createdHeaps;
     }
 }

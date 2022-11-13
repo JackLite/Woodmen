@@ -11,6 +11,7 @@ using Woodman.Felling.SecondChance;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
+using Woodman.Felling.Win;
 using Woodman.Loading;
 using Woodman.Locations;
 using Woodman.Locations.Boat;
@@ -42,7 +43,9 @@ namespace Woodman
             AddDependency(locations);
             AddDependency(new PlayerCoinsRepository());
             AddDependency(new MetaTreesRepository());
-            AddDependency(new LogsHeapRepository());
+            var logsHeapRepository = new LogsHeapRepository();
+            AddDependency(logsHeapRepository);
+            AddDependency(new LogsHeapService(logsHeapRepository));
             AddDependency(new ProgressionService(progressionSettings, locations));
             var buildingsRepository = new BuildingsRepository();
             AddDependency(buildingsRepository);

@@ -3,9 +3,10 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Common;
+using Woodman.Common.Tweens;
 using Woodman.Felling.Tree;
 using Woodman.Locations.Trees;
-using Woodman.Logs;
+using Woodman.Player.PlayerResources;
 using Woodman.Progress;
 
 namespace Woodman.Felling.Win
@@ -15,15 +16,13 @@ namespace Woodman.Felling.Win
     {
         private DataWorld _world;
         private ProgressionService _progressionService;
-        private LogsHeapRepository _logsHeapRepository;
+        private LogsHeapService _logsHeapService;
         private MetaTreesRepository _treesRepository;
         private UiProvider _windows;
         private EcsOneData<TreeModel> _treeModel;
+        private PlayerCoinsRepository _coinsRepository;
         
-        //todo: move to settings
-        private const int smallLogsHeap = 50;
-        private const int logsHeap = 100;
-        private const int bigLogsHeap = 200;
+        
         public void PostRun()
         {
             var q = _world.Select<WinEvent>();
@@ -32,25 +31,33 @@ namespace Woodman.Felling.Win
             
             _treesRepository.SetFell(_treesRepository.CurrentTree.Id);
             _progressionService.SetFell();
-            SaveLogs();
+            _logsHeapService.SaveLogs(ref _treeModel.GetData());
             _world.DeactivateModule<FellingModule>();
             _windows.FellingUi.Hide();
-            _windows.FellingWinWindow.Show();
+            ShowWinWindow();
         }
 
-        private void SaveLogs()
+        private void ShowWinWindow()
         {
-            //todo: добавить 4 размер кучи
-            var treeModel = _treeModel.GetData();
-            var remain = treeModel.size;
-            if (treeModel.size > bigLogsHeap)
+            if (_coinsRepository.GetPlayerRes() < 10)
             {
-                remain = treeModel.size % bigLogsHeap;
-                _logsHeapRepository.Create(LogsHeapType.Big, remain, treeModel.logsPositions[LogsHeapType.Big]);
+                _windows.FellingWinWindow.HideX2();
+            }
+            else
+            {
+                var tweenData = new TweenData
+                {
+                    remain = 5,
+                    update = r => { _windows.FellingWinWindow.SetSliderProgress(r / 5f); },
+                    onEnd = _windows.FellingWinWindow.HideX2,
+                    validate = () => _windows.FellingWinWindow != null
+                };
+                var treeModel = _treeModel.GetData();
+                _windows.FellingWinWindow.SetLogsCount(treeModel.size);
+                _world.NewEntity().AddComponent(tweenData).AddComponent(new WinX2TweenTag());
             }
 
-            var heapType = remain <= smallLogsHeap ? LogsHeapType.Small : LogsHeapType.Middle;
-            _logsHeapRepository.Create(heapType, remain, treeModel.logsPositions[heapType]);
+            _windows.FellingWinWindow.Show();
         }
     }
 }
