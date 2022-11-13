@@ -22,10 +22,10 @@ namespace Woodman.Felling.Start
         private EcsOneData<TreeModel> _currentTree;
         private EcsOneData<PlayerData> _playerData;
         private MetaTreesRepository _metaTrees;
-        private TreeProgressionService _treeProgressionService;
+        private ProgressionService _progressionService;
         private MetaUi _metaUi;
         private PlayerMovement _playerMovement;
-        private SwitchCoreScreen _switchCoreScreen;
+        private InnerLoadingScreen _innerLoadingScreen;
 
         public void Run()
         {
@@ -35,7 +35,7 @@ namespace Woodman.Felling.Start
 
             _metaTrees.CurrentTree = c.treeMeta;
             var treeModel = c.treeMeta.GetTreeModel();
-            treeModel.size = _treeProgressionService.GetSize();
+            treeModel.size = _progressionService.GetSize();
             _currentTree.SetData(treeModel);
             ref var pd = ref _playerData.GetData();
             pd.metaPos = _playerMovement.CurrentPos;
@@ -46,8 +46,8 @@ namespace Woodman.Felling.Start
         {
             try
             {
-                _switchCoreScreen.Show();
-                await Task.Delay(TimeSpan.FromSeconds(_switchCoreScreen.animDuration));
+                _innerLoadingScreen.Show();
+                await Task.Delay(TimeSpan.FromSeconds(_innerLoadingScreen.animDuration));
                 _metaUi.Hide();
                 _world.InitModule<CoreModule>();
                 _world.DestroyModule<MetaModule>();

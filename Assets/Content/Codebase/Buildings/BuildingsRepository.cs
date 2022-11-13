@@ -7,12 +7,12 @@ namespace Woodman.Buildings
     /// </summary>
     public class BuildingsRepository
     {
-        private const string SAVE_KEY = "meta.buildings.progress";
+        private const string BuildingsSaveKey = "meta.buildings.progress";
         private readonly BuildingSave _buildingSave;
 
         public BuildingsRepository()
         {
-            _buildingSave = RepositoryHelper.CreateSaveData<BuildingSave>(SAVE_KEY);
+            _buildingSave = RepositoryHelper.CreateSaveData<BuildingSave>(BuildingsSaveKey);
         }
         
         public int GetBuildingStateIndex(string building)
@@ -41,9 +41,9 @@ namespace Woodman.Buildings
             Save();
         }
 
-        public bool IsLastState(string building)
+        public bool IsLastState(BuildingView building)
         {
-            return GetBuildingStateIndex(building) == 4;
+            return GetBuildingStateIndex(building.Id) >= building.StatesCount - 1;
         }
 
         private void CheckBuilding(string building)
@@ -61,7 +61,7 @@ namespace Woodman.Buildings
 
         private void Save()
         {
-            RepositoryHelper.Save(SAVE_KEY, _buildingSave);
+            RepositoryHelper.Save(BuildingsSaveKey, _buildingSave);
         }
     }
 }

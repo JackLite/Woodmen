@@ -5,6 +5,7 @@ namespace Woodman.Locations.Interactions
         None = 0,
         Tree,
         Building,
-        Logs
+        Logs,
+        Boat
     }
 }

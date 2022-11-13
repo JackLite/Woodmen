@@ -1,31 +1,30 @@
-using ModulesFramework;
+﻿using ModulesFramework;
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
+using Woodman.Buildings;
 using Woodman.Common;
-using Woodman.Locations;
 using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
 
-namespace Woodman.Buildings
+namespace Woodman.Locations.Boat
 {
     [EcsSystem(typeof(MetaModule))]
-    public class BuildingInteractSystem : IRunSystem
+    public class BoatInteractionSystem : IRunSystem
     {
         private DataWorld _world;
         private PlayerLogsRepository _resRepository;
-        private BuildingsRepository _buildingsRepository;
+        private BoatSaveService _boatSaveService;
         private PoolsProvider _poolsProvider;
         private ProgressionService _progressionService;
         private BuildingService _buildingService;
         private EcsOneData<LocationData> _locationData;
-
         public void Run()
         {
             var q = _world.Select<Interact>()
-                .Where<Interact>(c => c.interactType == InteractTypeEnum.Building);
+                .Where<Interact>(c => c.interactType == InteractTypeEnum.Boat);
             if (!q.TrySelectFirst(out Interact interact))
                 return;
 
@@ -38,7 +37,7 @@ namespace Woodman.Buildings
             if (interact == null)
                 return;
 
-            if (_buildingsRepository.IsLastState(interact.BuildingView))
+            if (_boatSaveService.IsBoatFinished(_progressionService.GetLocationIndex(), interact.BuildingView))
                 return;
 
             Process(interact);
@@ -46,11 +45,12 @@ namespace Woodman.Buildings
 
         private void Process(BuildingInteract interact)
         {
-            var delta = _buildingService.CalcHouseNextState(interact.BuildingView);
-            var oldState = _buildingsRepository.GetBuildingStateIndex(interact.BuildingView.Id);
+            var locationIndex = _progressionService.GetLocationIndex();
+            var delta = _buildingService.CalcBoatNextState(locationIndex, interact.BuildingView);
+            var oldState = _boatSaveService.GetState(locationIndex);
             _resRepository.SubtractRes(delta.totalResources);
-            _buildingsRepository.SetBuildingStateIndex(delta.resultState, interact.BuildingView.Id);
-            _buildingsRepository.SetBuildingLogsCount(delta.resultLogsCount, interact.BuildingView.Id);
+            _boatSaveService.SetState(locationIndex, delta.resultState);
+            _boatSaveService.SetLogs(locationIndex, delta.resultLogsCount);
 
             interact.BuildingView.SetLogs(delta.resultLogsCount, delta.nextStateLogsCount);
 
@@ -58,19 +58,13 @@ namespace Woodman.Buildings
             {
                 interact.BuildingView.AnimateTo(delta.resultState, _poolsProvider.BuildingFxPool);
                 if (delta.resultState == interact.BuildingView.StatesCount - 1)
-                {
-                    FinishBuilding();
-                }
+                    FinishLocation();
             }
         }
 
-        private void FinishBuilding()
+        private void FinishLocation()
         {
-            _progressionService.RegisterFinishBuilding();
-            if (_progressionService.IsBuildingsFinished())
-            {
-                _locationData.GetData().locationView.ShowBoat();
-            }
+            _world.NewEntity().AddComponent(new NextLocationEvent());
         }
     }
 }

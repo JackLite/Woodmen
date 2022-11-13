@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ed8bffd6a064356a54ba6fab5e933f9, type: 3}
-  m_Name: Tree Progression Settings
+  m_Name: Progression Settings
   m_EditorClassIdentifier: 
   treeProgressionInfo:
   - easyTrees: 1e0000003200000046000000
@@ -19,6 +19,6 @@ MonoBehaviour:
   - easyTrees: 3200000032000000370000003700000037000000370000003c0000003c0000003c0000003c000000410000004100000041000000460000004600000046000000
     middleTrees: 8200000082000000820000008c0000008c0000009600000096000000a0000000aa000000aa000000
     hardTrees: d2000000dc000000e6000000f0000000fa000000
-  debug: 1
+  debug: 0
   currentLocationIndex: 1
   currentTreeIndex: 0

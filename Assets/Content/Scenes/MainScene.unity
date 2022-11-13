@@ -510,7 +510,7 @@ MonoBehaviour:
   <MetaUi>k__BackingField: {fileID: 5432740328442613954}
   <FellingUi>k__BackingField: {fileID: 8948099601766782764}
   <LoadScreen>k__BackingField: {fileID: 1007012611}
-  <SwitchCoreScreen>k__BackingField: {fileID: 259231157}
+  <InnerLoadingScreen>k__BackingField: {fileID: 259231157}
   <FellingUIProvider>k__BackingField: {fileID: 8948099601766782768}
   <PauseView>k__BackingField: {fileID: 1283851069}
   <SettingsView>k__BackingField: {fileID: 413731660}

@@ -1,5 +1,4 @@
-﻿using System;
-using ModulesFramework.Attributes;
+﻿using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using UnityEngine;
@@ -9,7 +8,7 @@ using Woodman.Felling.Tree;
 namespace Woodman.Felling.Taps.CutFx
 {
     [EcsSystem(typeof(CoreModule))]
-    public class CutFxSystem : IRunSystem
+    public class CutFxSystem : IRunSystem, IDestroySystem
     {
         private FellingCharacterController _characterController;
         private CutFxPool _cutFxPool;
@@ -45,6 +44,12 @@ namespace Woodman.Felling.Taps.CutFx
             fxTransform.localRotation = Quaternion.Euler(0, yRot, 0);
             fxTransform.position = _cutFxPool.transform.position;
             return fxTransform;
+        }
+
+        public void Destroy()
+        {
+            var fxQ = _world.Select<CutFxComponent>();
+            fxQ.DestroyAll();
         }
     }
 }

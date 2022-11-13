@@ -2,7 +2,6 @@ using System;
 using System.Threading.Tasks;
 #if UNITY_EDITOR
 using UnityEditor;
-using UnityEditor.SceneManagement;
 #endif
 using UnityEngine;
 using Woodman.Common.UI;
@@ -46,6 +45,7 @@ namespace Woodman.Buildings
         private static readonly int BuildingTrigger = Animator.StringToHash("Building");
 
         public string Id => _guid;
+        public int StatesCount => _states.Length;
 
         private void Awake()
         {
@@ -110,6 +110,11 @@ namespace Woodman.Buildings
             {
                 var state = _states[i];
                 state.SetActive(i == index);
+            }
+
+            if (_states.Length - 1 == index)
+            {
+                _progress.Hide();
             }
         }
 

@@ -3,7 +3,7 @@
 namespace Woodman.Progress
 {
     [CreateAssetMenu]
-    public class TreeProgressionSettings : ScriptableObject
+    public class ProgressionSettings : ScriptableObject
     {
         public TreeProgressionInfo[] treeProgressionInfo;
 

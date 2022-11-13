@@ -12,7 +12,7 @@ namespace Woodman.Meta
         {
             _uiProvider.LoadScreen.SetActive(false);
             _uiProvider.MetaUi.Show();
-            _uiProvider.SwitchCoreScreen.Hide();
+            _uiProvider.InnerLoadingScreen.Hide();
         }
     }
 }
