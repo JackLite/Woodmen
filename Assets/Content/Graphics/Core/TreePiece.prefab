@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9088920476410159525}
   - component: {fileID: 2079691106998516543}
   - component: {fileID: 7478655077546082046}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3906496960851977950}
   - component: {fileID: 6723325413920634481}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: TreePiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 2792391288637323596}
   - component: {fileID: 6107139233142905687}
   - component: {fileID: 3116485793565123171}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,6 +344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aeaa19d0e71f8d1429be6a4a1cb8a11b,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aeaa19d0e71f8d1429be6a4a1cb8a11b,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -435,6 +440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aeaa19d0e71f8d1429be6a4a1cb8a11b,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aeaa19d0e71f8d1429be6a4a1cb8a11b,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -523,6 +533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aeaa19d0e71f8d1429be6a4a1cb8a11b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aeaa19d0e71f8d1429be6a4a1cb8a11b,
         type: 3}

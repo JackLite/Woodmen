@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: a496342a2b71ce64f9df6e31cb536c56, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2f40f8d203480044d8843bd57f47ba23, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D_1:
@@ -47,9 +47,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Float: 1.2
-    - _Float_1: 0.5
-    - _Float_2: 1
+    - _Float: 1.15
+    - _Float_1: 1
+    - _Float_2: 1.4
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
@@ -58,7 +58,7 @@ Material:
     - _Color_2: {r: 0.40275946, g: 1, b: 0.1462264, a: 0}
     - _Vector2: {r: 0, g: 0, b: 0, a: 0}
     - _Vector2_1: {r: 1, g: 1, b: 0, a: 0}
-    - _Vector2_2: {r: 15, g: 15, b: 0, a: 0}
+    - _Vector2_2: {r: 15, g: 30, b: 0, a: 0}
     - _Vector2_3: {r: 20, g: 20, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6968329718431933207
