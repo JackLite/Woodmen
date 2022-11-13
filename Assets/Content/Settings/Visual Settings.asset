@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Visual Settings
   m_EditorClassIdentifier: 
   speed: 3
-  min: 0.1
+  min: 0.08
   gap: 0
   branchX: 0.4
   pieceHeight: 1

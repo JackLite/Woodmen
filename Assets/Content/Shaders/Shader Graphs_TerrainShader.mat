@@ -13,7 +13,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -26,11 +26,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D_1:
-        m_Texture: {fileID: 2800000, guid: b2c2f57adbea9d5459c778fa991319d2, type: 3}
+        m_Texture: {fileID: 2800000, guid: fac0aac4611c84a4dba675bbbee7d513, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D_2:
-        m_Texture: {fileID: 2800000, guid: 049928dacf86bda46b8f42ff60c8ce89, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9d474faa00c679a4fa7b0214e03799cc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -47,19 +47,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Float: 0.88
-    - _Float_1: 0.41
-    - _Float_2: 1.31
+    - _Float: 1.2
+    - _Float_1: 0.5
+    - _Float_2: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color_1: {r: 0.9907457, g: 1, b: 0.514151, a: 1}
     - _Color_2: {r: 0.40275946, g: 1, b: 0.1462264, a: 0}
     - _Vector2: {r: 0, g: 0, b: 0, a: 0}
     - _Vector2_1: {r: 1, g: 1, b: 0, a: 0}
-    - _Vector2_2: {r: 0, g: 0, b: 0, a: 0}
-    - _Vector2_3: {r: 0, g: 0, b: 0, a: 0}
+    - _Vector2_2: {r: 15, g: 15, b: 0, a: 0}
+    - _Vector2_3: {r: 20, g: 20, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6968329718431933207
 MonoBehaviour:
