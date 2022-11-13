@@ -225,9 +225,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4858889305753219341}
-  - component: {fileID: 1312665418144329087}
   - component: {fileID: 605047539252666274}
   - component: {fileID: 256744753669819600}
+  - component: {fileID: 4735622906373788171}
   m_Layer: 0
   m_Name: Interaction
   m_TagString: Untagged
@@ -250,19 +250,6 @@ Transform:
   m_Father: {fileID: 8954485927341546632}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1312665418144329087
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8117155846998202113}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 19.69, z: 0.9999999}
-  m_Center: {x: 0.0000019228457, y: 9.86, z: -0.0000021062974}
 --- !u!54 &605047539252666274
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -294,6 +281,19 @@ MonoBehaviour:
   _interactionDelay: 1
   <InteractType>k__BackingField: 1
   <TreeMeta>k__BackingField: {fileID: 5643181874768763308}
+--- !u!135 &4735622906373788171
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8117155846998202113}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.44
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9179789399275582347
 GameObject:
   m_ObjectHideFlags: 0
