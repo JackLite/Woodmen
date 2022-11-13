@@ -906,7 +906,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 306285805449495173}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   _progressSlider: {fileID: 1972768021765914748}
   _timeSlider: {fileID: 1687750900212350468}
   _cost: {fileID: 6542242560377580529}
-  _useChanceBtn: {fileID: 0}
+  _useChanceBtn: {fileID: 5662666811573036833}
   _skipBtn: {fileID: 8096670360081345373}
 --- !u!1 &7739677038109896892
 GameObject:
