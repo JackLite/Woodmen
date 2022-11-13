@@ -363,7 +363,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2.2
+  m_PixelsPerUnitMultiplier: 8.8
 --- !u!1 &7384297706478865628
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2
+  m_PixelsPerUnitMultiplier: 8
 --- !u!114 &6659713369468458556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ PrefabInstance:
     - target: {fileID: 748977227272581085, guid: ee92219ee4b3f1e418130efcf4920ee9,
         type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
-      value: 8
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1558448823557513003, guid: ee92219ee4b3f1e418130efcf4920ee9,
         type: 3}
