@@ -4,6 +4,7 @@ using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Cheats;
 using Woodman.Common;
+using Woodman.Common.Delay;
 using Woodman.Felling.SecondChance;
 using Woodman.Felling.Taps;
 using Woodman.Felling.Timer;
@@ -19,6 +20,7 @@ namespace Woodman.Felling.Lose
         private EcsOneData<DebugStateData> _debugData;
         private EcsOneData<SecondChanceData> _secondChanceData;
         private EcsOneData<TreeModel> _currentTree;
+        private FellingCharacterController _character;
         private TreePiecesRepository _piecesRepository;
         private UiProvider _windows;
 
@@ -50,25 +52,29 @@ namespace Woodman.Felling.Lose
 
         private void GameOver(LoseReason reason)
         {
-            ref var scd = ref _secondChanceData.GetData();
             _windows.FellingUi.Hide();
-            if (scd.wasShowed)
+            _character.Dead();
+            DelayedFactory.Create(_world, 1f, () =>
             {
-                _windows.FellingLoseWindow.Show();
-            }
-            else
-            {
-                scd.wasShowed = true;
-                scd.isActive = true;
-                scd.loseReason = reason;
-                _windows.SecondChanceView.SetCost(5);
-                _windows.SecondChanceView.SetProgress(1 - 
-                    (float)_piecesRepository.GetRemain() / _currentTree.GetData().size);
-                _windows.SecondChanceView.SetLoseReason(reason);
-                _windows.SecondChanceView.Show();
-            }
+                ref var scd = ref _secondChanceData.GetData();
+                if (scd.wasShowed)
+                {
+                    _windows.FellingLoseWindow.Show();
+                }
+                else
+                {
+                    scd.wasShowed = true;
+                    scd.isActive = true;
+                    scd.loseReason = reason;
+                    _windows.SecondChanceView.SetCost(5);
+                    var progress = 1 - (float)_piecesRepository.GetRemain() / _currentTree.GetData().size;
+                    _windows.SecondChanceView.SetProgress(progress);
+                    _windows.SecondChanceView.SetLoseReason(reason);
+                    _windows.SecondChanceView.Show();
+                }
 
-            _world.DeactivateModule<FellingModule>();
+                _world.DeactivateModule<FellingModule>();
+            });
         }
     }
 }

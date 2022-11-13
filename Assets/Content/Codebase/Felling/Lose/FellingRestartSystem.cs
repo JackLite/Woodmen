@@ -35,6 +35,7 @@ namespace Woodman.Felling.Lose
         {
             _piecesRepository.Destroy();
             var treeModel = _currentTree.GetData();
+            _characterController.ResetDead();
             _characterController.SetSide(FellingSide.Right);
             _treeGenerator.Generate(_positions.RootPos, treeModel.size, _viewProvider.Environment);
 

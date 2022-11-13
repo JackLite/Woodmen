@@ -6,6 +6,7 @@ namespace Woodman.Felling
     public class FellingCharacterController : MonoBehaviour
     {
         private static readonly int _cut = Animator.StringToHash("Attack");
+        private static readonly int _dead = Animator.StringToHash("Dead");
 
         [SerializeField]
         private Transform _character;
@@ -43,6 +44,16 @@ namespace Woodman.Felling
         public void Cut()
         {
             _animator.SetTrigger(_cut);
+        }
+
+        public void Dead()
+        {
+            _animator.SetBool(_dead, true);
+        }
+
+        public void ResetDead()
+        {
+            _animator.SetBool(_dead, false);
         }
     }
 }
