@@ -889,6 +889,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoftShadowProjector
       objectReference: {fileID: 0}
+    - target: {fileID: 2611276461722853706, guid: b9e8a15e107a55a44a9b47499573260c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4669969340759869976, guid: b9e8a15e107a55a44a9b47499573260c,
         type: 3}
       propertyPath: m_Material

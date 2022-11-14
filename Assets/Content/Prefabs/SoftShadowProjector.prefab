@@ -91,7 +91,7 @@ MonoBehaviour:
   - 0.5
   - 0.33333337
   - 0.1666667
-  m_preferredTextureFormats: 14000000
+  m_preferredTextureFormats: 07000000
   m_camerasForViewClipTest: []
   m_camera: {fileID: 5478436632303061600}
 --- !u!20 &5478436632303061600
