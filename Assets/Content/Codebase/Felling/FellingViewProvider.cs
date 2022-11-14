@@ -23,5 +23,8 @@ namespace Woodman.Felling
         [field:SerializeField]
         [field:ViewInject]
         public CutFxPool CutFxPool { get; private set; }
+        
+        [field:SerializeField]
+        public Transform Environment { get; private set; }
     }
 }

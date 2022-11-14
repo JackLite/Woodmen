@@ -40,10 +40,11 @@ namespace Woodman.Felling.Tree.Generator
             _branchSPAcc = settings.branchSwitching.minAcc;
         }
 
-        public GameObject Generate(Vector3 rootPos, int size)
+        public GameObject Generate(Vector3 rootPos, int size, Transform treeParent)
         {
             Reset();
             var parent = new GameObject("TreeCore");
+            parent.transform.SetParent(treeParent);
             var pieceIndex = 0;
             var s = size;
             FellingSide? prevSide = null;

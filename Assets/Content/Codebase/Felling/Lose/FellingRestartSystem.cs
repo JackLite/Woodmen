@@ -18,6 +18,7 @@ namespace Woodman.Felling.Lose
         private EcsOneData<TreeModel> _currentTree;
         private EcsOneData<SecondChanceData> _secondChanceData;
         private FellingPositions _positions;
+        private FellingViewProvider _viewProvider;
         private FellingCharacterController _characterController;
         private TreeGenerator _treeGenerator;
         private TreePiecesRepository _piecesRepository;
@@ -34,8 +35,9 @@ namespace Woodman.Felling.Lose
         {
             _piecesRepository.Destroy();
             var treeModel = _currentTree.GetData();
+            _characterController.ResetDead();
             _characterController.SetSide(FellingSide.Right);
-            _treeGenerator.Generate(_positions.RootPos, treeModel.size);
+            _treeGenerator.Generate(_positions.RootPos, treeModel.size, _viewProvider.Environment);
 
             ref var scd = ref _secondChanceData.GetData();
             scd.isActive = false;

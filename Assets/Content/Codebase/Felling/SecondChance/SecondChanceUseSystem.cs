@@ -40,6 +40,7 @@ namespace Woodman.Felling.SecondChance
                 var newSide = oldSide == FellingSide.Left ? FellingSide.Right : FellingSide.Left;
                 _characterController.SetSide(newSide);
             }
+            _characterController.ResetDead();
 
             _secondChanceView.Hide();
             _fellingUi.Show();

@@ -1597,6 +1597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148106a5c4a549479d0a08046a5951bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _topCanvasGroup: {fileID: 8730717865164020936}
   _logsCount: {fileID: 5817078518524993040}
   _slider: {fileID: 1687750900212350468}
   _costText: {fileID: 0}
@@ -1632,7 +1633,7 @@ CanvasGroup:
   m_GameObject: {fileID: 7384297706478865628}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &7739677038109896892

@@ -6,9 +6,11 @@ namespace Woodman.Felling.Tree
     public class TreePiecesRepository
     {
         private readonly Queue<TreePiece> _pieces = new();
+        private GameObject _parent;
 
         public void AddPiece(TreePiece piece)
         {
+            _parent = piece.transform.parent.gameObject;
             _pieces.Enqueue(piece);
         }
 
@@ -41,6 +43,8 @@ namespace Woodman.Felling.Tree
             }
 
             _pieces.Clear();
+            if (_parent != null) 
+                Object.Destroy(_parent);
         }
     }
 }
