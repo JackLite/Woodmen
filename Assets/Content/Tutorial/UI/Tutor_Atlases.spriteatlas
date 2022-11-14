@@ -38,11 +38,21 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 23efb844e263aa749a56bfd4edcfd42f, type: 3}
+  - {fileID: 21300000, guid: bac50184bfc6a2a48a3f58de1f8451ac, type: 3}
+  - {fileID: 21300000, guid: 6893ff069c84a9745a17b69404e93d8c, type: 3}
   - {fileID: 21300000, guid: 6872c87607a48854987418386d0cd758, type: 3}
+  - {fileID: 21300000, guid: c8a0e279876166d40bfff720450c3c8e, type: 3}
   - {fileID: 21300000, guid: ed89617ac41c829438fc8f1995a61162, type: 3}
+  - {fileID: 21300000, guid: 9a3c405ca6cbe9a4da37961ff436e7be, type: 3}
   m_PackedSpriteNamesToIndex:
-  - move_finger
-  - Joystik_base
+  - bg
+  - arrow
+  - tutor_ring
+  - tutor_movefinger
+  - tutor_finger
+  - tutor_joystic
+  - tutor_ring_01
   m_RenderDataMap: {}
   m_Tag: Tutor_Atlases
   m_IsVariant: 0
