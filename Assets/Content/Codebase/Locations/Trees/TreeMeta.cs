@@ -5,7 +5,6 @@ using UnityEditor;
 using UnityEngine;
 using Woodman.Felling.Tree;
 using Woodman.Logs;
-using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Locations.Trees
 {
@@ -16,12 +15,15 @@ namespace Woodman.Locations.Trees
         private string _guid;
 
         [SerializeField]
-        private GameObject _metaContent;
+        private GameObject _tree;
 
         [SerializeField]
         private LogsTypeView[] _logsTypeViews;
 
-        public Dictionary<LogsHeapType, Vector3> LogsHeapTypeToViews { private set; get; } = new();
+        [SerializeField]
+        private GameObject _stump;
+
+        private Dictionary<LogsHeapType, Vector3> LogsHeapTypeToViews { set; get; } = new();
 
         public string Id => _guid;
         
@@ -40,14 +42,16 @@ namespace Woodman.Locations.Trees
             #endif
         }
         
-        public void EnableMeta()
+        public void ShowTree()
         {
-            _metaContent.SetActive(true);
+            _tree.SetActive(true);
+            _stump.SetActive(false);
         }
 
-        public void DisableMeta()
+        public void ShowStump()
         {
-            _metaContent.SetActive(false);
+            _tree.SetActive(false);
+            _stump.SetActive(true);
         }
 
         public TreeModel GetTreeModel()
