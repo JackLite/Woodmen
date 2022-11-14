@@ -61,9 +61,9 @@ namespace Woodman.Locations
             {
                 var isFell = metaTreesRepository.IsFell(tree.Id);
                 if (isFell)
-                    tree.DisableMeta();
+                    tree.ShowStump();
                 else
-                    tree.EnableMeta();
+                    tree.ShowTree();
             }
         }
 
