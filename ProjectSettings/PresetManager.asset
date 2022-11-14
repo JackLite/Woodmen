@@ -25,5 +25,5 @@ PresetManager:
     second:
     - m_Preset: {fileID: 2655988077585873504, guid: b57616c9acae9de4cb3147d8cd2c6f0d,
         type: 2}
-      m_Filter: glob:"*Environment/**"
+      m_Filter: glob:"*Content/**"
       m_Disabled: 0
