@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: CoreContent
+  m_EditorClassIdentifier: 
+  m_GroupName: CoreContent
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e0869b9a2771bce4ab2d4c18694a794f
+  m_SerializeEntries:
+  - m_GUID: 24ad542c9d446674da7a58899bc2acf2
+    m_Address: Assets/Content/Graphics/Core/Branch.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 68ff474b28cbf5d42a8039fc4f17c191
+    m_Address: Assets/Content/Graphics/Core/TreePiece.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3380812e10cb79448821c974541c4f2
+    m_Address: Assets/Content/Graphics/Core/FBX/CoreBranch.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cb471a0adce8406429221718ecdd09c4
+    m_Address: Assets/Content/Graphics/Core/FBX/CoreLog.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aeaa19d0e71f8d1429be6a4a1cb8a11b
+    m_Address: Assets/Content/Graphics/Core/FBX/CoreWood.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5b0711ebf7776a24cbdaaa4fc3fdca87
+    m_Address: Assets/Content/Graphics/Core/FBX/hive.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 64af6f2d88d274545bdaec376c2c4722
+    m_Address: Assets/Content/Graphics/Core/FBX/PlusTime.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1e32cc15002517d4082f19a0d773510a
+    m_Address: Assets/Content/Graphics/Core/FBX/TimeFreeze.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a232b4bf83a18242ab6add937baa838
+    m_Address: Assets/Content/Graphics/Core/fx/BoosterIdle.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e20011f382dbdd440ad242e3a8e7fca1
+    m_Address: Assets/Content/Graphics/Core/fx/fx_corewood.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cc90727c56c629d4b8560018904960b9
+    m_Address: Assets/Content/Graphics/Core/fx/fx_material.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 76bc361b3e905ce4c87631e9877aede8
+    m_Address: Assets/Content/Graphics/Core/fx_tree.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9342486a65ca2fd49a51a2eb50f45537
+    m_Address: Assets/Content/Graphics/Core/fx/M_fxCore.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c67419512b7ec94ea229b1a027daf22
+    m_Address: Assets/Content/Graphics/Core/Materials/M_BaseBranch.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1ef05aa85f3b0a64a89d2be08ca3904c
+    m_Address: Assets/Content/Graphics/Core/Materials/M_BaseWood.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7bf2046057c73d4b8ce9b8242b9dd8d
+    m_Address: Assets/Content/Graphics/Core/Materials/M_Boosters.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cee01de5f982e8b49ac1d66a801c8063
+    m_Address: Assets/Content/Graphics/Core/Materials/M_HoleWood.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6ab5a5c0b85818744a542d1d04d7ec17
+    m_Address: Assets/Content/Graphics/Core/Materials/M_StrongBranch.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3e56776f32886314fb1e9237385357ec
+    m_Address: Assets/Content/Graphics/Core/Materials/M_StrongWood.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c46a74ea256b25c4e9078a89a5847507
+    m_Address: Assets/Content/Graphics/Core/Materials/M_WoodCircle.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2d1ad17249b1f624a9261b1382a895b4
+    m_Address: Assets/Content/Graphics/Core/Terrain/CoreTerrain.obj
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a4959197788cad84db0f45a9903d65f0
+    m_Address: Assets/Content/Graphics/Core/Terrain/M_CoreTerrain.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2f40f8d203480044d8843bd57f47ba23
+    m_Address: Assets/Content/Graphics/Core/Terrain/T_CoreTerrainMask.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d9d4d13b06b50eb4a9461d247df456fd
+    m_Address: Assets/Content/Graphics/Core/Textures/T_Block.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 82dcfecd7d3536547a3aff80948abb90
+    m_Address: Assets/Content/Graphics/Core/Textures/T_Boosters.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b7a98644f56f414d92eeef39787a1c1
+    m_Address: Assets/Content/Graphics/Core/Textures/T_circle.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 498b4d92eebf7b949ba7ef513e1dbabd
+    m_Address: Assets/Content/Graphics/Core/Textures/T_wood.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ed9138e54bc92064991958958bfefc71
+    m_Address: Assets/Content/Graphics/Core/Textures/T_WoodHole.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8583cee8bd855464e83817c4c5c721f1, type: 2}
+    - {fileID: 11400000, guid: b9ed75679d8c10249a1c5ca0a82c2d05, type: 2}

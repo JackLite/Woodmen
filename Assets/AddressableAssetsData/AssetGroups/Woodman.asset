@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Woodman
+  m_EditorClassIdentifier: 
+  m_GroupName: Woodman
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1687ce4f760b9b042b88bfb0f7e43f2b
+  m_SerializeEntries:
+  - m_GUID: 0582cc9f9b3a62e4ca6b55e4cd773947
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Animations/CH_Attack.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 21605344f6ca468498ffad460754d736
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Animations/CH_Dead.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0f5822e8fc6ed2840b2e383684d7e478
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Animations/CH_Idle.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 60b8d468352f80946b1bd4e047006dad
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Animations/CH_Walk.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3c90d75d090136b429461873af7f9f1f
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Animations/WoodmanController.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b26d89005fff9b74596a99cdc1eeca6a
+    m_Address: Assets/Content/Graphics/Characters/Woodman/fbx/CH_Woodman.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5f303886bfc13494c99b5ac9280f7648
+    m_Address: Assets/Content/Graphics/Characters/Woodman/fbx/WoodmanAxe.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ac4dd9c2105f87e4699d893de025fa80
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Materials/M_Woodman_Axe.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0ba384d134a8dff4883755bdd0b6e2d7
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Materials/M_Woodman_Bag.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 22a364e606e45354bb981ef2bf74a19c
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Materials/M_Woodman_Body.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cc7344c491726244d8684f42ea8658bd
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Materials/M_Woodman_Clothes.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 37f0a3ade68ce29489320a7fa88ea0eb
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Materials/M_Woodman_Face.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1a34c8866473e084683a10fd69f98527
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Materials/M_Woodman_Head.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1cbc94e1e3ae9ef49aabde64feb5b073
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Materials/M_Woodman_Shoes.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a9a1333964c1bd94d855c53081841cb1
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Prefabs/Woodman.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c333d7981397d95428d0fa6dc5f84f96
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Prefabs/WoodmanAxe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0d07687b2fedf654092186aece27a35b
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Textures/T_Woodman_Axe.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cd24a749f3c6fe742943ab3cb4ff0ce1
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Textures/T_Woodman_Body.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3ab19fd322cec4841890d2499f5b1261
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Textures/T_Woodman_Clothes.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 978715028a7aed5488913ae5f0152a1b
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Textures/T_Woodman_Face.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b1270ac045edc1c43a2f813198cd08cb
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Textures/T_Woodman_Head.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7b4e6529da12c4140997067399051d23
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Textures/T_Woodman_Shoes.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 39516ef28be581c4688c269f2b835f44
+    m_Address: Assets/Content/Graphics/Characters/Woodman/Textures/T_WoodmanBag.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ee0ce1ffbb868ea4e812007462cd9c43, type: 2}
+    - {fileID: 11400000, guid: 4b3281cca961c1e43a4bc3d4e24a1a35, type: 2}

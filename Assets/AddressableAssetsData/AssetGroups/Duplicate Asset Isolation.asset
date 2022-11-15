@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 74214dc08ff969b4abfe2b0b972ff738
+  m_SerializeEntries:
+  - m_GUID: e967173267ec34715b98906ebcae0b8c
+    m_Address: Assets/DynamicShadowProjector/Shaders/StencilPass.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fdbb9b05799ef4de98bfa27a7662c6e6
+    m_Address: Assets/DynamicShadowProjector/Shaders/Shadow/ShadowTransparent.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a0fb9bc77107e4463b7b8a887ed47fd6
+    m_Address: Assets/DynamicShadowProjector/Shaders/Blit/CopyMipmap.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d6d312182125e4d9eb9bf65b4c5eef2f
+    m_Address: Assets/DynamicShadowProjector/Samples/Materials/SoftShadowProjector.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a73b280aec97f4734ae3ad03c7b6a785
+    m_Address: Assets/DynamicShadowProjector/Shaders/Blit/Blur.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 62181e6bf23cf416aa2d24041051c30f
+    m_Address: Assets/DynamicShadowProjector/Shaders/Shadow/ShadowOpaque.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 968b8cdb35b554049a890fdd752f987a
+    m_Address: Assets/DynamicShadowProjector/Shaders/Blit/EraseShadow.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e350216d2245945449f6f6a17c8f6183
+    m_Address: Assets/DynamicShadowProjector/Shaders/Shadow/ShadowTransparentCutout.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a81f972eacc064190876c5a3d379ed72
+    m_Address: Assets/DynamicShadowProjector/Shaders/Blit/Downsample.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8e120911da58a4745b43ccedfb1f8dfc
+    m_Address: Assets/DynamicShadowProjector/Shaders/Blit/Downsample.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9f868051c83de498ebd1bf47695144db
+    m_Address: Assets/DynamicShadowProjector/Shaders/Projector/Dynamic/MipmappedShadow.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5c1567556c62647e6b5a1a102ef100d9
+    m_Address: Assets/DynamicShadowProjector/Shaders/Shadow/ShadowOpaque.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3a6acead5c68043bcacf013a63568bf8
+    m_Address: Assets/DynamicShadowProjector/Shaders/Blit/Blur.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 895f2eedd4ef1455b8b3380b122531bc
+    m_Address: Assets/DynamicShadowProjector/Shaders/Blit/CopyMipmap.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7a72d66ed7a4c4297a155be5f62366b5
+    m_Address: Assets/DynamicShadowProjector/Shaders/Blit/EraseShadow.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 64edec3f1103f49c198a99a7f9484ce6
+    m_Address: Assets/DynamicShadowProjector/Shaders/StencilPass.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b7fcbec293b0f4479aa08d690d610b42
+    m_Address: Assets/DynamicShadowProjector/Shaders/Blit/DownsampleFallback.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ce502fa55984d49f6add342af8ccf890
+    m_Address: Assets/DynamicShadowProjector/Shaders/Projector/MipmappedShadow.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ee1ecab6e2ba10a4c82bdd593335557a
+    m_Address: Assets/TextMesh Pro/Fonts/GilroySemibold.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a4aec2d89ff109847a39df6cf26a33e5
+    m_Address: Assets/Content/Shaders/CellShader.shadergraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 68e6db2ebdc24f95958faec2be5558d6
+    m_Address: Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 933532a4fcc9baf4fa0491de14d08ed7
+    m_Address: Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 36e335017ad71d54fbb10842863188ae
+    m_Address: Packages/com.unity.render-pipelines.core/Runtime/FallbackShader.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e6e9a19c3678ded42a3bc431ebef7dbd
+    m_Address: Packages/com.unity.render-pipelines.universal/Shaders/Utils/FallbackError.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f9ab2b050c0260c45883919e8dbcf594
+    m_Address: Assets/Content/Graphics/Environment/Trees/Materials/M_Line.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 170e1c6903056e34aaaca23535c69ef7
+    m_Address: Assets/Content/Graphics/Environment/Arabian/M_Arabian_H.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eef4cc4951851f44a8d8bc3d7a127341
+    m_Address: Assets/Content/Graphics/Environment/Trees/fbx/CircleLine.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8f8e53545ed308e429e13a56de6af7ec
+    m_Address: Assets/Content/Graphics/Environment/Building.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f56030cbb952db74593b84e6c5852410
+    m_Address: Assets/Content/Graphics/UI/Hints/BuildingHint.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2bbae64137e3ddf4194d0fe900ed1a11
+    m_Address: Assets/Content/Graphics/Environment/Building.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c768a328d6908b4895fd270ecc9d58d
+    m_Address: Assets/Content/Shaders/TimeOffsetShader.shadergraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 149a2e4aaa22fa548920c1d4f6b994d9
+    m_Address: Assets/Content/Graphics/Environment/Trees/Textures/t_line.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bed0818f66e1301488c9773c0ab37cf2
+    m_Address: Assets/Content/Graphics/UI/Hints/BuildingHint.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fac0aac4611c84a4dba675bbbee7d513
+    m_Address: Assets/Content/Graphics/Environment/T_Sand.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fe393ace9b354375a9cb14cdbbc28be4
+    m_Address: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 31321ba15b8f8eb4c954353edc038b1d
+    m_Address: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9d474faa00c679a4fa7b0214e03799cc
+    m_Address: Assets/Content/Graphics/Environment/T_Grass.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 09c6d44f6dba0b8449abca74536ea895
+    m_Address: Assets/Content/Shaders/TerrainShader.shadergraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 32f2e2609d659f547938e8df7e674b77, type: 2}
+    - {fileID: 11400000, guid: 3f20c3df889c1bf4b8561c95d697d702, type: 2}

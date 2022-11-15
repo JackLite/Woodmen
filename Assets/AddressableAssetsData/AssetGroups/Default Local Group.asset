@@ -45,40 +45,12 @@ MonoBehaviour:
     m_Address: LocationsContainer
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 1cf91c82b360ab749880a4f83004bf23
-    m_Address: Assets/Content/Scenes/Levels/CandyIsland.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 85b4f1d9c4ec1bb418008fb78b0d1961
-    m_Address: Assets/Content/Scenes/Levels/ArabianIsland.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 6909b8c5d0a876f4c9e7bfe96fd7df58
-    m_Address: VikingIsland
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: d4b0905a961579d40a03f21c1a62d3c1
-    m_Address: InkiIsland
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 2218ed24a33d3734c913227c1f5201a9
-    m_Address: Assets/Content/Scenes/Levels/AfrikaIsland.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 307c4949adc9459a9ad015ad69557a90
     m_Address: TreeGenerationSettings
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 7fa122a981c583b40bef692c8c4361d1
     m_Address: VisualSettings
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 76bc361b3e905ce4c87631e9877aede8
-    m_Address: Assets/Content/Graphics/Core/fx_tree.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a806a952dbbc0b04aab63819a6b34862
-    m_Address: Assets/Content/Tutorial/Scene/TutorIsland.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 05bd21bfda3161247a86682ac0ee0c34

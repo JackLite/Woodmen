@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Tutorial
+  m_EditorClassIdentifier: 
+  m_GroupName: Tutorial
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ca8aee7b2058fe044a98a9cb7f0e2290
+  m_SerializeEntries:
+  - m_GUID: 8cc5314be8828c446962a888f5642531
+    m_Address: Assets/Content/Tutorial/House/M_TutorialHouse.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ebe47d1dbc3fc2d4d94669da61bb9ec7
+    m_Address: Assets/Content/Tutorial/House/T_Tutorial_Tent_01.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 739707bab04e07143a1fb7b3bfdb9585
+    m_Address: Assets/Content/Tutorial/House/Tutorial_Colliders.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3dd8b27b7e80a004ab672f976c73a98c
+    m_Address: Assets/Content/Tutorial/House/Tutorial_Tent_L_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d37e0b7c0770464e938c7cfc68bfa25
+    m_Address: Assets/Content/Tutorial/House/Tutorial_Tent_M_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 770f0c1e0710f5348bcdb9748249a71b
+    m_Address: Assets/Content/Tutorial/House/Tutorial_Tent_S_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c6591aa52ea571c49940dc4e11cd8bf7
+    m_Address: Assets/Content/Tutorial/House/TutorialH.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d6065084f28ad674b8d2b5d674930c55
+    m_Address: Assets/Content/Tutorial/TerrainData/Terrain (ID_26942).obj
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8f6635e5e5c69b748bf07698e7360006
+    m_Address: Assets/Content/Tutorial/TerrainData/TerrainCol.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 762dd7e39d7d59f41bcc5fbf2765be06
+    m_Address: Assets/Content/Tutorial/TerrainData/TerrainMask.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4969c86fcfcb98942aa86dd11b3a81e3
+    m_Address: Assets/Content/Tutorial/Tree/M_TutorialTree.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a4e372ddebd73cd4cbd3aa4fb696e976
+    m_Address: Assets/Content/Tutorial/Tree/Stump_Tutorial_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5c4506858ff322841a926b1ca9008055
+    m_Address: Assets/Content/Tutorial/Tree/T_Tree_Tutorial_01.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8b2f95d65620bb746acc4b92272c7966
+    m_Address: Assets/Content/Tutorial/Tree/Tree_Tutorial_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a03e44e89c2d09648817a5cc79dab811
+    m_Address: Assets/Content/Tutorial/Tree/Tree_Tutorial_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fa1f3e01d53f1094ea5c41cff2533386
+    m_Address: Assets/Content/Tutorial/Tree/Tree_Tutorial_03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d62c0bc65eb64c14f80b958b50235384
+    m_Address: Assets/Content/Tutorial/Tree/TutorialTree.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 725ece4de9f8b864f85943cb5a0dc0d7
+    m_Address: Assets/Content/Tutorial/UI/Tutor_Atlases.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6aa7c2acefe0ae04080d31f956fa7dc3
+    m_Address: Assets/Content/Tutorial/UI/TutorCanvas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 539172589a2d2d84b85bfc6270378c22, type: 2}
+    - {fileID: 11400000, guid: c1236822842d28f449271f42586b8488, type: 2}

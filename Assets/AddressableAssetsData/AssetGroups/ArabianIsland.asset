@@ -1,0 +1,361 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: ArabianIsland
+  m_EditorClassIdentifier: 
+  m_GroupName: ArabianIsland
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9d502763f20e2dd4083b003fe6b1c132
+  m_SerializeEntries:
+  - m_GUID: 991ff5682128def42bb08ab342d01710
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianBoat_L.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c2ef9c25b91762c439b62c8bc7f91af0
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianBoat_M.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 06a9bb95331c92e47bb19440ef37e730
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianBoat_S.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 55513dea104807e4fa2bf5b3dd48162b
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianCart.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d25eb3e2fec70ac4fafd3cf05649d1c3
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 09e509f009e1d754db04e44adf959337
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 694ba7733b73bf948b7b4df85315e366
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9912c0edeae798c48bf612c9e82ab1bc
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_04.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0fb77feda97984f45bd6b25793125710
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_05.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2fc7250ad643ca34ebdbe440f31a4689
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_06.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4adccaa7b377610499d12509aab9c9f8
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_07.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7dabad3d21683bc41a1a8f2d30ae275f
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_08.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5f23bff03f3e3324186491dd2df65938
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_09.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0a1a55ccc01dbad4b9c24450922e8bc1
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_10.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 74156eb3c15d45f44be024bf1d4c255d
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_L_11.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b2a2538d58ff54c41b7d02f9136f264d
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bb87eebdebe43f649aa96ed6b9b99362
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 521d47e24b4485c45a5eb94cd5ce243c
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4e463d2d191c60b47989b2483c53143a
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_04.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c9c902e09f753394b832dcb0690cd3d5
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_05.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c96a69896fb39a347905113a3240426b
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_06.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1e2824a7d3e77f7499ba76ea35c6c6d7
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_07.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4755e4e428308e1418132513a5f63e20
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_08.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8fbcd155648a4cd479c16ed22912f0ed
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_09.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 95c86366bcc49b3448bd82ea00b9e23b
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_10.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7184f1819d459cd42a5ea0c3c65a9710
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_M_11.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bf823f34ccedaaf4e84bc62d7ae29e5a
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bde300d648d29ef4aa35e15167d76780
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 054f57b945b7c724b81719822ca3324a
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0173947e7eccf2a409cd01de1d760cdd
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_04.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f2001c95436241b4aaa4fc796d438f1c
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_05.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 65f62b494ad6b1a42aa18f86a69d7c3f
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_06.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 33a69705277ed204fba069ed00ea6e9d
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_07.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 062280b5bcbe7a04e9defd6259a59e54
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_08.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ff0aa9f950c04bd498506bdc38744273
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_09.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3cc8841491330714fb22d41e20571a12
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_10.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9385498a25079bc4d929f4dd3a24b053
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_S_11.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 068f3e47f653c49408780c31025bbc14
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 38a357443ca646a45bc9469fe1bba1e2
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 98321e9e3f699dc4f93895bfc6fef055
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4d9ac2d5aeb0dca488cd1afac46fe856
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_04.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4eefefbd4ea05744fa7cbf8b75c3794b
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_05.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 29463598c0458b14ba1c175719247ccf
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_06.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4bc53836988fc4544901ee0ce6262dda
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_07.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4b2faccebb094b04bb9c447e4f0c4a9e
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_08.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d465037fda9a4d40af3871529aac7d8
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_09.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bd8f000c3f6d1804b8f30d01a86dd696
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_10.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9110f3b8896f89e4daf3594b2c6d1eaa
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XL_11.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e5490b40287d8304599e8681b0e92fa5
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1ba28f53f0ba4c3439f4feb56620f9fe
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 068c751756024be4c8a82eb7df9876fa
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ab32f2b4b393db9458f4bd0a9d356e05
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_04.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6dd725561c495444588e0569ff63624e
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_05.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b02bad17631e01f4fadc9bcbb0f45754
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_06.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 006e6cf175c9496429673c5232b18f34
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_07.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8b29334b377e73f4cadc892e44211c29
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_08.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3d08c6f30762e2642a6eb364d75e5584
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_09.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 38ee55eb65cecf94fa47c42f5bb385fb
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_10.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b023648646989ff4b98c76be1a29e086
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianHouse_XXL_11.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f787fcea9831ef64f99244b53ff8422d
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianPalm_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6556f24cdc0dd134984ed391394751d4
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianPalm_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8723fb024426dae46855aee793024111
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianPalm_03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: deec70a3356bc494585f8fa4f926d0e9
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianStump_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4ef34ff0c5fe99f43bbc1e5352da9b06
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianStump_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a8e28b1f65a314146ae516fef9319fad
+    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianStump_03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c35cbc2de6b4b9147867494c7f1ec2ba
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianBoat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5e45067d4d3ac38489057117e4452110
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianCart.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9aba9da60d4a6ac46b76c9b16ea741a5
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_01.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: accda0fb50381df47866aee85f2a8ccd
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_02.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 95296450529553c4e87ae3c8cc5965a8
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_03.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 76ea83b12cad14340b5d22e9c45a101b
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_04.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c81b07c36487be429c501df203822c4
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_05.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dc7961f937312c74395f129fbd30f521
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_06.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f2d898078cce8104e9a1ed23d54efa13
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_07.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6b4aaee02befa1344a2b03f02b6e342b
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_08.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 11fe1b4b22a05dc47b6f2f5654e25a7d
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_09.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: db13b14c293a4e94d959528dd3789350
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_10.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4bea0836a2bd9524ab52c4b1d84f9a2a
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianH_11.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b28464afccf3e2b47963205d53488a2f
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianTree.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e49a4204f45d97845a443d5e27eb9865
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Terrain/Shader Graphs_TerrainShader.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 11be2aebb57bbaf4daf23a7b203c15bd
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Terrain/Terrain (ID_26496).obj
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f6b7632720adac46805df08ccb4f174
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Terrain/TerrainMask.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4438dcec8ab36e744bf25b35de984bee
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Terrain/TerrainCol.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bb615dba4588b9241aed4f6e34eba3c3
+    m_Address: Assets/Content/Graphics/Environment/Arabian/Textures/T_Arabian.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: dbcfb99e42d63074d8ab41553f1670b2, type: 2}
+    - {fileID: 11400000, guid: f4e089ad152be364fad452928f7c3382, type: 2}
