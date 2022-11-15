@@ -6682,6 +6682,26 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6652861543225638477, guid: 9816d053fb2bf2740a94bb68c8c58cac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.0010497688
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652861543225638477, guid: 9816d053fb2bf2740a94bb68c8c58cac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00035451894
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652861543225638477, guid: 9816d053fb2bf2740a94bb68c8c58cac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.94743097
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652861543225638477, guid: 9816d053fb2bf2740a94bb68c8c58cac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.31995833
+      objectReference: {fileID: 0}
     - target: {fileID: 7700761873376552576, guid: 9816d053fb2bf2740a94bb68c8c58cac,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -7991,6 +8011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.02405695
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700761873384065342, guid: 9816d053fb2bf2740a94bb68c8c58cac,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7700761873809558504, guid: 9816d053fb2bf2740a94bb68c8c58cac,
         type: 3}

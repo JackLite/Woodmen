@@ -41,6 +41,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 23efb844e263aa749a56bfd4edcfd42f, type: 3}
   - {fileID: 21300000, guid: bac50184bfc6a2a48a3f58de1f8451ac, type: 3}
   - {fileID: 21300000, guid: 6893ff069c84a9745a17b69404e93d8c, type: 3}
+  - {fileID: 21300000, guid: d2d74e3669da5a64b82c347b13bccaa0, type: 3}
   - {fileID: 21300000, guid: 6872c87607a48854987418386d0cd758, type: 3}
   - {fileID: 21300000, guid: c8a0e279876166d40bfff720450c3c8e, type: 3}
   - {fileID: 21300000, guid: ed89617ac41c829438fc8f1995a61162, type: 3}
@@ -49,6 +50,7 @@ SpriteAtlas:
   - bg
   - arrow
   - tutor_ring
+  - tutor_arrow
   - tutor_movefinger
   - tutor_finger
   - tutor_joystic

@@ -74,8 +74,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5931318703538274fa8c84bd44de1cb5, type: 3}
   - {fileID: 21300000, guid: af52f497d7dcd074295f2db2c1fd0d1b, type: 3}
   - {fileID: 21300000, guid: 67af46a7f535f014d8bed332ac8d0a41, type: 3}
+  - {fileID: 21300000, guid: 3c4e00f7045aab54fb074b8d8142c2ac, type: 3}
   - {fileID: 21300000, guid: a3b63888247325e48a3610c13fccaf97, type: 3}
   - {fileID: 21300000, guid: 801450c863260fd46bd6ee8a59166359, type: 3}
+  - {fileID: 21300000, guid: 54c8a8f8b641578408186bc60130fedb, type: 3}
   - {fileID: 21300000, guid: 487c96998e3b2aa468dcdcf207712658, type: 3}
   - {fileID: 381569403, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
   - {fileID: 2043122589, guid: 7170e7d99beefa74d9f44d63ac5b4766, type: 3}
@@ -123,8 +125,10 @@ SpriteAtlas:
   - b_square
   - i_tree
   - bg_shape
+  - hint_arrow
   - i_arrow
   - timer_ice
+  - i_wood_out
   - i_home
   - b_circle_3
   - b_circle_2
