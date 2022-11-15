@@ -98,7 +98,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: bg_bar
+    path: Bars
     classID: 224
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -124,7 +124,7 @@ AnimationClip:
       customType: 28
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3309104867
+      path: 2370426191
       attribute: 1460864421
       script: {fileID: 0}
       typeID: 224
@@ -233,7 +233,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: bg_bar
+    path: Bars
     classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []
