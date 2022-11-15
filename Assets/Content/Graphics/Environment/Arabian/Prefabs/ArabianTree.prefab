@@ -81,7 +81,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 170e1c6903056e34aaaca23535c69ef7, type: 2}
+      objectReference: {fileID: 2100000, guid: cec8286de6e7ed846908de9dc8a4d9c1, type: 2}
     - target: {fileID: 919132149155446097, guid: f787fcea9831ef64f99244b53ff8422d,
         type: 3}
       propertyPath: m_Name
@@ -119,6 +119,18 @@ CapsuleCollider:
   m_Height: 1.61
   m_Direction: 1
   m_Center: {x: 0, y: 0.45, z: 0}
+--- !u!114 &2423697768959338102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578715580055726169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2406887934170246721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,7 +212,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 170e1c6903056e34aaaca23535c69ef7, type: 2}
+      objectReference: {fileID: 2100000, guid: cec8286de6e7ed846908de9dc8a4d9c1, type: 2}
     - target: {fileID: 919132149155446097, guid: 6556f24cdc0dd134984ed391394751d4,
         type: 3}
       propertyPath: m_Name
@@ -238,6 +250,18 @@ CapsuleCollider:
   m_Height: 1.29
   m_Direction: 1
   m_Center: {x: -0.01, y: 0.44, z: -0.01}
+--- !u!114 &467358447847384772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3289758594641761040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4404352557440075822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -319,7 +343,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 170e1c6903056e34aaaca23535c69ef7, type: 2}
+      objectReference: {fileID: 2100000, guid: cec8286de6e7ed846908de9dc8a4d9c1, type: 2}
     - target: {fileID: 919132149155446097, guid: 8723fb024426dae46855aee793024111,
         type: 3}
       propertyPath: m_Name
@@ -357,6 +381,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.33, z: 0}
+--- !u!114 &1048262670530605865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593325500837246335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4491826923474801690
 PrefabInstance:
   m_ObjectHideFlags: 0
