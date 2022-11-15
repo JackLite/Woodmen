@@ -3,6 +3,7 @@ using ModulesFramework.Attributes;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.SceneManagement;
 using Woodman.Buildings;
 using Woodman.Cheats;
 using Woodman.Cheats.View;
@@ -29,6 +30,10 @@ namespace Woodman
     {
         protected override async Task Setup()
         {
+            if (SceneManager.GetActiveScene().name != "MainScene")
+            {
+                await Addressables.LoadSceneAsync("MainScene").Task;
+            }
             Application.targetFrameRate = 300;
             CreateOneData();
 

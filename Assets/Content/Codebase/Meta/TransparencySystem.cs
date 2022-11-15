@@ -60,7 +60,7 @@ namespace Woodman.Meta
             foreach (var e in q)
             {
                 ref var t = ref e.GetComponent<Transparency>();
-                t.delta = _visualSettings.speed;
+                t.delta = _visualSettings.transparencySpeed;
                 t.isFinish = false;
                 t.target = 1;
             }
@@ -79,7 +79,7 @@ namespace Woodman.Meta
             {
                 target = _visualSettings.min,
                 current = 1,
-                delta = -_visualSettings.speed,
+                delta = -_visualSettings.transparencySpeed,
                 transparent = meshTransparent
             });
         }

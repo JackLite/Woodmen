@@ -3,6 +3,7 @@ using Woodman.Cheats.View;
 using Woodman.Common;
 using Woodman.Loading;
 using Woodman.Logs;
+using Woodman.Logs.LogsUsing;
 using Woodman.Player;
 using Woodman.Player.Indicators;
 using Woodman.Player.Movement.View;
@@ -35,6 +36,10 @@ namespace Woodman.Meta
         [field: SerializeField]
         [field: ViewInject]
         public PlayerIndicatorsController PlayerIndicatorsController { get; private set; }
+        
+        [field: SerializeField]
+        [field: ViewInject]
+        public CharacterLogsView CharacterLogsView { get; private set; }
 
         [field: Header("Pools")]
         [field: SerializeField]

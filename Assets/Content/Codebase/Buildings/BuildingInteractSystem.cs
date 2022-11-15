@@ -2,10 +2,12 @@ using ModulesFramework;
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
+using Unity.Mathematics;
 using Woodman.Common;
 using Woodman.Locations;
 using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
+using Woodman.Logs.LogsUsing;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
 
@@ -21,6 +23,7 @@ namespace Woodman.Buildings
         private ProgressionService _progressionService;
         private BuildingService _buildingService;
         private EcsOneData<LocationData> _locationData;
+        private VisualSettings _visualSettings;
 
         public void Run()
         {
@@ -52,7 +55,15 @@ namespace Woodman.Buildings
             _buildingsRepository.SetBuildingStateIndex(delta.resultState, interact.BuildingView.Id);
             _buildingsRepository.SetBuildingLogsCount(delta.resultLogsCount, interact.BuildingView.Id);
 
-            interact.BuildingView.SetLogs(delta.resultLogsCount, delta.nextStateLogsCount);
+            if (delta.totalResources > 0)
+            {
+                _world.NewEntity().AddComponent(new UsingLogsCreateEvent
+                {
+                    count = math.min(delta.totalResources, _visualSettings.usingLogsCount),
+                    to = interact.BuildingView.transform.position,
+                    delayBetween = _visualSettings.usingLogsDelayBetween
+                });
+            }
 
             if (oldState != delta.resultState)
             {

@@ -6,7 +6,7 @@ namespace Woodman
     public class VisualSettings : ScriptableObject
     {
         [Header("Transparency")]
-        public float speed = 3f;
+        public float transparencySpeed = 3f;
 
         [Range(0, 1)]
         public float min = .1f;
@@ -18,6 +18,14 @@ namespace Woodman
         public Vector3 startBias;
         public float branchY = .5f;
 
+        [Header("UsingLogs")]
+        public int usingLogsCount = 15;
+        public float usingLogsTime = 1f;
+        public float usingLogsDelayBetween = .03f;
+        public AnimationCurve usingLogsYEasing;
+        public float usingLogsYMax = 10;
+        public Vector3 usingLogsRotationSpeed = Vector3.zero;
+        
         [Header("Felling")]
         public float fallSpeed = 10f;
     }
