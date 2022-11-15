@@ -1737,7 +1737,7 @@ MonoBehaviour:
   _topCanvasGroup: {fileID: 8730717865164020936}
   _logsCount: {fileID: 5817078518524993040}
   _slider: {fileID: 1687750900212350468}
-  _costText: {fileID: 0}
+  _costText: {fileID: 5479894515032208113}
   _x2Group: {fileID: 4881000440075060666}
   _okBtn: {fileID: 8096670360081345373}
   _x2Button: {fileID: 3805626240559552937}
