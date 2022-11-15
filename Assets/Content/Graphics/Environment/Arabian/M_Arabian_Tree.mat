@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: bb615dba4588b9241aed4f6e34eba3c3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 877dfcc19c3c77e498dfa53647e798b7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -73,6 +73,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2D:
+        m_Texture: {fileID: 2800000, guid: 91606cf8be4a9324397f98a9625b536d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -93,7 +97,7 @@ Material:
     - SoftEdgeAlpha: 0
     - SoftEdgeFalloff: 0
     - SoftEdgeSize: 0
-    - _Alpha: 1
+    - _Alpha: 2
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
@@ -127,6 +131,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _Transparent: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:

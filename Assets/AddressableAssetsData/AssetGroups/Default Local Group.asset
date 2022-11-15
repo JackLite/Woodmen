@@ -57,6 +57,14 @@ MonoBehaviour:
     m_Address: ProgressionSettings
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: a806a952dbbc0b04aab63819a6b34862
+    m_Address: Assets/Content/Tutorial/Scene/TutorIsland.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 85b4f1d9c4ec1bb418008fb78b0d1961
+    m_Address: Assets/Content/Scenes/Levels/ArabianIsland.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:
