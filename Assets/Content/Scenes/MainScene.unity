@@ -3311,18 +3311,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1239503780865325008}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1039542334 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7700761873996443764, guid: 9816d053fb2bf2740a94bb68c8c58cac,
-    type: 3}
-  m_PrefabInstance: {fileID: 7700761872976042058}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6be1d4038104617a84980075dbde7e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1039779323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4309,7 +4297,7 @@ MonoBehaviour:
   <PlayerMovement>k__BackingField: {fileID: 919704486}
   <PlayerVisibilityDetector>k__BackingField: {fileID: 919704488}
   <WoodmanContainer>k__BackingField: {fileID: 919704482}
-  <PlayerIndicatorsController>k__BackingField: {fileID: 1039542334}
+  <PlayerIndicatorsController>k__BackingField: {fileID: 7700761872976042059}
   <LogsPool>k__BackingField: {fileID: 413255062}
   <PoolsProvider>k__BackingField: {fileID: 244136939}
   <DebugViewProvider>k__BackingField: {fileID: 831014810}
@@ -8093,6 +8081,18 @@ PrefabInstance:
     - {fileID: 1062265262897165376, guid: 9816d053fb2bf2740a94bb68c8c58cac, type: 3}
     - {fileID: 1300722004459549245, guid: 9816d053fb2bf2740a94bb68c8c58cac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9816d053fb2bf2740a94bb68c8c58cac, type: 3}
+--- !u!114 &7700761872976042059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8982916797286781335, guid: 9816d053fb2bf2740a94bb68c8c58cac,
+    type: 3}
+  m_PrefabInstance: {fileID: 7700761872976042058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6be1d4038104617a84980075dbde7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8442519660420949707
 RectTransform:
   m_ObjectHideFlags: 0
