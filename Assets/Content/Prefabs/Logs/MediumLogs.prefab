@@ -50,6 +50,7 @@ MonoBehaviour:
   _countText: {fileID: 8448822857689749692}
   _count: 0
   _type: 0
+  _usingPoint: {fileID: 6129805535977297504}
 --- !u!1 &3401431859677875878
 GameObject:
   m_ObjectHideFlags: 0

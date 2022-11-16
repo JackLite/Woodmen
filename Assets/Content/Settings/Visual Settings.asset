@@ -20,7 +20,7 @@ MonoBehaviour:
   startBias: {x: -0.04, y: -0.38, z: 0}
   branchY: 0.5
   usingLogsCount: 15
-  usingLogsTime: 1
+  usingLogsTime: 0.5
   usingLogsDelayBetween: 0.03
   usingLogsYEasing:
     serializedVersion: 2
@@ -55,4 +55,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  usingLogsYMax: 4
+  usingLogsRotationSpeed: {x: -150, y: 150, z: 120}
   fallSpeed: 10

@@ -23,6 +23,7 @@ namespace Woodman.Logs.LogsUsing
             for (var i = 0; i < ev.count; i++)
                 DelayedFactory.Create(_world, i * ev.delayBetween, () => CreateUsingLogs(ev));
 
+            DelayedFactory.Create(_world, ev.count * ev.delayBetween + _visualSettings.usingLogsTime, ev.onAfter);
             q.DestroyAll();
         }
 
@@ -40,7 +41,7 @@ namespace Woodman.Logs.LogsUsing
                 time = _visualSettings.usingLogsTime,
                 remain = _visualSettings.usingLogsTime,
                 to = ev.to,
-                from = _characterLogs.LogsTargetPos
+                from = ev.from
             });
         }
     }

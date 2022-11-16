@@ -20,6 +20,7 @@ namespace Woodman.Buildings
         private PlayerLogsRepository _resRepository;
         private BuildingsRepository _buildingsRepository;
         private PoolsProvider _poolsProvider;
+        private CharacterLogsView _characterLogsView;
         private ProgressionService _progressionService;
         private BuildingService _buildingService;
         private EcsOneData<LocationData> _locationData;
@@ -55,24 +56,32 @@ namespace Woodman.Buildings
             _buildingsRepository.SetBuildingStateIndex(delta.resultState, interact.BuildingView.Id);
             _buildingsRepository.SetBuildingLogsCount(delta.resultLogsCount, interact.BuildingView.Id);
 
-            if (delta.totalResources > 0)
+            if (delta.totalResources <= 0) return;
+
+            CreateUsingLogs(interact, delta, oldState);
+        }
+
+        private void CreateUsingLogs(BuildingInteract interact, BuildingDelta delta, int oldState)
+        {
+            var createEvent = new UsingLogsCreateEvent
             {
-                _world.NewEntity().AddComponent(new UsingLogsCreateEvent
-                {
-                    count = math.min(delta.totalResources, _visualSettings.usingLogsCount),
-                    to = interact.BuildingView.transform.position,
-                    delayBetween = _visualSettings.usingLogsDelayBetween
-                });
-            }
+                count = math.min(delta.totalResources, _visualSettings.usingLogsCount),
+                from = _characterLogsView.LogsTargetPos,
+                to = interact.BuildingView.transform.position,
+                delayBetween = _visualSettings.usingLogsDelayBetween
+            };
 
             if (oldState != delta.resultState)
             {
-                interact.BuildingView.AnimateTo(delta.resultState, _poolsProvider.BuildingFxPool);
-                if (delta.resultState == interact.BuildingView.StatesCount - 1)
+                createEvent.onAfter = () =>
                 {
-                    FinishBuilding();
-                }
+                    interact.BuildingView.AnimateTo(delta.resultState, _poolsProvider.BuildingFxPool);
+                    if (delta.resultState == interact.BuildingView.StatesCount - 1)
+                        FinishBuilding();
+                };
             }
+
+            _world.NewEntity().AddComponent(createEvent);
         }
 
         private void FinishBuilding()

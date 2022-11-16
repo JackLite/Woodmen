@@ -5,6 +5,7 @@ using ModulesFramework.Systems;
 using Unity.Mathematics;
 using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
+using Woodman.Logs.LogsUsing;
 using Woodman.Player;
 using Woodman.Player.PlayerResources;
 
@@ -15,9 +16,11 @@ namespace Woodman.Logs
     {
         private DataWorld _world;
         private EcsOneData<PlayerData> _playerData;
+        private CharacterLogsView _characterLogsView;
         private LogsHeapRepository _logsHeapRepository;
         private LogsPool _logsPool;
         private PlayerLogsRepository _resRepository;
+        private VisualSettings _visualSettings;
 
         public void Run()
         {
@@ -41,12 +44,22 @@ namespace Woodman.Logs
 
             var toAdd = math.min(max - currentRes, logs.LogView.Count);
             _resRepository.AddPlayerRes(toAdd);
-            logs.LogView.Subtract(toAdd);
-            if (logs.LogView.Count <= 0)
-            {
-                _logsPool.Return(logs.LogView);
-            }
             _logsHeapRepository.SetCount(logs.LogView.Id, logs.LogView.Count);
+
+            var createEvent = new UsingLogsCreateEvent
+            {
+                count = _visualSettings.usingLogsCount,
+                from = logs.LogView.UsingPoint,
+                to = _characterLogsView.LogsTargetPos,
+                delayBetween = _visualSettings.usingLogsDelayBetween,
+                onAfter = () =>
+                {
+                    logs.LogView.Subtract(toAdd);
+                    if (logs.LogView.Count <= 0)
+                        _logsPool.Return(logs.LogView);
+                }
+            };
+            _world.NewEntity().AddComponent(createEvent);
         }
     }
 }

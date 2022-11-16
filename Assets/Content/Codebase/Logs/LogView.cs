@@ -13,10 +13,14 @@ namespace Woodman.Logs
 
         [SerializeField]
         private LogsHeapType _type;
+
+        [SerializeField]
+        private Transform _usingPoint;
         
         public int Count => _count;
         public LogsHeapType LogType => _type;
         public string Id { get; set; }
+        public Vector3 UsingPoint => _usingPoint.position;
         
         public void Show()
         {

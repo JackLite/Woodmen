@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Woodman.Logs.LogsUsing
 {
@@ -6,6 +7,8 @@ namespace Woodman.Logs.LogsUsing
     {
         public int count;
         public float delayBetween;
+        public Vector3 from;
         public Vector3 to;
+        public Action onAfter;
     }
 }

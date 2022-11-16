@@ -59,7 +59,8 @@ namespace Woodman.Utils
         {
             foreach (var t in _pool)
             {
-                Addressables.ReleaseInstance(t.gameObject);
+                if(t != null)
+                    Addressables.ReleaseInstance(t.gameObject);
             }
 
             _pool.Clear();
