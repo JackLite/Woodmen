@@ -12,11 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621715fdc96444c3847a3ffe2bdfc9eb, type: 3}
   m_Name: Visual Settings
   m_EditorClassIdentifier: 
-  speed: 3
+  transparencySpeed: 3
   min: 0.08
   gap: 0
   branchX: 0.4
   pieceHeight: 1
   startBias: {x: -0.04, y: -0.38, z: 0}
   branchY: 0.5
+  usingLogsCount: 15
+  usingLogsTime: 1
+  usingLogsDelayBetween: 0.03
+  usingLogsYEasing:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5014189
+      value: 0.49782312
+      inSlope: -0.0020580098
+      outSlope: -0.0020580098
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.37134442
+      outWeight: 0.12091272
+    - serializedVersion: 3
+      time: 1.0000014
+      value: -0.0000192218
+      inSlope: -2.7090657
+      outSlope: -2.7090657
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.11520371
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   fallSpeed: 10

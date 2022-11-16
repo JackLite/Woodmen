@@ -31,7 +31,7 @@ namespace Woodman
             var viewProvider = Object.FindObjectOfType<MetaViewProvider>(true);
             AddDependency(viewProvider);
             BindView(viewProvider);
-
+            await viewProvider.PoolsProvider.LogsUsingPool.WarmUp(20);
             CreateOneData<PlayerMovementData>();
 
             if (Debug.isDebugBuild)
