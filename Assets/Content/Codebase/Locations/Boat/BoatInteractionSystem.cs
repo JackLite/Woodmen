@@ -2,10 +2,13 @@
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
+using Unity.Mathematics;
 using Woodman.Buildings;
 using Woodman.Common;
+using Woodman.Common.Tweens;
 using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
+using Woodman.Logs.LogsUsing;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
 
@@ -21,6 +24,9 @@ namespace Woodman.Locations.Boat
         private ProgressionService _progressionService;
         private BuildingService _buildingService;
         private EcsOneData<LocationData> _locationData;
+        private VisualSettings _visualSettings;
+        private CharacterLogsView _characterLogsView;
+        
         public void Run()
         {
             var q = _world.Select<Interact>()
@@ -46,20 +52,84 @@ namespace Woodman.Locations.Boat
         private void Process(BuildingInteract interact)
         {
             var locationIndex = _progressionService.GetLocationIndex();
-            var delta = _buildingService.CalcBoatNextState(locationIndex, interact.BuildingView);
-            var oldState = _boatSaveService.GetState(locationIndex);
-            _resRepository.SubtractRes(delta.totalResources);
-            _boatSaveService.SetState(locationIndex, delta.resultState);
-            _boatSaveService.SetLogs(locationIndex, delta.resultLogsCount);
+            var currentState = _boatSaveService.GetState(locationIndex);
+            var nextStateLogs = interact.BuildingView.GetResForState(currentState + 1);
+            var currentLogs = ProcessLogic(interact, out var endLogs, out var endState);
 
-            interact.BuildingView.SetLogs(delta.resultLogsCount, delta.nextStateLogsCount);
+            CreateUsingLogs(interact, endLogs, endState, currentState);
 
-            if (oldState != delta.resultState)
+            var totalTime = _visualSettings.usingLogsTime +
+                            _visualSettings.usingLogsCount * _visualSettings.usingLogsDelayBetween;
+            var tweenData = new TweenData
             {
-                interact.BuildingView.AnimateTo(delta.resultState, _poolsProvider.BuildingFxPool);
-                if (delta.resultState == interact.BuildingView.StatesCount - 1)
-                    FinishLocation();
+                remain = totalTime,
+                update = r =>
+                {
+                    var logsCount = math.lerp(currentLogs, endLogs, 1 - r / totalTime);
+                    interact.BuildingView.SetLogs((int)logsCount, nextStateLogs);
+                },
+                validate = () => interact.BuildingView != null,
+                onEnd = () => interact.BuildingView.SetLogs(endLogs, nextStateLogs)
+            };
+            _world.NewEntity().AddComponent(tweenData);
+        }
+        
+        private int ProcessLogic(BuildingInteract interact, out int endLogs, out int endState)
+        {
+            var locationIndex = _progressionService.GetLocationIndex();
+            var currentLogs = _boatSaveService.GetLogs(locationIndex);
+            var currentState = _boatSaveService.GetState(locationIndex);
+            var nextStateLogs = interact.BuildingView.GetResForState(currentState + 1);
+            var needLogs = nextStateLogs - currentLogs;
+
+            endLogs = 0;
+            endState = currentState;
+            var playerLogs = _resRepository.GetPlayerRes();
+            if (needLogs <= playerLogs)
+            {
+                endLogs = nextStateLogs;
+                endState += 1;
+                _boatSaveService.SetState(locationIndex, currentState + 1);
+                _boatSaveService.SetLogs(locationIndex, 0);
             }
+            else
+            {
+                endLogs = currentLogs + playerLogs;
+                _boatSaveService.SetLogs(locationIndex, endLogs);
+            }
+
+            _resRepository.SubtractRes(math.min(playerLogs, needLogs));
+            return currentLogs;
+        }
+        
+        private void CreateUsingLogs(BuildingInteract interact, int logsCount, int newState, int oldState)
+        {
+            var createEvent = new UsingLogsCreateEvent
+            {
+                count = math.min(logsCount, _visualSettings.usingLogsCount),
+                from = _characterLogsView.LogsTargetPos,
+                to = () => interact.BuildingView.transform.position,
+                delayBetween = _visualSettings.usingLogsDelayBetween
+            };
+
+            if (oldState != newState)
+            {
+                createEvent.onAfter = () =>
+                {
+                    interact.BuildingView.AnimateTo(newState, _poolsProvider.BuildingFxPool);
+                    if (newState == interact.BuildingView.StatesCount - 1)
+                        FinishLocation();
+                    else
+                    {
+                        var locationIndex = _progressionService.GetLocationIndex();
+                        var currentState = _boatSaveService.GetState(locationIndex);
+                        var nextStateLogs = interact.BuildingView.GetResForState(currentState + 1);
+                        interact.BuildingView.SetLogs(0, nextStateLogs);
+                    }
+                };
+            }
+
+            _world.NewEntity().AddComponent(createEvent);
         }
 
         private void FinishLocation()
