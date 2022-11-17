@@ -164,6 +164,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArabianHouse_S_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0173947e7eccf2a409cd01de1d760cdd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0173947e7eccf2a409cd01de1d760cdd, type: 3}
 --- !u!1 &428020593088414280 stripped
@@ -255,6 +260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ArabianHouse_L_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9912c0edeae798c48bf612c9e82ab1bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9912c0edeae798c48bf612c9e82ab1bc, type: 3}
@@ -567,6 +577,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArabianHouse_M_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e463d2d191c60b47989b2483c53143a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e463d2d191c60b47989b2483c53143a, type: 3}
 --- !u!1 &7807613996233341549 stripped
@@ -658,6 +673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ArabianHouse_XL_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d9ac2d5aeb0dca488cd1afac46fe856,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9ac2d5aeb0dca488cd1afac46fe856, type: 3}

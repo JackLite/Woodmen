@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_TerrainShader
+  m_Name: M_TutorialTerrain
   m_Shader: {fileID: -6465566751694194690, guid: 09c6d44f6dba0b8449abca74536ea895,
     type: 3}
   m_ValidKeywords: []

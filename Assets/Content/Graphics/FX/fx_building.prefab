@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8438871515430744968}
   - component: {fileID: 7988322454813290450}
   - component: {fileID: 5495969778929321046}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: vfx`
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4632,7 +4632,7 @@ GameObject:
   - component: {fileID: 8149936878799221224}
   - component: {fileID: 6566086980282916210}
   - component: {fileID: 5336648140594551853}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: vfx`
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9226,7 +9226,7 @@ GameObject:
   - component: {fileID: 4804534359598828609}
   - component: {fileID: 8223143817715579640}
   - component: {fileID: 4967511024809362990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: vfx`.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13910,7 +13910,7 @@ GameObject:
   - component: {fileID: 61343132536287493}
   - component: {fileID: 6605854711691354659}
   - component: {fileID: 2835134177123619444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: vfx`.2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14377,7 +14377,7 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.5707963
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -18673,7 +18673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3349096598714842986}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fx_building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18707,7 +18707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4826990515901059948}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}

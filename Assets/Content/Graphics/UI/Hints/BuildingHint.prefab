@@ -724,7 +724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -17.6}
+  m_AnchoredPosition: {x: 0, y: -25.6}
   m_SizeDelta: {x: -18, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8641564805136130845
@@ -840,6 +840,7 @@ GameObject:
   - component: {fileID: 5427542627874939737}
   - component: {fileID: 2729673391748922534}
   - component: {fileID: 1097249097420860881}
+  - component: {fileID: 7199802249052764081}
   m_Layer: 5
   m_Name: HouseBar
   m_TagString: Untagged
@@ -885,7 +886,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 16
     m_Right: 16
-    m_Top: 15
+    m_Top: 25
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 10
@@ -910,6 +911,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!225 &7199802249052764081
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6105898330097804977}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7280290625205291326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,8 +1269,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3.5}
+  m_SizeDelta: {x: 0, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2425417542890218701
 CanvasRenderer:
