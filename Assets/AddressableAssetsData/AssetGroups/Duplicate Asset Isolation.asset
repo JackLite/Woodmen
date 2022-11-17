@@ -89,10 +89,6 @@ MonoBehaviour:
     m_Address: Assets/DynamicShadowProjector/Shaders/Projector/MipmappedShadow.shader
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ee1ecab6e2ba10a4c82bdd593335557a
-    m_Address: Assets/TextMesh Pro/Fonts/GilroySemibold.ttf
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: a4aec2d89ff109847a39df6cf26a33e5
     m_Address: Assets/Content/Shaders/CellShader.shadergraph
     m_ReadOnly: 0
