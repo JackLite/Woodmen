@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee1ecab6e2ba10a4c82bdd593335557a
+guid: ae9173b202e5cd044876fc8d26af6d6c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Gilroy
+  - Passion One
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
