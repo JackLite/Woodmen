@@ -309,8 +309,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: TermofService
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f3d0bd57f5d43d144921de1c5753c2a2, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 624377f23a281ac45915b2d566deda3e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0f2c81d8d877e94082ac01cc4824634, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 9a5452b436b0fb54191afd1ca7be3863, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -340,11 +340,11 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 32
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -8
+  m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

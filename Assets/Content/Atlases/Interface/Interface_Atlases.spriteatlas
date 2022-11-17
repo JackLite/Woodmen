@@ -50,7 +50,9 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: fe4ee280b38bbec4699f2abc9d9509fa, type: 3}
   - {fileID: 21300000, guid: 420745d05df03074d9d977a842826df3, type: 3}
+  - {fileID: 21300000, guid: a411813160b48cd47915093a62c72a96, type: 3}
   - {fileID: 1158674123, guid: 14102e32505e796469ee71e522c29bc9, type: 3}
   - {fileID: 471547711, guid: 14102e32505e796469ee71e522c29bc9, type: 3}
   - {fileID: 21300000, guid: 1e5923927cacab54b920aea2db876437, type: 3}
@@ -58,6 +60,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0c06b6732f35eea4ea1b0ef489c897d3, type: 3}
   - {fileID: 21300000, guid: 69496ab357f9c6542873542dac8bcf18, type: 3}
   - {fileID: 21300000, guid: 3126d2442991bb040bdc37fc5a6213a9, type: 3}
+  - {fileID: 21300000, guid: b0b8df94eb651bb44a25462010ae68ab, type: 3}
   - {fileID: 21300000, guid: d25ab0b4c6a98144aa58dc298a569a5c, type: 3}
   - {fileID: 21300000, guid: a85b20e56ee86cb4da7c117c4aa9f80e, type: 3}
   - {fileID: 21300000, guid: b6e869e5a3c7d82449041ad9bb4dd971, type: 3}
@@ -101,7 +104,9 @@ SpriteAtlas:
   - {fileID: -225644436, guid: 4bb006afffe28e6428f7697b5d4f48ab, type: 3}
   - {fileID: 21300000, guid: f2e8a6ff14f794e469f369f5d00c099c, type: 3}
   m_PackedSpriteNamesToIndex:
+  - i_heavy
   - i_close
+  - i_log
   - b_grad_h_0
   - b_grad_h_1
   - i_pause
@@ -109,6 +114,7 @@ SpriteAtlas:
   - Bar_wood
   - b_arrow_2
   - bg_resultwindow
+  - i_time_s
   - i_wood
   - i_mustaches
   - i_snow
