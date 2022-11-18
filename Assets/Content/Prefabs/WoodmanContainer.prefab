@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6652861543225638477}
   - component: {fileID: 7825898694238207551}
   - component: {fileID: 7449575601686208381}
-  - component: {fileID: 8982916797286781335}
   - component: {fileID: 4256926242649867381}
   m_Layer: 0
   m_Name: Canvas
@@ -27,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3795680026578351495}
-  m_LocalRotation: {x: 0.00035451894, y: 0.94743097, z: 0.31995833, w: -0.0010497688}
+  m_LocalRotation: {x: 0.0003545109, y: 0.947431, z: 0.31995833, w: -0.0010497448}
   m_LocalPosition: {x: 0, y: 0, z: 0.538}
   m_LocalScale: {x: 0.0015, y: 0.0015, z: 0.0015}
   m_ConstrainProportionsScale: 1
@@ -85,19 +84,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &8982916797286781335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3795680026578351495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6be1d4038104617a84980075dbde7e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  treeInteractIndicator: {fileID: 5437775443838325403}
 --- !u!114 &4256926242649867381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +111,7 @@ GameObject:
   - component: {fileID: 7700761873809558510}
   - component: {fileID: 7700761873809558509}
   - component: {fileID: 4135461346993926136}
+  - component: {fileID: 2392049262966766567}
   m_Layer: 0
   m_Name: WoodmanContainer
   m_TagString: Player
@@ -228,6 +215,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _logsTarget: {fileID: 8853846270619218016}
   _logsView: {fileID: 7817379015684608993}
+--- !u!114 &2392049262966766567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7700761873809558504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6be1d4038104617a84980075dbde7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeInteractIndicator: {fileID: 5437775443838325403}
+  backpackLog: {fileID: 7817379015684608993}
 --- !u!1 &7700761874909892317
 GameObject:
   m_ObjectHideFlags: 0

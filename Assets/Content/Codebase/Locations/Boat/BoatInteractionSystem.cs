@@ -69,7 +69,11 @@ namespace Woodman.Locations.Boat
                     interact.BuildingView.SetLogs((int)logsCount, nextStateLogs);
                 },
                 validate = () => interact.BuildingView != null,
-                onEnd = () => interact.BuildingView.SetLogs(endLogs, nextStateLogs)
+                onEnd = () =>
+                {
+                    interact.BuildingView.SetLogs(endLogs, nextStateLogs);
+                    _world.CreateOneFrame().AddComponent(new ChangeResEvent());
+                }
             };
             _world.NewEntity().AddComponent(tweenData);
         }

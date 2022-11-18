@@ -18,7 +18,7 @@ namespace Woodman.Locations.Interactions.TreeInteraction
             var startQuery = _world.Select<InteractStart>()
                 .Where<InteractStart>(c => c.interactType == InteractTypeEnum.Tree);
             if (startQuery.Any())
-                _indicatorsController.ShowHideTreeIndicator(true);
+                _indicatorsController.ToggleTreeIndicator(true);
             
             var q = _world.Select<Interact>()
                 .Where<Interact>(i => i.interactType == InteractTypeEnum.Tree);
@@ -32,7 +32,7 @@ namespace Woodman.Locations.Interactions.TreeInteraction
             var stopQuery = _world.Select<InteractStop>()
                 .Where<InteractStop>(c => c.interactType == InteractTypeEnum.Tree);
             if (stopQuery.Any())
-                _indicatorsController.ShowHideTreeIndicator(false);
+                _indicatorsController.ToggleTreeIndicator(false);
         }
     }
 }

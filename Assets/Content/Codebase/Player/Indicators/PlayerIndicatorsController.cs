@@ -7,9 +7,17 @@ namespace Woodman.Player.Indicators
         [SerializeField]
         private GameObject treeInteractIndicator;
 
-        public void ShowHideTreeIndicator(bool state)
+        [SerializeField]
+        private GameObject backpackLog;
+
+        public void ToggleTreeIndicator(bool state)
         {
             treeInteractIndicator.SetActive(state);
+        }
+
+        public void ToggleLogBackpack(bool state)
+        {
+            backpackLog.SetActive(state);
         }
     }
 }

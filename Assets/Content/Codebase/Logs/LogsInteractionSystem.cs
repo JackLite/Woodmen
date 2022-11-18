@@ -47,6 +47,7 @@ namespace Woodman.Logs
             _resRepository.AddPlayerRes(toAdd);
             var endLogs = currentLogs - toAdd;
             _logsHeapRepository.SetCount(logs.LogView.Id, endLogs);
+            _world.CreateOneFrame().AddComponent(new ChangeResEvent());
 
             var createEvent = new UsingLogsCreateEvent
             {
