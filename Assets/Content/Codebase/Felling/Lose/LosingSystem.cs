@@ -71,6 +71,10 @@ namespace Woodman.Felling.Lose
                     _windows.SecondChanceView.SetProgress(progress);
                     _windows.SecondChanceView.SetLoseReason(reason);
                     _windows.SecondChanceView.Show();
+                    DelayedFactory.Create(_world, .5f, () =>
+                    {
+                        _windows.SecondChanceView.ActivateSkip();
+                    });
                 }
 
                 _world.DeactivateModule<FellingModule>();
