@@ -35,6 +35,11 @@ namespace Woodman
                 await Addressables.LoadSceneAsync("MainScene").Task;
             }
             Application.targetFrameRate = 300;
+            var uiProvider = Object.FindObjectOfType<UiProvider>(true);
+            AddDependency(uiProvider);
+            BindView(uiProvider);
+            
+            uiProvider.LoadScreen.SetProgress(.1f);
             CreateOneData();
 
             var rawFellingSettings = await Addressables.LoadAssetAsync<TextAsset>("FellingSettings").Task;
@@ -45,6 +50,8 @@ namespace Woodman
                 await Addressables.LoadAssetAsync<ProgressionSettings>("ProgressionSettings").Task;
             AddDependency(progressionSettings);
             var locations = await Addressables.LoadAssetAsync<LocationsSettings>("LocationsContainer").Task;
+            uiProvider.LoadScreen.SetProgress(.3f);
+
             AddDependency(locations);
             AddDependency(new PlayerCoinsRepository());
             AddDependency(new MetaTreesRepository());
@@ -64,12 +71,12 @@ namespace Woodman
             AddDependency(locationsChooseView);
             var debugViewProvider = Object.FindObjectOfType<DebugViewProvider>(true);
             AddDependency(debugViewProvider);
-            var uiProvider = Object.FindObjectOfType<UiProvider>(true);
-            AddDependency(uiProvider);
-            BindView(uiProvider);
             
+            uiProvider.LoadScreen.SetProgress(.6f);
+
             var visualSettings = await Addressables.LoadAssetAsync<VisualSettings>("VisualSettings").Task;
             AddDependency(visualSettings);
+            uiProvider.LoadScreen.SetProgress(.9f);
         }
 
         private void CreateOneData()

@@ -10,7 +10,7 @@ namespace Woodman.Meta
         private UiProvider _uiProvider;
         public void Activate()
         {
-            _uiProvider.LoadScreen.SetActive(false);
+            _uiProvider.LoadScreen.Hide();
             _uiProvider.MetaUi.Show();
             _uiProvider.InnerLoadingScreen.Hide();
         }

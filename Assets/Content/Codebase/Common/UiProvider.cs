@@ -5,6 +5,7 @@ using Woodman.Felling.Lose;
 using Woodman.Felling.Pause;
 using Woodman.Felling.SecondChance;
 using Woodman.Felling.Win;
+using Woodman.Loading;
 using Woodman.Meta;
 using Woodman.Settings;
 using Woodman.Utils;
@@ -38,7 +39,7 @@ namespace Woodman.Common
 
         [field: SerializeField]
         [field: ViewInject]
-        public GameObject LoadScreen { get; private set; }
+        public LoadingView LoadScreen { get; private set; }
 
         [field: SerializeField]
         [field: ViewInject]

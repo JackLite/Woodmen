@@ -23,6 +23,7 @@ namespace Woodman.Loading
         private LocationsSettings _locations;
         private EcsOneData<LocationData> _locationsData;
         private ProgressionService _progressionService;
+        private LoadingView _loadingView;
 
         public void Init()
         {
