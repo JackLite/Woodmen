@@ -4,6 +4,7 @@
     {
         Usual = 0,
         Strong = 1,
-        Hollow = 2
+        Hollow = 2,
+        Finish = 3
     }
 }

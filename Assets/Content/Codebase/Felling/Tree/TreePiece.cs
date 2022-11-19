@@ -17,6 +17,9 @@ namespace Woodman.Felling.Tree
         private GameObject _hollowPiece;
 
         [SerializeField]
+        private GameObject _finish;
+        
+        [SerializeField]
         private TMP_Text _strongText;
 
         private TreePieceType _pieceType = TreePieceType.Usual;
@@ -60,6 +63,7 @@ namespace Woodman.Felling.Tree
             _usualPiece.SetActive(_pieceType == TreePieceType.Usual);
             _strongPiece.SetActive(_pieceType == TreePieceType.Strong);
             _hollowPiece.SetActive(_pieceType == TreePieceType.Hollow);
+            _finish.SetActive(_pieceType == TreePieceType.Finish);
         }
     }
 }
