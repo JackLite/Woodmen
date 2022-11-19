@@ -8,5 +8,7 @@ namespace Woodman.Player
     {
         public int maxWoodCount;
         public Vector3 metaPos;
+        public bool interact;
+        public Vector3 lastInteractPosition;
     }
 }
