@@ -17,27 +17,27 @@ namespace Woodman.Player.PlayerResources
             return count;
         }
 
-        public void AddPlayerRes(int count, bool saveImmediate = true)
+        public void AddPlayerRes(int addCount, bool saveImmediate = true)
         {
-            var old = this.count;
-            this.count += count;
+            var old = count;
+            count += addCount;
             if (saveImmediate)
                 Save();
-            OnChange?.Invoke(old, this.count);
+            OnChange?.Invoke(old, count);
         }
 
-        public int SubtractRes(int count, bool saveImmediate = true)
+        public int SubtractRes(int subtractCount, bool saveImmediate = true)
         {
-            if (this.count < count)
+            if (count < subtractCount)
                 Logger.LogError(nameof(PlayerResRepository),
                     nameof(SubtractRes),
-                    $"Count: {this.count}. You trying subtract ${count}!");
-            var old = this.count;
-            this.count = math.max(this.count - count, 0);
+                    $"Count: {count}. You trying subtract {subtractCount}!");
+            var old = count;
+            count = math.max(count - subtractCount, 0);
             if (saveImmediate)
                 Save();
-            OnChange?.Invoke(old, this.count);
-            return this.count;
+            OnChange?.Invoke(old, count);
+            return count;
         }
 
         private void Save()

@@ -1,13 +1,17 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Common.UI
 {
-    public class ProgressText : MonoBehaviour
+    public class BuildingProgressView : MonoBehaviour
     {
         [SerializeField]
         private TMP_Text _text;
+
+        [SerializeField]
+        private Slider _slider;
 
         private int _current;
         private int? _total;
@@ -16,21 +20,25 @@ namespace Woodman.Common.UI
         {
             _current = current;
             _total = total;
-            UpdateText();
+            UpdateView();
         }
 
         public void SetProgress(int current, int total)
         {
             if (_total == null)
-                Logger.LogError(nameof(ProgressText), nameof(SetProgress), "Not initialized");
+                Logger.LogError(nameof(BuildingProgressView), nameof(SetProgress), "Not initialized");
             _current = current;
             _total = total;
-            UpdateText();
+            UpdateView();
         }
 
-        private void UpdateText()
+        private void UpdateView()
         {
-            _text.text = $"{_current.ToString()}/{_total.ToString()}";
+            if (_total != null)
+            {
+                _slider.value = (float)_current / _total.Value;
+                _text.text = $"{(_total - _current).ToString()}";
+            }
         }
 
         public void Hide()

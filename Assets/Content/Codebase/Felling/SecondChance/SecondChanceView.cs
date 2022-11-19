@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace Woodman.Felling.SecondChance
     public class SecondChanceView : SimpleUiWindow
     {
         [SerializeField]
-        private TMP_Text _title;
+        private List<LoseTypeMap> _titles;
 
         [SerializeField]
         private TMP_Text _percent;
@@ -27,7 +28,7 @@ namespace Woodman.Felling.SecondChance
 
         [SerializeField]
         private Button _useChanceBtn;
-        
+
         [SerializeField]
         private Button _skipBtn;
 
@@ -40,10 +41,9 @@ namespace Woodman.Felling.SecondChance
             _skipBtn.onClick.AddListener(() => OnSkip?.Invoke());
         }
 
-        public override void Show()
+        public void ActivateSkip()
         {
             _skipBtn.interactable = true;
-            base.Show();
         }
 
         public override void Hide()
@@ -54,21 +54,10 @@ namespace Woodman.Felling.SecondChance
 
         public void SetLoseReason(LoseReason reason)
         {
-            switch (reason)
+            foreach (var typeMap in _titles)
             {
-                case LoseReason.TimeOut:
-                    _title.text = "Time's out!";
-                    break;
-                case LoseReason.BranchCollide:
-                    _title.text = "Ouch!";
-                    break;
-                case LoseReason.HiveCollide:
-                    _title.text = "Bzzzzz!";
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(reason), reason, null);
+                typeMap.title.SetActive(reason == typeMap.reason);
             }
-            
         }
 
         public void SetProgress(float progress)
@@ -85,6 +74,13 @@ namespace Woodman.Felling.SecondChance
         public void SetCost(int cost)
         {
             _cost.text = "x" + cost.ToString(CultureInfo.InvariantCulture);
+        }
+
+        [Serializable]
+        private struct LoseTypeMap
+        {
+            public LoseReason reason;
+            public GameObject title;
         }
     }
 }

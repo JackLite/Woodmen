@@ -847,7 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3137255, g: 0.7411765, b: 0.6392157, a: 1}
+  m_Color: {r: 0.15267888, g: 0.6886792, b: 0.56082594, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1497,6 +1497,16 @@ MonoBehaviour:
   _slider: {fileID: 6140347394883505688}
   _freezeAnimator: {fileID: 766175802199557882}
   _hideAnimationTime: 1
+  _colors:
+  - place: 0
+    color: {r: 0.15294118, g: 0.6901961, b: 0.56078434, a: 1}
+  - place: 0.238
+    color: {r: 0.03951584, g: 0.2264151, b: 0.18139556, a: 1}
+  - place: 0.764
+    color: {r: 0.6577052, g: 1, b: 0, a: 1}
+  - place: 1
+    color: {r: 0.4373927, g: 0, b: 1, a: 1}
+  _sliderFiller: {fileID: 6224915622854757119}
 --- !u!1 &8283637465828192468
 GameObject:
   m_ObjectHideFlags: 0

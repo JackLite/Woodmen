@@ -26,7 +26,7 @@ namespace Woodman.Buildings
         private int[] _logsCount;
 
         [SerializeField]
-        private ProgressText _progress;
+        private BuildingProgressView _progress;
 
         [SerializeField]
         private Transform _vfxParent;  

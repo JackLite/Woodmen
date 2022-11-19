@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Woodman.Logs.LogsUsing
 {
@@ -6,7 +7,7 @@ namespace Woodman.Logs.LogsUsing
     {
         public Transform log;
         public Vector3 from;
-        public Vector3 to;
+        public Func<Vector3> to;
         public float time;
         public float remain;
     }

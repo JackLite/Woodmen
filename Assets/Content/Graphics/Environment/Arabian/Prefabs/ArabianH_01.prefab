@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}
 --- !u!1001 &4886195199676223649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -194,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}
 --- !u!1001 &5246524714703163590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -286,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}
 --- !u!1001 &6955405345157156827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -592,6 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}
 --- !u!1001 &8856103303964631038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -689,3 +693,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}

@@ -8,7 +8,7 @@ namespace Woodman.Logs.LogsUsing
         public int count;
         public float delayBetween;
         public Vector3 from;
-        public Vector3 to;
+        public Func<Vector3> to;
         public Action onAfter;
     }
 }

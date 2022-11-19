@@ -74,12 +74,16 @@ namespace Woodman.Felling.Tree.Generator
                 _treePiecesRepository.AddPiece(tree);
                 ++pieceIndex;
             }
+            var finish = _pieceBuilder.Create(rootPos + Vector3.up * 0.5f, FellingSide.Left, pieceIndex)
+                .SetType(TreePieceType.Finish).Flush();
+            _treePiecesRepository.AddFinish(finish);
 
             return _treePiecesRepository.GetBottomPiece().gameObject;
         }
 
         private void Reset()
         {
+            _nextBranch = null;
             _typeGenerator.Reset();
             _branchModGenerator.Reset();
             _branchSP = _settings.branchSwitching.min;
