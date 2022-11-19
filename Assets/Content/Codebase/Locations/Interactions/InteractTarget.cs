@@ -15,6 +15,8 @@ namespace Woodman.Locations.Interactions
         [field: SerializeField]
         public InteractTypeEnum InteractType { get; private set; }
 
+        public float Delay => _interactionDelay;
+
         private void Awake()
         {
             InteractionStaticPool.Register(this);
