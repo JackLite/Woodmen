@@ -80,6 +80,7 @@ namespace Woodman.Felling.Tree.Generator
 
         private void Reset()
         {
+            _nextBranch = null;
             _typeGenerator.Reset();
             _branchModGenerator.Reset();
             _branchSP = _settings.branchSwitching.min;
