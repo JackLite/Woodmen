@@ -19,6 +19,7 @@ namespace Woodman.Logs
         
         public int Count => _count;
         public LogsHeapType LogType => _type;
+        [field:SerializeField]
         public string Id { get; set; }
         public Vector3 UsingPoint => _usingPoint.position;
         

@@ -57,4 +57,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   usingLogsYMax: 4
   usingLogsRotationSpeed: {x: -150, y: 150, z: 120}
+  buildingSettings:
+    transparencyTime: 0.6
+    transparencyValue: 2
+    blinkTime: 1
+    blinkValue: 1
   fallSpeed: 10
