@@ -2422,22 +2422,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: 95296450529553c4e87ae3c8cc5965a8,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 89
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 95296450529553c4e87ae3c8cc5965a8,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 108
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 95296450529553c4e87ae3c8cc5965a8,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 115
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 95296450529553c4e87ae3c8cc5965a8,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 150
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 2725608456263745063, guid: 95296450529553c4e87ae3c8cc5965a8,
         type: 3}
@@ -3208,22 +3208,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: 6b4aaee02befa1344a2b03f02b6e342b,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 94
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 6b4aaee02befa1344a2b03f02b6e342b,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 117
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 6b4aaee02befa1344a2b03f02b6e342b,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 149
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 6b4aaee02befa1344a2b03f02b6e342b,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 203
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 2725608456263745063, guid: 6b4aaee02befa1344a2b03f02b6e342b,
         type: 3}
@@ -3905,22 +3905,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: 4bea0836a2bd9524ab52c4b1d84f9a2a,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 94
+      value: 188
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 4bea0836a2bd9524ab52c4b1d84f9a2a,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 133
+      value: 201
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 4bea0836a2bd9524ab52c4b1d84f9a2a,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 163
+      value: 227
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 4bea0836a2bd9524ab52c4b1d84f9a2a,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 188
+      value: 254
       objectReference: {fileID: 0}
     - target: {fileID: 2715567851686809450, guid: 4bea0836a2bd9524ab52c4b1d84f9a2a,
         type: 3}
@@ -5071,22 +5071,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: 76ea83b12cad14340b5d22e9c45a101b,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 37
+      value: 172
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 76ea83b12cad14340b5d22e9c45a101b,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 52
+      value: 195
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 76ea83b12cad14340b5d22e9c45a101b,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 67
+      value: 217
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 76ea83b12cad14340b5d22e9c45a101b,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 88
+      value: 235
       objectReference: {fileID: 0}
     - target: {fileID: 2725608456263745063, guid: 76ea83b12cad14340b5d22e9c45a101b,
         type: 3}
@@ -5688,22 +5688,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: db13b14c293a4e94d959528dd3789350,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 172
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: db13b14c293a4e94d959528dd3789350,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 195
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: db13b14c293a4e94d959528dd3789350,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 217
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: db13b14c293a4e94d959528dd3789350,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 235
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 2725608456263745063, guid: db13b14c293a4e94d959528dd3789350,
         type: 3}
@@ -7245,22 +7245,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: 9aba9da60d4a6ac46b76c9b16ea741a5,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 55
+      value: 147
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 9aba9da60d4a6ac46b76c9b16ea741a5,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 67
+      value: 168
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 9aba9da60d4a6ac46b76c9b16ea741a5,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 78
+      value: 189
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 9aba9da60d4a6ac46b76c9b16ea741a5,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 82
+      value: 207
       objectReference: {fileID: 0}
     - target: {fileID: 2725608456263745063, guid: 9aba9da60d4a6ac46b76c9b16ea741a5,
         type: 3}
@@ -7884,22 +7884,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: dc7961f937312c74395f129fbd30f521,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 44
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: dc7961f937312c74395f129fbd30f521,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 54
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: dc7961f937312c74395f129fbd30f521,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 63
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: dc7961f937312c74395f129fbd30f521,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 96
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2725608456263745063, guid: dc7961f937312c74395f129fbd30f521,
         type: 3}
@@ -8197,6 +8197,7 @@ MonoBehaviour:
   - {fileID: 320306006}
   - {fileID: 281203684}
   _boat: {fileID: 0}
+  startedLogs: []
 --- !u!4 &1445090588
 Transform:
   m_ObjectHideFlags: 0
@@ -8821,22 +8822,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: accda0fb50381df47866aee85f2a8ccd,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 42
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: accda0fb50381df47866aee85f2a8ccd,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 49
+      value: 133
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: accda0fb50381df47866aee85f2a8ccd,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 56
+      value: 163
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: accda0fb50381df47866aee85f2a8ccd,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 65
+      value: 188
       objectReference: {fileID: 0}
     - target: {fileID: 2725608456263745063, guid: accda0fb50381df47866aee85f2a8ccd,
         type: 3}
@@ -9503,22 +9504,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: 11fe1b4b22a05dc47b6f2f5654e25a7d,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 188
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 11fe1b4b22a05dc47b6f2f5654e25a7d,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 201
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 11fe1b4b22a05dc47b6f2f5654e25a7d,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 227
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: 11fe1b4b22a05dc47b6f2f5654e25a7d,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 254
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2725608456263745063, guid: 11fe1b4b22a05dc47b6f2f5654e25a7d,
         type: 3}
@@ -9970,22 +9971,22 @@ PrefabInstance:
     - target: {fileID: 2698316624917607790, guid: f2d898078cce8104e9a1ed23d54efa13,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
-      value: 147
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: f2d898078cce8104e9a1ed23d54efa13,
         type: 3}
       propertyPath: _logsCount.Array.data[2]
-      value: 168
+      value: 117
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: f2d898078cce8104e9a1ed23d54efa13,
         type: 3}
       propertyPath: _logsCount.Array.data[3]
-      value: 189
+      value: 149
       objectReference: {fileID: 0}
     - target: {fileID: 2698316624917607790, guid: f2d898078cce8104e9a1ed23d54efa13,
         type: 3}
       propertyPath: _logsCount.Array.data[4]
-      value: 207
+      value: 203
       objectReference: {fileID: 0}
     - target: {fileID: 2725608456263745063, guid: f2d898078cce8104e9a1ed23d54efa13,
         type: 3}
