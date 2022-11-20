@@ -252,8 +252,8 @@ MonoBehaviour:
   - {fileID: 2765590495833590167}
   - {fileID: 1523954776244951241}
   - {fileID: 2188735146013077846}
-  _totalLogsCount: 50
-  _logsCount: 000000001900000019000000
+  _totalLogsCount: 0
+  _logsCount: 000000002d00000096000000
   _progress: {fileID: 4732520184090606708}
   _vfxParent: {fileID: 5808089480057008828}
   _animator: {fileID: 3615383691542493672}
