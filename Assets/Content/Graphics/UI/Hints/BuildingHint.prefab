@@ -188,6 +188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 8376188124509892544}
   _slider: {fileID: 4826425717815462585}
+  _animator: {fileID: 8434830644724098376}
+  _interactor: {fileID: 2103807463905729662}
 --- !u!1 &996745998051698931
 GameObject:
   m_ObjectHideFlags: 0

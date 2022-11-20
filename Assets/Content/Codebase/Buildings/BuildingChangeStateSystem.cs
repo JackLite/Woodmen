@@ -21,6 +21,7 @@ namespace Woodman.Buildings
                 return;
 
             ev.buildingView.ShowBuildingVFX(_poolsProvider.BuildingFxPool);
+            ev.buildingView.ToggleProgress(false);
             TransparencyDown(ev);
 
             q.DestroyAll();
@@ -61,6 +62,7 @@ namespace Woodman.Buildings
                 {
                     ev.buildingView.GetState(ev.newState).SetTransparency(0);
                     ev.buildingView.SetState(ev.newState);
+                    ev.buildingView.SetLogs(0, ev.nextStateLogs);
                     TransparencyUp(ev);
                 }
             };
@@ -86,7 +88,10 @@ namespace Woodman.Buildings
                     if (ev.buildingView.IsLastState(ev.newState))
                         BlinkUp(ev);
                     else
+                    {
                         ev.onFinishBuilding?.Invoke();
+                        ev.buildingView.ToggleProgress(true);
+                    }
                 }
             };
             _world.NewEntity().AddComponent(tween);

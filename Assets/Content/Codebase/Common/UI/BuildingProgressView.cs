@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Woodman.Locations.Interactions;
 using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Common.UI
@@ -13,8 +14,15 @@ namespace Woodman.Common.UI
         [SerializeField]
         private Slider _slider;
 
+        [SerializeField]
+        private Animator _animator;
+
+        [SerializeField]
+        private InteractTarget _interactor;
+
         private int _current;
         private int? _total;
+        private static readonly int AhimatorHide = Animator.StringToHash("Hide");
 
         public void Init(int current, int total)
         {
@@ -43,12 +51,14 @@ namespace Woodman.Common.UI
 
         public void Hide()
         {
-            gameObject.SetActive(false);
+            _interactor.enabled = false;
+            _animator.SetBool(AhimatorHide, true);
         }
         
         public void Show()
         {
-            gameObject.SetActive(true);
+            _interactor.enabled = true;
+            _animator.SetBool(AhimatorHide, false);
         }
     }
 }

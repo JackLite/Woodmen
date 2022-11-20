@@ -48,7 +48,7 @@ namespace Woodman.Buildings
 
             if (_resRepository.GetPlayerRes() == 0)
                 return;
-            
+
             Process(interact);
         }
 
@@ -122,21 +122,22 @@ namespace Woodman.Buildings
             {
                 createEvent.onAfter = () =>
                 {
-                    _world.CreateEvent(new BuildingChangeStateEvent
+                    var changeStateEvent = new BuildingChangeStateEvent
                     {
                         buildingView = interact.BuildingView,
                         newState = newState
-                    });
-                    if (newState == interact.BuildingView.StatesCount - 1)
+                    };
+                    if (interact.BuildingView.IsLastState(newState))
                     {
                         FinishBuilding();
                     }
                     else
                     {
                         var currentState = _buildingsRepository.GetBuildingStateIndex(interact.BuildingView.Id);
-                        var nextStateLogs = interact.BuildingView.GetResForState(currentState + 1);
-                        interact.BuildingView.SetLogs(0, nextStateLogs);
+                        changeStateEvent.nextStateLogs = interact.BuildingView.GetResForState(currentState + 1);
                     }
+
+                    _world.CreateEvent(changeStateEvent);
                 };
             }
 

@@ -119,41 +119,17 @@ namespace Woodman.Buildings
             }
         }
 
+        public void ToggleProgress(bool state)
+        {
+            if (state)
+                _progress.Show();
+            else
+                _progress.Hide();
+        }
+
         public bool IsLastState(int state)
         {
             return state >= StatesCount - 1;
-        }
-
-        public void AnimateTo(int state, BuildingFxPool vfxPool)
-        {
-            _animator.SetBool(BuildingTrigger, true);
-            _progress.Hide();
-
-            AnimateAsync(state, vfxPool);
-        }
-
-        private async void AnimateAsync(int state, BuildingFxPool vfxPool)
-        {
-            try
-            {
-                _currentBuildingVfx = vfxPool.Get();
-                _currentBuildingVfx.SetParent(_vfxParent);
-                _currentBuildingVfx.localPosition = Vector3.zero;
-                _currentBuildingVfx.localRotation = Quaternion.identity;
-                _currentBuildingVfx.gameObject.SetActive(false);
-                _currentBuildingVfx.gameObject.SetActive(true);
-                await Task.Delay(TimeSpan.FromSeconds(1));
-                SetState(state);
-                await Task.Delay(TimeSpan.FromSeconds(_frames / _framesPerSecond - 1));
-                _animator.SetBool(BuildingTrigger, false);
-                if (state != _states.Length - 1)
-                    _progress.Show();
-                vfxPool.Return(_currentBuildingVfx);
-            }
-            catch (Exception e)
-            {
-                Debug.LogException(e);
-            }
         }
 
         public void ShowBuildingVFX(BuildingFxPool vfxPool)

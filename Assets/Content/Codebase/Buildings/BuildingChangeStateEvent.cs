@@ -6,6 +6,7 @@ namespace Woodman.Buildings
     {
         public BuildingView buildingView;
         public int newState;
+        public int nextStateLogs;
         public Action onFinishBuilding;
     }
 }
