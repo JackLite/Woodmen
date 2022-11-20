@@ -24,6 +24,22 @@ namespace Woodman.Logs
             }
         }
 
+        public bool TryGetStartedData(string id, out LogsHeapData data)
+        {
+            data = null;
+            if (!_saveData.startedLogHeaps.ContainsKey(id))
+                return false;
+            data = _saveData.startedLogHeaps[id];
+            return true;
+        }
+
+        public void SetStartedCount(string id, int count)
+        {
+            CheckStarted(id);
+            _saveData.startedLogHeaps[id].count = count;
+            Save();
+        }
+
         public void SetCount(string id, int count)
         {
             Check(id);
@@ -56,9 +72,19 @@ namespace Woodman.Logs
 
         private void Check(string id)
         {
-            if (_saveData.logHeaps.ContainsKey(id))
+            Check(id, _saveData.logHeaps);
+        }
+        
+        private void CheckStarted(string id)
+        {
+            Check(id, _saveData.startedLogHeaps);
+        }
+
+        private static void Check(string id, Dictionary<string, LogsHeapData> data)
+        {
+            if (data.ContainsKey(id))
                 return;
-            _saveData.logHeaps[id] = new LogsHeapData
+            data[id] = new LogsHeapData
             {
                 count = 0,
                 id = id,

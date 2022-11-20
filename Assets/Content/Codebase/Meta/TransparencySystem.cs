@@ -4,6 +4,7 @@ using ModulesFramework.Systems;
 using UnityEngine;
 using Woodman.Common;
 using Woodman.Player;
+using Woodman.Settings;
 
 namespace Woodman.Meta
 {

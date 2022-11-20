@@ -7,16 +7,21 @@ namespace Woodman.Common.UI
     /// </summary>
     public class InnerLoadingScreen : MonoBehaviour
     {
+        [SerializeField]
+        private Animator _animator;
+        
         public float animDuration = 2f;
+        private static readonly int HideWindow = Animator.StringToHash("HideWindow");
 
         public void Show()
         {
+            _animator.SetBool(HideWindow, false);
             gameObject.SetActive(true);
         }
 
         public void Hide()
         {
-            gameObject.SetActive(false);
+            _animator.SetBool(HideWindow, true);
         }
     }
 }

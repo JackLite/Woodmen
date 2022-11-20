@@ -3,13 +3,15 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
-using Woodman.Common;
+using Woodman.Common.Tweens;
 using Woodman.Locations;
 using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
 using Woodman.Logs.LogsUsing;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
+using Woodman.Settings;
+using Woodman.Utils;
 
 namespace Woodman.Buildings
 {
@@ -19,7 +21,6 @@ namespace Woodman.Buildings
         private DataWorld _world;
         private PlayerLogsRepository _resRepository;
         private BuildingsRepository _buildingsRepository;
-        private PoolsProvider _poolsProvider;
         private CharacterLogsView _characterLogsView;
         private ProgressionService _progressionService;
         private BuildingService _buildingService;
@@ -45,39 +46,98 @@ namespace Woodman.Buildings
             if (_buildingsRepository.IsLastState(interact.BuildingView))
                 return;
 
+            if (_resRepository.GetPlayerRes() == 0)
+                return;
+
             Process(interact);
         }
 
         private void Process(BuildingInteract interact)
         {
-            var delta = _buildingService.CalcHouseNextState(interact.BuildingView);
-            var oldState = _buildingsRepository.GetBuildingStateIndex(interact.BuildingView.Id);
-            _resRepository.SubtractRes(delta.totalResources);
-            _buildingsRepository.SetBuildingStateIndex(delta.resultState, interact.BuildingView.Id);
-            _buildingsRepository.SetBuildingLogsCount(delta.resultLogsCount, interact.BuildingView.Id);
+            var currentState = _buildingsRepository.GetBuildingStateIndex(interact.BuildingView.Id);
+            var nextStateLogs = interact.BuildingView.GetResForState(currentState + 1);
+            var currentLogs = ProcessLogic(interact, out var endLogs, out var endState);
 
-            if (delta.totalResources <= 0) return;
+            CreateUsingLogs(interact, endLogs, endState, currentState);
 
-            CreateUsingLogs(interact, delta, oldState);
+            var totalTime = _visualSettings.usingLogsTime +
+                            _visualSettings.usingLogsCount * _visualSettings.usingLogsDelayBetween;
+            var tweenData = new TweenData
+            {
+                remain = totalTime,
+                update = r =>
+                {
+                    var logsCount = math.lerp(currentLogs, endLogs, 1 - r / totalTime);
+                    interact.BuildingView.SetLogs((int)logsCount, nextStateLogs);
+                },
+                validate = () => interact.BuildingView != null,
+                onEnd = () =>
+                {
+                    interact.BuildingView.SetLogs(endLogs, nextStateLogs);
+                    _world.CreateOneFrame().AddComponent(new ChangeResEvent());
+                }
+            };
+            _world.NewEntity().AddComponent(tweenData);
         }
 
-        private void CreateUsingLogs(BuildingInteract interact, BuildingDelta delta, int oldState)
+        private int ProcessLogic(BuildingInteract interact, out int endLogs, out int endState)
+        {
+            var building = interact.BuildingView.Id;
+            var currentLogs = _buildingsRepository.GetBuildingLogsCount(building);
+            var currentState = _buildingsRepository.GetBuildingStateIndex(building);
+            var nextStateLogs = interact.BuildingView.GetResForState(currentState + 1);
+            var needLogs = nextStateLogs - currentLogs;
+
+            endLogs = 0;
+            endState = currentState;
+            var playerLogs = _resRepository.GetPlayerRes();
+            if (needLogs <= playerLogs)
+            {
+                endLogs = nextStateLogs;
+                endState += 1;
+                _buildingsRepository.SetBuildingStateIndex(endState, building);
+                _buildingsRepository.SetBuildingLogsCount(0, building);
+            }
+            else
+            {
+                endLogs = currentLogs + playerLogs;
+                _buildingsRepository.SetBuildingLogsCount(endLogs, building);
+            }
+
+            _resRepository.SubtractRes(math.min(playerLogs, needLogs));
+            return currentLogs;
+        }
+
+        private void CreateUsingLogs(BuildingInteract interact, int logsCount, int newState, int oldState)
         {
             var createEvent = new UsingLogsCreateEvent
             {
-                count = math.min(delta.totalResources, _visualSettings.usingLogsCount),
+                count = math.min(logsCount, _visualSettings.usingLogsCount),
                 from = _characterLogsView.LogsTargetPos,
-                to = interact.BuildingView.transform.position,
+                to = () => interact.BuildingView.transform.position,
                 delayBetween = _visualSettings.usingLogsDelayBetween
             };
 
-            if (oldState != delta.resultState)
+            if (oldState != newState)
             {
                 createEvent.onAfter = () =>
                 {
-                    interact.BuildingView.AnimateTo(delta.resultState, _poolsProvider.BuildingFxPool);
-                    if (delta.resultState == interact.BuildingView.StatesCount - 1)
+                    var changeStateEvent = new BuildingChangeStateEvent
+                    {
+                        buildingView = interact.BuildingView,
+                        newState = newState
+                    };
+                    if (interact.BuildingView.IsLastState(newState))
+                    {
                         FinishBuilding();
+                    }
+                    else
+                    {
+                        var currentState = _buildingsRepository.GetBuildingStateIndex(interact.BuildingView.Id);
+                        changeStateEvent.nextStateLogs = interact.BuildingView.GetResForState(currentState + 1);
+                    }
+
+                    _world.CreateEvent(changeStateEvent);
                 };
             }
 

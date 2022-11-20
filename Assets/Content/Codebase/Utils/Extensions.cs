@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ModulesFramework.Data;
+using UnityEngine;
 
 namespace Woodman.Utils
 {
@@ -26,7 +27,7 @@ namespace Woodman.Utils
         {
             return new Vector2(Mathf.Clamp(v.x, min, max), Mathf.Clamp(v.y, min, max));
         }
-        
+
         public static Vector3 ScreenToCanvasPosition(this Canvas canvas, Vector3 screenPosition)
         {
             var viewportPosition = new Vector3(screenPosition.x / Screen.width,
@@ -47,10 +48,20 @@ namespace Woodman.Utils
         {
             return new Vector3(v.x, v.y, -v.z);
         }
-        
+
         public static Vector3 MirrorX(this Vector3 v)
         {
             return new Vector3(-v.x, v.y, v.z);
+        }
+
+        public static Entity CreateEvent<T>(this DataWorld world) where T : struct
+        {
+            return world.NewEntity().AddComponent(new T());
+        }
+        
+        public static Entity CreateEvent<T>(this DataWorld world, T c) where T : struct
+        {
+            return world.NewEntity().AddComponent(c);
         }
     }
 }

@@ -7,6 +7,7 @@ namespace Woodman.Felling.Tree
     {
         private readonly Queue<TreePiece> _pieces = new();
         private GameObject _parent;
+        private TreePiece _finish;
 
         public void AddPiece(TreePiece piece)
         {
@@ -32,7 +33,12 @@ namespace Woodman.Felling.Tree
 
         public IEnumerable<TreePiece> GetPieces()
         {
-            return _pieces;
+            foreach (var piece in _pieces)
+            {
+                yield return piece;
+            }
+
+            yield return _finish;
         }
 
         public void Destroy()
@@ -41,10 +47,16 @@ namespace Woodman.Felling.Tree
             {
                 Object.Destroy(piece.gameObject);
             }
-
+            
+            Object.Destroy(_finish.gameObject);
             _pieces.Clear();
             if (_parent != null) 
                 Object.Destroy(_parent);
+        }
+
+        public void AddFinish(TreePiece finish)
+        {
+            _finish = finish;
         }
     }
 }

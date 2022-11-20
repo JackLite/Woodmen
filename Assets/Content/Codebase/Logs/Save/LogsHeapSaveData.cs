@@ -7,5 +7,6 @@ namespace Woodman.Logs.Save
     public class LogsHeapSaveData
     {
         public Dictionary<string, LogsHeapData> logHeaps = new();
+        public Dictionary<string, LogsHeapData> startedLogHeaps = new();
     }
 }

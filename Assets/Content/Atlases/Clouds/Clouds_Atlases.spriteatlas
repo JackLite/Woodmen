@@ -25,12 +25,24 @@ SpriteAtlas:
       m_BuildTarget: Android
       m_MaxTextureSize: 1024
       m_ResizeAlgorithm: 0
-      m_TextureFormat: 65
+      m_TextureFormat: 48
       m_TextureCompression: 1
       m_CompressionQuality: 50
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
-      m_Overridden: 1
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
       m_AndroidETC2FallbackOverride: 0
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
@@ -50,21 +62,15 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 080bef3286634d646aa00b97c5f293ac, type: 3}
-  - {fileID: 21300000, guid: 15b72262e0bc9094b846556039344445, type: 3}
-  - {fileID: 21300000, guid: 9f2e19261b63a3240848104e9d4a6339, type: 3}
-  - {fileID: 21300000, guid: d84c279ad04362d48b0121b320d019a1, type: 3}
-  - {fileID: 21300000, guid: 1e8def0e42079354aa33984b08e58f99, type: 3}
-  - {fileID: 21300000, guid: 0541932f80c6b8842951b789cbbde126, type: 3}
-  - {fileID: 21300000, guid: c9502faf9f6c6bd4d871672ff4ccbddb, type: 3}
+  - {fileID: 21300000, guid: e9a50df14d4740c41878f5f021897f11, type: 3}
+  - {fileID: 21300000, guid: c44bae5aedcbe4347b7e2738c848ac16, type: 3}
+  - {fileID: 21300000, guid: e37803ac36a43334ebd04703eb496bcb, type: 3}
+  - {fileID: 21300000, guid: 7234947f15222794b8c4878ba6f5e183, type: 3}
   m_PackedSpriteNamesToIndex:
-  - cloud_7
-  - cloud_6
-  - cloud_1
-  - cloud_5
-  - cloud_2
-  - cloud_4
-  - cloud_3
+  - cloud3
+  - cloud4
+  - cloud1
+  - cloud2
   m_RenderDataMap: {}
   m_Tag: Clouds_Atlases
   m_IsVariant: 0

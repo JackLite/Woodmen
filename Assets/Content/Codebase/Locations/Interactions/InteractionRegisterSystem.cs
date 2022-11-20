@@ -3,6 +3,7 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Locations.Interactions.Components;
+using Woodman.Player;
 
 namespace Woodman.Locations.Interactions
 {
@@ -10,6 +11,7 @@ namespace Woodman.Locations.Interactions
     public class InteractionRegisterSystem : IInitSystem, IRunSystem, IDestroySystem
     {
         private readonly DataWorld _world;
+        private EcsOneData<PlayerData> _playerData;
 
         public void Init()
         {
@@ -47,6 +49,7 @@ namespace Woodman.Locations.Interactions
 
         private void OnStartInteract(InteractTarget target)
         {
+            if (AlreadyInteract(target)) return;
             var interactStart = new InteractStart
             {
                 target = target,
@@ -57,6 +60,8 @@ namespace Woodman.Locations.Interactions
 
         private void OnInteract(InteractTarget target)
         {
+            if (AlreadyInteract(target)) return;
+            SetInteract(target);
             var interactStart = new Interact
             {
                 target = target,
@@ -67,12 +72,34 @@ namespace Woodman.Locations.Interactions
 
         private void OnStopInteract(InteractTarget target)
         {
+            ResetInteract();
             var interactStart = new InteractStop
             {
                 target = target,
                 interactType = target.InteractType
             };
             _world.NewEntity().AddComponent(interactStart);
+        }
+
+        private bool AlreadyInteract(InteractTarget target)
+        {
+            ref var pd = ref _playerData.GetData();
+            if (!pd.interact) return false;
+            var distance = pd.lastInteractPosition - target.transform.position;
+            return distance.sqrMagnitude <= 0.01f;
+        }
+
+        private void SetInteract(InteractTarget target)
+        {
+            ref var pd = ref _playerData.GetData();
+            pd.interact = true;
+            pd.lastInteractPosition = target.transform.position;
+        }
+
+        private void ResetInteract()
+        {
+            ref var pd = ref _playerData.GetData();
+            pd.interact = false;
         }
     }
 }

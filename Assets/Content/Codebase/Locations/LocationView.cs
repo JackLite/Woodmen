@@ -1,6 +1,7 @@
 using UnityEngine;
 using Woodman.Buildings;
 using Woodman.Locations.Trees;
+using Woodman.Logs;
 
 namespace Woodman.Locations
 {
@@ -19,6 +20,9 @@ namespace Woodman.Locations
 
         [SerializeField]
         private BuildingView _boat;
+
+        [SerializeField]
+        private LogView[] startedLogs;
 
         private void Awake()
         {
@@ -51,6 +55,7 @@ namespace Woodman.Locations
                     var total = view.GetResForState(stateIndex + 1);
                     view.SetLogs(current, total);
                 }
+
                 view.SetState(stateIndex);
             }
         }
@@ -67,6 +72,20 @@ namespace Woodman.Locations
             }
         }
 
+        public void LoadStartedLogs(LogsHeapRepository repository)
+        {
+            if (startedLogs == null)
+                return;
+            foreach (var startedLog in startedLogs)
+            {
+                if (!repository.TryGetStartedData(startedLog.Id, out var data))
+                    continue;
+                startedLog.SetCount(data.count);
+                if (data.count == 0)
+                    startedLog.Hide();
+            }
+        }
+
         public int GetBuildingsCount()
         {
             return _buildings.Length;
@@ -74,7 +93,8 @@ namespace Woodman.Locations
 
         public void ShowBoat()
         {
-            _boat.gameObject.SetActive(true);
+            if (_boat != null)
+                _boat.gameObject.SetActive(true);
         }
 
         public void SetBoatState(int index)

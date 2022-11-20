@@ -42,6 +42,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_947dcba20b044532a036ee9822142440_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 851dbc17e95881a42a6359009204a9ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture2D:
         m_Texture: {fileID: 2800000, guid: fb3937162ad60d445a9502717a86d850, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -67,6 +71,7 @@ Material:
     - SoftEdgeFalloff: 0
     - SoftEdgeSize: 28
     - _Alpha: 1
+    - _BlinkSlider: 0
     - _Float: 0
     - _LightScalar: 1
     - _QueueControl: 0
@@ -76,6 +81,7 @@ Material:
     m_Colors:
     - HardEdgeColor: {r: 1, g: 1, b: 1, a: 0}
     - SoftEdgeColor: {r: 1, g: 1, b: 1, a: 0}
+    - _BlinkColor: {r: 1, g: 0.9803922, b: 0.682353, a: 0}
     - _Color: {r: 0.865, g: 0.865, b: 0.865, a: 0}
     - _Color_1: {r: 0, g: 0, b: 0, a: 0}
     - _EmissColor: {r: 1, g: 1, b: 1, a: 0}

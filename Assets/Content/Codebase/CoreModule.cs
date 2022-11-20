@@ -14,6 +14,7 @@ using Woodman.Felling.Taps;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Builder;
 using Woodman.Felling.Tree.Generator;
+using Woodman.Settings;
 using Woodman.Utils;
 using Object = UnityEngine.Object;
 

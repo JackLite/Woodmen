@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Woodman.Felling.Tree.Branches;
 using Woodman.Meta;
+using Woodman.Settings;
 
 namespace Woodman.Felling.Tree.Builder
 {

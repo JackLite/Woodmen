@@ -17,11 +17,16 @@ namespace Woodman.Logs
         [SerializeField]
         private Transform _usingPoint;
         
+        [field:SerializeField]
+        public bool IsStarted { get; private set; }
+
+        [field: SerializeField]
+        public string Id { get; set; }
+
         public int Count => _count;
         public LogsHeapType LogType => _type;
-        public string Id { get; set; }
         public Vector3 UsingPoint => _usingPoint.position;
-        
+
         public void Show()
         {
             gameObject.SetActive(true);
@@ -35,12 +40,6 @@ namespace Woodman.Logs
         public void SetCount(int count)
         {
             _count = count;
-            _countText.SetCount(_count);
-        }
-
-        public void Subtract(int count)
-        {
-            _count -= count;
             _countText.SetCount(_count);
         }
     }

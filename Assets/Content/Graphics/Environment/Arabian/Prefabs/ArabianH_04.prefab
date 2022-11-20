@@ -92,6 +92,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}
+--- !u!23 &1260257207395387420 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: ab32f2b4b393db9458f4bd0a9d356e05,
+    type: 3}
+  m_PrefabInstance: {fileID: 485474932832015512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &662534541736115993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164,6 +171,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArabianHouse_S_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0173947e7eccf2a409cd01de1d760cdd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0173947e7eccf2a409cd01de1d760cdd, type: 3}
 --- !u!1 &428020593088414280 stripped
@@ -184,6 +196,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}
+--- !u!23 &2229385195834434461 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 0173947e7eccf2a409cd01de1d760cdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 662534541736115993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2323050898055689541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,6 +275,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArabianHouse_L_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9912c0edeae798c48bf612c9e82ab1bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9912c0edeae798c48bf612c9e82ab1bc, type: 3}
 --- !u!1 &3241549026152138772 stripped
@@ -276,6 +300,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}
+--- !u!23 &4034301513271634369 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 9912c0edeae798c48bf612c9e82ab1bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2323050898055689541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6955405345157156827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -288,6 +319,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 468725778741085488, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 4034301513271634369}
     - target: {fileID: 1583478387007599114, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -368,16 +404,36 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2296447751873465886, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 1260257207395387420}
+    - target: {fileID: 2675607782063619926, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 7352633113332536091}
     - target: {fileID: 3049846831987891068, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3393768160631896272, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 8600410601660128184}
     - target: {fileID: 3599399492968404511, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3949127962231744829, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 2229385195834434461}
     - target: {fileID: 4717585819978502015, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
       propertyPath: m_RootOrder
@@ -567,6 +623,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArabianHouse_M_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e463d2d191c60b47989b2483c53143a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e463d2d191c60b47989b2483c53143a, type: 3}
 --- !u!1 &7807613996233341549 stripped
@@ -587,6 +648,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}
+--- !u!23 &8600410601660128184 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 4e463d2d191c60b47989b2483c53143a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6961261285532370748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8198901517203754911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -659,8 +727,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArabianHouse_XL_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d9ac2d5aeb0dca488cd1afac46fe856,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9ac2d5aeb0dca488cd1afac46fe856, type: 3}
+--- !u!23 &7352633113332536091 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 4d9ac2d5aeb0dca488cd1afac46fe856,
+    type: 3}
+  m_PrefabInstance: {fileID: 8198901517203754911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9009786046524322510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d9ac2d5aeb0dca488cd1afac46fe856,
@@ -679,3 +758,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc069c2397c44e99bed2c8b41e9fe64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 0}

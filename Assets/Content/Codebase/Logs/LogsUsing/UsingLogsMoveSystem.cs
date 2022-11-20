@@ -3,6 +3,7 @@ using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
 using UnityEngine;
+using Woodman.Settings;
 
 namespace Woodman.Logs.LogsUsing
 {
@@ -23,7 +24,7 @@ namespace Woodman.Logs.LogsUsing
                 
                 if (d.remain <= 0)
                 {
-                    d.log.position = d.to;
+                    d.log.position = d.to();
                     _pool.Return(d.log);
                     entity.Destroy();
                     continue;
@@ -31,7 +32,7 @@ namespace Woodman.Logs.LogsUsing
 
                 var lerpFactor = 1 - d.remain / d.time;
                 var y = _visualSettings.usingLogsYEasing.Evaluate(lerpFactor) * _visualSettings.usingLogsYMax;
-                var newPos = Vector3.Lerp(d.from, d.to, lerpFactor);
+                var newPos = Vector3.Lerp(d.from, d.to(), lerpFactor);
                 
                 d.log.position = new Vector3(newPos.x, newPos.y + y, newPos.z);
                 d.log.Rotate(_visualSettings.usingLogsRotationSpeed * Time.deltaTime, Space.World);

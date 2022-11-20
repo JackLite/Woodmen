@@ -134,6 +134,7 @@ MonoBehaviour:
   _usualPiece: {fileID: 2474090526125323023}
   _strongPiece: {fileID: 4054820041427815781}
   _hollowPiece: {fileID: 5012347745681455230}
+  _finish: {fileID: 7695584822693422220}
   _strongText: {fileID: 3116485793565123171}
 --- !u!1 &9027214362067198778
 GameObject:
@@ -203,7 +204,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: x2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f3d0bd57f5d43d144921de1c5753c2a2, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: -7824143165930722319, guid: f3d0bd57f5d43d144921de1c5753c2a2,
     type: 2}
   m_fontSharedMaterials: []
@@ -746,6 +747,12 @@ PrefabInstance:
 --- !u!4 &7027837751096983094 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aeaa19d0e71f8d1429be6a4a1cb8a11b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7353635258447321565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7695584822693422220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aeaa19d0e71f8d1429be6a4a1cb8a11b,
     type: 3}
   m_PrefabInstance: {fileID: 7353635258447321565}
   m_PrefabAsset: {fileID: 0}
