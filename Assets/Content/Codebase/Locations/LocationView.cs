@@ -51,6 +51,7 @@ namespace Woodman.Locations
                     var total = view.GetResForState(stateIndex + 1);
                     view.SetLogs(current, total);
                 }
+
                 view.SetState(stateIndex);
             }
         }
@@ -74,7 +75,8 @@ namespace Woodman.Locations
 
         public void ShowBoat()
         {
-            _boat.gameObject.SetActive(true);
+            if (_boat != null)
+                _boat.gameObject.SetActive(true);
         }
 
         public void SetBoatState(int index)
