@@ -837,6 +837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
         type: 3}
+      propertyPath: _logsCount.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
       propertyPath: _states.Array.data[0]
       value: 
       objectReference: {fileID: 6636403859353928907}
