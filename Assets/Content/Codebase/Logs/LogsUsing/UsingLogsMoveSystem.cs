@@ -3,6 +3,7 @@ using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
 using UnityEngine;
+using Woodman.Settings;
 
 namespace Woodman.Logs.LogsUsing
 {

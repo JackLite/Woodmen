@@ -9,6 +9,7 @@ using Woodman.Locations.Interactions.Components;
 using Woodman.Logs.LogsUsing;
 using Woodman.Player;
 using Woodman.Player.PlayerResources;
+using Woodman.Settings;
 
 namespace Woodman.Logs
 {

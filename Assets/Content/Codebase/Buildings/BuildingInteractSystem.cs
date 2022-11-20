@@ -3,7 +3,6 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
-using Woodman.Common;
 using Woodman.Common.Tweens;
 using Woodman.Locations;
 using Woodman.Locations.Interactions;
@@ -11,6 +10,8 @@ using Woodman.Locations.Interactions.Components;
 using Woodman.Logs.LogsUsing;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
+using Woodman.Settings;
+using Woodman.Utils;
 
 namespace Woodman.Buildings
 {
@@ -20,7 +21,6 @@ namespace Woodman.Buildings
         private DataWorld _world;
         private PlayerLogsRepository _resRepository;
         private BuildingsRepository _buildingsRepository;
-        private PoolsProvider _poolsProvider;
         private CharacterLogsView _characterLogsView;
         private ProgressionService _progressionService;
         private BuildingService _buildingService;
@@ -122,7 +122,11 @@ namespace Woodman.Buildings
             {
                 createEvent.onAfter = () =>
                 {
-                    interact.BuildingView.AnimateTo(newState, _poolsProvider.BuildingFxPool);
+                    _world.CreateEvent(new BuildingChangeStateEvent
+                    {
+                        buildingView = interact.BuildingView,
+                        newState = newState
+                    });
                     if (newState == interact.BuildingView.StatesCount - 1)
                     {
                         FinishBuilding();

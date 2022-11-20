@@ -16,7 +16,7 @@ namespace Woodman.Buildings
         private string _guid;
 
         [SerializeField]
-        private GameObject[] _states;
+        private BuildingStateView[] _states;
 
         [SerializeField]
         private int _totalLogsCount;
@@ -29,8 +29,8 @@ namespace Woodman.Buildings
         private BuildingProgressView _progress;
 
         [SerializeField]
-        private Transform _vfxParent;  
-        
+        private Transform _vfxParent;
+
         [Header("Animation")]
         [SerializeField]
         private Animator _animator;
@@ -43,6 +43,7 @@ namespace Woodman.Buildings
 
         private int _currentCount;
         private static readonly int BuildingTrigger = Animator.StringToHash("Building");
+        private Transform _currentBuildingVfx;
 
         public string Id => _guid;
         public int StatesCount => _states.Length;
@@ -109,7 +110,7 @@ namespace Woodman.Buildings
             for (var i = 0; i < _states.Length; ++i)
             {
                 var state = _states[i];
-                state.SetActive(i == index);
+                state.ToggleActive(i == index);
             }
 
             if (_states.Length - 1 == index)
@@ -118,11 +119,16 @@ namespace Woodman.Buildings
             }
         }
 
+        public bool IsLastState(int state)
+        {
+            return state >= StatesCount - 1;
+        }
+
         public void AnimateTo(int state, BuildingFxPool vfxPool)
         {
             _animator.SetBool(BuildingTrigger, true);
             _progress.Hide();
-            
+
             AnimateAsync(state, vfxPool);
         }
 
@@ -130,24 +136,44 @@ namespace Woodman.Buildings
         {
             try
             {
-                var vfx = vfxPool.Get();
-                vfx.SetParent(_vfxParent);
-                vfx.localPosition = Vector3.zero;
-                vfx.localRotation = Quaternion.identity;
-                vfx.gameObject.SetActive(false);
-                vfx.gameObject.SetActive(true);
+                _currentBuildingVfx = vfxPool.Get();
+                _currentBuildingVfx.SetParent(_vfxParent);
+                _currentBuildingVfx.localPosition = Vector3.zero;
+                _currentBuildingVfx.localRotation = Quaternion.identity;
+                _currentBuildingVfx.gameObject.SetActive(false);
+                _currentBuildingVfx.gameObject.SetActive(true);
                 await Task.Delay(TimeSpan.FromSeconds(1));
                 SetState(state);
                 await Task.Delay(TimeSpan.FromSeconds(_frames / _framesPerSecond - 1));
                 _animator.SetBool(BuildingTrigger, false);
                 if (state != _states.Length - 1)
                     _progress.Show();
-                vfxPool.Return(vfx);
+                vfxPool.Return(_currentBuildingVfx);
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
             }
+        }
+
+        public void ShowBuildingVFX(BuildingFxPool vfxPool)
+        {
+            _currentBuildingVfx = vfxPool.Get();
+            _currentBuildingVfx.SetParent(_vfxParent);
+            _currentBuildingVfx.localPosition = Vector3.zero;
+            _currentBuildingVfx.localRotation = Quaternion.identity;
+            _currentBuildingVfx.gameObject.SetActive(false);
+            _currentBuildingVfx.gameObject.SetActive(true);
+        }
+
+        public void HideVfx(BuildingFxPool vfxPool)
+        {
+            vfxPool.Return(_currentBuildingVfx);
+        }
+
+        public BuildingStateView GetState(int state)
+        {
+            return _states[state];
         }
     }
 }

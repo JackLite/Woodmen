@@ -11,6 +11,7 @@ using Woodman.Locations.Interactions.Components;
 using Woodman.Logs.LogsUsing;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
+using Woodman.Settings;
 
 namespace Woodman.Locations.Boat
 {

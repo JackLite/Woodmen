@@ -3,6 +3,7 @@ using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using UnityEngine;
 using Woodman.Common.Delay;
+using Woodman.Settings;
 
 namespace Woodman.Logs.LogsUsing
 {

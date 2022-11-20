@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Woodman
+namespace Woodman.Settings
 {
     [CreateAssetMenu]
     public class VisualSettings : ScriptableObject
@@ -25,7 +25,10 @@ namespace Woodman
         public AnimationCurve usingLogsYEasing;
         public float usingLogsYMax = 10;
         public Vector3 usingLogsRotationSpeed = Vector3.zero;
-        
+
+        [Header("Building")]
+        public BuildingSettings buildingSettings;
+
         [Header("Felling")]
         public float fallSpeed = 10f;
     }

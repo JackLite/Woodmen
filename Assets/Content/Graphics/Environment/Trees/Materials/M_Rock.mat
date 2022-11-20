@@ -73,7 +73,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_947dcba20b044532a036ee9822142440_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 851dbc17e95881a42a6359009204a9ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -101,6 +109,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
+    - _BlinkSlider: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
@@ -154,6 +163,7 @@ Material:
     - _SrcBlendOutline: 0
     - _Surface: 0
     - _TexLod: 5
+    - _Transparent: 0
     - _WorkflowMode: 0
     - _ZSmooth: -0.5
     - _ZWrite: 1
@@ -162,6 +172,7 @@ Material:
     - SoftEdgeColor: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _BlinkColor: {r: 1, g: 0.9803922, b: 0.682353, a: 0}
     - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.305, g: 0.2546602, b: 0.19247574, a: 1}
     - _Color_1: {r: 0.40071008, g: 0.6132076, b: 0.18222678, a: 1}

@@ -4,6 +4,7 @@ using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using UnityEngine;
 using Woodman.Felling.Taps;
+using Woodman.Settings;
 
 namespace Woodman.Felling.Tree
 {

@@ -21,6 +21,7 @@ using Woodman.Logs;
 using Woodman.Player;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
+using Woodman.Settings;
 using Woodman.Utils;
 
 namespace Woodman

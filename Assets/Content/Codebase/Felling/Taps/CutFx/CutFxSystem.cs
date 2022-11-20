@@ -4,6 +4,7 @@ using ModulesFramework.Systems;
 using UnityEngine;
 using Woodman.Common.LifetimeData;
 using Woodman.Felling.Tree;
+using Woodman.Settings;
 
 namespace Woodman.Felling.Taps.CutFx
 {
