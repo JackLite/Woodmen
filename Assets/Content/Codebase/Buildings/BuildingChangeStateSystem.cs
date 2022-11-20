@@ -38,7 +38,8 @@ namespace Woodman.Buildings
                     var blink = (settings.blinkTime - r) / settings.blinkTime * 1;
                     stateView.SetBlink(blink);
                 },
-                validate = () => ev.buildingView != null
+                validate = () => ev.buildingView != null,
+                onEnd = ev.onFinishBuilding
             };
             _world.NewEntity().AddComponent(tween);
         }
@@ -84,6 +85,8 @@ namespace Woodman.Buildings
                     ev.buildingView.HideVfx(_poolsProvider.BuildingFxPool);
                     if (ev.buildingView.IsLastState(ev.newState))
                         BlinkUp(ev);
+                    else
+                        ev.onFinishBuilding?.Invoke();
                 }
             };
             _world.NewEntity().AddComponent(tween);

@@ -12,6 +12,7 @@ using Woodman.Logs.LogsUsing;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
 using Woodman.Settings;
+using Woodman.Utils;
 
 namespace Woodman.Locations.Boat
 {
@@ -121,10 +122,16 @@ namespace Woodman.Locations.Boat
             {
                 createEvent.onAfter = () =>
                 {
-                    interact.BuildingView.AnimateTo(newState, _poolsProvider.BuildingFxPool);
+                    var stateEvent = new BuildingChangeStateEvent
+                    {
+                        buildingView = interact.BuildingView,
+                        newState = newState
+                    };
                     if (newState == interact.BuildingView.StatesCount - 1)
-                        FinishLocation();
-                    else
+                        stateEvent.onFinishBuilding = FinishLocation;
+                    _world.CreateEvent(stateEvent);
+                    
+                    if (newState < interact.BuildingView.StatesCount - 1)
                     {
                         var locationIndex = _progressionService.GetLocationIndex();
                         var currentState = _boatSaveService.GetState(locationIndex);
