@@ -16,6 +16,9 @@ namespace Woodman.Logs
 
         [SerializeField]
         private Transform _usingPoint;
+        
+        [field:SerializeField]
+        public bool IsStarted { get; private set; }
 
         [field: SerializeField]
         public string Id { get; set; }

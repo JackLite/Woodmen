@@ -64,6 +64,7 @@ namespace Woodman.Locations
             _locationsData.SetData(ld);
             ld.locationView.SetBuildingsStates(_buildingsRepository);
             ld.locationView.SetTreesStates(_treesRepository);
+            ld.locationView.LoadStartedLogs(_logsHeapRepository);
             _progressionService.SetBuildingsCount(ld.locationView.GetBuildingsCount());
             if (_progressionService.IsBuildingsFinished())
                 ld.locationView.ShowBoat();

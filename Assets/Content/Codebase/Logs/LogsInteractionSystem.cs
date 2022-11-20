@@ -47,7 +47,10 @@ namespace Woodman.Logs
             var toAdd = math.min(max - currentRes, currentLogs);
             _resRepository.AddPlayerRes(toAdd);
             var endLogs = currentLogs - toAdd;
-            _logsHeapRepository.SetCount(logs.LogView.Id, endLogs);
+            if (logs.LogView.IsStarted)
+                _logsHeapRepository.SetStartedCount(logs.LogView.Id, endLogs);
+            else
+                _logsHeapRepository.SetCount(logs.LogView.Id, endLogs);
             _world.CreateOneFrame().AddComponent(new ChangeResEvent());
 
             var createEvent = new UsingLogsCreateEvent
@@ -63,7 +66,7 @@ namespace Woodman.Logs
                 }
             };
             _world.NewEntity().AddComponent(createEvent);
-            
+
             var totalTime = _visualSettings.usingLogsTime +
                             _visualSettings.usingLogsCount * _visualSettings.usingLogsDelayBetween;
             var tweenData = new TweenData
