@@ -26,6 +26,7 @@ namespace Woodman.Felling.Tree
 
         public FellingSide BranchSide { get; set; }
         public bool IsHasBranch { get; set; }
+        public int TotalSize { get; private set; }
         public int Size { get; private set; }
         public float TargetY { get; set; }
         public GameObject Branch { get; set; }
@@ -44,6 +45,7 @@ namespace Woodman.Felling.Tree
         public void SetSize(int size)
         {
             Size = size;
+            TotalSize = size;
             UpdateStrongText();
         }
 

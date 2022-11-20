@@ -2,6 +2,6 @@
 {
     public struct CutEvent
     {
-        
+        public int size;
     }
 }

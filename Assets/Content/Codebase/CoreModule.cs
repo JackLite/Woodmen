@@ -36,7 +36,12 @@ namespace Woodman
             CreateOneData<TreePiecesData>();
 
             var fellingViewProvider = Object.FindObjectOfType<FellingViewProvider>(true);
-            await fellingViewProvider.CutFxPool.WarmUp(20);
+            var tasks = new[]
+            {
+                fellingViewProvider.CutFxPool.WarmUp(20),
+                fellingViewProvider.CutTextPool.WarmUp(20)
+            };
+            await Task.WhenAll(tasks);
             AddDependency(fellingViewProvider);
             BindView(fellingViewProvider);
             EcsWorldContainer.World.InitModule<FellingModule>();
