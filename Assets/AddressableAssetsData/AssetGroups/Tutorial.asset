@@ -90,7 +90,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 6aa7c2acefe0ae04080d31f956fa7dc3
-    m_Address: Assets/Content/Tutorial/UI/TutorCanvas.prefab
+    m_Address: TutorialCanvas
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

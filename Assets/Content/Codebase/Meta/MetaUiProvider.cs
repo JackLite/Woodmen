@@ -16,7 +16,7 @@ namespace Woodman.Meta
         
         [field: SerializeField]
         [field: ViewInject]
-        public MovementViewProvider MovementViewProvider { get; private set; }
+        public MovementView MovementView { get; private set; }
 
         [field: SerializeField]
         public Button SettingsButton { get; private set; }

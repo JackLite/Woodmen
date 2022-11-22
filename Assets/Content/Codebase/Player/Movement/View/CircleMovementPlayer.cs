@@ -7,34 +7,47 @@ namespace Woodman.Player.Movement.View
     public class CircleMovementPlayer : MonoBehaviour
     {
         [SerializeField]
+        private RectTransform _selfRect;
+
+        [SerializeField]
         private RectTransform _circle;
 
         private Vector2 _defaultAnchoredPosition;
         private float _diff;
+        private bool _isInit;
 
-        private RectTransform _rectTransform;
         private Vector2 _startPos;
         public Vector2 Delta { get; private set; }
-
-        public void Awake()
-        {
-            _rectTransform = GetComponent<RectTransform>();
-        }
+        
 
         private void Start()
         {
-            var p = _rectTransform.position;
-            _rectTransform.anchorMin = Vector2.zero;
-            _rectTransform.anchorMax = Vector2.zero;
-            _rectTransform.position = p;
-            _defaultAnchoredPosition = _rectTransform.anchoredPosition;
-            _diff = _rectTransform.sizeDelta.x - _circle.sizeDelta.x;
+            Init();
+        }
+
+        private void Init()
+        {
+            if (_isInit) 
+                return;
+            var p = _selfRect.position;
+            _selfRect.anchorMin = Vector2.zero;
+            _selfRect.anchorMax = Vector2.zero;
+            _selfRect.position = p;
+            _defaultAnchoredPosition = _selfRect.anchoredPosition;
+            _diff = _selfRect.sizeDelta.x - _circle.sizeDelta.x;
+            _isInit = true;
+        }
+        
+        public void Toggle(bool state)
+        {
+            Init();
+            gameObject.SetActive(state);
         }
 
         public void SetStartPosition(Vector2 p)
         {
             _startPos = p;
-            _rectTransform.anchoredPosition = p;
+            _selfRect.anchoredPosition = p;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,8 +57,9 @@ namespace Woodman.Player.Movement.View
             if (direction.sqrMagnitude > _diff * _diff)
             {
                 _startPos += Vector2.ClampMagnitude(direction, direction.magnitude - _diff);
-                _rectTransform.anchoredPosition = _startPos;
+                _selfRect.anchoredPosition = _startPos;
             }
+
             var newPos = Vector2.ClampMagnitude(direction, _diff);
             _circle.anchoredPosition = newPos;
 
@@ -64,7 +78,7 @@ namespace Woodman.Player.Movement.View
 
         public void ResetToDefault()
         {
-            _rectTransform.anchoredPosition = _defaultAnchoredPosition;
+            _selfRect.anchoredPosition = _defaultAnchoredPosition;
             _circle.anchoredPosition = Vector2.zero;
         }
     }

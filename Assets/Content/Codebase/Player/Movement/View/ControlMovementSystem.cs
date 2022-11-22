@@ -17,13 +17,13 @@ namespace Woodman.Player.Movement.View
         private EcsOneData<PlayerMovementData> _movementData;
         public void Init()
         {
-            _metaUiProvider.MovementViewProvider.Reader.OnOnChangeMoveState += OnChangeMoveState;
+            _metaUiProvider.MovementView.Reader.OnOnChangeMoveState += OnChangeMoveState;
         }
 
         private void OnChangeMoveState(bool isActive)
         {
-            var reader = _metaUiProvider.MovementViewProvider.Reader;
-            var circle = _metaUiProvider.MovementViewProvider.CircleMovement;
+            var reader = _metaUiProvider.MovementView.Reader;
+            var circle = _metaUiProvider.MovementView.CircleMovement;
             ref var moveData = ref _movementData.GetData();
             if (isActive)
             {
@@ -46,8 +46,8 @@ namespace Woodman.Player.Movement.View
             if (!moveData.isMove)
                 return;
 
-            var circleMovement = _metaUiProvider.MovementViewProvider.CircleMovement;
-            var reader = _metaUiProvider.MovementViewProvider.Reader;
+            var circleMovement = _metaUiProvider.MovementView.CircleMovement;
+            var reader = _metaUiProvider.MovementView.Reader;
             moveData.input = circleMovement.Delta;
             if (moveData.input.magnitude > 1)
                 moveData.input = moveData.input.normalized;
@@ -58,7 +58,7 @@ namespace Woodman.Player.Movement.View
 
         public void Destroy()
         {
-            _metaUiProvider.MovementViewProvider.Reader.OnOnChangeMoveState -= OnChangeMoveState;
+            _metaUiProvider.MovementView.Reader.OnOnChangeMoveState -= OnChangeMoveState;
         }
     }
 }

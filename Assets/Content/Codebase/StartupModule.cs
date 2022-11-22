@@ -22,6 +22,7 @@ using Woodman.Player;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
 using Woodman.Settings;
+using Woodman.Tutorial;
 using Woodman.Utils;
 
 namespace Woodman
@@ -78,6 +79,10 @@ namespace Woodman
             var visualSettings = await Addressables.LoadAssetAsync<VisualSettings>("VisualSettings").Task;
             AddDependency(visualSettings);
             uiProvider.LoadScreen.SetProgress(.9f);
+
+            var tutorialSaveService = new TutorialSaveService();
+            AddDependency(tutorialSaveService);
+            CreateOneData(tutorialSaveService.LoadData());
         }
 
         private void CreateOneData()

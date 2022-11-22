@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using Woodman.Common.UI;
 
@@ -27,6 +28,17 @@ namespace Woodman.Logs
         public LogsHeapType LogType => _type;
         public Vector3 UsingPoint => _usingPoint.position;
 
+        private void Awake()
+        {
+            UpdateText();
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private void UpdateText()
+        {
+            _countText.SetCount(_count);
+        }
+
         public void Show()
         {
             gameObject.SetActive(true);
@@ -40,7 +52,7 @@ namespace Woodman.Logs
         public void SetCount(int count)
         {
             _count = count;
-            _countText.SetCount(_count);
+            UpdateText();
         }
     }
 }

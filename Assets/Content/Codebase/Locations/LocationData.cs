@@ -1,5 +1,6 @@
 ﻿using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.ResourceProviders;
+using Woodman.Tutorial.Arrows;
 
 namespace Woodman.Locations
 {
@@ -8,5 +9,6 @@ namespace Woodman.Locations
         public AssetReference currentLocation;
         public LocationView locationView;
         public SceneInstance currentLocationScene;
+        public TutorialArrowsProvider tutorialArrowsProvider;
     }
 }

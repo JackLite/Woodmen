@@ -15,6 +15,7 @@ using Woodman.Logs;
 using Woodman.Meta;
 using Woodman.Player;
 using Woodman.Progress;
+using Woodman.Tutorial.Arrows;
 
 namespace Woodman.Locations
 {
@@ -61,6 +62,7 @@ namespace Woodman.Locations
 
             ld.currentLocationScene = sceneInstance;
             ld.locationView = UnityEngine.Object.FindObjectOfType<LocationView>();
+            ld.tutorialArrowsProvider = ld.locationView.GetComponent<TutorialArrowsProvider>();
             _locationsData.SetData(ld);
             ld.locationView.SetBuildingsStates(_buildingsRepository);
             ld.locationView.SetTreesStates(_treesRepository);

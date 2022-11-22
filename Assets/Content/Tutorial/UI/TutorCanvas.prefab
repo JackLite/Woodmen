@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Finish chopping the tree before time runs out!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f3d0bd57f5d43d144921de1c5753c2a2, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: -7824143165930722319, guid: f3d0bd57f5d43d144921de1c5753c2a2,
     type: 2}
   m_fontSharedMaterials: []
@@ -528,6 +528,7 @@ GameObject:
   - component: {fileID: 4502449382065952696}
   - component: {fileID: 2985291172189023457}
   - component: {fileID: 49715208257444971}
+  - component: {fileID: 625459207333316471}
   m_Layer: 5
   m_Name: Finger
   m_TagString: Untagged
@@ -552,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64.23135, y: 61.233463}
+  m_AnchoredPosition: {x: -64, y: 64}
   m_SizeDelta: {x: 264, y: 242}
   m_Pivot: {x: 0.25669938, y: 0.7530307}
 --- !u!222 &2985291172189023457
@@ -593,6 +594,45 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &625459207333316471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270388068882763551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d020ca0b4334b008f836e65590c2748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: 150
+  time: 0.5
+  easing:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _rectTransform: {fileID: 4502449382065952696}
 --- !u!1 &6690496518601503901
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +721,8 @@ GameObject:
   - component: {fileID: 6424917580572344634}
   - component: {fileID: 5171246843067851444}
   - component: {fileID: 2052619003061888602}
+  - component: {fileID: 4872444849488396820}
+  - component: {fileID: 5932136012817127278}
   m_Layer: 5
   m_Name: TutorCanvas
   m_TagString: Untagged
@@ -772,6 +814,33 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4872444849488396820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960699616087786505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e9573c265c45a9a33df9bb78f80ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TutorialCanvasView>k__BackingField: {fileID: 5932136012817127278}
+  <TutorialJoystickView>k__BackingField: {fileID: 625459207333316471}
+--- !u!114 &5932136012817127278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960699616087786505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b10de34c2f4850985537f99a3a3d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fingerContainer: {fileID: 8744733971042439112}
 --- !u!1 &8501061847757754729
 GameObject:
   m_ObjectHideFlags: 0

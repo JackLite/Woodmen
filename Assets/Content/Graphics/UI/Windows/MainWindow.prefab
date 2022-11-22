@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <LogsBarMetaUI>k__BackingField: {fileID: 1263359237036591418}
   <CoinsBarMetaUI>k__BackingField: {fileID: 9181768740112717517}
-  <MovementViewProvider>k__BackingField: {fileID: 3608913231731725868}
+  <MovementView>k__BackingField: {fileID: 3608913231731725868}
   <SettingsButton>k__BackingField: {fileID: 4569297289904279452}
 --- !u!114 &5202229907929482466
 MonoBehaviour:

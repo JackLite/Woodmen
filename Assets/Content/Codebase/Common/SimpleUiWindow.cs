@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Woodman.Common
 {
     /// <summary>
-    /// Общий класс для всех полноэкранных окон
+    /// Общий класс для всех полноэкранных интерфейсов
     /// </summary>
     public abstract class SimpleUiWindow : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Woodman.Player.Movement.View
 {
-    public class MovementViewProvider : MonoBehaviour
+    public class MovementView : MonoBehaviour
     {
         [field:SerializeField]
         public ReaderPlayerMovement Reader { get; private set; }
