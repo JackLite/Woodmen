@@ -51,6 +51,8 @@ MonoBehaviour:
   _count: 0
   _type: 0
   _usingPoint: {fileID: 4628534995438220459}
+  <IsStarted>k__BackingField: 0
+  <Id>k__BackingField: 
 --- !u!1 &1519519521525546895
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '120 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f3d0bd57f5d43d144921de1c5753c2a2, type: 2}
-  m_sharedMaterial: {fileID: -7824143165930722319, guid: f3d0bd57f5d43d144921de1c5753c2a2,
+  m_fontAsset: {fileID: 11400000, guid: b0f2c81d8d877e94082ac01cc4824634, type: 2}
+  m_sharedMaterial: {fileID: 1387117021953318899, guid: b0f2c81d8d877e94082ac01cc4824634,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
