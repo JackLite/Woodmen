@@ -1499,13 +1499,11 @@ MonoBehaviour:
   _hideAnimationTime: 1
   _colors:
   - place: 0
-    color: {r: 0.15294118, g: 0.6901961, b: 0.56078434, a: 1}
-  - place: 0.238
-    color: {r: 0.03951584, g: 0.2264151, b: 0.18139556, a: 1}
-  - place: 0.764
-    color: {r: 0.6577052, g: 1, b: 0, a: 1}
+    color: {r: 0.31764707, g: 0.7372549, b: 0.6509804, a: 1}
+  - place: 0.5
+    color: {r: 0.82199997, g: 0.75534946, b: 0.25071, a: 1}
   - place: 1
-    color: {r: 0.4373927, g: 0, b: 1, a: 1}
+    color: {r: 0.7372549, g: 0.3214435, b: 0.31764704, a: 1}
   _sliderFiller: {fileID: 6224915622854757119}
 --- !u!1 &8283637465828192468
 GameObject:
