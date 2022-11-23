@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.1523755, g: 1.5628635, b: 1.5917212, a: 1}
+  m_IndirectSpecularColor: {r: 1.1526978, g: 1.5633366, b: 1.5923707, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -955,6 +955,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3138394595511818146}
     m_Modifications:
+    - target: {fileID: 1461228719747574138, guid: c35cbc2de6b4b9147867494c7f1ec2ba,
+        type: 3}
+      propertyPath: _states.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461228719747574138, guid: c35cbc2de6b4b9147867494c7f1ec2ba,
+        type: 3}
+      propertyPath: _logsCount.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461228719747574138, guid: c35cbc2de6b4b9147867494c7f1ec2ba,
+        type: 3}
+      propertyPath: _states.Array.data[2]
+      value: 
+      objectReference: {fileID: 311831067}
+    - target: {fileID: 1461228719747574138, guid: c35cbc2de6b4b9147867494c7f1ec2ba,
+        type: 3}
+      propertyPath: _logsCount.Array.data[1]
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461228719747574138, guid: c35cbc2de6b4b9147867494c7f1ec2ba,
+        type: 3}
+      propertyPath: _logsCount.Array.data[2]
+      value: 87
+      objectReference: {fileID: 0}
     - target: {fileID: 2238802973652744027, guid: c35cbc2de6b4b9147867494c7f1ec2ba,
         type: 3}
       propertyPath: m_RootOrder
@@ -1113,6 +1138,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e83ba0e058f543c49422f1a2027b58b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &311831067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4190709026050833907, guid: c35cbc2de6b4b9147867494c7f1ec2ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 311831064}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19041d8344b542f3b36d31d8b05fc204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &368160606
