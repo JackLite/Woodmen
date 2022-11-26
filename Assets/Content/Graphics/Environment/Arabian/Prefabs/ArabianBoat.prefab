@@ -843,7 +843,7 @@ PrefabInstance:
     - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
         type: 3}
       propertyPath: _logsCount.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
         type: 3}
@@ -860,6 +860,16 @@ PrefabInstance:
       propertyPath: _states.Array.data[2]
       value: 
       objectReference: {fileID: 198212046181628286}
+    - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: _logsCount.Array.data[1]
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: _logsCount.Array.data[2]
+      value: 87
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0efc60c9050d39242b7a91663728b5d4, type: 3}
 --- !u!114 &198212046181628286 stripped
