@@ -1,9 +1,9 @@
 ﻿using ModulesFramework.Attributes;
 using ModulesFramework.Systems;
 
-namespace Woodman.Tutorial
+namespace Woodman.Tutorial.Meta
 {
-    [EcsSystem(typeof(TutorialModule))]
+    [EcsSystem(typeof(MetaTutorialModule))]
     public class TutorialShowSystem : IActivateSystem
     {
         private TutorialCanvasView _tutorialCanvas;

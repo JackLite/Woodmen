@@ -16,10 +16,13 @@ namespace Woodman.Felling.Tree.Branches
 
         public void Run()
         {
-            var q = _world.Select<FellingTimeFreeze>().GetEntities();
+            var q = _world.Select<FellingTimeFreeze>();
+            if (!q.Any())
+                return;
+            var entities = q.GetEntities();
             var isFreeze = false;
             var unfreezeMaxTime = 0f;
-            foreach (var e in q)
+            foreach (var e in entities)
             {
                 ref var timeFreeze = ref e.GetComponent<FellingTimeFreeze>();
                 if (Time.time >= timeFreeze.unfreezeTime)

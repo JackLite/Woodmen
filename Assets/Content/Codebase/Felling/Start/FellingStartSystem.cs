@@ -17,10 +17,10 @@ namespace Woodman.Felling.Start
             _fellingUIProvider.StartGameBtn.gameObject.SetActive(true);
             _fellingUIProvider.FellingTimerView.SetProgress(1);
             _fellingUIProvider.TreeUIProgress.SetProgress(1);
-            _fellingUIProvider.StartGameBtn.onClick.AddListener(OnStartClick);
+            _fellingUIProvider.TapController.OnTap += OnTap;
         }
 
-        private void OnStartClick()
+        private void OnTap(FellingSide side)
         {
             _fellingUIProvider.StartGameBtn.gameObject.SetActive(false);
             _world.ActivateModule<FellingModule>();
@@ -28,7 +28,7 @@ namespace Woodman.Felling.Start
 
         public void Destroy()
         {
-            _fellingUIProvider.StartGameBtn.onClick.RemoveListener(OnStartClick);
+            _fellingUIProvider.TapController.OnTap -= OnTap;
         }
     }
 }

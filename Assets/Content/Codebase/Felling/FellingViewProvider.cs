@@ -1,5 +1,4 @@
 using UnityEngine;
-using Woodman.Felling.Taps;
 using Woodman.Felling.Taps.CutFx;
 using Woodman.Felling.Tree;
 using Woodman.Utils;

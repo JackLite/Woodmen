@@ -32,7 +32,6 @@ namespace Woodman.Felling.Taps.CutFx
                 .Without<Lifetime>();
             foreach (var entity in fxQ.GetEntities())
             {
-                Debug.Log("[TEST] Destroy fx");
                 _cutFxPool.Return(entity.GetComponent<CutFxComponent>().fxTransform);
                 entity.Destroy();
             }

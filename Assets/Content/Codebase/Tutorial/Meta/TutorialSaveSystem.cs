@@ -2,12 +2,12 @@
 using ModulesFramework.Attributes;
 using ModulesFramework.Systems;
 
-namespace Woodman.Tutorial
+namespace Woodman.Tutorial.Meta
 {
-    [EcsSystem(typeof(TutorialModule))]
+    [EcsSystem(typeof(MetaTutorialModule))]
     public class TutorialSaveSystem : IPostRunSystem, IDestroySystem
     {
-        private EcsOneData<TutorialData> _tutorialData;
+        private EcsOneData<MetaTutorialData> _tutorialData;
         private TutorialSaveService _saveService;
         
         public void PostRun()

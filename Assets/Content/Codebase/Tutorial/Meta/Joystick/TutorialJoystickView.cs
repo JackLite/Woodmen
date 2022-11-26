@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Woodman.Tutorial.Joystick
+namespace Woodman.Tutorial.Meta.Joystick
 {
     public class TutorialJoystickView : MonoBehaviour
     {

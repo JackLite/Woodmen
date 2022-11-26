@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Woodman.Tutorial
+namespace Woodman.Tutorial.Meta
 {
     [Serializable]
-    public struct TutorialData
+    public struct MetaTutorialData
     {
         public bool firstStepComplete;
         public bool secondStepComplete;

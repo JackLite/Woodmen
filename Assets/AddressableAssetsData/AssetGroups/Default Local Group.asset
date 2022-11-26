@@ -77,6 +77,10 @@ MonoBehaviour:
     m_Address: Assets/Content/Scenes/Levels/VikingIsland.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: eca0d77029815c641acb9dae8b98ec36
+    m_Address: TutorialSettings
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:

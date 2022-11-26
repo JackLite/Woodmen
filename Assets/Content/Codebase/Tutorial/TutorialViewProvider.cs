@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using Woodman.Tutorial.Arrows;
-using Woodman.Tutorial.Joystick;
+using Woodman.Tutorial.Core.Taps;
+using Woodman.Tutorial.Meta.Joystick;
 using Woodman.Utils;
 
-namespace Woodman.Tutorial
+namespace Woodman.Tutorial.Meta
 {
     public class TutorialViewProvider : ViewProvider
     {
@@ -14,5 +14,9 @@ namespace Woodman.Tutorial
         [field: SerializeField]
         [field: ViewInject]
         public TutorialJoystickView TutorialJoystickView { get; private set; }
+        
+        [field: SerializeField]
+        [field: ViewInject]
+        public CoreTutorialTapPositions TutorialTapPositions { get; private set; }
     }
 }

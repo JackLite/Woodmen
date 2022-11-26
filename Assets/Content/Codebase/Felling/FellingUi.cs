@@ -10,6 +10,9 @@ namespace Woodman.Felling
         [SerializeField]
         private Button _pauseBtn;
 
+        public GameObject timer;
+        public GameObject progress;
+        
         public event Action OnPause;
 
         private void Awake()

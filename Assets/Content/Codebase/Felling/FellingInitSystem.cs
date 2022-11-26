@@ -8,7 +8,7 @@ using Woodman.Felling.Tree.Generator;
 namespace Woodman.Felling
 {
     /// <summary>
-    /// Init fellings logic after switch scenes
+    /// Init felling logic after switch scenes
     /// </summary>
     [EcsSystem(typeof(CoreModule))]
     public class FellingInitSystem : IPreInitSystem, IRunSystem

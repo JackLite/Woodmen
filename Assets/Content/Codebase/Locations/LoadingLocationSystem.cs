@@ -15,7 +15,7 @@ using Woodman.Logs;
 using Woodman.Meta;
 using Woodman.Player;
 using Woodman.Progress;
-using Woodman.Tutorial.Arrows;
+using Woodman.Tutorial.Meta.Arrows;
 
 namespace Woodman.Locations
 {

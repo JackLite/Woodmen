@@ -23,6 +23,7 @@ using Woodman.Player.PlayerResources;
 using Woodman.Progress;
 using Woodman.Settings;
 using Woodman.Tutorial;
+using Woodman.Tutorial.Meta;
 using Woodman.Utils;
 
 namespace Woodman
@@ -82,7 +83,8 @@ namespace Woodman
 
             var tutorialSaveService = new TutorialSaveService();
             AddDependency(tutorialSaveService);
-            CreateOneData(tutorialSaveService.LoadData());
+            CreateOneData(tutorialSaveService.LoadMetaData());
+            CreateOneData(tutorialSaveService.LoadCoreData());
         }
 
         private void CreateOneData()

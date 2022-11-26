@@ -2,7 +2,7 @@
 using UnityEngine;
 using Woodman.Common.Tweens;
 
-namespace Woodman.Tutorial.Arrows
+namespace Woodman.Tutorial.Meta.Arrows
 {
     public class ArrowView : MonoBehaviour
     {
@@ -21,7 +21,7 @@ namespace Woodman.Tutorial.Arrows
         private void MoveDown()
         {
             var startPos = _rect.anchoredPosition;
-            var endPos = startPos - _deltaY * Vector2.down;
+            var endPos = startPos + _deltaY * Vector2.down;
             var tween = new TweenData
             {
                 remain = _time,
@@ -40,7 +40,7 @@ namespace Woodman.Tutorial.Arrows
         private void MoveUp()
         {
             var startPos = _rect.anchoredPosition;
-            var endPos = startPos + _deltaY * Vector2.down;
+            var endPos = startPos - _deltaY * Vector2.down;
             var tween = new TweenData
             {
                 remain = _time,

@@ -1,5 +1,6 @@
 ﻿using ModulesFramework.Data;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Woodman.Utils
 {
@@ -58,10 +59,28 @@ namespace Woodman.Utils
         {
             return world.NewEntity().AddComponent(new T());
         }
-        
+
         public static Entity CreateEvent<T>(this DataWorld world, T c) where T : struct
         {
             return world.NewEntity().AddComponent(c);
+        }
+
+        public static void SetColorA(this Image image, float a)
+        {
+            var old = image.color;
+            old.a = a;
+            image.color = old;
+        }
+
+        public static void SetLayer(this GameObject go, int layer, bool includeChildren = false)
+        {
+            go.layer = layer;
+            if (!includeChildren)
+                return;
+            for (var i = 0; i < go.transform.childCount; ++i)
+            {
+                go.transform.GetChild(i).gameObject.SetLayer(layer, true);
+            }
         }
     }
 }

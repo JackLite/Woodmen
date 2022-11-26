@@ -1,6 +1,6 @@
 ﻿using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.ResourceProviders;
-using Woodman.Tutorial.Arrows;
+using Woodman.Tutorial.Meta.Arrows;
 
 namespace Woodman.Locations
 {

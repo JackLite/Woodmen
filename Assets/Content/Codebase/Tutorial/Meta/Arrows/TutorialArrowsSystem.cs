@@ -6,13 +6,13 @@ using Woodman.Locations;
 using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
 
-namespace Woodman.Tutorial.Arrows
+namespace Woodman.Tutorial.Meta.Arrows
 {
-    [EcsSystem(typeof(TutorialModule))]
+    [EcsSystem(typeof(MetaTutorialModule))]
     public class TutorialArrowsSystem : IActivateSystem, IRunSystem
     {
         private DataWorld _world;
-        private EcsOneData<TutorialData> _tutorialData;
+        private EcsOneData<MetaTutorialData> _tutorialData;
         private EcsOneData<LocationData> _locationData;
 
         public void Activate()

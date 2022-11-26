@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Woodman.Tutorial.Arrows
+namespace Woodman.Tutorial.Meta.Arrows
 {
     public class TutorialArrowsProvider : MonoBehaviour
     {
