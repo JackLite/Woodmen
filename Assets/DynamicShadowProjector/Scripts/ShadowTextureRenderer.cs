@@ -360,7 +360,7 @@ namespace DynamicShadowProjector {
 				return;
 			}
 			// choose a texture format
-			RenderTextureFormat textureFormat = RenderTextureFormat.ARGB32;
+			RenderTextureFormat textureFormat = RenderTextureFormat.ARGB1555;
 			if (m_preferredTextureFormats != null && 0 < m_preferredTextureFormats.Length) {
 				foreach (RenderTextureFormat format in m_preferredTextureFormats) {
 					if (SystemInfo.SupportsRenderTextureFormat(textureFormat)) {

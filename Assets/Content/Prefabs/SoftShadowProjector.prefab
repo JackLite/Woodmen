@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3393d773db443d18bfb7356381fe67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_multiSampling: 1
-  m_superSampling: 2
+  m_multiSampling: 2
+  m_superSampling: 1
   m_mipmapFalloff: 0
   m_blurFilter: 0
   m_testViewClip: 0
