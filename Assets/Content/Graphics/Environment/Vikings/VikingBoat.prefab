@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1182242461325358378
+--- !u!1001 &5837627088434553021
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -74,80 +74,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7affcd658c84544f8f6d3caac065dd9, type: 3}
---- !u!1001 &3564420790201642039
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 8954446302094832447}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c3a3e6d6d177c054691fc5ae2e85cb23, type: 2}
-    - target: {fileID: 919132149155446097, guid: 71a414bce501d1d468d279fc2132164f,
-        type: 3}
-      propertyPath: m_Name
-      value: VikingBoat_M
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 71a414bce501d1d468d279fc2132164f, type: 3}
+--- !u!23 &5098918420287880249 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: c7affcd658c84544f8f6d3caac065dd9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5837627088434553021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6406083246917411795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -235,11 +167,31 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2188735146013077846, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882763020445148983, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 7813228164540536488}
     - target: {fileID: 4900115495638762350, guid: 0efc60c9050d39242b7a91663728b5d4,
         type: 3}
       propertyPath: m_Name
       value: VikingBoat
       objectReference: {fileID: 0}
+    - target: {fileID: 6040178005479595535, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726864750896650882, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 5098918420287880249}
     - target: {fileID: 8568860469339460775, guid: 0efc60c9050d39242b7a91663728b5d4,
         type: 3}
       propertyPath: m_RootOrder
@@ -295,8 +247,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: _states.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: _logsCount.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: _states.Array.data[0]
+      value: 
+      objectReference: {fileID: 7855582460714681572}
+    - target: {fileID: 9060175393332546182, guid: 0efc60c9050d39242b7a91663728b5d4,
+        type: 3}
+      propertyPath: _states.Array.data[1]
+      value: 
+      objectReference: {fileID: 3737332694493264209}
+    m_RemovedComponents:
+    - {fileID: 6040178005479595535, guid: 0efc60c9050d39242b7a91663728b5d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0efc60c9050d39242b7a91663728b5d4, type: 3}
+--- !u!114 &3737332694493264209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7726864750896650882, guid: 0efc60c9050d39242b7a91663728b5d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6406083246917411795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19041d8344b542f3b36d31d8b05fc204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4182446684751695886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7128621911528272861, guid: 0efc60c9050d39242b7a91663728b5d4,
@@ -309,13 +294,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6406083246917411795}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8954446302094832447 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2639795192264904940, guid: 0efc60c9050d39242b7a91663728b5d4,
+--- !u!114 &7855582460714681572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3882763020445148983, guid: 0efc60c9050d39242b7a91663728b5d4,
     type: 3}
   m_PrefabInstance: {fileID: 6406083246917411795}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7766748884283523167
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19041d8344b542f3b36d31d8b05fc204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8912549167468284460
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -387,10 +378,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VikingBoat_S
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 73e2fdab150c8664d811f8d7f440061d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e2fdab150c8664d811f8d7f440061d, type: 3}
+--- !u!23 &7813228164540536488 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 73e2fdab150c8664d811f8d7f440061d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8912549167468284460}
+  m_PrefabAsset: {fileID: 0}
