@@ -63,7 +63,7 @@ namespace Woodman.Meta
                 ref var t = ref e.GetComponent<Transparency>();
                 t.delta = _visualSettings.transparencySpeed;
                 t.isFinish = false;
-                t.target = 1;
+                t.target = 2;
             }
         }
 
