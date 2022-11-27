@@ -41,6 +41,19 @@ namespace Woodman.Felling.Tree
             yield return _finish;
         }
 
+        public TreePiece GetPiece(int offset)
+        {
+            var i = offset;
+            foreach (var piece in _pieces)
+            {
+                --i;
+                if (i < 0)
+                    return piece;
+            }
+
+            return null;
+        }
+
         public void Destroy()
         {
             foreach (var piece in _pieces)

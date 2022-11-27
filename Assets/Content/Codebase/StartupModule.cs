@@ -89,7 +89,7 @@ namespace Woodman
 
         private void CreateOneData()
         {
-            CreateOneData(new PlayerData { maxWoodCount = 50 });
+            CreateOneData(new PlayerData { maxWoodCount = 300 });
             CreateOneData<TreeModel>();
             CreateOneData<TimerData>();
             CreateOneData<LocationData>();

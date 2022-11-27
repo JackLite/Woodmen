@@ -14,6 +14,8 @@ using Woodman.Felling.Taps;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Builder;
 using Woodman.Felling.Tree.Generator;
+using Woodman.Locations;
+using Woodman.Progress;
 using Woodman.Settings;
 using Woodman.Utils;
 using Object = UnityEngine.Object;
@@ -72,11 +74,14 @@ namespace Woodman
             var visualSettings = GetGlobalDependency<StartupModule, VisualSettings>();
             var treePieceBuilder = new TreePieceBuilder(treeContainer, visualSettings);
             var treePiecesRepository = new TreePiecesRepository();
+            var progressionService = GetGlobalDependency<StartupModule, ProgressionService>();
+            var locationIndex = progressionService.GetLocationIndex();
             var treeGenerator = new TreeGenerator(
                 treePieceBuilder,
                 treePiecesRepository,
                 EcsWorldContainer.World,
-                generationSettings
+                generationSettings,
+                locationIndex
             );
             AddDependency(treePiecesRepository);
             AddDependency(treeGenerator);

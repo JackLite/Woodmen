@@ -28,14 +28,15 @@ namespace Woodman.Felling.Tree.Generator
             TreePieceBuilder pieceBuilder,
             TreePiecesRepository treePiecesRepository, 
             DataWorld world,
-            TreeGenerationSettings settings)
+            TreeGenerationSettings settings,
+            int currentLocation)
         {
             _settings = settings;
             _pieceBuilder = pieceBuilder;
             _treePiecesRepository = treePiecesRepository;
             _world = world;
             _typeGenerator = new TreePieceTypeGenerator(settings);
-            _branchModGenerator = new TreePieceBranchModGenerator(settings);
+            _branchModGenerator = new TreePieceBranchModGenerator(settings, currentLocation);
             _branchSP = settings.branchSwitching.min;
             _branchSPAcc = settings.branchSwitching.minAcc;
         }
@@ -143,8 +144,7 @@ namespace Woodman.Felling.Tree.Generator
             var hasBranch = (pieceIndex + branchBias) % 2 == 0 && pieceIndex >= 4;
             if (hasBranch)
             {
-                var isSameSide = prevSide.HasValue && prevSide == side;
-                var branchMod = _branchModGenerator.GenerateBranchMod(pieceIndex, isSameSide);
+                var branchMod = _branchModGenerator.GenerateBranchMod(pieceIndex);
 
                 if (branchMod != BranchModEnum.None)
                 {

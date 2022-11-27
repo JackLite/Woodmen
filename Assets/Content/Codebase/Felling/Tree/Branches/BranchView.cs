@@ -56,6 +56,46 @@ namespace Woodman.Felling.Tree.Branches
             _hive.gameObject.SetActive(true);
         }
 
+        public bool IsHasBooster()
+        {
+            foreach (var booster in _boosters)
+            {
+                if (booster.gameObject.activeSelf)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public BoosterType GetBoosterType()
+        {
+            foreach (var booster in _boosters)
+            {
+                if (booster.gameObject.activeSelf)
+                    return booster.BoosterType;
+            }
+
+            return BoosterType.Undefined;
+        }
+
+        public bool IsHasHive()
+        {
+            return _hive.gameObject.activeSelf;
+        }
+
+        public BranchElementView GetActiveElement()
+        {
+            foreach (var booster in _boosters)
+            {
+                if (booster.gameObject.activeSelf)
+                    return booster;
+            }
+
+            if (_hive.gameObject.activeSelf)
+                return _hive;
+            return null;
+        }
+
         public void Revert()
         {
             transform.localScale = transform.localScale.MirrorX();

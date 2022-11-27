@@ -82,5 +82,10 @@ namespace Woodman.Utils
                 go.transform.GetChild(i).gameObject.SetLayer(layer, true);
             }
         }
+
+        public static bool IsEventRaised<T>(this DataWorld world) where T : struct
+        {
+            return world.Select<T>().Any();
+        }
     }
 }
