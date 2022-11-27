@@ -71,6 +71,7 @@ namespace Woodman.Tutorial.Core.Bubbles
                 _tutorialCanvas.bubbleView.Hide();
                 _tutorialCanvas.Hide();
                 ResetLayer(branchElementView);
+                _tutorialCanvas.ReleaseRenderTexture();
             };
         }
 
@@ -113,6 +114,7 @@ namespace Woodman.Tutorial.Core.Bubbles
                 _tutorialCanvas.bubbleView.Hide();
                 _tutorialCanvas.Hide();
                 ResetLayer(branchElementView);
+                _tutorialCanvas.ReleaseRenderTexture();
             };
         }
 
@@ -131,6 +133,7 @@ namespace Woodman.Tutorial.Core.Bubbles
                 _tutorialCanvas.bubbleView.Hide();
                 _tutorialCanvas.Hide();
                 ResetLayer(branchElementView);
+                _tutorialCanvas.ReleaseRenderTexture();
             };
         }
 
@@ -148,6 +151,7 @@ namespace Woodman.Tutorial.Core.Bubbles
 
         private void InitBubble(TreePiece piece, BranchElementView branchElement)
         {
+            _tutorialCanvas.InitRenderTexture();
             branchElement.gameObject.SetLayer(LayerMask.NameToLayer(_tutorialSettings.tutorialObjectsLayer), true);
             UpdateBubblePos(piece.BranchSide, branchElement);
             var tween = new TweenData

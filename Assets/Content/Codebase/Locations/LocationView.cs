@@ -106,5 +106,10 @@ namespace Woodman.Locations
         {
             _boat.SetLogs(logs, total);
         }
+        
+        public int GetBoatLogsForState(int state)
+        {
+            return _boat.GetResForState(state);
+        }
     }
 }

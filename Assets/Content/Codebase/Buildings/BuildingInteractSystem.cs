@@ -5,6 +5,7 @@ using ModulesFramework.Systems;
 using Unity.Mathematics;
 using Woodman.Common.Tweens;
 using Woodman.Locations;
+using Woodman.Locations.Boat;
 using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
 using Woodman.Logs.LogsUsing;
@@ -26,6 +27,7 @@ namespace Woodman.Buildings
         private BuildingService _buildingService;
         private EcsOneData<LocationData> _locationData;
         private VisualSettings _visualSettings;
+        private BoatSaveService _boatSaveService;
 
         public void Run()
         {
@@ -149,7 +151,13 @@ namespace Woodman.Buildings
             _progressionService.RegisterFinishBuilding();
             if (_progressionService.IsBuildingsFinished())
             {
-                _locationData.GetData().locationView.ShowBoat();
+                var ld = _locationData.GetData();
+                ld.locationView.ShowBoat();
+                var locationIndex = _progressionService.GetLocationIndex();
+                var boatState = _boatSaveService.GetState(locationIndex);
+                ld.locationView.SetBoatState(boatState);
+                var logs = _boatSaveService.GetLogs(locationIndex);
+                ld.locationView.SetBoatLogs(logs, ld.locationView.GetBoatLogsForState(boatState + 1));
             }
         }
     }

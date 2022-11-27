@@ -30,19 +30,10 @@ namespace Woodman.Buildings
 
         [SerializeField]
         private Transform _vfxParent;
-
-        [Header("Animation")]
-        [SerializeField]
-        private Animator _animator;
-
-        [SerializeField]
-        private float _frames;
-
-        [SerializeField]
+        
         private float _framesPerSecond;
 
         private int _currentCount;
-        private static readonly int BuildingTrigger = Animator.StringToHash("Building");
         private Transform _currentBuildingVfx;
 
         public string Id => _guid;

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tutorial Settings
   m_EditorClassIdentifier: 
   tutorialObjectsLayer: TutorialObject
-  branchXOffset: 150
+  branchXOffset: 100

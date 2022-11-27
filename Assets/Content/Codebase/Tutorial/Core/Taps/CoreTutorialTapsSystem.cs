@@ -27,16 +27,16 @@ namespace Woodman.Tutorial.Core.Taps
             }
 
             if (!td.rightTapComplete)
-                ShowTapHand(_tapPositions.right.position);
+                ShowTapHand(_tapPositions.right);
             else if (!td.leftTapComplete)
-                ShowTapHand(_tapPositions.left.position);
+                ShowTapHand(_tapPositions.left);
 
             _fellingUIProvider.TapController.OnTap += OnTap;
         }
 
-        private void ShowTapHand(Vector3 position)
+        private void ShowTapHand(RectTransform target)
         {
-            _tutorialCanvas.tapHand.SetPosition(position);
+            _tutorialCanvas.tapHand.SetPosition(target);
             _tutorialCanvas.tapHand.Toggle(true);
             _tutorialCanvas.Show();
         }
@@ -53,10 +53,11 @@ namespace Woodman.Tutorial.Core.Taps
                 if (td.leftTapComplete)
                 {
                     _tutorialCanvas.tapHand.Toggle(false);
+                    _world.CreateEvent<TutorialCoreFinishTapEvent>();
                 }
                 else
                 {
-                    _tutorialCanvas.tapHand.SetPosition(_tapPositions.left.position);
+                    _tutorialCanvas.tapHand.SetPosition(_tapPositions.left);
                 }
             }
 
@@ -71,7 +72,7 @@ namespace Woodman.Tutorial.Core.Taps
                 }
                 else
                 {
-                    _tutorialCanvas.tapHand.SetPosition(_tapPositions.right.position);
+                    _tutorialCanvas.tapHand.SetPosition(_tapPositions.right);
                 }
             }
         }

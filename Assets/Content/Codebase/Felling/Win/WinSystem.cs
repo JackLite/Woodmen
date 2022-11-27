@@ -21,14 +21,13 @@ namespace Woodman.Felling.Win
         private UiProvider _windows;
         private EcsOneData<TreeModel> _treeModel;
         private PlayerCoinsRepository _coinsRepository;
-        
-        
+
         public void PostRun()
         {
             var q = _world.Select<WinEvent>();
             if (!q.Any())
                 return;
-            
+
             _treesRepository.SetFell(_treesRepository.CurrentTree.Id);
             _progressionService.SetFell();
             _logsHeapService.SaveLogs(ref _treeModel.GetData());
@@ -54,6 +53,8 @@ namespace Woodman.Felling.Win
                 };
                 var treeModel = _treeModel.GetData();
                 _windows.FellingWinWindow.SetLogsCount(treeModel.size);
+                _windows.FellingWinWindow.SetCoinsCost(10);
+                _windows.FellingWinWindow.ResetX2();
                 _world.NewEntity().AddComponent(tweenData).AddComponent(new WinX2TweenTag());
             }
 

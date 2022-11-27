@@ -33,9 +33,11 @@ namespace Woodman.Tutorial.Core.Taps
         [SerializeField]
         private float _circleScale = 2;
 
-        public void SetPosition(Vector3 pos)
+        public void SetPosition(RectTransform target)
         {
-            _selfRect.position = pos;
+            _selfRect.anchorMin = target.anchorMin;
+            _selfRect.anchorMax = target.anchorMax;
+            _selfRect.anchoredPosition = target.anchoredPosition;
         }
 
         public void Toggle(bool state)

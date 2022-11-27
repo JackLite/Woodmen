@@ -57,7 +57,16 @@ namespace Woodman.Tutorial.Core.Bubbles
             if (progress < 0.3)
             {
                 ToggleTimerFreeze(true);
-                ShowUIBubble(_fellingUi.progress);
+                var bubbleView = _tutorialCanvas.bubbleView;
+            
+                bubbleView.SetBubbleSide(FellingSide.Left);
+                UpdateBubbleViewPos(_tutorialCanvas.progressMask);
+                _tutorialCanvas.ToggleProgressMask(true);
+
+                bubbleView.OnBubbleClick += () =>
+                {
+                    _tutorialCanvas.ToggleProgressMask(false);
+                };
                 ProcessBubbleInteractOnShow();
                 _tutorialCanvas.Show();
                 _tutorialCanvas.ShowProgressBubble();
@@ -77,28 +86,28 @@ namespace Woodman.Tutorial.Core.Bubbles
 
         private void ShowTimerBubble()
         {
-            ShowUIBubble(_fellingUi.timer);
+            var bubbleView = _tutorialCanvas.bubbleView;
+            
+            bubbleView.SetBubbleSide(FellingSide.Left);
+            UpdateBubbleViewPos(_tutorialCanvas.timerMask);
+            _tutorialCanvas.ToggleTimerMask(true);
+            bubbleView.OnBubbleClick += () =>
+            {
+                _tutorialCanvas.ToggleTimerMask(false);
+            };
             _tutorialCanvas.ShowTimerBubble();
         }
 
-        private void ShowUIBubble(GameObject target)
+        private void UpdateBubbleViewPos(RectTransform mask)
         {
-            var bubbleView = _tutorialCanvas.bubbleView;
-            var objectCopy = Object.Instantiate(target, target.transform.parent);
-            objectCopy.transform.SetParent(bubbleView.transform, true);
-
-            var timerRect = (RectTransform)objectCopy.transform;
-            var timerWorldPos = timerRect.position;
-            timerRect.anchorMin = timerRect.anchorMax = Vector2.zero;
-            timerRect.position = timerWorldPos;
-            bubbleView.SetBubbleSide(FellingSide.Left);
-            bubbleView.SetBubbleAnchor(timerRect.anchoredPosition);
-
-            bubbleView.OnBubbleClick += () =>
-            {
-                if (objectCopy != null)
-                    Object.Destroy(objectCopy);
-            };
+            var bubbleRect = _tutorialCanvas.bubbleView.bubble;
+            bubbleRect.anchorMin = mask.anchorMin;
+            bubbleRect.anchorMax = mask.anchorMax;
+            var rect = mask.rect;
+            var x = rect.width / 2 - rect.width * mask.pivot.x;
+            var y = rect.height * mask.pivot.y;
+            var anchor = mask.anchoredPosition;
+            bubbleRect.anchoredPosition = anchor + new Vector2(x, -y);
         }
 
         private void ShowBranchAware()

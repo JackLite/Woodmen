@@ -12,8 +12,7 @@ namespace Woodman.Tutorial.Bubbles
         [SerializeField]
         private TMP_Text _text;
 
-        [SerializeField]
-        private RectTransform _bubble;
+        public RectTransform bubble;
 
         [SerializeField]
         private GameObject _leftArrow;
@@ -30,7 +29,7 @@ namespace Woodman.Tutorial.Bubbles
         [SerializeField]
         private Button _button;
 
-        public float Height => _bubble.rect.height;
+        public float Height => bubble.rect.height;
         
         public event Action OnBubbleClick;
 
@@ -46,14 +45,20 @@ namespace Woodman.Tutorial.Bubbles
 
         public void SetBubbleSide(FellingSide side)
         {
-            _bubble.pivot = side == FellingSide.Left ? _leftPivot : _rightPivot;
+            bubble.pivot = side == FellingSide.Left ? _leftPivot : _rightPivot;
             _leftArrow.SetActive(side == FellingSide.Left);
             _rightArrow.SetActive(side == FellingSide.Right);
         }
 
-        public void SetBubbleAnchor(Vector3 position)
+        public void SetBubbleAnchor(Vector2 position)
         {
-            _bubble.anchoredPosition = position + Vector3.down * 50;
+            bubble.anchoredPosition = position;
+        }
+
+        public void ResetBubbleAnchor()
+        {
+            bubble.anchorMin = Vector2.zero;
+            bubble.anchorMax = Vector2.zero;
         }
 
         public void ToggleInteract(bool interactable)

@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using Woodman.Buildings;
+using Woodman.Locations.Boat;
 using Woodman.Locations.Trees;
 using Woodman.Logs;
 using Woodman.Meta;
@@ -24,6 +25,7 @@ namespace Woodman.Locations
     {
         private EcsOneData<LocationData> _locationsData;
         private EcsOneData<PlayerData> _playerData;
+        private BoatSaveService _boatSaveService;
         private BuildingsRepository _buildingsRepository;
         private LogsHeapRepository _logsHeapRepository;
         private MetaTreesRepository _treesRepository;
@@ -69,7 +71,15 @@ namespace Woodman.Locations
             ld.locationView.LoadStartedLogs(_logsHeapRepository);
             _progressionService.SetBuildingsCount(ld.locationView.GetBuildingsCount());
             if (_progressionService.IsBuildingsFinished())
+            {
                 ld.locationView.ShowBoat();
+                var locationIndex = _progressionService.GetLocationIndex();
+                var boatState = _boatSaveService.GetState(locationIndex);
+                ld.locationView.SetBoatState(boatState);
+                var logs = _boatSaveService.GetLogs(locationIndex);
+                ld.locationView.SetBoatLogs(logs, ld.locationView.GetBoatLogsForState(boatState + 1));
+            }
+
             UpdatePlayerPos(ld.locationView);
         }
 
