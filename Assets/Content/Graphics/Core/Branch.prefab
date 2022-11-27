@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc377fe5b204370a514396dacdef3d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BoosterType>k__BackingField: 0
+  <BoosterType>k__BackingField: 1
 --- !u!1001 &3194490275044344122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc377fe5b204370a514396dacdef3d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BoosterType>k__BackingField: 1
+  <BoosterType>k__BackingField: 2
 --- !u!4 &4414794674717629540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 64af6f2d88d274545bdaec376c2c4722,

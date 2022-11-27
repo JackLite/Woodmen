@@ -6,6 +6,7 @@ namespace Woodman.Felling.Tree.Generator
 {
     public class TreePieceBranchModGenerator
     {
+        private readonly int _currentLocation;
         private readonly TreeElementSettings _timeFreezeSettings;
         private readonly TreeElementSettings _restoreTimeSettings;
         private readonly TreeElementSettings _hiveSettings;
@@ -14,8 +15,9 @@ namespace Woodman.Felling.Tree.Generator
         private TreeGeneratorPossibility _restoreTimePossibility;
         private TreeGeneratorPossibility _hivePossibility;
 
-        public TreePieceBranchModGenerator(TreeGenerationSettings settings)
+        public TreePieceBranchModGenerator(TreeGenerationSettings settings, int currentLocation)
         {
+            _currentLocation = currentLocation;
             _timeFreezeSettings = settings.timeFreeze;
             _restoreTimeSettings = settings.restoreTime;
             _hiveSettings = settings.hive;
@@ -30,7 +32,7 @@ namespace Woodman.Felling.Tree.Generator
             _timeFreezePossibility = TreeGeneratorPossibilityFactory.Create(_timeFreezeSettings);
         }
 
-        public BranchModEnum GenerateBranchMod(int pieceIndex, bool isBranchSameSide)
+        public BranchModEnum GenerateBranchMod(int pieceIndex)
         {
             var typeR = Random.Range(0, 1f);
             var acc = 0f;
@@ -44,13 +46,15 @@ namespace Woodman.Felling.Tree.Generator
             return BranchModEnum.None;
         }
 
-        private static bool Check(
+        private bool Check(
             TreeElementSettings element,
             ref TreeGeneratorPossibility possibility,
             int pieceIndex,
             float random,
             ref float acc)
         {
+            if (element.startLocation > _currentLocation)
+                return false;
             var pieceDiff = pieceIndex - possibility.lastGeneratedPieceIndex;
 
             acc += possibility.possibility;

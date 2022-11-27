@@ -29,6 +29,8 @@ namespace Woodman.Tutorial.Bubbles
 
         [SerializeField]
         private Button _button;
+
+        public float Height => _bubble.rect.height;
         
         public event Action OnBubbleClick;
 
@@ -52,6 +54,11 @@ namespace Woodman.Tutorial.Bubbles
         public void SetBubbleAnchor(Vector3 position)
         {
             _bubble.anchoredPosition = position + Vector3.down * 50;
+        }
+
+        public void ToggleInteract(bool interactable)
+        {
+            _button.interactable = interactable;
         }
     }
 }

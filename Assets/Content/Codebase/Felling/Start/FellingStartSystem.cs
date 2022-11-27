@@ -1,12 +1,15 @@
+using ModulesFramework;
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
+using Woodman.Felling.SecondChance;
 
 namespace Woodman.Felling.Start
 {
     [EcsSystem(typeof(CoreModule))]
     public class FellingStartSystem : IInitSystem, IDestroySystem
     {
+        private EcsOneData<SecondChanceData> _secondChanceData;
         private DataWorld _world;
         private FellingUIProvider _fellingUIProvider;
         private FellingUi _fellingUi;
@@ -18,6 +21,11 @@ namespace Woodman.Felling.Start
             _fellingUIProvider.FellingTimerView.SetProgress(1);
             _fellingUIProvider.TreeUIProgress.SetProgress(1);
             _fellingUIProvider.TapController.OnTap += OnTap;
+            
+            ref var scd = ref _secondChanceData.GetData();
+            scd.isActive = false;
+            scd.wasShowed = false;
+            scd.remainTime = scd.totalTime;
         }
 
         private void OnTap(FellingSide side)
