@@ -63,13 +63,21 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: e9a50df14d4740c41878f5f021897f11, type: 3}
+  - {fileID: 1764801786, guid: 2f392b7685e6057409124cf3a182b70f, type: 3}
+  - {fileID: 486385009, guid: 2f392b7685e6057409124cf3a182b70f, type: 3}
   - {fileID: 21300000, guid: c44bae5aedcbe4347b7e2738c848ac16, type: 3}
   - {fileID: 21300000, guid: e37803ac36a43334ebd04703eb496bcb, type: 3}
+  - {fileID: -702922547, guid: 0a29780f0cac8d7489e93cbd0d8921ef, type: 3}
+  - {fileID: -1613901952, guid: 0a29780f0cac8d7489e93cbd0d8921ef, type: 3}
   - {fileID: 21300000, guid: 7234947f15222794b8c4878ba6f5e183, type: 3}
   m_PackedSpriteNamesToIndex:
   - cloud3
+  - WoodmanAttack_1
+  - WoodmanAttack_0
   - cloud4
   - cloud1
+  - Wood_1
+  - Wood_0
   - cloud2
   m_RenderDataMap: {}
   m_Tag: Clouds_Atlases
