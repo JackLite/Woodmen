@@ -39,7 +39,7 @@ namespace Woodman.Felling.Tree.Builder
                 branchView.Revert();
             }
 
-            _currentPiece.Branch = branchView.gameObject;
+            _currentPiece.Branch = branchView;
 
             return branchView;
         }

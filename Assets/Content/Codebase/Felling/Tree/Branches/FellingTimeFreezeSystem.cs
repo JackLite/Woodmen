@@ -38,7 +38,7 @@ namespace Woodman.Felling.Tree.Branches
             }
 
             ref var timerData = ref _timerData.GetData();
-            timerData.isFreeze = isFreeze;
+            timerData.isPaused = isFreeze;
             
             UpdateUI(isFreeze, ref timerData, unfreezeMaxTime);
         }

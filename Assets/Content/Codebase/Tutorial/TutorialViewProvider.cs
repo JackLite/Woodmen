@@ -3,7 +3,7 @@ using Woodman.Tutorial.Core.Taps;
 using Woodman.Tutorial.Meta.Joystick;
 using Woodman.Utils;
 
-namespace Woodman.Tutorial.Meta
+namespace Woodman.Tutorial
 {
     public class TutorialViewProvider : ViewProvider
     {

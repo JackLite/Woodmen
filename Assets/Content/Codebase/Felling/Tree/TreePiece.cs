@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
+using Woodman.Felling.Tree.Branches;
 
 namespace Woodman.Felling.Tree
 {
@@ -29,7 +30,7 @@ namespace Woodman.Felling.Tree
         public int TotalSize { get; private set; }
         public int Size { get; private set; }
         public float TargetY { get; set; }
-        public GameObject Branch { get; set; }
+        public BranchView Branch { get; set; }
 
         private void Start()
         {

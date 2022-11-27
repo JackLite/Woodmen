@@ -12,8 +12,8 @@
     "afterIndex": 20,
     "afterTree": 0,
     "possibilityCoef": 0.01,
-    "startPossibility": 0.03,
-    "maxPossibility": 0.6
+    "startPossibility": 0.01,
+    "maxPossibility": 0.3
   },
   "strong": {
     "afterIndex": 20,
@@ -41,6 +41,7 @@
     ]
   },
   "timeFreeze": {
+    "startLocation": 1,
     "afterIndex": 30,
     "afterTree": 0,
     "possibilityCoef": 0.0002,
@@ -48,14 +49,16 @@
     "maxPossibility": 0.2
   },
   "restoreTime": {
-    "afterIndex": 100,
+    "startLocation": 1,
+    "afterIndex": 60,
     "afterTree": 0,
     "possibilityCoef": 0.0002,
     "startPossibility": 0.05,
     "maxPossibility": 0.2
   },
   "hive": {
-    "afterIndex": 130,
+    "startLocation": 1,
+    "afterIndex": 80,
     "afterTree": 0,
     "possibilityCoef": 0.0004,
     "startPossibility": 0.2,

@@ -18,6 +18,8 @@ namespace Woodman.Tutorial.Meta.Arrows
         public void Activate()
         {
             ref var td = ref _tutorialData.GetData();
+            if (td.tutorialComplete)
+                return;                
             ref var ld = ref _locationData.GetData();
             ld.tutorialArrowsProvider.logArrow.Hide();
             ld.tutorialArrowsProvider.buildArrow.Hide();
@@ -65,6 +67,7 @@ namespace Woodman.Tutorial.Meta.Arrows
             if (!q.Any())
                 return;
             td.thirdStepComplete = true;
+            td.tutorialComplete = true;
             td.isDirty = true;
             ref var ld = ref _locationData.GetData();
             ld.tutorialArrowsProvider.buildArrow.Hide();

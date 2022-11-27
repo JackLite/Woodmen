@@ -3,7 +3,10 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using UnityEngine;
+using Woodman.Common.Delay;
+using Woodman.Common.Tweens;
 using Woodman.Felling;
+using Woodman.Felling.Taps;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Tutorial.Core.Taps;
@@ -13,14 +16,13 @@ using Woodman.Utils;
 namespace Woodman.Tutorial.Core.Bubbles
 {
     [EcsSystem(typeof(CoreTutorialModule))]
-    public class CoreTutorialTimerBubbleSystem : IInitSystem, IRunSystem, IDestroySystem
+    public class CoreTutorialBaseBubbleSystem : IInitSystem, IRunSystem, IDestroySystem
     {
         private EcsOneData<CoreTutorialData> _tutorialData;
         private EcsOneData<TreeModel> _currentTree;
         private EcsOneData<TimerData> _timerData;
         private DataWorld _world;
         private FellingUi _fellingUi;
-        private FellingUIProvider _fellingUIProvider;
         private TutorialCanvasView _tutorialCanvas;
         private TutorialSaveService _tutorialSaveService;
         private TutorialSettings _tutorialSettings;
@@ -29,21 +31,23 @@ namespace Woodman.Tutorial.Core.Bubbles
         public void Init()
         {
             _tutorialCanvas.bubbleView.OnBubbleClick += OnBubbleClick;
-            _fellingUIProvider.TapController.OnTap += OnTap;
         }
 
         public void Run()
         {
+            if (_tutorialData.GetData().baseComplete)
+                return;
             CheckTapTutorial();
+            if (_world.IsEventRaised<CutEvent>())
+                OnTap();
         }
 
         public void Destroy()
         {
             _tutorialCanvas.bubbleView.OnBubbleClick -= OnBubbleClick;
-            _fellingUIProvider.TapController.OnTap -= OnTap;
         }
 
-        private void OnTap(FellingSide side)
+        private void OnTap()
         {
             if (_tutorialData.GetData().progressComplete)
                 return;
@@ -54,7 +58,8 @@ namespace Woodman.Tutorial.Core.Bubbles
             {
                 ToggleTimerFreeze(true);
                 ShowUIBubble(_fellingUi.progress);
-
+                ProcessBubbleInteractOnShow();
+                _tutorialCanvas.Show();
                 _tutorialCanvas.ShowProgressBubble();
             }
         }
@@ -98,18 +103,38 @@ namespace Woodman.Tutorial.Core.Bubbles
 
         private void ShowBranchAware()
         {
+            var piece = GetFirstPieceWithBranch();
+            piece.Branch.gameObject.SetLayer(LayerMask.NameToLayer(_tutorialSettings.tutorialObjectsLayer), true);
+            UpdateBubblePos(piece);
+            var tween = new TweenData
+            {
+                remain = 1f,
+                update = _ => UpdateBubblePos(piece),
+                validate = () => piece != null && _tutorialCanvas != null
+            };
+            _world.NewEntity().AddComponent(tween);
+
+            _tutorialCanvas.InitRenderTexture();
+            _tutorialCanvas.ShowBranchesBubble();
+        }
+
+        private TreePiece GetFirstPieceWithBranch()
+        {
             foreach (var piece in _piecesRepository.GetPieces())
             {
                 if (!piece.IsHasBranch)
                     continue;
-                piece.Branch.SetLayer(LayerMask.NameToLayer(_tutorialSettings.tutorialObjectsLayer), true);
-                var branchWorldPos = piece.Branch.transform.position;
-                var xOffset = _tutorialSettings.branchXOffset * (piece.BranchSide == FellingSide.Left ? -1 : 1);
-                _tutorialCanvas.SetBubblePos(piece.BranchSide, branchWorldPos, xOffset);
-                break;
+                return piece;
             }
 
-            _tutorialCanvas.ShowBranchesBubble();
+            return null;
+        }
+
+        private void UpdateBubblePos(TreePiece piece)
+        {
+            var branchWorldPos = piece.Branch.transform.position;
+            var xOffset = _tutorialSettings.branchXOffset * (piece.BranchSide == FellingSide.Left ? -1 : 1);
+            _tutorialCanvas.SetBubblePos(piece.BranchSide, branchWorldPos, xOffset);
         }
 
         private void OnBubbleClick()
@@ -125,8 +150,12 @@ namespace Woodman.Tutorial.Core.Bubbles
             if (!td.branchComplete)
             {
                 td.branchComplete = true;
+                var piece = GetFirstPieceWithBranch();
+                piece.Branch.gameObject.SetLayer(piece.transform.parent.gameObject.layer, true);
                 ToggleTimerFreeze(false);
+                _tutorialCanvas.ReleaseRenderTexture();
                 _tutorialCanvas.bubbleView.Hide();
+                _tutorialCanvas.Hide();
                 return;
             }
 
@@ -134,17 +163,24 @@ namespace Woodman.Tutorial.Core.Bubbles
             {
                 td.progressComplete = true;
                 td.baseComplete = true;
+                _tutorialSaveService.Save(td);
                 ToggleTimerFreeze(false);
                 _tutorialCanvas.bubbleView.Hide();
-                _tutorialSaveService.Save(td);
+                _tutorialCanvas.Hide();
                 return;
             }
+        }
+
+        private void ProcessBubbleInteractOnShow()
+        {
+            _tutorialCanvas.bubbleView.ToggleInteract(false);
+            DelayedFactory.Create(_world, 1f, () => _tutorialCanvas.bubbleView.ToggleInteract(true));
         }
 
         private void ToggleTimerFreeze(bool state)
         {
             ref var timer = ref _timerData.GetData();
-            timer.isFreeze = state;
+            timer.isPaused = state;
         }
     }
 }

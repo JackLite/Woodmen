@@ -93,7 +93,7 @@ namespace Woodman.Felling.Taps
             }
 
             ref var td = ref _timerData.GetData();
-            if (!td.isFreeze)
+            if (!td.isPaused)
             {
                 td.remain += _fellingSettings.GetData().timeForCut;
                 td.remain = math.min(td.remain, td.totalTime);

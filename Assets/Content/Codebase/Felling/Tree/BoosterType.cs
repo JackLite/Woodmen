@@ -2,6 +2,7 @@
 {
     public enum BoosterType
     {
+        Undefined,
         TimeFreeze,
         RestoreTime
     }
