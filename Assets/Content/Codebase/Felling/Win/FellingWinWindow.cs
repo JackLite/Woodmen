@@ -78,5 +78,11 @@ namespace Woodman.Felling.Win
             _x2Group.alpha = .5f;
             _x2Group.interactable = false;
         }
+
+        public void ResetX2()
+        {
+            _x2Group.alpha = 1;
+            _x2Group.interactable = true;
+        }
     }
 }

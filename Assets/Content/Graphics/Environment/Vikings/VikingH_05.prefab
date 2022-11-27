@@ -600,9 +600,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5040874764198787765, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
+      propertyPath: _states.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040874764198787765, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
       propertyPath: _logsCount.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5040874764198787765, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: _states.Array.data[3]
+      value: 
+      objectReference: {fileID: 7496306631838084060}
     - target: {fileID: 5040874764198787765, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
       propertyPath: _logsCount.Array.data[1]
@@ -627,6 +637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VikingH_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014614604912596337, guid: 8a6c334325bc3254ba0e4cf45883414f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8043832446365156675, guid: 8a6c334325bc3254ba0e4cf45883414f,
         type: 3}
@@ -719,6 +734,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8635269905378485698}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7496306631838084060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2296447751873465886, guid: 8a6c334325bc3254ba0e4cf45883414f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8635269905378485698}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19041d8344b542f3b36d31d8b05fc204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7930094991931926570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1863363637230456296, guid: 8a6c334325bc3254ba0e4cf45883414f,
