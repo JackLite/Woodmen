@@ -105,7 +105,8 @@ Material:
     - SoftEdgeAlpha: 0.323
     - SoftEdgeFalloff: 0.58
     - SoftEdgeSize: 19
-    - _Alpha: 1
+    - _: 0
+    - _Alpha: 2
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
@@ -130,6 +131,7 @@ Material:
     - _EnvironmentReflections: 1
     - _FlipbookBlending: 0
     - _FlipbookMode: 0
+    - _Float: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossinessSource: 0

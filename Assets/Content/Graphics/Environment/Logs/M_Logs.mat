@@ -114,7 +114,8 @@ Material:
     - SoftEdgeAlpha: 0.4
     - SoftEdgeFalloff: 0.5
     - SoftEdgeSize: 20
-    - _Alpha: 1
+    - _: 0
+    - _Alpha: 2
     - _AlphaClip: 0
     - _Blend: 0
     - _BlinkSlider: 0
@@ -127,6 +128,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _Float: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0

@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8075493704229397741
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Viking_House_2
+  m_Name: New Material
   m_Shader: {fileID: -6465566751694194690, guid: a4aec2d89ff109847a39df6cf26a33e5,
     type: 3}
   m_ValidKeywords: []
@@ -21,8 +34,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AOTexture:
+        m_Texture: {fileID: 2800000, guid: 7b0fe415d2e26f648bc375fd8c10c702, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 7640d8e3a3b03de41a551da994c4a48e, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -45,12 +62,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _EmmisTex:
-        m_Texture: {fileID: 2800000, guid: a639d5432619690428ff44d54600e12a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a639d5432619690428ff44d54600e12a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 28a6040c6edbdb8458ee4eb34d4600ff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -91,16 +104,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - HardEdgeAlpha: 0.066
-    - HardEdgeFalloff: 0.533
-    - HardEdgeSize: 0.682
-    - SoftEdgeAlpha: 0.323
-    - SoftEdgeFalloff: 0.58
-    - SoftEdgeSize: 19
-    - _Alpha: 2
+    - HardEdgeAlpha: 0
+    - HardEdgeFalloff: 0
+    - HardEdgeSize: 0.4
+    - SoftEdgeAlpha: 0
+    - SoftEdgeFalloff: 0
+    - SoftEdgeSize: 28
+    - _AOBlend: 0.6
+    - _Alpha: 1
     - _AlphaClip: 0
     - _Blend: 0
-    - _BlendOp: 0
     - _BlinkSlider: 0
     - _BuildGlow: 0
     - _BumpScale: 1
@@ -114,51 +127,33 @@ Material:
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
-    - _GlossinessSource: 0
     - _GlossyReflections: 0
-    - _LightScalar: 1
+    - _LightScalar: 1.09
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RampLevels: 2
+    - _RampLevels: 5
     - _ReceiveShadows: 1
-    - _SampleGI: 0
-    - _Shininess: 0
     - _Smoothness: 0.5
-    - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
-    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Transparent: 1
+    - _Transparent: 0
+    - _UseAO: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - HardEdgeColor: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 0}
-    - SoftEdgeColor: {r: 0.26312745, g: 0.6886792, b: 0.60974526, a: 0}
+    - HardEdgeColor: {r: 1, g: 1, b: 1, a: 0}
+    - SoftEdgeColor: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BlinkColor: {r: 1, g: 0.9803922, b: 0.682353, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Color_1: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HighColor: {r: 2.670157, g: 2.670157, b: 2.670157, a: 0}
+    - _HighColor: {r: 2, g: 2, b: 2, a: 0}
     - _LowColor: {r: 0.8408964, g: 0.8408964, b: 0.8408964, a: 0}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &7681793053602621161
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5

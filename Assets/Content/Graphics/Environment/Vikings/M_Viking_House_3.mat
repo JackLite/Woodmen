@@ -97,11 +97,12 @@ Material:
     - SoftEdgeAlpha: 0.323
     - SoftEdgeFalloff: 0.58
     - SoftEdgeSize: 19
-    - _Alpha: 1
+    - _Alpha: 2
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
     - _BlinkSlider: 0
+    - _BuildGlow: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -132,7 +133,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Transparent: 0
+    - _Transparent: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
