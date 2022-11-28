@@ -7,6 +7,7 @@ namespace Woodman.Settings
     {
         public float transparencyTime = 0.6f;
         public float transparencyValue = 2;
+        public float delay;
         public float blinkTime = 1f;
         public float blinkValue = 1;
     }

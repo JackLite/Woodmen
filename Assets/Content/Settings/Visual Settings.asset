@@ -60,6 +60,7 @@ MonoBehaviour:
   buildingSettings:
     transparencyTime: 0.6
     transparencyValue: 2
+    delay: 2
     blinkTime: 1
     blinkValue: 1
   fallSpeed: 10
