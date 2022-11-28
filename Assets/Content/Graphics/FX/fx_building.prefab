@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8438871515430744968}
   - component: {fileID: 7988322454813290450}
   - component: {fileID: 5495969778929321046}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: vfx`
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299923222895727329}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.42, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.10654761, y: -0, z: -0, w: 0.99430764}
+  m_LocalPosition: {x: 0.01, y: 1.57, z: 2.28}
+  m_LocalScale: {x: 0.64645, y: 0.64645, z: 0.64645}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3349096598714842986}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.233, y: 0, z: 0}
 --- !u!198 &7988322454813290450
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4632,7 +4632,7 @@ GameObject:
   - component: {fileID: 8149936878799221224}
   - component: {fileID: 6566086980282916210}
   - component: {fileID: 5336648140594551853}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: vfx`
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4647,7 +4647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3371493145184586643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.86}
+  m_LocalPosition: {x: 0.23, y: 0.87, z: 1.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9226,7 +9226,7 @@ GameObject:
   - component: {fileID: 4804534359598828609}
   - component: {fileID: 8223143817715579640}
   - component: {fileID: 4967511024809362990}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: vfx`.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9241,7 +9241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4013928162521418988}
   m_LocalRotation: {x: 0.106305994, y: -0, z: -0, w: 0.99433345}
-  m_LocalPosition: {x: 0, y: 3.55, z: 2}
+  m_LocalPosition: {x: 0, y: 1.8499992, z: 0.5699997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9402,7 +9402,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -13910,7 +13910,7 @@ GameObject:
   - component: {fileID: 61343132536287493}
   - component: {fileID: 6605854711691354659}
   - component: {fileID: 2835134177123619444}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: vfx`.2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13925,7 +13925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5436695875941486381}
   m_LocalRotation: {x: 0.106305994, y: -0, z: -0, w: 0.99433345}
-  m_LocalPosition: {x: 0, y: 3.68, z: 0.53}
+  m_LocalPosition: {x: 0, y: 3.18, z: -0.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14086,7 +14086,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14148,7 +14148,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.25
+      scalar: 1.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14201,7 +14201,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14412,7 +14412,7 @@ ParticleSystem:
     randomizeRotationDirection: 0
     maxNumParticles: 1
     customEmitterVelocity: {x: 0, y: 0, z: 0}
-    size3D: 0
+    size3D: 1
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
@@ -18707,7 +18707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4826990515901059948}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18721,13 +18721,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8593103989685432276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37, y: 0, z: 0.52}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.20479809, y: -0, z: -0, w: 0.9788043}
+  m_LocalPosition: {x: -0.46, y: 1.0706, z: 2.5582}
+  m_LocalScale: {x: 0.62877, y: 0.62877, z: 0.62877}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4804534359598828609}
   - {fileID: 61343132536287493}
   m_Father: {fileID: 3349096598714842986}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 23.635, y: 0, z: 0}
