@@ -138,11 +138,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 75
-  _inputThreshold: 0.3
+  _inputThreshold: 0
+  _sensitivity: 0.8
   _rigidbody: {fileID: 7700761873809558510}
   _character: {fileID: 7700761873376552662}
   _animator: {fileID: 7700761873384065342}
-  _animationSpeedFactor: 2
 --- !u!136 &7700761873809558511
 CapsuleCollider:
   m_ObjectHideFlags: 0
