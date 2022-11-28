@@ -2,6 +2,7 @@
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Common;
+using Woodman.Common.Delay;
 using Woodman.Common.Tweens;
 using Woodman.Settings;
 
@@ -36,7 +37,7 @@ namespace Woodman.Buildings
                 remain = settings.blinkTime,
                 update = r =>
                 {
-                    var blink = (settings.blinkTime - r) / settings.blinkTime * 1;
+                    var blink = (settings.blinkTime - r) / settings.blinkTime * settings.blinkValue;
                     stateView.SetBlink(blink);
                 },
                 validate = () => ev.buildingView != null,
@@ -54,8 +55,8 @@ namespace Woodman.Buildings
                 remain = settings.transparencyTime,
                 update = r =>
                 {
-                    var transparency = (settings.transparencyTime - r) / settings.transparencyTime * 2;
-                    stateView.SetTransparency(2 - transparency);
+                    var transparency = (settings.transparencyTime - r) / settings.transparencyTime * settings.transparencyValue;
+                    stateView.SetTransparency(settings.transparencyValue - transparency);
                 },
                 validate = () => ev.buildingView != null,
                 onEnd = () =>
@@ -63,10 +64,16 @@ namespace Woodman.Buildings
                     ev.buildingView.GetState(ev.newState).SetTransparency(0);
                     ev.buildingView.SetState(ev.newState);
                     ev.buildingView.SetLogs(0, ev.nextStateLogs);
-                    TransparencyUp(ev);
+                    DelayedTransparencyUp(ev);
                 }
             };
             _world.NewEntity().AddComponent(tween);
+        }
+
+        private void DelayedTransparencyUp(BuildingChangeStateEvent ev)
+        {
+            var settings = _visual.buildingSettings;
+            DelayedFactory.Create(_world, settings.delay, () => TransparencyUp(ev));
         }
 
         private void TransparencyUp(BuildingChangeStateEvent ev)
@@ -78,7 +85,7 @@ namespace Woodman.Buildings
                 remain = settings.transparencyTime,
                 update = r =>
                 {
-                    var transparency = (settings.transparencyTime - r) / settings.transparencyTime * 2;
+                    var transparency = (settings.transparencyTime - r) / settings.transparencyTime * settings.transparencyValue;
                     stateView.SetTransparency(transparency);
                 },
                 validate = () => ev.buildingView != null,

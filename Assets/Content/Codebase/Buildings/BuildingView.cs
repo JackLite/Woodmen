@@ -1,10 +1,12 @@
 using System;
 using System.Threading.Tasks;
 #if UNITY_EDITOR
+using ModulesFrameworkUnity;
 using UnityEditor;
 #endif
 using UnityEngine;
 using Woodman.Common.UI;
+using Woodman.Utils;
 using Logger = Woodman.Utils.Logger;
 
 namespace Woodman.Buildings
@@ -142,5 +144,19 @@ namespace Woodman.Buildings
         {
             return _states[state];
         }
+        
+        #if UNITY_EDITOR
+        [ContextMenu("Show building effect")]
+        private void ShowBuildingEffect()
+        {
+            EcsWorldContainer.World.CreateEvent(new BuildingChangeStateEvent()
+            {
+                buildingView = this,
+                newState = 2,
+                nextStateLogs = 0,
+                onFinishBuilding = () => { }
+            });
+        }
+        #endif
     }
 }
