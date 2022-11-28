@@ -18,17 +18,17 @@ namespace Woodman.Tutorial.Meta.Arrows
         public void Activate()
         {
             ref var td = ref _tutorialData.GetData();
-            if (td.tutorialComplete)
-                return;                
-            ref var ld = ref _locationData.GetData();
-            ld.tutorialArrowsProvider.logArrow.Hide();
-            ld.tutorialArrowsProvider.buildArrow.Hide();
+            var arrowsProvider = _locationData.GetData().tutorialArrowsProvider;
+            arrowsProvider.logArrow.Hide();
+            arrowsProvider.buildArrow.Hide();
+
             if (td.tutorialComplete || !td.firstStepComplete)
                 return;
+
             if (!td.secondStepComplete)
-                ld.tutorialArrowsProvider.logArrow.Show();
+                arrowsProvider.logArrow.Show();
             else if (!td.thirdStepComplete)
-                ld.tutorialArrowsProvider.buildArrow.Show();
+                arrowsProvider.buildArrow.Show();
         }
 
         public void Run()
@@ -54,7 +54,7 @@ namespace Woodman.Tutorial.Meta.Arrows
             ld.tutorialArrowsProvider.logArrow.Hide();
             ld.tutorialArrowsProvider.buildArrow.Show();
         }
-        
+
         private void CheckBuildArrow()
         {
             ref var td = ref _tutorialData.GetData();
