@@ -10,6 +10,7 @@ using Woodman.Felling.Taps;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Branches;
+using Woodman.Player.PlayerResources;
 
 namespace Woodman.Felling.Lose
 {
@@ -21,6 +22,7 @@ namespace Woodman.Felling.Lose
         private EcsOneData<SecondChanceData> _secondChanceData;
         private EcsOneData<TreeModel> _currentTree;
         private FellingCharacterController _character;
+        private PlayerCoinsRepository _coinsRepository;
         private TreePiecesRepository _piecesRepository;
         private UiProvider _windows;
 
@@ -67,6 +69,7 @@ namespace Woodman.Felling.Lose
                     scd.isActive = true;
                     scd.loseReason = reason;
                     _windows.SecondChanceView.SetCost(5);
+                    _windows.SecondChanceView.SetCoins(_coinsRepository.GetPlayerRes());
                     var progress = 1 - (float)_piecesRepository.GetRemain() / _currentTree.GetData().size;
                     _windows.SecondChanceView.SetProgress(progress);
                     _windows.SecondChanceView.SetLoseReason(reason);

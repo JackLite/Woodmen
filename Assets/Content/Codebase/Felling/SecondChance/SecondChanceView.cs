@@ -6,11 +6,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using Woodman.Common;
 using Woodman.Felling.Lose;
+using Woodman.Player.PlayerResources;
 
 namespace Woodman.Felling.SecondChance
 {
     public class SecondChanceView : SimpleUiWindow
     {
+        [SerializeField]
+        private ResourceBarUI _coinsBar;
+        
         [SerializeField]
         private List<LoseTypeMap> _titles;
 
@@ -74,6 +78,11 @@ namespace Woodman.Felling.SecondChance
         public void SetCost(int cost)
         {
             _cost.text = "x" + cost.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public void SetCoins(int coins)
+        {
+            _coinsBar.SetCoinsCount(coins);
         }
 
         [Serializable]

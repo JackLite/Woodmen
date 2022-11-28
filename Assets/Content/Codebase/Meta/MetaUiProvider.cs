@@ -9,10 +9,10 @@ namespace Woodman.Meta
     public class MetaUiProvider : MonoBehaviour
     {
         [field: SerializeField]
-        public ResourceBarMetaUI LogsBarMetaUI { get; private set; }
+        public ResourceBarUI LogsBarMetaUI { get; private set; }
         
         [field: SerializeField]
-        public ResourceBarMetaUI CoinsBarMetaUI { get; private set; }
+        public ResourceBarUI CoinsBarMetaUI { get; private set; }
         
         [field: SerializeField]
         [field: ViewInject]

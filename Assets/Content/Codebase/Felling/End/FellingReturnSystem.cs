@@ -52,6 +52,7 @@ namespace Woodman.Felling.End
             }
 
             _coinsRepository.SubtractRes(10);
+            _uiProvider.FellingWinWindow.SetCoins(_coinsRepository.GetPlayerRes());
             ref var tm = ref _treeModel.GetData();
             foreach(var id in tm.createdHeaps)
                 _logsHeapRepository.Remove(id);
@@ -112,6 +113,7 @@ namespace Woodman.Felling.End
         public void Destroy()
         {
             _uiProvider.FellingWinWindow.OnOkBtnClick -= OnWinClick;
+            _uiProvider.FellingWinWindow.OnX2BtnClick -= OnX2Click;
             _uiProvider.FellingLoseWindow.OnHomeClick -= OnLoseClick;
             _uiProvider.FellingLoseWindow.OnRestartClick -= OnRestartClick;
             _uiProvider.PauseView.OnRestart -= OnRestartClick;

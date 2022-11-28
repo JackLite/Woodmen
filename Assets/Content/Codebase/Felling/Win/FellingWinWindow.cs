@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Woodman.Common;
+using Woodman.Player.PlayerResources;
 
 namespace Woodman.Felling.Win
 {
@@ -21,6 +22,9 @@ namespace Woodman.Felling.Win
 
         [SerializeField]
         private TMP_Text _costText;
+
+        [SerializeField]
+        private ResourceBarUI _coinsBar;
 
         [SerializeField]
         private CanvasGroup _x2Group;
@@ -71,6 +75,11 @@ namespace Woodman.Felling.Win
         public void SetCoinsCost(int coins)
         {
             _costText.text = coins.ToString();
+        }
+        
+        public void SetCoins(int coins)
+        {
+            _coinsBar.SetCoinsCount(coins);
         }
 
         public void HideX2()

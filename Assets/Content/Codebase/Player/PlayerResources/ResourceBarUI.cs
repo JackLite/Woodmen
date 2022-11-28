@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Woodman.Player.PlayerResources
 {
-    public class ResourceBarMetaUI : MonoBehaviour
+    public class ResourceBarUI : MonoBehaviour
     {
         [SerializeField]
         private TMP_Text _text;
@@ -25,11 +25,6 @@ namespace Woodman.Player.PlayerResources
                 _text.text = count.ToString(CultureInfo.InvariantCulture);
             else
                 _text.text = (count / 1000).ToString(CultureInfo.InvariantCulture) + "k";
-        }
-
-        public void SetCountAnim(int count)
-        {
-            //TODO: make animation
         }
     }
 }
