@@ -266,6 +266,7 @@ MonoBehaviour:
   _logsCount: 6400000064000000640000006400000064000000
   _progress: {fileID: 5624809599188203995}
   _vfxParent: {fileID: 4194465771318039751}
+  _animator: {fileID: 3077239417955193020}
 --- !u!1 &7596297096350694087
 GameObject:
   m_ObjectHideFlags: 0

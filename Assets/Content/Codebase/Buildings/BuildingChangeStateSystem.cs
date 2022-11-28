@@ -22,6 +22,7 @@ namespace Woodman.Buildings
                 return;
 
             ev.buildingView.ShowBuildingVFX(_poolsProvider.BuildingFxPool);
+            ev.buildingView.TriggerBuildAnimation();
             ev.buildingView.ToggleProgress(false);
             TransparencyDown(ev);
 
@@ -32,6 +33,7 @@ namespace Woodman.Buildings
         {
             var stateView = ev.buildingView.GetState(ev.newState);
             var settings = _visual.buildingSettings;
+            stateView.ToggleBlink(true);
             var tween = new TweenData
             {
                 remain = settings.blinkTime,
@@ -41,7 +43,11 @@ namespace Woodman.Buildings
                     stateView.SetBlink(blink);
                 },
                 validate = () => ev.buildingView != null,
-                onEnd = ev.onFinishBuilding
+                onEnd = () =>
+                {
+                    ev.onFinishBuilding?.Invoke();
+                    stateView.ToggleBlink(false);
+                }
             };
             _world.NewEntity().AddComponent(tween);
         }
@@ -92,6 +98,7 @@ namespace Woodman.Buildings
                 onEnd = () =>
                 {
                     ev.buildingView.HideVfx(_poolsProvider.BuildingFxPool);
+                    ev.buildingView.ResetBuildAnimation();
                     if (ev.buildingView.IsLastState(ev.newState))
                         BlinkUp(ev);
                     else

@@ -32,11 +32,15 @@ namespace Woodman.Buildings
 
         [SerializeField]
         private Transform _vfxParent;
+
+        [SerializeField]
+        private Animator _animator;
         
         private float _framesPerSecond;
 
         private int _currentCount;
         private Transform _currentBuildingVfx;
+        private static readonly int Building = Animator.StringToHash("Building");
 
         public string Id => _guid;
         public int StatesCount => _states.Length;
@@ -138,6 +142,16 @@ namespace Woodman.Buildings
         public void HideVfx(BuildingFxPool vfxPool)
         {
             vfxPool.Return(_currentBuildingVfx);
+        }
+
+        public void TriggerBuildAnimation()
+        {
+            _animator.SetTrigger(Building);
+        }
+
+        public void ResetBuildAnimation()
+        {
+            _animator.ResetTrigger(Building);
         }
 
         public BuildingStateView GetState(int state)

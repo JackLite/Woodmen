@@ -14,6 +14,7 @@ namespace Woodman.Buildings
         private Material _material;
         private static readonly int Transparent = Shader.PropertyToID("_Alpha");
         private static readonly int BlinkSlider = Shader.PropertyToID("_BlinkSlider");
+        private static readonly int UseBlink = Shader.PropertyToID("_UseBlink");
 
         private void Awake()
         {
@@ -42,6 +43,11 @@ namespace Woodman.Buildings
         public void SetBlink(float b)
         {
             _material.SetFloat(BlinkSlider, b);
+        }
+
+        public void ToggleBlink(bool isActive)
+        {
+            _material.SetFloat(UseBlink, isActive ? 1 : 0);
         }
 
         private void FillMeshRenderer()
