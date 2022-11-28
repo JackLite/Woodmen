@@ -31,7 +31,16 @@ namespace Woodman.Felling.Tree
                 return;
             var fallDelta = _visualSettings.fallSpeed * Time.deltaTime;
             pd.remainY -= fallDelta;
-            if (pd.remainY < 0) pd.remainY = 0;
+            if (pd.remainY <= 0)
+            {
+                if (_piecesRepository.GetRemain() > 0)
+                {
+                    var bottomPiece = _piecesRepository.GetBottomPiece();
+                    if (bottomPiece.IsHasBranch)
+                        bottomPiece.Branch.HideMods();
+                } 
+                pd.remainY = 0;
+            }
             foreach (var treePiece in _piecesRepository.GetPieces())
             {
                 var oldPos = treePiece.transform.position;
