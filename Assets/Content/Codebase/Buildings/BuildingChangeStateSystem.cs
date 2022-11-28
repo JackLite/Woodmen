@@ -52,10 +52,10 @@ namespace Woodman.Buildings
             var settings = _visual.buildingSettings;
             var tween = new TweenData
             {
-                remain = settings.transparencyTime,
+                remain = settings.transparencyDownTime,
                 update = r =>
                 {
-                    var transparency = (settings.transparencyTime - r) / settings.transparencyTime * settings.transparencyValue;
+                    var transparency = (settings.transparencyDownTime - r) / settings.transparencyDownTime * settings.transparencyValue;
                     stateView.SetTransparency(settings.transparencyValue - transparency);
                 },
                 validate = () => ev.buildingView != null,
@@ -82,10 +82,10 @@ namespace Woodman.Buildings
             var settings = _visual.buildingSettings;
             var tween = new TweenData
             {
-                remain = settings.transparencyTime,
+                remain = settings.transparencyUpTime,
                 update = r =>
                 {
-                    var transparency = (settings.transparencyTime - r) / settings.transparencyTime * settings.transparencyValue;
+                    var transparency = (settings.transparencyUpTime - r) / settings.transparencyUpTime * settings.transparencyValue;
                     stateView.SetTransparency(transparency);
                 },
                 validate = () => ev.buildingView != null,

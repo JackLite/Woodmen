@@ -58,7 +58,8 @@ MonoBehaviour:
   usingLogsYMax: 4
   usingLogsRotationSpeed: {x: -150, y: 150, z: 120}
   buildingSettings:
-    transparencyTime: 0.6
+    transparencyDownTime: 0.6
+    transparencyUpTime: 0.6
     transparencyValue: 2
     delay: 2
     blinkTime: 1

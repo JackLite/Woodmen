@@ -149,6 +149,12 @@ namespace Woodman.Buildings
         [ContextMenu("Show building effect")]
         private void ShowBuildingEffect()
         {
+            var newState = 2;
+            var oldState = GetState(newState - 1);
+            oldState.SetTransparency(1);
+            oldState.ToggleActive(true);
+            GetState(newState).ToggleActive(false);
+
             EcsWorldContainer.World.CreateEvent(new BuildingChangeStateEvent()
             {
                 buildingView = this,
