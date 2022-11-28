@@ -54,6 +54,7 @@ namespace Woodman.Felling.Win
                 var treeModel = _treeModel.GetData();
                 _windows.FellingWinWindow.SetLogsCount(treeModel.size);
                 _windows.FellingWinWindow.SetCoinsCost(10);
+                _windows.FellingWinWindow.SetCoins(_coinsRepository.GetPlayerRes());
                 _windows.FellingWinWindow.ResetX2();
                 _world.NewEntity().AddComponent(tweenData).AddComponent(new WinX2TweenTag());
             }

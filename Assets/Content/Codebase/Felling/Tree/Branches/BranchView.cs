@@ -106,5 +106,14 @@ namespace Woodman.Felling.Tree.Branches
             _longBranch.material = _strongMat;
             _shortBranch.material = _strongMat;
         }
+
+        public void HideMods()
+        {
+            _hive.gameObject.SetActive(false);
+            foreach (var booster in _boosters)
+            {
+                booster.Destroy();
+            }
+        }
     }
 }

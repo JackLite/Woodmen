@@ -21,5 +21,10 @@ namespace Woodman.Felling.Lose
             _homeBtn.onClick.AddListener(() => OnHomeClick?.Invoke());
             _restartBtn.onClick.AddListener(() => OnRestartClick?.Invoke());
         }
+
+        public override void Show()
+        {
+            base.Show();
+        }
     }
 }
