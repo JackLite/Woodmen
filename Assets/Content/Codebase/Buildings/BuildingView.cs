@@ -158,7 +158,7 @@ namespace Woodman.Buildings
             EcsWorldContainer.World.CreateEvent(new BuildingChangeStateEvent()
             {
                 buildingView = this,
-                newState = 2,
+                newState = 3,
                 nextStateLogs = 0,
                 onFinishBuilding = () => { }
             });
