@@ -192,14 +192,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3395029559975292131}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8568860469339460775}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &4900115495638762350
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,6 +209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8568860469339460775}
+  - component: {fileID: 5387971346510999742}
   - component: {fileID: 9060175393332546182}
   m_Layer: 0
   m_Name: BaseBoat
@@ -235,6 +236,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &5387971346510999742
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900115495638762350}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f8e53545ed308e429e13a56de6af7ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &9060175393332546182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,14 +272,12 @@ MonoBehaviour:
   _states:
   - {fileID: 3882763020445148983}
   - {fileID: 6040178005479595535}
-  - {fileID: 7726864750896650882}
+  - {fileID: 0}
   _totalLogsCount: 0
-  _logsCount: 000000002d00000096000000
+  _logsCount: 000000002d00000000000000
   _progress: {fileID: 4732520184090606708}
   _vfxParent: {fileID: 5808089480057008828}
-  _animator: {fileID: 3615383691542493672}
-  _frames: 350
-  _framesPerSecond: 60
+  _animator: {fileID: 5387971346510999742}
 --- !u!1001 &5125911697818295456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,12 +437,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f0502652118b9c46bf53866ca136490, type: 3}
---- !u!95 &3615383691542493672 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8434830644724098376, guid: 7f0502652118b9c46bf53866ca136490,
-    type: 3}
-  m_PrefabInstance: {fileID: 5125911697818295456}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4732520184090606708 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 472789516683092180, guid: 7f0502652118b9c46bf53866ca136490,
