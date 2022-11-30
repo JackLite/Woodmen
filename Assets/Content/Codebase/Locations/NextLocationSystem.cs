@@ -51,7 +51,7 @@ namespace Woodman.Locations
                 await Addressables.UnloadSceneAsync(ld.currentLocationScene).Task;
 
                 // load new location
-                _progressionService.SetLocation(_progressionService.GetLocationIndex() + 1);
+                _progressionService.ChangeLocation(_progressionService.GetLocationIndex() + 1);
                 var newLocation = _locations.locations[_progressionService.GetLocationIndex()];
                 var scene = await Addressables.LoadSceneAsync(newLocation, LoadSceneMode.Additive).Task;
                 scene.ActivateAsync();

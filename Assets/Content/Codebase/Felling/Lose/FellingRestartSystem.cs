@@ -8,6 +8,7 @@ using Woodman.Felling.SecondChance;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Generator;
+using Woodman.Progress;
 
 namespace Woodman.Felling.Lose
 {
@@ -24,6 +25,7 @@ namespace Woodman.Felling.Lose
         private TreePiecesRepository _piecesRepository;
         private UiProvider _uiProvider;
         private PauseView _pauseView;
+        private ProgressionService _progressionService;
 
         public void Init()
         {
@@ -34,7 +36,8 @@ namespace Woodman.Felling.Lose
         private void RestartFelling()
         {
             _piecesRepository.Destroy();
-            var treeModel = _currentTree.GetData();
+            ref var treeModel = ref _currentTree.GetData();
+            treeModel.size = _progressionService.GetSize();
             _characterController.ResetDead();
             _characterController.SetSide(FellingSide.Right);
             _treeGenerator.Generate(_positions.RootPos, treeModel.size, _viewProvider.Environment);

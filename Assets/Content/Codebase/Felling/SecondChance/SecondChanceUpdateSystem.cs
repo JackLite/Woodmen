@@ -3,6 +3,7 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Systems;
 using UnityEngine;
 using Woodman.Felling.Lose;
+using Woodman.Progress;
 
 namespace Woodman.Felling.SecondChance
 {
@@ -10,9 +11,10 @@ namespace Woodman.Felling.SecondChance
     public class SecondChanceUpdateSystem : IRunSystem
     {
         private EcsOneData<SecondChanceData> _secondChanceData;
-        private SecondChanceView _secondChanceView;
         private FellingLoseWindow _fellingLoseWindow;
-        
+        private ProgressionService _progressionService;
+        private SecondChanceView _secondChanceView;
+
         public void Run()
         {
             ref var d = ref _secondChanceData.GetData();
@@ -25,6 +27,7 @@ namespace Woodman.Felling.SecondChance
             {
                 d.remainTime = 0;
                 _secondChanceView.Hide();
+                _progressionService.RegisterCoreResult(false);
                 _fellingLoseWindow.Show();
             }
         }

@@ -5,6 +5,7 @@ using ModulesFramework.Systems;
 using Woodman.Felling.Lose;
 using Woodman.Felling.Timer;
 using Woodman.Player.PlayerResources;
+using Woodman.Progress;
 
 namespace Woodman.Felling.SecondChance
 {
@@ -19,6 +20,7 @@ namespace Woodman.Felling.SecondChance
         private EcsOneData<SecondChanceData> _secondChanceData;
         private DataWorld _world;
         private FellingCharacterController _characterController;
+        private ProgressionService _progressionService;
 
         public void Init()
         {
@@ -51,6 +53,7 @@ namespace Woodman.Felling.SecondChance
         {
             ref var scd = ref _secondChanceData.GetData();
             scd.isActive = false;
+            _progressionService.RegisterCoreResult(false);
             _secondChanceView.Hide();
             _fellingLoseWindow.Show();
         }
@@ -58,6 +61,7 @@ namespace Woodman.Felling.SecondChance
         public void Destroy()
         {
             _secondChanceView.OnUseSecondChance -= UseSecondChance;
+            _secondChanceView.OnSkip -= Skip;
         }
     }
 }

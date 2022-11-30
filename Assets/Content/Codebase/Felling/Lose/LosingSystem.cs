@@ -11,6 +11,7 @@ using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Branches;
 using Woodman.Player.PlayerResources;
+using Woodman.Progress;
 
 namespace Woodman.Felling.Lose
 {
@@ -23,6 +24,7 @@ namespace Woodman.Felling.Lose
         private EcsOneData<TreeModel> _currentTree;
         private FellingCharacterController _character;
         private PlayerCoinsRepository _coinsRepository;
+        private ProgressionService _progressionService;
         private TreePiecesRepository _piecesRepository;
         private UiProvider _windows;
 
@@ -59,9 +61,10 @@ namespace Woodman.Felling.Lose
             DelayedFactory.Create(_world, 1f, () =>
             {
                 ref var scd = ref _secondChanceData.GetData();
-                if (scd.wasShowed)
+                if (scd.wasShowed || _coinsRepository.GetPlayerRes() < 5)
                 {
                     _windows.FellingLoseWindow.Show();
+                    _progressionService.RegisterCoreResult(false);
                 }
                 else
                 {

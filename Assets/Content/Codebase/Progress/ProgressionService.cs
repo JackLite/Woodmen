@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using Newtonsoft.Json;
+using Unity.Mathematics;
 using UnityEngine.AddressableAssets;
+using Woodman.Felling.Tree.Progression;
 using Woodman.Locations;
 using Woodman.Utils;
 
@@ -9,13 +11,13 @@ namespace Woodman.Progress
     {
         private const string LocationsSaveKey = "core.location.current";
         private const string BuildingSaveKey = "core.building.count";
-        private const string TreeSaveKey = "core.tree.current";
+        private const string TreeProgressionKey = "core.tree.treeProgressionSaveData";
         private readonly ProgressionSettings _settings;
         private readonly LocationsSettings _locationsSettings;
         private int _currentLocation;
         private int _buildingsCount;
-        private int _currentTreeIndex;
         private int _totalBuildingsCount;
+        private TreeProgressionSaveData _treeProgression = new();
 
         public ProgressionService(ProgressionSettings settings, LocationsSettings locationsSettings)
         {
@@ -23,38 +25,61 @@ namespace Woodman.Progress
             _locationsSettings = locationsSettings;
             _currentLocation = SaveUtility.LoadInt(LocationsSaveKey);
             _buildingsCount = SaveUtility.LoadInt(BuildingSaveKey);
-            _currentTreeIndex = SaveUtility.LoadInt(TreeSaveKey);
+            if (SaveUtility.IsKeyExist(TreeProgressionKey))
+            {
+                var raw = SaveUtility.LoadString(TreeProgressionKey);
+                _treeProgression = JsonConvert.DeserializeObject<TreeProgressionSaveData>(raw);
+            }
+
             #if UNITY_EDITOR
             if (settings.debug)
             {
                 _currentLocation = settings.currentLocationIndex;
-                _currentTreeIndex = settings.currentTreeIndex;
             }
             #endif
         }
 
         public int GetSize()
         {
-            var info = _settings.treeProgressionInfo[_currentLocation];
-            if (_currentTreeIndex < info.easyTrees.Length)
-                return info.easyTrees[_currentTreeIndex];
+            var progressionInfo = _settings.treeProgressionInfo[_currentLocation];
+            var size = TreeSizeCalculator.CalculateTreeSize(
+                _treeProgression.lastResult,
+                progressionInfo,
+                _treeProgression.treesProgress);
+            _treeProgression.lastDifficult = size.difficult;
+            return size.size;
+        }
 
-            var newIndex = _currentTreeIndex - info.easyTrees.Length;
-            if (newIndex < info.middleTrees.Length)
-                return info.middleTrees[newIndex];
+        public void RegisterCoreResult(bool isWin)
+        {
+            _treeProgression.lastResult.isWin = isWin;
+            var difficultChanged = _treeProgression.lastResult.difficult != _treeProgression.lastDifficult;
+            if (isWin)
+            {
+                _treeProgression.treesProgress[_treeProgression.lastDifficult]++;
+                if (difficultChanged)
+                    _treeProgression.lastResult.count = 1;
+                else
+                    _treeProgression.lastResult.count++;
+            }
+            else
+            {
+                if (difficultChanged)
+                    _treeProgression.lastResult.count = 2;
+                else
+                    _treeProgression.lastResult.count--;
+            }
+            _treeProgression.lastResult.difficult = _treeProgression.lastDifficult;
+            _treeProgression.lastResult.count = math.clamp(_treeProgression.lastResult.count, 1, 2);
 
-            newIndex = _currentTreeIndex - info.middleTrees.Length;
-            if (newIndex < info.hardTrees.Length)
-                return info.hardTrees[newIndex];
-
-            return info.hardTrees.Last();
+            SaveUtility.SaveString(TreeProgressionKey, JsonConvert.SerializeObject(_treeProgression), true);
         }
 
         public int GetLocationIndex()
         {
             return _currentLocation;
         }
-        
+
         public AssetReference GetLocation()
         {
             return _locationsSettings.locations[_currentLocation];
@@ -66,16 +91,12 @@ namespace Woodman.Progress
             SaveUtility.SaveInt(BuildingSaveKey, _buildingsCount, true);
         }
 
-        public void SetLocation(int locationIndex)
+        public void ChangeLocation(int locationIndex)
         {
             _currentLocation = locationIndex;
-            SaveUtility.SaveInt(LocationsSaveKey, _currentLocation, true);
-        }
-
-        public void SetFell()
-        {
-            _currentTreeIndex++;
-            SaveUtility.SaveInt(TreeSaveKey, _currentTreeIndex, true);
+            _treeProgression = new TreeProgressionSaveData();
+            SaveUtility.SaveInt(LocationsSaveKey, _currentLocation);
+            SaveUtility.SaveString(TreeProgressionKey, JsonConvert.SerializeObject(_treeProgression), true);
         }
 
         public void SetBuildingsCount(int count)
