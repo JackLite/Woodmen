@@ -29,7 +29,7 @@ namespace Woodman.Felling.Win
                 return;
 
             _treesRepository.SetFell(_treesRepository.CurrentTree.Id);
-            _progressionService.SetFell();
+            _progressionService.RegisterCoreResult(true);
             _logsHeapService.SaveLogs(ref _treeModel.GetData());
             _world.DeactivateModule<FellingModule>();
             _windows.FellingUi.Hide();

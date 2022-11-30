@@ -57,7 +57,8 @@ namespace Woodman.Player.Movement.View
             _rigidbody.AddForce(direction * _speed, ForceMode.Acceleration);
             _animator.SetFloat(Speed, mg);
 
-            _character.rotation = Quaternion.LookRotation(new Vector3(delta.x, 0, delta.y));
+            if(mg != 0)
+                _character.rotation = Quaternion.LookRotation(new Vector3(delta.x, 0, delta.y));
         }
     }
 }
