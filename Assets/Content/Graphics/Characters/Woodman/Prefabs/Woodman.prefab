@@ -117,14 +117,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6241333042835828094, guid: b26d89005fff9b74596a99cdc1eeca6a,
         type: 3}
+      propertyPath: m_Quality
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6241333042835828094, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6241333042835828094, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6241333042835828094, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6241333042835828094, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ba384d134a8dff4883755bdd0b6e2d7, type: 2}
     - target: {fileID: -836642298198669774, guid: b26d89005fff9b74596a99cdc1eeca6a,
         type: 3}
+      propertyPath: m_Quality
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -836642298198669774, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -836642298198669774, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -836642298198669774, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -836642298198669774, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ba384d134a8dff4883755bdd0b6e2d7, type: 2}
+    - target: {fileID: -150009337949190703, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -150009337949190703, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -150009337949190703, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -150009337949190703, guid: b26d89005fff9b74596a99cdc1eeca6a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -134,6 +189,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CH_Woodman
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: b26d89005fff9b74596a99cdc1eeca6a,
         type: 3}
@@ -152,14 +222,59 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 22a364e606e45354bb981ef2bf74a19c, type: 2}
     - target: {fileID: 5128063986421979777, guid: b26d89005fff9b74596a99cdc1eeca6a,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1cbc94e1e3ae9ef49aabde64feb5b073, type: 2}
     - target: {fileID: 5631970234333447461, guid: b26d89005fff9b74596a99cdc1eeca6a,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631970234333447461, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631970234333447461, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631970234333447461, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cc7344c491726244d8684f42ea8658bd, type: 2}
+    - target: {fileID: 6761708314861323176, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761708314861323176, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761708314861323176, guid: b26d89005fff9b74596a99cdc1eeca6a,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6761708314861323176, guid: b26d89005fff9b74596a99cdc1eeca6a,
         type: 3}
       propertyPath: m_Materials.Array.size

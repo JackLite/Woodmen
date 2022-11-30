@@ -95,6 +95,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
+    - _CastShadows: 0
     - _CellDensity: 5
     - _Contrast: 1.76
     - _Cull: 2
@@ -116,7 +117,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossinessSource: 0
     - _GlossyReflections: 1
-    - _HeightWater: -0.01
+    - _HeightWater: -0.002
     - _Metallic: 0
     - _Mode: 0
     - _NoiseScale: 20
@@ -131,13 +132,15 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecSource: 0
     - _SpecularHighlights: 1
-    - _SpeedWater: 0.002
+    - _SpeedWater: 0.005
     - _SrcBlend: 1
     - _Surface: 0
     - _TimeCell: 1.5
     - _UVSec: 0
     - _WaterLight: -0.1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 1
     - _distance: 0.7
     - _step: 4
     - _time: 0.02

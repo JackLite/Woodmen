@@ -33,10 +33,6 @@ MonoBehaviour:
     m_Address: Assets/Content/Graphics/Environment/Building.anim
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 9c768a328d6908b4895fd270ecc9d58d
-    m_Address: Assets/Content/Shaders/TimeOffsetShader.shadergraph
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 149a2e4aaa22fa548920c1d4f6b994d9
     m_Address: Assets/Content/Graphics/Environment/Trees/Textures/t_line.png
     m_ReadOnly: 0

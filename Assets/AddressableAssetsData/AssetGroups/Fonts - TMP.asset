@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Fonts - TMP
+  m_EditorClassIdentifier: 
+  m_GroupName: Fonts - TMP
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 822600ed8259e714b9f335e6282ccfdb
+  m_SerializeEntries:
+  - m_GUID: b0f2c81d8d877e94082ac01cc4824634
+    m_Address: Fonts & Materials/PassionOne SDF
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 67da3467ae267c84b821af2b88d84882
+    m_Address: Fonts & Materials/PassionOne SDF - NormalShadow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1d34202fd31daa44aad9a8c07616d6db
+    m_Address: Fonts & Materials/PassionOne SDF - Outline 1px
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f766ffbcc2316464ba653320f333f52d
+    m_Address: Fonts & Materials/PassionOne SDF - Outline 2px
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9a5452b436b0fb54191afd1ca7be3863
+    m_Address: Fonts & Materials/PassionOne SDF - SmallShadow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9a2d99704654e4141b737c22eabd6938
+    m_Address: Fonts & Materials/PassionOne SDF - SoftShadow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3ce070a44262d0b4bb338302456523f7
+    m_Address: Fonts & Materials/PassionOne-Bold SDF - NormalShadow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 80c3d75bc7b8f0f44a3cf892b2acdaeb
+    m_Address: Fonts & Materials/PassionOne-Bold SDF - SoftShadow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 20306920a98d4b34bb9d60ddcd804e38, type: 2}
+    - {fileID: 11400000, guid: e0346c75d31df2641a6fff537afb57c2, type: 2}
