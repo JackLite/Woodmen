@@ -66,7 +66,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5545051626165628764}
   - component: {fileID: 921766312106820490}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 2710610259109908665}
   - component: {fileID: 4770608435159482872}
   - component: {fileID: 6832376844878131794}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Hive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8009322887836928518}
   - component: {fileID: 9093643426263567949}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1e32cc15002517d4082f19a0d773510a,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1e32cc15002517d4082f19a0d773510a,
         type: 3}
@@ -564,7 +564,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e3380812e10cb79448821c974541c4f2,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e3380812e10cb79448821c974541c4f2,
         type: 3}
@@ -679,7 +679,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 64af6f2d88d274545bdaec376c2c4722,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 64af6f2d88d274545bdaec376c2c4722,
         type: 3}
@@ -827,7 +827,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e3380812e10cb79448821c974541c4f2,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e3380812e10cb79448821c974541c4f2,
         type: 3}
