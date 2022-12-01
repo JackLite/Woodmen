@@ -9,7 +9,7 @@ namespace Woodman.Felling.Tree.Branches
 
         public void Destroy()
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
