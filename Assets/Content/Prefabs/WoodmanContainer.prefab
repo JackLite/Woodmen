@@ -750,6 +750,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 166966774450818040, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 166966774450818040, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 166966774450818040, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177618881924105039, guid: a9a1333964c1bd94d855c53081841cb1,
         type: 3}
       propertyPath: m_Layer
@@ -980,6 +995,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4436824829655843880, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_Quality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436824829655843880, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436824829655843880, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436824829655843880, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4571901752463546657, guid: a9a1333964c1bd94d855c53081841cb1,
         type: 3}
       propertyPath: m_Layer
@@ -1035,6 +1070,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5271175178385396994, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271175178385396994, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271175178385396994, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5383886710546900835, guid: a9a1333964c1bd94d855c53081841cb1,
         type: 3}
       propertyPath: m_Layer
@@ -1065,6 +1115,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6042171537266445355, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042171537266445355, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042171537266445355, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6158695355253374190, guid: a9a1333964c1bd94d855c53081841cb1,
         type: 3}
       propertyPath: m_Layer
@@ -1075,6 +1140,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6546077784842507151, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546077784842507151, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546077784842507151, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6727419782318737374, guid: a9a1333964c1bd94d855c53081841cb1,
         type: 3}
       propertyPath: m_Layer
@@ -1084,6 +1164,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958965521569321112, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_Quality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958965521569321112, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958965521569321112, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958965521569321112, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7002836915928983139, guid: a9a1333964c1bd94d855c53081841cb1,
         type: 3}
@@ -1124,6 +1224,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573822346920055675, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573822346920055675, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573822346920055675, guid: a9a1333964c1bd94d855c53081841cb1,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7678137676659365430, guid: a9a1333964c1bd94d855c53081841cb1,
         type: 3}

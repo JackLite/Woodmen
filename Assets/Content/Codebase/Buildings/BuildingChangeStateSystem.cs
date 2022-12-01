@@ -21,7 +21,8 @@ namespace Woodman.Buildings
             if (!q.TrySelectFirst(out BuildingChangeStateEvent ev))
                 return;
 
-            ev.buildingView.ShowBuildingVFX(_poolsProvider.BuildingFxPool);
+            var state = ev.buildingView.GetState(ev.newState);
+            ev.buildingView.ShowBuildingVFX(_poolsProvider.BuildingFxPool, state);
             ev.buildingView.TriggerBuildAnimation();
             ev.buildingView.ToggleProgress(false);
             TransparencyDown(ev);

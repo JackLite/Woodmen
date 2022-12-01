@@ -57,5 +57,11 @@ namespace Woodman.Buildings
             EditorUtility.SetDirty(this);
             #endif
         }
+
+        public Mesh GetMesh()
+        {
+            //todo: заменить ссылкой когда будет скрипт быстрой сборки домиков
+            return _meshRenderer.GetComponent<MeshFilter>().mesh;
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace Woodman.Buildings
         private float _framesPerSecond;
 
         private int _currentCount;
-        private Transform _currentBuildingVfx;
+        private BuildingVFX _currentBuildingVfx;
         private static readonly int Building = Animator.StringToHash("Building");
 
         public string Id => _guid;
@@ -129,13 +129,15 @@ namespace Woodman.Buildings
             return state >= StatesCount - 1;
         }
 
-        public void ShowBuildingVFX(BuildingFxPool vfxPool)
+        public void ShowBuildingVFX(BuildingFxPool vfxPool, BuildingStateView stateView)
         {
             _currentBuildingVfx = vfxPool.Get();
-            _currentBuildingVfx.SetParent(_vfxParent);
-            _currentBuildingVfx.localPosition = Vector3.zero;
-            _currentBuildingVfx.localRotation = Quaternion.identity;
+            var vfxTransform = _currentBuildingVfx.transform;
+            vfxTransform.SetParent(_vfxParent);
+            vfxTransform.localPosition = Vector3.zero;
+            vfxTransform.localRotation = Quaternion.identity;
             _currentBuildingVfx.gameObject.SetActive(false);
+            _currentBuildingVfx.SetMesh(stateView.GetMesh());
             _currentBuildingVfx.gameObject.SetActive(true);
         }
 
