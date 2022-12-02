@@ -295,7 +295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5507215066618149732
 RectTransform:
   m_ObjectHideFlags: 0
@@ -679,7 +679,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -9.0515, y: 0}
   m_SizeDelta: {x: 28.1029, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -755,8 +755,8 @@ RectTransform:
   m_Father: {fileID: 7172817733454575065}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -11.085907, y: -0.8232}
   m_SizeDelta: {x: 46.1526, y: 19.5756}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -878,7 +878,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 53.429333}
-  m_SizeDelta: {x: 752, y: 943.2097}
+  m_SizeDelta: {x: 752, y: 659}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &3396103535926882303
 CanvasGroup:
@@ -1002,7 +1002,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -9.0515, y: 0}
   m_SizeDelta: {x: 28.1029, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1227,8 +1227,8 @@ RectTransform:
   m_Father: {fileID: 6390143004304026046}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -11.085907, y: -0.8232}
   m_SizeDelta: {x: 46.1526, y: 19.5756}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1669,8 +1669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -74.7, y: 59.8}
-  m_SizeDelta: {x: 80, y: 29}
+  m_AnchoredPosition: {x: -110.97876, y: 67.944214}
+  m_SizeDelta: {x: 152.5575, y: 45.2884}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1291733599072752424
 CanvasRenderer:
@@ -1702,9 +1702,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: v.1.1.1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
-  m_sharedMaterial: {fileID: -7824143165930722319, guid: f3d0bd57f5d43d144921de1c5753c2a2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0f2c81d8d877e94082ac01cc4824634, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 67da3467ae267c84b821af2b88d84882, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1728,8 +1727,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1930,17 +1929,17 @@ PrefabInstance:
     - target: {fileID: 748977227272581085, guid: 3921c7707b054e74b9e57874f441ba7f,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.8078432
+      value: 0.8980392
       objectReference: {fileID: 0}
     - target: {fileID: 748977227272581085, guid: 3921c7707b054e74b9e57874f441ba7f,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.73333335
+      value: 0.5411765
       objectReference: {fileID: 0}
     - target: {fileID: 748977227272581085, guid: 3921c7707b054e74b9e57874f441ba7f,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.3921569
+      value: 0.654902
       objectReference: {fileID: 0}
     - target: {fileID: 748977227272581085, guid: 3921c7707b054e74b9e57874f441ba7f,
         type: 3}
@@ -2040,7 +2039,7 @@ PrefabInstance:
     - target: {fileID: 1896908060936911701, guid: 3921c7707b054e74b9e57874f441ba7f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -180
+      value: -56
       objectReference: {fileID: 0}
     - target: {fileID: 1896908060936911701, guid: 3921c7707b054e74b9e57874f441ba7f,
         type: 3}
@@ -2445,6 +2444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TermofService
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558448823557513003, guid: 3921c7707b054e74b9e57874f441ba7f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1896908060936911701, guid: 3921c7707b054e74b9e57874f441ba7f,
         type: 3}

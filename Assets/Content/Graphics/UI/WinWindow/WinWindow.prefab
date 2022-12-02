@@ -556,6 +556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2861097041348834228}
+  - component: {fileID: 7251352523777615182}
   m_Layer: 0
   m_Name: Bar
   m_TagString: Untagged
@@ -584,6 +585,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -79.5}
   m_SizeDelta: {x: 205.39, y: 79}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &7251352523777615182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084587839559546831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConformX: 1
+  ConformY: 1
+  Logging: 0
 --- !u!1 &3229637419267659830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,7 +2106,7 @@ PrefabInstance:
     - target: {fileID: 2995155479191129149, guid: 2bd8e6aaf0b407e4da961760a6fc8138,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -0
+      value: 30.2142
       objectReference: {fileID: 0}
     - target: {fileID: 2995155479191129149, guid: 2bd8e6aaf0b407e4da961760a6fc8138,
         type: 3}
@@ -2100,7 +2116,7 @@ PrefabInstance:
     - target: {fileID: 2995155479191129149, guid: 2bd8e6aaf0b407e4da961760a6fc8138,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 9.064194
       objectReference: {fileID: 0}
     - target: {fileID: 2995155479191129149, guid: 2bd8e6aaf0b407e4da961760a6fc8138,
         type: 3}
