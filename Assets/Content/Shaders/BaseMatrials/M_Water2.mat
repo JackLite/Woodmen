@@ -107,7 +107,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _CellDensity: 5
+    - _CellDensity: 10
     - _Contrast: 1.76
     - _Cull: 2
     - _Cutoff: 0.5
@@ -117,8 +117,8 @@ Material:
     - _DstBlend: 0
     - _FadeStepContrast: -0.25
     - _Float: 0.05
-    - _Float_1: 0.84
-    - _Float_2: 0.24
+    - _Float_1: 0.8
+    - _Float_2: 0.9
     - _Float_3: 0.05
     - _Foam: -0.03
     - _FoamDistance: 10
@@ -154,16 +154,16 @@ Material:
     - _step: 4
     - _time: 0.02
     m_Colors:
-    - _BaseColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+    - _BaseColor: {r: 0.5176471, g: 0.5176471, b: 0.5176471, a: 1}
     - _BaseColor_1: {r: 0, g: 0.58146906, b: 0.93333334, a: 1}
-    - _Color: {r: 0, g: 0.5867772, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color_1: {r: 0, g: 1, b: 0.6866684, a: 1}
     - _Color_2: {r: 1, g: 1, b: 1, a: 0}
     - _DepthFadeColor: {r: 0.3912068, g: 0.5796048, b: 0.6981132, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _Tiling: {r: 5, g: 5, b: 0, a: 0}
-    - _Tiling_1: {r: 30, g: 20, b: 0, a: 0}
+    - _Tiling_1: {r: 20, g: 100, b: 0, a: 0}
     - _Vector2: {r: 1, g: 1, b: 0, a: 0}
     - _Vector2_1: {r: 0, g: 0, b: 0, a: 0}
     - _Vector4: {r: 1.69, g: 0, b: 0.59, a: 0}
