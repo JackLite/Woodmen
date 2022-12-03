@@ -1,10 +1,10 @@
 using UnityEngine;
 using Woodman.Common.UI;
 using Woodman.Felling;
-using Woodman.Felling.Lose;
+using Woodman.Felling.Finish.Lose;
+using Woodman.Felling.Finish.Win;
 using Woodman.Felling.Pause;
 using Woodman.Felling.SecondChance;
-using Woodman.Felling.Win;
 using Woodman.Loading;
 using Woodman.Meta;
 using Woodman.Settings;

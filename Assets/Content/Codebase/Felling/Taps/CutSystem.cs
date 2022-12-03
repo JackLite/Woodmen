@@ -4,11 +4,11 @@ using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
 using UnityEngine;
+using Woodman.Felling.Finish.Win;
 using Woodman.Felling.Settings;
 using Woodman.Felling.Taps.CutFx;
 using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
-using Woodman.Felling.Win;
 
 namespace Woodman.Felling.Taps
 {
@@ -50,17 +50,20 @@ namespace Woodman.Felling.Taps
 
         private void Cut(FellingSide fellingSide)
         {
+            ref var tree = ref _currentTree.GetData();
+            tree.progress = 1 - (float)_treePiecesRepository.GetRemain() / tree.size;
             _characterController.SetSide(fellingSide);
             if (CheckGameOver())
             {
                 _world.NewEntity().AddComponent(new BranchCollide());
                 return;
             }
+
             #if UNITY_EDITOR
             if (Input.GetKey(KeyCode.Space))
             {
                 _treePiecesRepository.Destroy();
-                UpdateProgressUI();
+                _fellingUIProvider.TreeUIProgress.SetProgress(1 - tree.progress);
                 _characterController.SetSide(FellingSide.Right);
                 _world.CreateOneFrame().AddComponent(new WinEvent());
                 return;
@@ -77,7 +80,7 @@ namespace Woodman.Felling.Taps
                 {
                     size = piece.TotalSize
                 });
-                UpdateProgressUI();
+                _fellingUIProvider.TreeUIProgress.SetProgress(1 - tree.progress);
                 if (_treePiecesRepository.GetRemain() == 0)
                 {
                     _characterController.SetSide(FellingSide.Right);
@@ -98,12 +101,6 @@ namespace Woodman.Felling.Taps
                 td.remain += _fellingSettings.GetData().timeForCut;
                 td.remain = math.min(td.remain, td.totalTime);
             }
-        }
-
-        private void UpdateProgressUI()
-        {
-            var remain = _treePiecesRepository.GetRemain();
-            _fellingUIProvider.TreeUIProgress.SetProgress((float)remain / _currentTree.GetData().size);
         }
 
         private bool CheckGameOver()

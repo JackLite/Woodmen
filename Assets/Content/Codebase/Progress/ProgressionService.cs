@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Linq;
+using Newtonsoft.Json;
 using Unity.Mathematics;
 using UnityEngine.AddressableAssets;
 using Woodman.Felling.Tree.Progression;
@@ -12,8 +13,10 @@ namespace Woodman.Progress
         private const string LocationsSaveKey = "core.location.current";
         private const string BuildingSaveKey = "core.building.count";
         private const string TreeProgressionKey = "core.tree.treeProgressionSaveData";
+
         private readonly ProgressionSettings _settings;
         private readonly LocationsSettings _locationsSettings;
+
         private int _currentLocation;
         private int _buildingsCount;
         private int _totalBuildingsCount;
@@ -39,15 +42,20 @@ namespace Woodman.Progress
             #endif
         }
 
-        public int GetSize()
+        public TreeSize GetSize()
         {
             var progressionInfo = _settings.treeProgressionInfo[_currentLocation];
             var size = TreeSizeCalculator.CalculateTreeSize(
                 _treeProgression.lastResult,
                 progressionInfo,
                 _treeProgression.treesProgress);
+
+            var difficultChanged = _treeProgression.lastDifficult != size.difficult;
             _treeProgression.lastDifficult = size.difficult;
-            return size.size;
+            if (difficultChanged)
+                SaveUtility.SaveString(TreeProgressionKey, JsonConvert.SerializeObject(_treeProgression), true);
+
+            return size;
         }
 
         public void RegisterCoreResult(bool isWin)
@@ -69,10 +77,35 @@ namespace Woodman.Progress
                 else
                     _treeProgression.lastResult.count--;
             }
+
             _treeProgression.lastResult.difficult = _treeProgression.lastDifficult;
             _treeProgression.lastResult.count = math.clamp(_treeProgression.lastResult.count, 1, 2);
 
             SaveUtility.SaveString(TreeProgressionKey, JsonConvert.SerializeObject(_treeProgression), true);
+        }
+
+        public int GetCurrentTreeNumber()
+        {
+            var number = 1;
+            for (var i = 0; i < _currentLocation; ++i)
+            {
+                number += _settings.treeProgressionInfo[i].easyTrees.Length;
+                number += _settings.treeProgressionInfo[i].middleTrees.Length;
+                number += _settings.treeProgressionInfo[i].hardTrees.Length;
+            }
+
+            foreach (var kvp in _treeProgression.treesProgress)
+            {
+                var count = kvp.Value;
+                number += count;
+            }
+
+            return number;
+        }
+
+        public TreeDifficult GetLastDifficult()
+        {
+            return _treeProgression.lastDifficult;
         }
 
         public int GetLocationIndex()

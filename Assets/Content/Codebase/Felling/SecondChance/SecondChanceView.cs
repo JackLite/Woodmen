@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Woodman.Common;
-using Woodman.Felling.Lose;
+using Woodman.Felling.Finish.Lose;
 using Woodman.Player.PlayerResources;
 
 namespace Woodman.Felling.SecondChance

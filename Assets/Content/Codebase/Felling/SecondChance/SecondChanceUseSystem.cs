@@ -2,10 +2,14 @@
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
-using Woodman.Felling.Lose;
+using TreeEditor;
+using Woodman.Felling.Finish;
+using Woodman.Felling.Finish.Lose;
 using Woodman.Felling.Timer;
+using Woodman.Felling.Tree;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
+using Woodman.Utils;
 
 namespace Woodman.Felling.SecondChance
 {
@@ -17,6 +21,7 @@ namespace Woodman.Felling.SecondChance
         private FellingLoseWindow _fellingLoseWindow;
         private PlayerCoinsRepository _coinsRepository;
         private EcsOneData<TimerData> _timerData;
+        private EcsOneData<TreeModel> _treeData;
         private EcsOneData<SecondChanceData> _secondChanceData;
         private DataWorld _world;
         private FellingCharacterController _characterController;
@@ -53,6 +58,12 @@ namespace Woodman.Felling.SecondChance
         {
             ref var scd = ref _secondChanceData.GetData();
             scd.isActive = false;
+            _world.CreateEvent(new FellingFinishSignal
+            {
+                reason = FellingFinishReason.Lose,
+                progress = _treeData.GetData().progress,
+                secondChanceShowed = true
+            });
             _progressionService.RegisterCoreResult(false);
             _secondChanceView.Hide();
             _fellingLoseWindow.Show();

@@ -12,8 +12,9 @@ using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Branches;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
+using Woodman.Utils;
 
-namespace Woodman.Felling.Lose
+namespace Woodman.Felling.Finish.Lose
 {
     [EcsSystem(typeof(CoreModule))]
     public class LosingSystem : IPostRunSystem
@@ -64,6 +65,12 @@ namespace Woodman.Felling.Lose
                 if (scd.wasShowed || _coinsRepository.GetPlayerRes() < 5)
                 {
                     _windows.FellingLoseWindow.Show();
+                    _world.CreateEvent(new FellingFinishSignal
+                    {
+                        reason = FellingFinishReason.Lose,
+                        progress = _currentTree.GetData().progress,
+                        secondChanceShowed = scd.wasShowed
+                    });
                     _progressionService.RegisterCoreResult(false);
                 }
                 else

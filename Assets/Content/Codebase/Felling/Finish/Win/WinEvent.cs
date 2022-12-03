@@ -1,4 +1,4 @@
-namespace Woodman.Felling.Win
+namespace Woodman.Felling.Finish.Win
 {
     public struct WinEvent
     {

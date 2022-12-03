@@ -35,7 +35,8 @@ namespace Woodman.Felling.Start
 
             _metaTrees.CurrentTree = c.treeMeta;
             var treeModel = c.treeMeta.GetTreeModel();
-            treeModel.size = _progressionService.GetSize();
+            var treeSize = _progressionService.GetSize();
+            treeModel.size = treeSize.size;
             _currentTree.SetData(treeModel);
             ref var pd = ref _playerData.GetData();
             pd.metaPos = _playerMovement.CurrentPos;

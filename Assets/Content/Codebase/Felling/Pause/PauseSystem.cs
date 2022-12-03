@@ -1,6 +1,8 @@
-﻿using ModulesFramework.Attributes;
+﻿using ModulesFramework;
+using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
+using Woodman.Felling.Tree;
 
 namespace Woodman.Felling.Pause
 {
@@ -11,8 +13,10 @@ namespace Woodman.Felling.Pause
     public class PauseSystem : IInitSystem, IDestroySystem
     {
         private DataWorld _world;
-        private PauseView _pauseView;
+        private EcsOneData<TreeModel> _tree;
         private FellingUi _fellingUi;
+        private PauseView _pauseView;
+        private TreePiecesRepository _piecesRepository;
 
         public void Init()
         {
@@ -29,7 +33,9 @@ namespace Woodman.Felling.Pause
         private void Play()
         {
             _pauseView.Hide();
-            _world.ActivateModule<FellingModule>();
+            var playerStartChop = _tree.GetData().size > _piecesRepository.GetRemain();
+            if (playerStartChop)
+                _world.ActivateModule<FellingModule>();
         }
 
         private void OnPause()

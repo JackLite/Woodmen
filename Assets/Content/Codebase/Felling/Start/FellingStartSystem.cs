@@ -3,6 +3,7 @@ using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Felling.SecondChance;
+using Woodman.Utils;
 
 namespace Woodman.Felling.Start
 {
@@ -30,7 +31,10 @@ namespace Woodman.Felling.Start
 
         private void OnTap(FellingSide side)
         {
+            if (_world.IsModuleActive<FellingModule>())
+                return;
             _fellingUIProvider.StartGameBtn.gameObject.SetActive(false);
+            _world.CreateEvent<StartFellingSignal>();
             _world.ActivateModule<FellingModule>();
         }
 
