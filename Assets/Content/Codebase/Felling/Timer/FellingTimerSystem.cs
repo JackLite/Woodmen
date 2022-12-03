@@ -27,13 +27,17 @@ namespace Woodman.Felling.Timer
                 td.remain = td.totalTime;
             }
 
+            if (td.remain <= 0)
+                return;
+
+            td.remain -= Time.deltaTime;
+
             if (td.remain <= 0 && !_world.Select<TimerEndEvent>().Any())
             {
                 _world.NewEntity().AddComponent(new TimerEndEvent());
                 return;
             }
 
-            td.remain -= Time.deltaTime;
             _uiProvider.FellingTimerView.SetProgress(td.remain / td.totalTime);
         }
     }

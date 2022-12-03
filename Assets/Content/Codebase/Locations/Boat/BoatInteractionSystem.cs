@@ -28,7 +28,7 @@ namespace Woodman.Locations.Boat
         private EcsOneData<LocationData> _locationData;
         private VisualSettings _visualSettings;
         private CharacterLogsView _characterLogsView;
-        
+
         public void Run()
         {
             var q = _world.Select<Interact>()
@@ -79,7 +79,7 @@ namespace Woodman.Locations.Boat
             };
             _world.NewEntity().AddComponent(tweenData);
         }
-        
+
         private int ProcessLogic(BuildingInteract interact, out int endLogs, out int endState)
         {
             var locationIndex = _progressionService.GetLocationIndex();
@@ -107,7 +107,7 @@ namespace Woodman.Locations.Boat
             _resRepository.SubtractRes(math.min(playerLogs, needLogs));
             return currentLogs;
         }
-        
+
         private void CreateUsingLogs(BuildingInteract interact, int logsCount, int newState, int oldState)
         {
             var createEvent = new UsingLogsCreateEvent
@@ -129,15 +129,16 @@ namespace Woodman.Locations.Boat
                     };
                     if (newState == interact.BuildingView.StatesCount - 1)
                         stateEvent.onFinishBuilding = FinishLocation;
-                    _world.CreateEvent(stateEvent);
-                    
+
                     if (newState < interact.BuildingView.StatesCount - 1)
                     {
                         var locationIndex = _progressionService.GetLocationIndex();
                         var currentState = _boatSaveService.GetState(locationIndex);
                         var nextStateLogs = interact.BuildingView.GetResForState(currentState + 1);
-                        interact.BuildingView.SetLogs(0, nextStateLogs);
+                        stateEvent.nextStateLogs = nextStateLogs;
                     }
+
+                    _world.CreateEvent(stateEvent);
                 };
             }
 

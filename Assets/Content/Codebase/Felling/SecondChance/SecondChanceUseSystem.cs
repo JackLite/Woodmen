@@ -17,6 +17,7 @@ namespace Woodman.Felling.SecondChance
     {
         private SecondChanceView _secondChanceView;
         private FellingUi _fellingUi;
+        private FellingUIProvider _fellingUIProvider;
         private FellingLoseWindow _fellingLoseWindow;
         private PlayerCoinsRepository _coinsRepository;
         private EcsOneData<TimerData> _timerData;
@@ -50,7 +51,8 @@ namespace Woodman.Felling.SecondChance
 
             _secondChanceView.Hide();
             _fellingUi.Show();
-            _world.ActivateModule<FellingModule>();
+            _fellingUIProvider.FellingTimerView.SetProgress(1);
+            _fellingUIProvider.StartGameBtn.gameObject.SetActive(true);
         }
 
         private void Skip()

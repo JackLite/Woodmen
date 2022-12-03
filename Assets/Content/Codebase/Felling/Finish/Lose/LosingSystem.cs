@@ -59,6 +59,8 @@ namespace Woodman.Felling.Finish.Lose
         {
             _windows.FellingUi.Hide();
             _character.Dead();
+            _world.DeactivateModule<FellingModule>();
+
             DelayedFactory.Create(_world, 1f, () =>
             {
                 ref var scd = ref _secondChanceData.GetData();
@@ -89,8 +91,6 @@ namespace Woodman.Felling.Finish.Lose
                         _windows.SecondChanceView.ActivateSkip();
                     });
                 }
-
-                _world.DeactivateModule<FellingModule>();
             });
         }
     }

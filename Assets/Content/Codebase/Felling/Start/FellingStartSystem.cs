@@ -33,8 +33,10 @@ namespace Woodman.Felling.Start
         {
             if (_world.IsModuleActive<FellingModule>())
                 return;
+            ref var scd = ref _secondChanceData.GetData();
             _fellingUIProvider.StartGameBtn.gameObject.SetActive(false);
-            _world.CreateEvent<StartFellingSignal>();
+            if (!scd.wasShowed)
+                _world.CreateEvent<StartFellingSignal>();
             _world.ActivateModule<FellingModule>();
         }
 
