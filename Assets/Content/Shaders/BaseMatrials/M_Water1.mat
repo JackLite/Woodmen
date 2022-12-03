@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Water_01
+  m_Name: M_Water1
   m_Shader: {fileID: -6465566751694194690, guid: e3f67b83a445f8f40acb47ca090632e0,
     type: 3}
   m_ValidKeywords: []
@@ -28,7 +28,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2999
+  m_CustomRenderQueue: 1999
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -58,6 +58,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FoamMask:
+        m_Texture: {fileID: 2800000, guid: 9bfe222e280134b498531ad6c3ad8b6d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -72,6 +76,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4c91c05cc80445148cbcd7f0867ad4aa_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a496342a2b71ce64f9df6e31cb536c56, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_fb85c3715ac14f18b84bcc880a6c12d7_Texture_1:
+        m_Texture: {fileID: 2800000, guid: deed9bb4adef6474da06782966b15354, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -95,29 +107,28 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _CastShadows: 0
-    - _CellDensity: 5
+    - _CellDensity: 10
     - _Contrast: 1.76
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DepthFade: 1.79
+    - _DepthFade: 0.12
     - _DetailNormalMapScale: 1
-    - _DistanceFade: 1.67
+    - _DistanceFade: 0.25
     - _DstBlend: 0
-    - _FadeStepContrast: 2.07
+    - _FadeStepContrast: -0.25
     - _Float: 0.05
-    - _Float_1: 0.84
-    - _Float_2: 0.24
+    - _Float_1: 0.8
+    - _Float_2: 0.9
     - _Float_3: 0.05
     - _Foam: -0.03
-    - _FoamDistance: 0.39
-    - _FoamInt: 0.07
-    - _FoamStepContrast: 0.85
+    - _FoamDistance: 10.55
+    - _FoamInt: 0.85
+    - _FoamStepContrast: 0.2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossinessSource: 0
     - _GlossyReflections: 1
-    - _HeightWater: -0.002
+    - _HeightWater: -0.02
     - _Metallic: 0
     - _Mode: 0
     - _NoiseScale: 20
@@ -132,29 +143,28 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecSource: 0
     - _SpecularHighlights: 1
-    - _SpeedWater: 0.005
+    - _SpeedWater: 0.003
     - _SrcBlend: 1
     - _Surface: 0
     - _TimeCell: 1.5
     - _UVSec: 0
     - _WaterLight: -0.1
-    - _ZTest: 4
     - _ZWrite: 1
-    - _ZWriteControl: 1
     - _distance: 0.7
     - _step: 4
     - _time: 0.02
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
     - _BaseColor_1: {r: 0, g: 0.58146906, b: 0.93333334, a: 1}
-    - _Color: {r: 0, g: 0.5867772, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color_1: {r: 0, g: 1, b: 0.6866684, a: 1}
     - _Color_2: {r: 1, g: 1, b: 1, a: 0}
-    - _DepthFadeColor: {r: 0, g: 0.6415094, b: 0.5031446, a: 1}
+    - _DepthFadeColor: {r: 0.3912068, g: 0.5796048, b: 0.6981132, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _Tiling: {r: 5, g: 5, b: 0, a: 0}
-    - _Tiling_1: {r: 5, g: 5, b: 0, a: 0}
-    - _Vector2: {r: 15, g: 15, b: 0, a: 0}
+    - _Tiling_1: {r: 20, g: 100, b: 0, a: 0}
+    - _Vector2: {r: 1, g: 1, b: 0, a: 0}
+    - _Vector2_1: {r: 0, g: 0, b: 0, a: 0}
     - _Vector4: {r: 1.69, g: 0, b: 0.59, a: 0}
   m_BuildTextureStacks: []

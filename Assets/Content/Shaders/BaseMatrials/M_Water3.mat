@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Water
+  m_Name: M_Water3
   m_Shader: {fileID: -6465566751694194690, guid: e3f67b83a445f8f40acb47ca090632e0,
     type: 3}
   m_ValidKeywords: []
@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamMask:
-        m_Texture: {fileID: 2800000, guid: deed9bb4adef6474da06782966b15354, type: 3}
+        m_Texture: {fileID: 2800000, guid: b5428a72862b61141bfba7c1b0988f9a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -116,22 +116,22 @@ Material:
     - _DistanceFade: 0.25
     - _DstBlend: 0
     - _FadeStepContrast: -0.25
-    - _Float: 0.26
-    - _Float_1: 0.8
-    - _Float_2: 0.9
+    - _Float: 0.05
+    - _Float_1: 0.84
+    - _Float_2: 0.24
     - _Float_3: 0.05
     - _Foam: -0.03
     - _FoamDistance: 10
-    - _FoamInt: 1
+    - _FoamInt: 0.8
     - _FoamStepContrast: 0.2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossinessSource: 0
     - _GlossyReflections: 1
-    - _HeightWater: -0.02
+    - _HeightWater: -0.002
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseScale: 20
+    - _NoiseScale: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
@@ -143,7 +143,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecSource: 0
     - _SpecularHighlights: 1
-    - _SpeedWater: 0.003
+    - _SpeedWater: 0.005
     - _SrcBlend: 1
     - _Surface: 0
     - _TimeCell: 1.5
@@ -154,17 +154,17 @@ Material:
     - _step: 4
     - _time: 0.02
     m_Colors:
-    - _BaseColor: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
-    - _BaseColor_1: {r: 0, g: 0.58146906, b: 0.93333334, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+    - _BaseColor_1: {r: 0, g: 0.51784027, b: 0.8301887, a: 1}
+    - _Color: {r: 0, g: 0.5867772, b: 1, a: 1}
     - _Color_1: {r: 0, g: 1, b: 0.6866684, a: 1}
     - _Color_2: {r: 1, g: 1, b: 1, a: 0}
     - _DepthFadeColor: {r: 0.3912068, g: 0.5796048, b: 0.6981132, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _Tiling: {r: 5, g: 5, b: 0, a: 0}
-    - _Tiling_1: {r: 20, g: 100, b: 0, a: 0}
-    - _Vector2: {r: 1, g: 1, b: 0, a: 0}
-    - _Vector2_1: {r: 0, g: 0, b: 0, a: 0}
+    - _Tiling_1: {r: 10, g: 15, b: 0, a: 0}
+    - _Vector2: {r: 13, g: 13, b: 0, a: 0}
+    - _Vector2_1: {r: -5.99, g: -5.35, b: 0, a: 0}
     - _Vector4: {r: 1.69, g: 0, b: 0.59, a: 0}
   m_BuildTextureStacks: []
