@@ -2,7 +2,6 @@
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
-using TreeEditor;
 using Woodman.Felling.Finish;
 using Woodman.Felling.Finish.Lose;
 using Woodman.Felling.Timer;
