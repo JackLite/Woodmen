@@ -20,6 +20,7 @@ namespace Woodman.Analytic
 
         public void PreInit()
         {
+            AppMetrica.Instance.SendEventsBuffer();
             if (AnalyticHelper.IsLevelStarted())
             {
                 var fields = CreateCommonFields();
