@@ -9,8 +9,9 @@ using Woodman.Felling.Timer;
 using Woodman.Felling.Tree;
 using Woodman.Felling.Tree.Generator;
 using Woodman.Progress;
+using Woodman.Utils;
 
-namespace Woodman.Felling.Lose
+namespace Woodman.Felling.Finish.Lose
 {
     [EcsSystem(typeof(CoreModule))]
     public class FellingRestartSystem : IInitSystem, IDestroySystem
@@ -30,14 +31,27 @@ namespace Woodman.Felling.Lose
         public void Init()
         {
             _uiProvider.FellingLoseWindow.OnRestartClick += RestartFelling;
-            _pauseView.OnRestart += RestartFelling;
+            _pauseView.OnRestart += OnRestartInPause;
+        }
+
+        private void OnRestartInPause()
+        {
+            _world.CreateEvent(new FellingFinishSignal
+            {
+                reason = FellingFinishReason.Restart,
+                progress = _currentTree.GetData().progress,
+                secondChanceShowed = _secondChanceData.GetData().wasShowed
+            });
+            RestartFelling();
         }
 
         private void RestartFelling()
         {
             _piecesRepository.Destroy();
             ref var treeModel = ref _currentTree.GetData();
-            treeModel.size = _progressionService.GetSize();
+            var treeSize = _progressionService.GetSize();
+            treeModel.size = treeSize.size;
+            treeModel.progress = 0;
             _characterController.ResetDead();
             _characterController.SetSide(FellingSide.Right);
             _treeGenerator.Generate(_positions.RootPos, treeModel.size, _viewProvider.Environment);
@@ -53,7 +67,7 @@ namespace Woodman.Felling.Lose
         public void Destroy()
         {
             _uiProvider.FellingLoseWindow.OnRestartClick -= RestartFelling;
-            _pauseView.OnRestart -= RestartFelling;
+            _pauseView.OnRestart -= OnRestartInPause;
         }
     }
 }

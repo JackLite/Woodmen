@@ -1,4 +1,4 @@
-﻿namespace Woodman.Felling.Lose
+﻿namespace Woodman.Felling.Finish.Lose
 {
     public enum LoseReason
     {

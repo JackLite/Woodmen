@@ -2,7 +2,7 @@
 using Woodman.Felling.Tree;
 using Woodman.Logs;
 
-namespace Woodman.Felling.Win
+namespace Woodman.Felling.Finish.Win
 {
     public class LogsHeapService
     {

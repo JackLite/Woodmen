@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using Woodman.Common;
 using Woodman.Player.PlayerResources;
 
-namespace Woodman.Felling.Win
+namespace Woodman.Felling.Finish.Win
 {
     public class FellingWinWindow : SimpleUiWindow
     {

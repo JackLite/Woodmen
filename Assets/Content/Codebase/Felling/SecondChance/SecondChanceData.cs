@@ -1,4 +1,4 @@
-﻿using Woodman.Felling.Lose;
+﻿using Woodman.Felling.Finish.Lose;
 
 namespace Woodman.Felling.SecondChance
 {

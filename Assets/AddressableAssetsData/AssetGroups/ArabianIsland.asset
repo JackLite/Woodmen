@@ -265,18 +265,6 @@ MonoBehaviour:
     m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianPalm_03.fbx
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: deec70a3356bc494585f8fa4f926d0e9
-    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianStump_01.fbx
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 4ef34ff0c5fe99f43bbc1e5352da9b06
-    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianStump_02.fbx
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a8e28b1f65a314146ae516fef9319fad
-    m_Address: Assets/Content/Graphics/Environment/Arabian/fbx/ArabianStump_03.fbx
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: c35cbc2de6b4b9147867494c7f1ec2ba
     m_Address: Assets/Content/Graphics/Environment/Arabian/Prefabs/ArabianBoat.prefab
     m_ReadOnly: 0
