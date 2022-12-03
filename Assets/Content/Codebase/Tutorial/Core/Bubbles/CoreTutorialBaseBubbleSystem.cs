@@ -95,6 +95,7 @@ namespace Woodman.Tutorial.Core.Bubbles
             {
                 _tutorialCanvas.ToggleTimerMask(false);
             };
+            ProcessBubbleInteractOnShow();
             _tutorialCanvas.ShowTimerBubble();
         }
 
