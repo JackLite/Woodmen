@@ -82,8 +82,16 @@ Material:
         m_Texture: {fileID: 2800000, guid: a496342a2b71ce64f9df6e31cb536c56, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a9fb5ef7e8344f1f8a1e680aeab78970_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 439df265505b92a40b23e3827ff6ced2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_fb85c3715ac14f18b84bcc880a6c12d7_Texture_1:
         m_Texture: {fileID: 2800000, guid: deed9bb4adef6474da06782966b15354, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_fc467aaa414c4eaaacd6824cd8256aa3_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 439df265505b92a40b23e3827ff6ced2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -117,8 +125,8 @@ Material:
     - _DstBlend: 0
     - _FadeStepContrast: -0.25
     - _Float: 0.05
-    - _Float_1: 0.8
-    - _Float_2: 0.9
+    - _Float_1: 0.1
+    - _Float_2: 0.18
     - _Float_3: 0.05
     - _Foam: -0.03
     - _FoamDistance: 10.55
@@ -143,7 +151,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecSource: 0
     - _SpecularHighlights: 1
-    - _SpeedWater: 0.003
+    - _SpeedWater: 0.01
     - _SrcBlend: 1
     - _Surface: 0
     - _TimeCell: 1.5
@@ -162,8 +170,8 @@ Material:
     - _DepthFadeColor: {r: 0.3912068, g: 0.5796048, b: 0.6981132, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
-    - _Tiling: {r: 5, g: 5, b: 0, a: 0}
-    - _Tiling_1: {r: 20, g: 100, b: 0, a: 0}
+    - _Tiling: {r: 53, g: 60, b: 0, a: 0}
+    - _Tiling_1: {r: 5, g: 30, b: 0, a: 0}
     - _Vector2: {r: 1, g: 1, b: 0, a: 0}
     - _Vector2_1: {r: 0, g: 0, b: 0, a: 0}
     - _Vector4: {r: 1.69, g: 0, b: 0.59, a: 0}
