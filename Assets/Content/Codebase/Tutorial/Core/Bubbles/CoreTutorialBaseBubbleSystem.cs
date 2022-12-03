@@ -107,8 +107,9 @@ namespace Woodman.Tutorial.Core.Bubbles
             var rect = mask.rect;
             var x = rect.width / 2 - rect.width * mask.pivot.x;
             var y = rect.height * mask.pivot.y;
+            var offset = (Screen.height - Screen.safeArea.height) / 2f;
             var anchor = mask.anchoredPosition;
-            bubbleRect.anchoredPosition = anchor + new Vector2(x, -y);
+            bubbleRect.anchoredPosition = anchor + new Vector2(x, -y) + Vector2.down * offset;
         }
 
         private void ShowBranchAware()

@@ -15,6 +15,6 @@ namespace Woodman.Tutorial.Core
         public bool hiveComplete;
 
         public bool baseComplete;
-        public bool isDirty;
+        public int tapsCount;
     }
 }

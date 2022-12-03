@@ -27,7 +27,8 @@ namespace Woodman.Player.Movement.View
             ref var moveData = ref _movementData.GetData();
             if (isActive)
             {
-                var pos = _uiProvider.MainCanvas.ScreenToCanvasPosition(reader.CurrentPointerPos);
+                var screenPos = RecalcScreenPos(reader.CurrentPointerPos);
+                var pos = _uiProvider.MainCanvas.ScreenToCanvasPosition(screenPos);
                 circle.SetStartPosition(pos);
             }
             else
@@ -42,7 +43,6 @@ namespace Woodman.Player.Movement.View
         public void Run()
         {
             ref var moveData = ref _movementData.GetData();
-
             if (!moveData.isMove)
                 return;
 
@@ -51,9 +51,16 @@ namespace Woodman.Player.Movement.View
             moveData.input = circleMovement.Delta;
             if (moveData.input.magnitude > 1)
                 moveData.input = moveData.input.normalized;
-            var pos = _uiProvider.MainCanvas.ScreenToCanvasPosition(reader.CurrentPointerPos);
-
+            
+            var screenPos = RecalcScreenPos(reader.CurrentPointerPos);
+            var pos = _uiProvider.MainCanvas.ScreenToCanvasPosition(screenPos);
             circleMovement.SetPosition(pos);
+        }
+
+        private Vector2 RecalcScreenPos(Vector2 screenPos)
+        {
+            var screenOffset = Screen.height - Screen.safeArea.height;
+            return screenPos + Vector2.down * screenOffset / 2;
         }
 
         public void Destroy()
