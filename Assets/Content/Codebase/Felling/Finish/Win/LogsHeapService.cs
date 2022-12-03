@@ -27,7 +27,7 @@ namespace Woodman.Felling.Finish.Win
             if (treeModel.size > bigLogsHeap)
             {
                 remain = treeModel.size % bigLogsHeap;
-                id = _logsHeapRepository.Create(LogsHeapType.Big, remain, treeModel.logsPositions[LogsHeapType.Big]);
+                id = _logsHeapRepository.Create(LogsHeapType.Big, bigLogsHeap, treeModel.logsPositions[LogsHeapType.Big]);
                 treeModel.createdHeaps.Add(id);
             }
 
