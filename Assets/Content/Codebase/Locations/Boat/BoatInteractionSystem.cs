@@ -17,7 +17,7 @@ using Woodman.Utils;
 namespace Woodman.Locations.Boat
 {
     [EcsSystem(typeof(MetaModule))]
-    public class BoatInteractionSystem : IInitSystem, IRunSystem
+    public class BoatInteractionSystem : IRunSystem
     {
         private DataWorld _world;
         private PlayerLogsRepository _resRepository;
