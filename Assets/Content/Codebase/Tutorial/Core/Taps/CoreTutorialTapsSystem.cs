@@ -12,8 +12,8 @@ namespace Woodman.Tutorial.Core.Taps
     public class CoreTutorialTapsSystem : IInitSystem, IDestroySystem
     {
         private CoreTutorialTapPositions _tapPositions;
-        private EcsOneData<CoreTutorialData> _tutorialData;
         private DataWorld _world;
+        private EcsOneData<CoreTutorialData> _tutorialData;
         private FellingUIProvider _fellingUIProvider;
         private TutorialCanvasView _tutorialCanvas;
 
@@ -45,15 +45,19 @@ namespace Woodman.Tutorial.Core.Taps
         {
             ref var td = ref _tutorialData.GetData();
             if (td.baseComplete) return;
-
+            td.tapsCount++;
+            if (td.tapsCount >= 4 && (!td.rightTapComplete || !td.leftTapComplete))
+            {
+                td.rightTapComplete = true;
+                td.leftTapComplete = true;
+                FinishTapsTutorial();
+            }
             if (side == FellingSide.Right && !td.rightTapComplete)
             {
                 td.rightTapComplete = true;
-                td.isDirty = true;
                 if (td.leftTapComplete)
                 {
-                    _tutorialCanvas.tapHand.Toggle(false);
-                    _world.CreateEvent<TutorialCoreFinishTapEvent>();
+                    FinishTapsTutorial();
                 }
                 else
                 {
@@ -64,17 +68,21 @@ namespace Woodman.Tutorial.Core.Taps
             if (side == FellingSide.Left && !td.leftTapComplete)
             {
                 td.leftTapComplete = true;
-                td.isDirty = true;
                 if (td.rightTapComplete)
                 {
-                    _tutorialCanvas.tapHand.Toggle(false);
-                    _world.CreateEvent<TutorialCoreFinishTapEvent>();
+                    FinishTapsTutorial();
                 }
                 else
                 {
                     _tutorialCanvas.tapHand.SetPosition(_tapPositions.right);
                 }
             }
+        }
+
+        private void FinishTapsTutorial()
+        {
+            _tutorialCanvas.tapHand.Toggle(false);
+            _world.CreateEvent<TutorialCoreFinishTapEvent>();
         }
 
         public void Destroy()
