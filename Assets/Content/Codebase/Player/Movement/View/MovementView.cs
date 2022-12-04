@@ -9,5 +9,11 @@ namespace Woodman.Player.Movement.View
 
         [field:SerializeField]
         public CircleMovementPlayer CircleMovement { get; private set; }
+
+        public void ToggleMove(bool state)
+        {
+            Reader.StopMove();
+            gameObject.SetActive(state);
+        }
     }
 }

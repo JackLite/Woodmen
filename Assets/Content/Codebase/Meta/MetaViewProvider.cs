@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 using Woodman.Cheats.View;
 using Woodman.Common;
-using Woodman.Loading;
 using Woodman.Logs;
 using Woodman.Logs.LogsUsing;
 using Woodman.Player;
@@ -16,11 +16,11 @@ namespace Woodman.Meta
     /// </summary>
     public class MetaViewProvider : MonoBehaviour
     {
-        [field: Header("Locations")]
+        [field: Header("Camera")]
         [field: SerializeField]
         [field: ViewInject]
-        public LocationsView LocationsView { get; private set; }
-
+        public CinemachineVirtualCamera MetaCamera { get; private set; }
+        
         [field: Header("Player")]
         [field: SerializeField]
         [field: ViewInject]

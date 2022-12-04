@@ -46,6 +46,8 @@ namespace Woodman.Cheats.Systems
                 tree.ShowTree();
                 _treesRepository.Reset(tree.Id);
             }
+
+            _progressionService.ChangeLocation(_progressionService.GetLocationIndex());
         }
     }
 }

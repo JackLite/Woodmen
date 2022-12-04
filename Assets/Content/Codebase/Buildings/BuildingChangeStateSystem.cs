@@ -1,10 +1,15 @@
-﻿using ModulesFramework.Attributes;
+﻿using System;
+using Cinemachine;
+using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
+using UnityEngine;
 using Woodman.Common;
 using Woodman.Common.Delay;
 using Woodman.Common.Tweens;
+using Woodman.Meta;
 using Woodman.Settings;
+using Woodman.Utils;
 
 namespace Woodman.Buildings
 {
@@ -12,6 +17,8 @@ namespace Woodman.Buildings
     public class BuildingChangeStateSystem : IRunSystem
     {
         private DataWorld _world;
+        private MetaViewProvider _viewProvider;
+        private MetaUiProvider _uiProvider;
         private PoolsProvider _poolsProvider;
         private VisualSettings _visual;
 
@@ -21,10 +28,12 @@ namespace Woodman.Buildings
             if (!q.TrySelectFirst(out BuildingChangeStateEvent ev))
                 return;
 
-            var state = ev.buildingView.GetState(ev.newState);
-            ev.buildingView.ShowBuildingVFX(_poolsProvider.BuildingFxPool, state);
-            ev.buildingView.TriggerBuildAnimation();
-            ev.buildingView.ToggleProgress(false);
+            var buildingView = ev.buildingView;
+            var state = buildingView.GetState(ev.newState);
+            buildingView.ShowBuildingVFX(_poolsProvider.BuildingFxPool, state);
+            buildingView.TriggerBuildAnimation();
+            buildingView.ToggleProgress(false);
+
             TransparencyDown(ev);
 
             q.DestroyAll();
@@ -46,8 +55,8 @@ namespace Woodman.Buildings
                 validate = () => ev.buildingView != null,
                 onEnd = () =>
                 {
-                    ev.onFinishBuilding?.Invoke();
                     stateView.ToggleBlink(false);
+                    ev.onFinishBuilding?.Invoke();
                 }
             };
             _world.NewEntity().AddComponent(tween);
@@ -57,12 +66,14 @@ namespace Woodman.Buildings
         {
             var stateView = ev.buildingView.GetState(ev.newState - 1);
             var settings = _visual.buildingSettings;
+            TimerStatic.time = DateTime.Now;
             var tween = new TweenData
             {
                 remain = settings.transparencyDownTime,
                 update = r =>
                 {
-                    var transparency = (settings.transparencyDownTime - r) / settings.transparencyDownTime * settings.transparencyValue;
+                    var transparency = (settings.transparencyDownTime - r) / settings.transparencyDownTime *
+                                       settings.transparencyValue;
                     stateView.SetTransparency(settings.transparencyValue - transparency);
                 },
                 validate = () => ev.buildingView != null,
@@ -85,27 +96,33 @@ namespace Woodman.Buildings
 
         private void TransparencyUp(BuildingChangeStateEvent ev)
         {
-            var stateView = ev.buildingView.GetState(ev.newState);
+            var buildingView = ev.buildingView;
+            var stateView = buildingView.GetState(ev.newState);
             var settings = _visual.buildingSettings;
             var tween = new TweenData
             {
                 remain = settings.transparencyUpTime,
                 update = r =>
                 {
-                    var transparency = (settings.transparencyUpTime - r) / settings.transparencyUpTime * settings.transparencyValue;
+                    var normalizedTransparency = (settings.transparencyUpTime - r) / settings.transparencyUpTime;
+                    var transparency = normalizedTransparency * settings.transparencyValue;
                     stateView.SetTransparency(transparency);
                 },
-                validate = () => ev.buildingView != null,
+                validate = () => buildingView != null,
                 onEnd = () =>
                 {
-                    ev.buildingView.HideVfx(_poolsProvider.BuildingFxPool);
-                    ev.buildingView.ResetBuildAnimation();
-                    if (ev.buildingView.IsLastState(ev.newState))
+                    buildingView.HideVfx(_poolsProvider.BuildingFxPool);
+                    buildingView.ResetBuildAnimation();
+                    var diff = DateTime.Now - TimerStatic.time;
+                    Debug.Log("[Animation] Building without blink takes " + diff.TotalMilliseconds + " ms");
+                    if (buildingView.IsLastState(ev.newState))
+                    {
                         BlinkUp(ev);
+                    }
                     else
                     {
+                        buildingView.ToggleProgress(true);
                         ev.onFinishBuilding?.Invoke();
-                        ev.buildingView.ToggleProgress(true);
                     }
                 }
             };

@@ -27,6 +27,11 @@ namespace Woodman.Player.Movement.View
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            StopMove();
+        }
+
+        public void StopMove()
+        {
             _isMoveStarted = false;
             OnOnChangeMoveState?.Invoke(_isMoveStarted);
         }

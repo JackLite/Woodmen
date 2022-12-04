@@ -1,14 +1,19 @@
+using Cinemachine;
 using ModulesFramework;
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
+using UnityEngine;
+using Woodman.Common.Delay;
 using Woodman.Common.Tweens;
 using Woodman.Locations;
 using Woodman.Locations.Boat;
 using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
 using Woodman.Logs.LogsUsing;
+using Woodman.Meta;
+using Woodman.Player.Movement.View;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
 using Woodman.Settings;
@@ -19,15 +24,17 @@ namespace Woodman.Buildings
     [EcsSystem(typeof(MetaModule))]
     public class BuildingInteractSystem : IRunSystem
     {
-        private DataWorld _world;
-        private PlayerLogsRepository _resRepository;
+        private BoatSaveService _boatSaveService;
+        private BuildingService _buildingService;
         private BuildingsRepository _buildingsRepository;
         private CharacterLogsView _characterLogsView;
-        private ProgressionService _progressionService;
-        private BuildingService _buildingService;
+        private DataWorld _world;
         private EcsOneData<LocationData> _locationData;
+        private MovementView _movementView;
+        private MetaViewProvider _viewProvider;
+        private PlayerLogsRepository _resRepository;
+        private ProgressionService _progressionService;
         private VisualSettings _visualSettings;
-        private BoatSaveService _boatSaveService;
 
         public void Run()
         {
@@ -122,12 +129,18 @@ namespace Woodman.Buildings
 
             if (oldState != newState)
             {
+                _movementView.ToggleMove(false);
+                UpdateCamera(interact.BuildingView.transform, .75f);
                 createEvent.onAfter = () =>
                 {
                     var changeStateEvent = new BuildingChangeStateEvent
                     {
                         buildingView = interact.BuildingView,
                         newState = newState
+                    };
+                    changeStateEvent.onFinishBuilding = () =>
+                    {
+                        ReturnToChar();
                     };
                     if (interact.BuildingView.IsLastState(newState))
                     {
@@ -159,6 +172,36 @@ namespace Woodman.Buildings
                 var logs = _boatSaveService.GetLogs(locationIndex);
                 ld.locationView.SetBoatLogs(logs, ld.locationView.GetBoatLogsForState(boatState + 1));
             }
+        }
+        
+        private void ReturnToChar()
+        {
+            SetCameraTransform(_viewProvider.WoodmanContainer.transform);
+            DelayedFactory.Create(_world, 0.75f, () =>
+            {
+                SetCameraDamping(0);
+                _movementView.ToggleMove(true);
+            });
+        }
+
+        private void UpdateCamera(Transform transform, float damping)
+        {
+            SetCameraDamping(damping);
+            SetCameraTransform(transform);
+        }
+
+        private void SetCameraDamping(float damping)
+        {
+            var transposer = _viewProvider.MetaCamera.GetCinemachineComponent<CinemachineTransposer>();
+            transposer.m_XDamping = damping;
+            transposer.m_YDamping = damping;
+            transposer.m_ZDamping = damping;
+        }
+
+        private void SetCameraTransform(Transform transform)
+        {
+            _viewProvider.MetaCamera.Follow = transform;
+            _viewProvider.MetaCamera.LookAt = transform;
         }
     }
 }

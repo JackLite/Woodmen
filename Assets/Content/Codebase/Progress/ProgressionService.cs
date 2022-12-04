@@ -127,6 +127,7 @@ namespace Woodman.Progress
         public void ChangeLocation(int locationIndex)
         {
             _currentLocation = locationIndex;
+            _buildingsCount = 0;
             _treeProgression = new TreeProgressionSaveData();
             SaveUtility.SaveInt(LocationsSaveKey, _currentLocation);
             SaveUtility.SaveString(TreeProgressionKey, JsonConvert.SerializeObject(_treeProgression), true);
