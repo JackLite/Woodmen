@@ -138,10 +138,7 @@ namespace Woodman.Buildings
                         buildingView = interact.BuildingView,
                         newState = newState
                     };
-                    changeStateEvent.onFinishBuilding = () =>
-                    {
-                        ReturnToChar();
-                    };
+                    changeStateEvent.onFinishBuilding = ReturnToChar;
                     if (interact.BuildingView.IsLastState(newState))
                     {
                         FinishBuilding();

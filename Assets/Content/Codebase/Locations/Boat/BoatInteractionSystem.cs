@@ -1,14 +1,19 @@
-﻿using ModulesFramework;
+﻿using Cinemachine;
+using ModulesFramework;
 using ModulesFramework.Attributes;
 using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Unity.Mathematics;
+using UnityEngine;
 using Woodman.Buildings;
 using Woodman.Common;
+using Woodman.Common.Delay;
 using Woodman.Common.Tweens;
 using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
 using Woodman.Logs.LogsUsing;
+using Woodman.Meta;
+using Woodman.Player.Movement.View;
 using Woodman.Player.PlayerResources;
 using Woodman.Progress;
 using Woodman.Settings;
@@ -19,15 +24,17 @@ namespace Woodman.Locations.Boat
     [EcsSystem(typeof(MetaModule))]
     public class BoatInteractionSystem : IRunSystem
     {
-        private DataWorld _world;
-        private PlayerLogsRepository _resRepository;
+        private CharacterLogsView _characterLogsView;
         private BoatSaveService _boatSaveService;
+        private BuildingService _buildingService;
+        private DataWorld _world;
+        private EcsOneData<LocationData> _locationData;
+        private MetaViewProvider _viewProvider;
+        private MovementView _movementView;
+        private PlayerLogsRepository _resRepository;
         private PoolsProvider _poolsProvider;
         private ProgressionService _progressionService;
-        private BuildingService _buildingService;
-        private EcsOneData<LocationData> _locationData;
         private VisualSettings _visualSettings;
-        private CharacterLogsView _characterLogsView;
 
         public void Run()
         {
@@ -120,6 +127,8 @@ namespace Woodman.Locations.Boat
 
             if (oldState != newState)
             {
+                _movementView.ToggleMove(false);
+                UpdateCamera(interact.BuildingView.transform, .75f);
                 createEvent.onAfter = () =>
                 {
                     var stateEvent = new BuildingChangeStateEvent
@@ -127,9 +136,10 @@ namespace Woodman.Locations.Boat
                         buildingView = interact.BuildingView,
                         newState = newState
                     };
+                    stateEvent.onFinishBuilding += ReturnToChar;
                     if (newState == interact.BuildingView.StatesCount - 1)
                     {
-                        stateEvent.onFinishBuilding = FinishLocation;
+                        stateEvent.onFinishBuilding += FinishLocation;
                         _world.CreateEvent<DisableTreesSignal>();
                     }
 
@@ -151,6 +161,37 @@ namespace Woodman.Locations.Boat
         private void FinishLocation()
         {
             _world.NewEntity().AddComponent(new NextLocationEvent());
+        }
+        
+        
+        private void ReturnToChar()
+        {
+            SetCameraTransform(_viewProvider.WoodmanContainer.transform);
+            DelayedFactory.Create(_world, 0.75f, () =>
+            {
+                SetCameraDamping(0);
+                _movementView.ToggleMove(true);
+            });
+        }
+
+        private void UpdateCamera(Transform transform, float damping)
+        {
+            SetCameraDamping(damping);
+            SetCameraTransform(transform);
+        }
+
+        private void SetCameraDamping(float damping)
+        {
+            var transposer = _viewProvider.MetaCamera.GetCinemachineComponent<CinemachineTransposer>();
+            transposer.m_XDamping = damping;
+            transposer.m_YDamping = damping;
+            transposer.m_ZDamping = damping;
+        }
+
+        private void SetCameraTransform(Transform transform)
+        {
+            _viewProvider.MetaCamera.Follow = transform;
+            _viewProvider.MetaCamera.LookAt = transform;
         }
     }
 }
