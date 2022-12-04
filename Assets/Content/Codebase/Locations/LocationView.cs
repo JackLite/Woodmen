@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Woodman.Buildings;
 using Woodman.Locations.Trees;
@@ -84,6 +85,16 @@ namespace Woodman.Locations
                 if (data.count == 0)
                     startedLog.Hide();
             }
+        }
+
+        public IEnumerable<BuildingView> GetBuildings()
+        {
+            return _buildings;
+        }
+        
+        public IEnumerable<TreeMeta> GetTrees()
+        {
+            return _trees;
         }
 
         public int GetBuildingsCount()

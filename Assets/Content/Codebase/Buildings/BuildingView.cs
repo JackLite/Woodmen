@@ -21,10 +21,6 @@ namespace Woodman.Buildings
         private BuildingStateView[] _states;
 
         [SerializeField]
-        private int _totalLogsCount;
-
-        [ContextMenuItem("Recalc", nameof(CalculateStateLogsCount))]
-        [SerializeField]
         private int[] _logsCount;
 
         [SerializeField]
@@ -64,21 +60,6 @@ namespace Woodman.Buildings
         {
             _currentCount = count;
             _progress.SetProgress(_currentCount, total);
-        }
-
-        private void CalculateStateLogsCount()
-        {
-            var stateCount = _states.Length;
-            var oneStateCount = _totalLogsCount / (stateCount - 1);
-            var lastStateCount = oneStateCount + _totalLogsCount % oneStateCount;
-            _logsCount = new int[_states.Length];
-            _logsCount[0] = 0;
-            for (var i = 1; i < _logsCount.Length - 1; ++i)
-                _logsCount[i] = oneStateCount;
-            _logsCount[^1] = lastStateCount;
-            #if UNITY_EDITOR
-            EditorUtility.SetDirty(gameObject);
-            #endif
         }
 
         public int GetResForState(int stateIndex)

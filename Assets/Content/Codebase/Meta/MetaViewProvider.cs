@@ -49,9 +49,5 @@ namespace Woodman.Meta
         [field: SerializeField]
         [field: ViewInject]
         public PoolsProvider PoolsProvider { get; private set; }
-
-        [field: SerializeField]
-        [field: ViewInject]
-        public DebugViewProvider DebugViewProvider { get; private set; }
     }
 }

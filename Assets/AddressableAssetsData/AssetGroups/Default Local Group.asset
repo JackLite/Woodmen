@@ -81,6 +81,10 @@ MonoBehaviour:
     m_Address: TutorialSettings
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: c1526359298a1dc4fa0b5237bd6e8dcc
+    m_Address: DebugCanvas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4c4c2446a3470e4b88d56161114d588, type: 2}
   m_SchemaSet:

@@ -29,6 +29,13 @@ namespace Woodman.Locations.Trees
             Save();
         }
 
+        public void Reset(string id)
+        {
+            CheckTree(id);
+            _saveData.trees[id].isFell = false;
+            Save();
+        }
+
         private void CheckTree(string id)
         {
             if (!_saveData.trees.ContainsKey(id))

@@ -22,12 +22,12 @@ namespace Woodman.Cheats.Systems
             if (state.isGodModeTurnOn)
             {
                 _viewProvider.DebugMessageView.SetMsg("God mode turn on!");
-                _viewProvider.GodModeBtn.SetText("Turn off");
+                _viewProvider.GodModeBtn.SetText("Turn off God Mode");
             }
             else
             {
                 _viewProvider.DebugMessageView.SetMsg("God mode turn off!");
-                _viewProvider.GodModeBtn.SetText("Turn on");
+                _viewProvider.GodModeBtn.SetText("Turn on God Mode");
             }
         }
 

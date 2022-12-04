@@ -22,8 +22,11 @@ namespace Woodman.Cheats.View
 
         [field: SerializeField]
         public DebugResourceViewProvider DebugResourceViewProvider { get; private set; }
-        
-        [field:SerializeField]
+
+        [field: SerializeField]
         public GodModeBtn GodModeBtn { get; private set; }
+
+        [field: SerializeField]
+        public Button ResetCurrentLocationBtn { get; private set; }
     }
 }
