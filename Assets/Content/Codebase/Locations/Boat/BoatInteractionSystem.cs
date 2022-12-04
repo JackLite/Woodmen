@@ -128,7 +128,10 @@ namespace Woodman.Locations.Boat
                         newState = newState
                     };
                     if (newState == interact.BuildingView.StatesCount - 1)
+                    {
                         stateEvent.onFinishBuilding = FinishLocation;
+                        _world.CreateEvent<DisableTreesSignal>();
+                    }
 
                     if (newState < interact.BuildingView.StatesCount - 1)
                     {

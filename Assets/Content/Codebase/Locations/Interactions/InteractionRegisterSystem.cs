@@ -36,7 +36,7 @@ namespace Woodman.Locations.Interactions
 
         private void OnRegisterTarget()
         {
-            foreach (var target in InteractionStaticPool.GetTargets())
+            foreach (var target in InteractionStaticPool.DequeueTargets())
                 Subscribe(target);
         }
 

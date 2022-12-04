@@ -58,5 +58,11 @@ namespace Woodman.Locations.Interactions
         public event Action<InteractTarget> OnStartInteract;
         public event Action<InteractTarget> OnEndInteract;
         public event Action<InteractTarget> OnInteract;
+
+        public void Disable()
+        {
+            InteractionStaticPool.Unregister(this);
+            Destroy(this);
+        }
     }
 }

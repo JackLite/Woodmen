@@ -3,11 +3,11 @@ using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using Woodman.Common.Tweens;
 using Woodman.Felling.Start;
+using Woodman.Locations.Interactions;
 using Woodman.Locations.Interactions.Components;
-using Woodman.Locations.Trees;
 using Woodman.Player.Indicators;
 
-namespace Woodman.Locations.Interactions.TreeInteraction
+namespace Woodman.Locations.Trees
 {
     [EcsSystem(typeof(MetaModule))]
     public class TreeInteractionSystem : IRunSystem

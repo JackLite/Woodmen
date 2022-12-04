@@ -10,7 +10,7 @@ using Woodman.Cheats;
 using Woodman.Common;
 using Woodman.Felling;
 using Woodman.Locations.Interactions;
-using Woodman.Locations.Interactions.TreeInteraction;
+using Woodman.Locations.Trees;
 using Woodman.Meta;
 using Woodman.Player.Movement.View;
 using Woodman.Player.PlayerResources;
