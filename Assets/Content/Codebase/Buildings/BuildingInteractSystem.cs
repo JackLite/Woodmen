@@ -159,9 +159,9 @@ namespace Woodman.Buildings
         private void FinishBuilding()
         {
             _progressionService.RegisterFinishBuilding();
-            if (_progressionService.IsBuildingsFinished())
+            var ld = _locationData.GetData();
+            if (_progressionService.IsBuildingsFinished() && ld.locationView.HasBoat())
             {
-                var ld = _locationData.GetData();
                 ld.locationView.ShowBoat();
                 var locationIndex = _progressionService.GetLocationIndex();
                 var boatState = _boatSaveService.GetState(locationIndex);

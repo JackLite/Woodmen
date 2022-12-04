@@ -122,5 +122,10 @@ namespace Woodman.Locations
         {
             return _boat.GetResForState(state);
         }
+
+        public bool HasBoat()
+        {
+            return _boat != null;
+        }
     }
 }
