@@ -37,7 +37,7 @@ namespace Woodman.Buildings
         
         public void SetTransparency(float t)
         {
-            _material.SetFloat(Transparent, t);
+            //_material.SetFloat(Transparent, t);
         }
 
         public void SetBlink(float b)

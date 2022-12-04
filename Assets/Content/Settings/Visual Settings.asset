@@ -61,7 +61,7 @@ MonoBehaviour:
     transparencyDownTime: 0.4
     transparencyUpTime: 0.9
     transparencyValue: 1
-    delay: 2
+    delay: 1
     blinkTime: 1
-    blinkValue: 1
+    blinkValue: 0.8
   fallSpeed: 10
