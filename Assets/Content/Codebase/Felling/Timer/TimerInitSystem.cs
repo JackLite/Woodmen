@@ -10,6 +10,7 @@ namespace Woodman.Felling.Timer
     {
         private EcsOneData<FellingSettings> _fellingSettings;
         private EcsOneData<TimerData> _timerData;
+        private FellingUIProvider _uiProvider;
 
         public void Init()
         {
@@ -19,6 +20,7 @@ namespace Woodman.Felling.Timer
                 remain = settings.time,
                 totalTime = settings.time
             });
+            _uiProvider.FellingTimerView.ResetFreeze();
         }
     }
 }

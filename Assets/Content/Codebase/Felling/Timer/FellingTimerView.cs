@@ -88,6 +88,12 @@ namespace Woodman.Felling.Timer
             _freezeAnimator.gameObject.SetActive(true);
         }
 
+        public void ResetFreeze()
+        {
+            _freezeAnimator.gameObject.SetActive(false);
+            _isFreeze = false;
+        }
+
         public void SetDefroze()
         {
             _freezeAnimator.SetBool(Defroze, true);
