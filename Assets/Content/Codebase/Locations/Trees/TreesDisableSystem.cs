@@ -17,10 +17,14 @@ namespace Woodman.Locations.Trees
                 return;
             
             query.DestroyAll();
-            foreach(var target in InteractionStaticPool.AllTargets())
+            var list = InteractionStaticPool.AllTargets();
+            for (var i = 0; i < list.Count;)
             {
+                var target = list[i];
                 if (target.InteractType == InteractTypeEnum.Tree)
                     target.Disable();
+                else
+                    i++;
             }
         }
     }

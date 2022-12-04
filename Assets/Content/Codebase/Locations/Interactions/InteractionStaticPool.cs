@@ -22,7 +22,7 @@ namespace Woodman.Locations.Interactions
                 yield return _targets.Dequeue();
         }
 
-        public static IEnumerable<InteractTarget> AllTargets()
+        public static List<InteractTarget> AllTargets()
         {
             return _allTargets;
         }
