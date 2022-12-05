@@ -27,7 +27,8 @@ namespace Woodman.Locations
 
         private void Awake()
         {
-            _boat.gameObject.SetActive(false);
+            if (_boat != null)
+                _boat.gameObject.SetActive(false);
         }
 
         public Vector3 GetPlayerSpawnPos()
