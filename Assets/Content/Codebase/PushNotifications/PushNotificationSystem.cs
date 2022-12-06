@@ -33,6 +33,7 @@ namespace Woodman.PushNotifications
             {
                 Title = "It's time!",
                 Text = "For finish house.",
+                SmallIcon = "main_small",
                 FireTime = time1000,
                 ShouldAutoCancel = true
             };
@@ -49,6 +50,7 @@ namespace Woodman.PushNotifications
             {
                 Title = "A little bit more!",
                 Text = "It's time to finish houses.",
+                SmallIcon = "main_small",
                 FireTime = time2000,
                 ShouldAutoCancel = true
             };
