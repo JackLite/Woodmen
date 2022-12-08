@@ -37,6 +37,7 @@ namespace Woodman.Felling.SecondChance
                 _world.CreateEvent(new FellingFinishSignal
                 {
                     reason = FellingFinishReason.Lose,
+                    loseReason = d.loseReason,
                     progress = _tree.GetData().progress,
                     secondChanceShowed = true
                 });

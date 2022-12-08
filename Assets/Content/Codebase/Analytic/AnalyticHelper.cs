@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Woodman.Felling.Finish;
+using Woodman.Felling.Finish.Lose;
 using Woodman.Felling.Tree.Progression;
 using Woodman.Utils;
 
@@ -15,12 +16,19 @@ namespace Woodman.Analytic
             { TreeDifficult.Hard, "hard" }
         };
 
-        private static readonly Dictionary<FellingFinishReason, string> ReasonMap = new()
+        private static readonly Dictionary<FellingFinishReason, string> FinishReasonMap = new()
         {
             { FellingFinishReason.Win, "win" },
             { FellingFinishReason.Lose, "lose" },
             { FellingFinishReason.Restart, "restart" },
             { FellingFinishReason.GameClosed, "game_closed" },
+        };
+        
+        private static readonly Dictionary<LoseReason, string> LoseReasonMap = new()
+        {
+            { LoseReason.BranchCollide, "branch" },
+            { LoseReason.HiveCollide, "hive" },
+            { LoseReason.TimeOut, "timeout" },
         };
 
         private const string LevelCountKey = "analytic.felling.lifetime_count";
@@ -36,7 +44,7 @@ namespace Woodman.Analytic
 
         public static string GetFinishReason(FellingFinishReason reason)
         {
-            if (ReasonMap.TryGetValue(reason, out var reasonString))
+            if (FinishReasonMap.TryGetValue(reason, out var reasonString))
                 return reasonString;
             return "unknown_finish_reason";
         }
@@ -73,6 +81,13 @@ namespace Woodman.Analytic
         {
             var diff = DateTime.Now - _startFellingTime;
             return (int) diff.TotalSeconds;
+        }
+
+        public static string GetLoseReason(LoseReason reason)
+        {
+            if (LoseReasonMap.TryGetValue(reason, out var reasonString))
+                return reasonString;
+            return "unknown_lose_reason";
         }
     }
 }

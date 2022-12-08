@@ -70,6 +70,7 @@ namespace Woodman.Felling.Finish.Lose
                     _world.CreateEvent(new FellingFinishSignal
                     {
                         reason = FellingFinishReason.Lose,
+                        loseReason = reason,
                         progress = _currentTree.GetData().progress,
                         secondChanceShowed = scd.wasShowed
                     });
