@@ -70,7 +70,7 @@ namespace Woodman.Locations
             ld.locationView.SetTreesStates(_treesRepository);
             ld.locationView.LoadStartedLogs(_logsHeapRepository);
             _progressionService.SetBuildingsCount(ld.locationView.GetBuildingsCount());
-            if (_progressionService.IsBuildingsFinished())
+            if (_progressionService.IsBuildingsFinished() && ld.locationView.HasBoat())
             {
                 ld.locationView.ShowBoat();
                 var locationIndex = _progressionService.GetLocationIndex();

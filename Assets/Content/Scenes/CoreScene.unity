@@ -4669,6 +4669,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSCheck
       objectReference: {fileID: 0}
+    - target: {fileID: 5364933923009514328, guid: 668edce20a9a746fabc1de1b0bc8cdde,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668edce20a9a746fabc1de1b0bc8cdde, type: 3}
 --- !u!23 &8408560422596542918

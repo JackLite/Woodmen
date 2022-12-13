@@ -31,6 +31,10 @@ namespace Woodman.Buildings
 
         [SerializeField]
         private Animator _animator;
+
+        [Header("Debug")]
+        [SerializeField]
+        private int _newState = 1;
         
         private float _framesPerSecond;
 
@@ -119,6 +123,7 @@ namespace Woodman.Buildings
             vfxTransform.localRotation = Quaternion.identity;
             _currentBuildingVfx.gameObject.SetActive(false);
             _currentBuildingVfx.SetMesh(stateView.GetMesh());
+            _currentBuildingVfx.ResetTransform(stateView.transform);
             _currentBuildingVfx.gameObject.SetActive(true);
         }
 
@@ -143,19 +148,31 @@ namespace Woodman.Buildings
         }
         
         #if UNITY_EDITOR
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                var selection = Selection.activeObject as GameObject;
+                if (selection == null)
+                    return;
+                if (selection == this.gameObject)
+                    ShowBuildingEffect();
+            }
+        }
+
         [ContextMenu("Show building effect")]
         private void ShowBuildingEffect()
         {
-            var newState = 2;
-            var oldState = GetState(newState - 1);
+            var oldState = GetState(_newState - 1);
             oldState.SetTransparency(1);
             oldState.ToggleActive(true);
-            GetState(newState).ToggleActive(false);
+            GetState(_newState).ToggleActive(false);
 
             EcsWorldContainer.World.CreateEvent(new BuildingChangeStateEvent()
             {
                 buildingView = this,
-                newState = 3,
+                newState = _newState,
                 nextStateLogs = 0,
                 onFinishBuilding = () => { }
             });

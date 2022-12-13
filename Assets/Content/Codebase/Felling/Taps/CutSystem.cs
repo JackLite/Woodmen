@@ -83,7 +83,6 @@ namespace Woodman.Felling.Taps
                 _fellingUIProvider.TreeUIProgress.SetProgress(1 - tree.progress);
                 if (_treePiecesRepository.GetRemain() == 0)
                 {
-                    _characterController.SetSide(FellingSide.Right);
                     _world.CreateOneFrame().AddComponent(new WinEvent());
                     return;
                 }

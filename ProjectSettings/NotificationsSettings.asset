@@ -39,7 +39,7 @@
         },
         "DrawableResources": [
             {
-                "Id": "icon_0",
+                "Id": "main_small",
                 "Type": 0,
                 "Asset": {
                     "fileID": 2800000,

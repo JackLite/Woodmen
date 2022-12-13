@@ -64,6 +64,10 @@ namespace Woodman.Analytic
             var levelNumber = _progressionService.GetCurrentTreeNumber();
             if (signal.reason == FellingFinishReason.Win)
                 levelNumber--;
+            if (signal.reason == FellingFinishReason.Lose)
+            {
+                fields["lose_reason"] = AnalyticHelper.GetLoseReason(signal.loseReason);
+            }
             fields["level_number"] = levelNumber.ToString(CultureInfo.InvariantCulture);
             fields["result"] = AnalyticHelper.GetFinishReason(signal.reason);
             fields["progress"] = ((int)(signal.progress * 100)).ToString(CultureInfo.InvariantCulture);

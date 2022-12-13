@@ -79,6 +79,8 @@ namespace Woodman.Buildings
                 validate = () => ev.buildingView != null,
                 onEnd = () =>
                 {
+                    var diff = DateTime.Now - TimerStatic.time;
+                    Debug.Log("[Animation] Transparency down takes " + diff.TotalMilliseconds + " ms");
                     ev.buildingView.GetState(ev.newState).SetTransparency(0);
                     ev.buildingView.SetState(ev.newState);
                     ev.buildingView.SetLogs(0, ev.nextStateLogs);
@@ -96,6 +98,8 @@ namespace Woodman.Buildings
 
         private void TransparencyUp(BuildingChangeStateEvent ev)
         {
+            var diff = DateTime.Now - TimerStatic.time;
+            Debug.Log("[Animation] Delay up takes " + diff.TotalMilliseconds + " ms");
             var buildingView = ev.buildingView;
             var stateView = buildingView.GetState(ev.newState);
             var settings = _visual.buildingSettings;
