@@ -50,7 +50,7 @@ namespace Woodman.Felling.Start
                 _innerLoadingScreen.Show();
                 await Task.Delay(TimeSpan.FromSeconds(_innerLoadingScreen.animDuration));
                 _metaUi.Hide();
-                _world.InitModule<CoreModule>();
+                _world.InitModule<CoreModule>(true);
                 _world.DestroyModule<MetaModule>();
             }
             catch (Exception e)

@@ -36,8 +36,7 @@ namespace Woodman
 
             if (Debug.isDebugBuild)
             {
-                EcsWorldContainer.World.InitModule<CheatsModule, MetaModule>();
-                EcsWorldContainer.World.ActivateModule<CheatsModule>();
+                EcsWorldContainer.World.InitModule<CheatsModule, MetaModule>(true);
             }
         }
 

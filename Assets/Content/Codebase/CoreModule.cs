@@ -47,12 +47,11 @@ namespace Woodman
             AddDependency(fellingViewProvider);
             BindView(fellingViewProvider);
             EcsWorldContainer.World.InitModule<FellingModule>();
-            EcsWorldContainer.World.ActivateModule<CoreModule>();
         }
 
         public override void OnActivate()
         {
-            GetGlobalDependency<StartupModule, InnerLoadingScreen>().Hide();
+            GetGlobalDependency<StartupModule, InnerLoadingScreen>()?.Hide();
         }
 
         public override void OnDestroy()

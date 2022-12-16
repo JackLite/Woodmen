@@ -14,8 +14,15 @@ namespace Woodman.Tutorial.Core
         private EcsOneData<TimerData> _timer;
         public void Init()
         {
-            _world.InitModule<CoreTutorialModule, CoreModule>();
-            _world.ActivateModule<CoreTutorialModule>();
+            ref var td = ref _tutorialData.GetData();
+            if (td.baseComplete)
+                return;
+            td.branchComplete = false;
+            td.leftTapComplete = false;
+            td.rightTapComplete = false;
+            td.timerComplete = false;
+            td.tapsCount = 0;
+            _world.InitModule<CoreTutorialModule, CoreModule>(true);
         }
 
         public void Activate()

@@ -10,6 +10,7 @@ namespace Woodman.Tutorial.Core
         public bool branchComplete;
         public bool timerComplete;
         public bool progressComplete;
+        
         public bool freezeComplete;
         public bool refillComplete;
         public bool hiveComplete;
