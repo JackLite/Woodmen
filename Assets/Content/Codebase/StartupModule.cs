@@ -47,7 +47,7 @@ namespace Woodman
 
             var rawFellingSettings = await Addressables.LoadAssetAsync<TextAsset>("FellingSettings").Task;
             var fellingSettings = JsonConvert.DeserializeObject<FellingSettings>(rawFellingSettings.text);
-            CreateOneData(fellingSettings);
+            world.CreateOneData(fellingSettings);
 
             var progressionSettings =
                 await Addressables.LoadAssetAsync<ProgressionSettings>("ProgressionSettings").Task;
@@ -83,18 +83,18 @@ namespace Woodman
 
             var tutorialSaveService = new TutorialSaveService();
             AddDependency(tutorialSaveService);
-            CreateOneData(tutorialSaveService.LoadMetaData());
-            CreateOneData(tutorialSaveService.LoadCoreData());
+            world.CreateOneData(tutorialSaveService.LoadMetaData());
+            world.CreateOneData(tutorialSaveService.LoadCoreData());
         }
 
         private void CreateOneData()
         {
-            CreateOneData(new PlayerData { maxWoodCount = 300 });
-            CreateOneData<TreeModel>();
-            CreateOneData<TimerData>();
-            CreateOneData<LocationData>();
-            CreateOneData<DebugStateData>();
-            CreateOneData(new SecondChanceData { remainTime = 5, totalTime = 5 });
+            world.CreateOneData(new PlayerData { maxWoodCount = 300 });
+            world.CreateOneData<TreeModel>();
+            world.CreateOneData<TimerData>();
+            world.CreateOneData<LocationData>();
+            world.CreateOneData<DebugStateData>();
+            world.CreateOneData(new SecondChanceData { remainTime = 5, totalTime = 5 });
         }
     }
 }

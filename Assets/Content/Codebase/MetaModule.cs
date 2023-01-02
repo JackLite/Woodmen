@@ -32,12 +32,16 @@ namespace Woodman
             AddDependency(viewProvider);
             BindView(viewProvider);
             await viewProvider.PoolsProvider.LogsUsingPool.WarmUp(20);
-            CreateOneData<PlayerMovementData>();
+            world.CreateOneData(new PlayerMovementData
+            {
+                test = viewProvider.gameObject
+            });
 
             if (Debug.isDebugBuild)
             {
                 EcsWorldContainer.World.InitModule<CheatsModule, MetaModule>(true);
             }
+            
         }
 
         protected override Dictionary<Type, int> GetSystemsOrder()

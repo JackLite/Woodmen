@@ -6,5 +6,6 @@ namespace Woodman.Player.Movement.View
     {
         public Vector2 input;
         public bool isMove;
+        public GameObject test;
     }
 }

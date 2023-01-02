@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Locations
   m_EditorClassIdentifier: 
   locations:
+  - m_AssetGUID: d1e7d220be2ed3a4891b2584f94f8d6d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   - m_AssetGUID: a806a952dbbc0b04aab63819a6b34862
     m_SubObjectName: 
     m_SubObjectType: 

@@ -17,6 +17,10 @@ namespace Woodman.Locations.Interactions
 
         public float Delay => _interactionDelay;
 
+        public event Action<InteractTarget> OnStartInteract;
+        public event Action<InteractTarget> OnEndInteract;
+        public event Action<InteractTarget> OnInteract;
+
         private void Awake()
         {
             InteractionStaticPool.Register(this);
@@ -54,10 +58,6 @@ namespace Woodman.Locations.Interactions
             _isInside = false;
             OnEndInteract?.Invoke(this);
         }
-
-        public event Action<InteractTarget> OnStartInteract;
-        public event Action<InteractTarget> OnEndInteract;
-        public event Action<InteractTarget> OnInteract;
 
         public void Disable()
         {

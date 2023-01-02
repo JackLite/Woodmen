@@ -1,5 +1,6 @@
 using ModulesFramework;
 using ModulesFramework.Attributes;
+using ModulesFramework.Data;
 using ModulesFramework.Systems;
 using UnityEngine;
 using Woodman.Common;
@@ -14,7 +15,7 @@ namespace Woodman.Player.Movement.View
         private MetaUiProvider _metaUiProvider;
         private MetaViewProvider _metaViewProvider;
         private UiProvider _uiProvider;
-        private EcsOneData<PlayerMovementData> _movementData;
+        private DataWorld _world;
         public void Init()
         {
             _metaUiProvider.MovementView.Reader.OnOnChangeMoveState += OnChangeMoveState;
@@ -24,7 +25,7 @@ namespace Woodman.Player.Movement.View
         {
             var reader = _metaUiProvider.MovementView.Reader;
             var circle = _metaUiProvider.MovementView.CircleMovement;
-            ref var moveData = ref _movementData.GetData();
+            ref var moveData = ref _world.OneData<PlayerMovementData>();
             if (isActive)
             {
                 var screenPos = RecalcScreenPos(reader.CurrentPointerPos);
@@ -42,7 +43,7 @@ namespace Woodman.Player.Movement.View
 
         public void Run()
         {
-            ref var moveData = ref _movementData.GetData();
+            ref var moveData = ref _world.OneData<PlayerMovementData>();
             if (!moveData.isMove)
                 return;
 

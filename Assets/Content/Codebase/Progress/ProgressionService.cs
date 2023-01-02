@@ -115,6 +115,7 @@ namespace Woodman.Progress
 
         public AssetReference GetLocation()
         {
+            return _locationsSettings.locations[0];
             return _locationsSettings.locations[_currentLocation];
         }
 

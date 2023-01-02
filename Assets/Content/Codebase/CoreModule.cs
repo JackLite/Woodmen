@@ -35,7 +35,7 @@ namespace Woodman
                 JsonConvert.DeserializeObject<TreeGenerationSettings>(rawTreeGenerationSettings.text);
             CreateTreeGenerator(treeGenerationSettings);
 
-            CreateOneData<TreePiecesData>();
+            world.CreateOneData<TreePiecesData>();
 
             var fellingViewProvider = Object.FindObjectOfType<FellingViewProvider>(true);
             var tasks = new[]
